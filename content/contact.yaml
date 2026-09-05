@@ -23,7 +23,10 @@ address: |
     Belgium
 
 # Optional: a link to a map, and directions in prose.
-map_url: 'https://www.openstreetmap.org/'
+# The coordinates are those of Celestijnenlaan 200D (the physics research
+# building), so the link opens with a marker on the address rather than on a
+# generic map. Update them if the address changes.
+map_url: 'https://www.openstreetmap.org/?mlat=50.86280&mlon=4.67692#map=18/50.86280/4.67692'
 directions: |
     The department is a twenty-minute bus ride from Leuven station (lines 3 and
     616 stop nearby). Visitors should report to the reception desk on arrival.
