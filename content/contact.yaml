@@ -2,16 +2,16 @@
 
 intro: |
     For research enquiries, collaboration proposals, and press, write to the
-    group address below. For matters concerning a specific project, contact the
-    relevant group member directly — their addresses are on their profile pages.
+    group leader at the address below. For matters concerning a specific
+    project, contact the relevant group member directly; where an address is
+    listed, it is on their profile page.
     The group is part of both the Laboratory for Semiconductor Physics and the
     Leuven Gravity Institute at KU Leuven.
 
-# PLACEHOLDER — NOT A VERIFIED ADDRESS. This was invented while scaffolding the
-# site and has never been checked; mail sent to it may bounce. Replace it with
-# the group's real address before the site goes live. It also appears in
-# `contact.links` below and in `org.links` in site.yaml.
-email: 'gravity@kuleuven.be'
+# The group leader's address, used as the general contact point. It also
+# appears in `contact.links` below and in `org.links` in site.yaml; change all
+# three together.
+email: 'tjonnie.li@kuleuven.be'
 phone: ''
 address: |
     Gravitational Wave Group
@@ -29,7 +29,7 @@ directions: |
     616 stop nearby). Visitors should report to the reception desk on arrival.
 
 links:
-    - { label: 'Email', icon: 'email', url: 'mailto:gravity@kuleuven.be' }
+    - { label: 'Email', icon: 'email', url: 'mailto:tjonnie.li@kuleuven.be' }
     - {
           label: 'GitHub',
           icon: 'github',

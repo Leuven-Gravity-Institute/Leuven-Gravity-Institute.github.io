@@ -59,6 +59,7 @@ items:
       group: 'gw-group'
       status: 'current'
       photo: '/assets/img/people/placeholder.svg'
+      email: 'tjonnie.li@kuleuven.be'
       orcid: '0000-0003-4297-7365'
       inspire: 'T.G.F.Li.1'
       # OpenAlex splits him across entities that hold different papers, so all
