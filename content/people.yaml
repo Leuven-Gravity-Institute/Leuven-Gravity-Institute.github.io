@@ -49,6 +49,14 @@
 #
 # Biographies are left blank for people who have not written one. Please add
 # your own rather than having one written for you; `bio` supports Markdown.
+#
+# `links` holds any profile links you want on your page. To add a personal
+# website, append an entry with the `globe` icon:
+#
+#   - { label: 'Website', icon: 'globe', url: 'https://example.org' }
+#
+# Available icons are the keys in templates/partials/icons.html: globe, orcid,
+# github, scholar, linkedin, bluesky, mastodon, twitter, email.
 
 items:
     - id: 'tjonnie-li'
@@ -108,6 +116,11 @@ items:
           gravitational-wave detectors, including correlated noise modelling and
           null-stream methods for the Einstein Telescope.
       links:
+          - {
+                label: 'Website',
+                icon: 'globe',
+                url: 'https://isaac-cf-wong.github.io',
+            }
           - {
                 label: 'ORCID',
                 icon: 'orcid',
