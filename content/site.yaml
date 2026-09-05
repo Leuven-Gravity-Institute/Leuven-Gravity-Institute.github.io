@@ -21,6 +21,9 @@ site:
     language: 'en'
     # Accent colour used across the site (any valid CSS colour).
     accent: '#0b6b8f'
+    # Site-root path to the logo, shown in the masthead and used as the browser
+    # tab icon. Leave empty ("") to show the site name without a mark.
+    logo: '/assets/img/logo.svg'
 
     # Research groups covered by this site.
     #
