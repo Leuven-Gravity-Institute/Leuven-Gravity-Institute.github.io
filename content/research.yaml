@@ -5,7 +5,11 @@
 # Keep the two consistent when either changes.
 #
 # `people` lists person ids from people.yaml; each becomes a link to that
-# person's profile. `publications` lists publication `key` values to feature.
+# person's profile.
+#
+# The lists below were INFERRED from co-authorship in the synced publication
+# list, not stated by the group — they say who has published on a theme, which
+# is not quite the same as who works on it. Please confirm and correct them.
 
 items:
     - name: 'Data analysis for current and future observatories'
@@ -21,7 +25,14 @@ items:
           - 'Virgo'
           - 'Bayesian inference'
           - 'Signal detection'
-      # people: ['<person-id>']  # who works on this; ids from people.yaml
+      people:
+          [
+              'tjonnie-li',
+              'isaac-wong',
+              'arthur-offermans',
+              'francesco-cireddu',
+              'milan-wils',
+          ]
 
     - name: 'Detector noise, data quality, and calibration'
       summary: |
@@ -35,7 +46,15 @@ items:
           - 'Glitches'
           - 'Correlated noise'
           - 'Calibration'
-      # people: ['<person-id>']  # who works on this; ids from people.yaml
+      people:
+          [
+              'tjonnie-li',
+              'isaac-wong',
+              'brecht-evens',
+              'francesco-cireddu',
+              'milan-wils',
+              'tom-colemont',
+          ]
 
     - name: 'The Einstein Telescope'
       summary: |
@@ -47,7 +66,7 @@ items:
           - 'Einstein Telescope'
           - 'Triangular configuration'
           - 'Next-generation detectors'
-      # people: ['<person-id>']  # who works on this; ids from people.yaml
+      people: ['tjonnie-li', 'isaac-wong', 'francesco-cireddu', 'milan-wils']
 
     - name: 'Core-collapse supernovae and strong-field gravity'
       summary: |
@@ -60,4 +79,4 @@ items:
           - 'Strong-field gravity'
           - 'Ultra-dense matter'
           - 'Large-scale computing'
-      # people: ['<person-id>']  # who works on this; ids from people.yaml
+      people: ['tjonnie-li', 'arthur-offermans']
