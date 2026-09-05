@@ -305,7 +305,7 @@ items:
   highlight: false
   title: 'GWTC-4.0: Population Properties of Merging Compact Binaries'
   authors:
-  - A. G. Abac et al. (incl. **T. G. F. Li**, **M. Wils**, **I. C. F. Wong**)
+  - A. G. Abac et al. (incl. **T. G. F. Li**, **A. Offermans**, **M. Wils**, **I. C. F. Wong**)
   venue: The Astrophysical Journal Letters 1005, L51 (2026)
   year: 2026
   date: '2026-07-03'
@@ -316,6 +316,7 @@ items:
   key: doi:10.3847/2041-8213/ae771e
   source: orcid
   members:
+  - arthur-offermans
   - isaac-wong
   - milan-wils
   - tjonnie-li
@@ -595,7 +596,7 @@ items:
   title: Deep Search for Joint Sources of Gravitational Waves and High-energy Neutrinos with IceCube during the Third Observing
     Run of LIGO and Virgo
   authors:
-  - R. Abbasi et al. (incl. **T. G. F. Li**, **M. Wils**, **I. C. F. Wong**)
+  - R. Abbasi et al. (incl. **T. G. F. Li**, **A. Offermans**, **M. Wils**, **I. C. F. Wong**)
   venue: The Astrophysical Journal 1003, 41 (2026)
   year: 2026
   date: '2026-05-13'
@@ -606,6 +607,7 @@ items:
   key: doi:10.3847/1538-4357/ae4e1b
   source: orcid
   members:
+  - arthur-offermans
   - isaac-wong
   - milan-wils
   - tjonnie-li
@@ -1065,7 +1067,7 @@ items:
   highlight: false
   title: 'GWTC-4.0: Methods for Identifying and Characterizing Gravitational-wave Transients'
   authors:
-  - A.G. Abac et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
+  - A.G. Abac et al. (incl. **T.G. F. Li**, **A. Offermans**, **M. Wils**, **I.C. F. Wong**)
   venue: Astrophys.J.Lett. 1004, L21 (2026)
   year: 2026
   date: '2026'
@@ -1076,6 +1078,7 @@ items:
   key: doi:10.3847/2041-8213/ae447b
   source: inspire
   members:
+  - arthur-offermans
   - isaac-wong
   - milan-wils
   - tjonnie-li
@@ -1618,7 +1621,7 @@ items:
   highlight: false
   title: Swift-BAT GUANO Follow-up of Gravitational-wave Triggers in the Third LIGO–Virgo–KAGRA Observing Run
   authors:
-  - Gayathri Raman et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
+  - Gayathri Raman et al. (incl. **T.G. F. Li**, **A. Offermans**, **M. Wils**, **I.C. F. Wong**)
   venue: Astrophys.J. 980, 207 (2025)
   year: 2025
   date: '2025'
@@ -1629,6 +1632,7 @@ items:
   key: doi:10.3847/1538-4357/ad9749
   source: inspire
   members:
+  - arthur-offermans
   - isaac-wong
   - milan-wils
   - tjonnie-li
@@ -1651,7 +1655,7 @@ items:
   highlight: false
   title: Search for Gravitational Waves Emitted from SN 2023ixf
   authors:
-  - A.G. Abac et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
+  - A.G. Abac et al. (incl. **T.G. F. Li**, **A. Offermans**, **M. Wils**, **I.C. F. Wong**)
   venue: Astrophys.J. 985, 183 (2025)
   year: 2025
   date: '2025'
@@ -1662,6 +1666,7 @@ items:
   key: doi:10.3847/1538-4357/adc681
   source: inspire
   members:
+  - arthur-offermans
   - isaac-wong
   - milan-wils
   - tjonnie-li
@@ -1683,7 +1688,7 @@ items:
   title: Search for Continuous Gravitational Waves from Known Pulsars in the First Part of the Fourth LIGO-Virgo-KAGRA Observing
     Run
   authors:
-  - A.G. Abac et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
+  - A.G. Abac et al. (incl. **T.G. F. Li**, **A. Offermans**, **M. Wils**, **I.C. F. Wong**)
   venue: Astrophys.J. 983, 99 (2025)
   year: 2025
   date: '2025'
@@ -1694,6 +1699,7 @@ items:
   key: doi:10.3847/1538-4357/adb3a0
   source: inspire
   members:
+  - arthur-offermans
   - isaac-wong
   - milan-wils
   - tjonnie-li
@@ -1714,7 +1720,7 @@ items:
   highlight: false
   title: Properties of neural networks identifying strongly lensed gravitational waves in timedomain
   authors:
-  - Arthur Offermans
+  - '**Arthur Offermans**'
   - '**Tjonnie G.F. Li**'
   venue: Phil.Trans.Roy.Soc.Lond.A 383, 20240169 (2025)
   year: 2025
@@ -1725,6 +1731,7 @@ items:
   key: doi:10.1098/rsta.2024.0169
   source: inspire
   members:
+  - arthur-offermans
   - tjonnie-li
   author_count: 2
   collaboration: false
@@ -1860,6 +1867,37 @@ items:
     url: https://inspirehep.net/literature/2843520
 - include: true
   highlight: false
+  title: Influence of neutrino-electron scattering and neutrino-pair annihilation on hypermassive neutron star
+  authors:
+  - Patrick Chi-Kit Cheong
+  - Francois Foucart
+  - Harry Ho-Yin Ng
+  - '**Arthur Offermans**'
+  - Matthew D. Duez
+  - Nishad Muhammed
+  - Pavan Chawhan
+  venue: Phys.Rev.D 111, 043036 (2025)
+  year: 2025
+  date: '2025'
+  type: journal
+  doi: 10.1103/PhysRevD.111.043036
+  arxiv: '2410.20681'
+  url: https://openalex.org/W4407723389
+  key: doi:10.1103/physrevd.111.043036
+  source: inspire
+  members:
+  - arthur-offermans
+  author_count: 7
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.111.043036
+  - label: arXiv
+    url: https://arxiv.org/abs/2410.20681
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2843264
+- include: true
+  highlight: false
   title: Gravitational wave signatures from the phase-transition-induced collapse of a magnetized neutron star
   authors:
   - Anson Ka Long Yip
@@ -1889,7 +1927,7 @@ items:
   highlight: false
   title: 'GWTC-4.0: An Introduction to Version 4.0 of the Gravitational-Wave Transient Catalog'
   authors:
-  - A.G. Abac et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
+  - A.G. Abac et al. (incl. **T.G. F. Li**, **A. Offermans**, **M. Wils**, **I.C. F. Wong**)
   venue: Astrophys.J.Lett. 995, L18 (2025)
   year: 2025
   date: '2025'
@@ -1900,6 +1938,7 @@ items:
   key: doi:10.3847/2041-8213/ae0c06
   source: inspire
   members:
+  - arthur-offermans
   - isaac-wong
   - milan-wils
   - tjonnie-li
@@ -2002,7 +2041,7 @@ items:
   highlight: false
   title: Using time series to identify strongly-lensed gravitational waves with deep learning
   authors:
-  - Arthur Offermans
+  - '**Arthur Offermans**'
   - '**Tjonnie G.F. Li**'
   venue: arXiv:2411.12453
   year: 2024
@@ -2013,6 +2052,7 @@ items:
   key: arxiv:2411.12453
   source: inspire
   members:
+  - arthur-offermans
   - tjonnie-li
   author_count: 2
   collaboration: false
@@ -2025,7 +2065,7 @@ items:
   highlight: false
   title: Search for Eccentric Black Hole Coalescences during the Third Observing Run of LIGO and Virgo
   authors:
-  - A. G. Abac et al. (incl. **T. G. F. Li**, **M. Wils**, **I. C. F. Wong**)
+  - A. G. Abac et al. (incl. **T. G. F. Li**, **A. Offermans**, **M. Wils**, **I. C. F. Wong**)
   venue: The Astrophysical Journal 973, 132 (2024)
   year: 2024
   date: '2024-09-26'
@@ -2036,6 +2076,7 @@ items:
   key: doi:10.3847/1538-4357/ad65ce
   source: orcid
   members:
+  - arthur-offermans
   - isaac-wong
   - milan-wils
   - tjonnie-li
@@ -2112,7 +2153,7 @@ items:
   highlight: false
   title: Ultralight vector dark matter search using data from the KAGRA O3GK run
   authors:
-  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **A. Offermans**, **M. Wils**, **I.C.F. Wong**)
   venue: Phys.Rev.D 110, 042001 (2024)
   year: 2024
   date: '2024'
@@ -2123,6 +2164,7 @@ items:
   key: doi:10.1103/physrevd.110.042001
   source: inspire
   members:
+  - arthur-offermans
   - isaac-wong
   - milan-wils
   - tjonnie-li
@@ -2174,7 +2216,7 @@ items:
   highlight: false
   title: Observation of Gravitational Waves from the Coalescence of a 2.5–4.5 M $_{⊙}$ Compact Object and a Neutron Star
   authors:
-  - A.G. Abac et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
+  - A.G. Abac et al. (incl. **T.G. F. Li**, **A. Offermans**, **M. Wils**, **I.C. F. Wong**)
   venue: Astrophys.J.Lett. 970, L34 (2024)
   year: 2024
   date: '2024'
@@ -2185,6 +2227,7 @@ items:
   key: doi:10.3847/2041-8213/ad5beb
   source: inspire
   members:
+  - arthur-offermans
   - isaac-wong
   - milan-wils
   - tjonnie-li
@@ -2348,6 +2391,37 @@ items:
     url: https://inspirehep.net/literature/2647065
 - include: true
   highlight: false
+  title: Energy-dependent and Energy-integrated Two-moment General-relativistic Neutrino Transport Simulations of a Hypermassive
+    Neutron Star
+  authors:
+  - Patrick Chi-Kit Cheong
+  - Francois Foucart
+  - Matthew D. Duez
+  - '**Arthur Offermans**'
+  - Nishad Muhammed
+  - Pavan Chawhan
+  venue: Astrophys.J. 975, 116 (2024)
+  year: 2024
+  date: '2024'
+  type: journal
+  doi: 10.3847/1538-4357/ad7825
+  arxiv: '2407.16017'
+  url: https://openalex.org/W4403877930
+  key: doi:10.3847/1538-4357/ad7825
+  source: inspire
+  members:
+  - arthur-offermans
+  author_count: 6
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ad7825
+  - label: arXiv
+    url: https://arxiv.org/abs/2407.16017
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2810461
+- include: true
+  highlight: false
   title: 'Characterizing gravitational wave detector networks: from A$^\sharp$ to cosmic explorer'
   authors:
   - Ish Gupta
@@ -2421,7 +2495,7 @@ items:
   highlight: false
   title: A Search Using GEO600 for Gravitational Waves Coincident with Fast Radio Bursts from SGR 1935+2154
   authors:
-  - A.G. Abac et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
+  - A.G. Abac et al. (incl. **T.G. F. Li**, **A. Offermans**, **M. Wils**, **I.C. F. Wong**)
   venue: Astrophys.J. 977, 255 (2024)
   year: 2024
   date: '2024'
@@ -2432,6 +2506,7 @@ items:
   key: doi:10.3847/1538-4357/ad8de0
   source: inspire
   members:
+  - arthur-offermans
   - isaac-wong
   - milan-wils
   - tjonnie-li

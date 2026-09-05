@@ -140,16 +140,25 @@ items:
                 url: 'https://orcid.org/0000-0002-2317-9395',
             }
 
-    - id: 'arthur-offerman'
-      slug: 'arthur-offerman'
-      name: 'Arthur Offerman'
+    - id: 'arthur-offermans'
+      slug: 'arthur-offermans'
+      name: 'Arthur Offermans'
       role: 'PhD Candidate'
       category: 'Doctoral researchers'
       group: 'gw-group'
       status: 'current'
       photo: '/assets/img/people/placeholder.svg'
-      # No ORCID iD on file; add one plus a `start` date to sync publications.
+      orcid: '0000-0002-8313-5976'
+      inspire: 'A.Offermans.2'
+      openalex: 'A5114450396'
+      # From the KU Leuven employment record on their ORCID profile.
+      start: '2022-09-01'
       links:
+          - {
+                label: 'ORCID',
+                icon: 'orcid',
+                url: 'https://orcid.org/0000-0002-8313-5976',
+            }
           - {
                 label: 'GitHub',
                 icon: 'github',
