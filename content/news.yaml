@@ -1,22 +1,11 @@
 # Dated announcements, newest first is not required — the site sorts them.
 # `body` supports Markdown. `title` is optional; without it the feed derives a
 # title from the body.
+#
+# Example:
+#   - date: '2026-06-15'
+#     title: 'New preprint on null-stream reranking'
+#     body: |
+#         Our work on **null-stream reranking** is now on arXiv.
 
-items:
-    - date: '2026-06-15'
-      title: 'New preprint on null-stream reranking'
-      body: |
-          Our work on **null-stream reranking** for the Einstein Telescope is now
-          on arXiv.
-
-    - date: '2026-03-02'
-      title: 'Alex Student joins the group'
-      body: |
-          Alex joins us as a PhD candidate, working on simulation-based
-          inference.
-
-    - date: '2025-11-20'
-      title: 'Group featured in the KU Leuven research highlights'
-      body: |
-          Our work on detector characterisation was featured in the faculty's
-          annual research highlights.
+items: []

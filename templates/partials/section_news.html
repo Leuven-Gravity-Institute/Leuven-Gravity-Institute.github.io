@@ -1,8 +1,12 @@
-{% if news %}
+{# Shown whenever there is news, and on the news page even when there is none —
+   an empty section on the home page would just be clutter, but a page with
+   nothing on it at all looks broken.                                         #}
+{% if news or not s.preview %}
 {% set rows = news[:s.preview] if s.preview else news %}
 <section id="news" class="section">
   <div class="wrap">
     {% if show_title %}<h2 class="section-title">News</h2>{% endif %}
+    {% if news %}
     <ul class="news-list">
       {% for item in rows %}
       <li class="news-item">
@@ -18,6 +22,9 @@
     </ul>
     {% if s.preview and news | length > s.preview %}
     <p class="more"><a href="/news/">All news →</a></p>
+    {% endif %}
+    {% else %}
+    <p class="muted">No news yet.</p>
     {% endif %}
   </div>
 </section>

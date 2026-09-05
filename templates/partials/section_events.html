@@ -19,11 +19,15 @@
   </div>
 </li>
 {% endmacro %}
-{% if upcoming_events or past_events %}
+{# As with news: hidden on the home page when empty, but still shown on its own
+   page so the page is not left blank.                                        #}
+{% if upcoming_events or past_events or not s.preview %}
 <section id="events" class="section">
   <div class="wrap">
     {% if show_title %}<h2 class="section-title">Events</h2>{% endif %}
-    {% if s.preview %}
+    {% if not (upcoming_events or past_events) %}
+    <p class="muted">No events are scheduled at the moment.</p>
+    {% elif s.preview %}
     <ul class="event-list">
       {% for item in (upcoming_events or past_events)[:s.preview] %}{{ event_row(item) }}{% endfor %}
     </ul>

@@ -96,6 +96,21 @@ class TestBuild:
             else:
                 assert title not in page
 
+    def test_a_section_with_no_items_still_renders_its_own_page(self, built: Path) -> None:
+        # An empty section is hidden on the home page, where it would be
+        # clutter, but its own page must not come out blank.
+        page = (built / "news" / "index.html").read_text(encoding="utf-8")
+        assert "No news yet." in page or "news-item" in page
+        assert "No events are scheduled" in page or "event-list" in page
+
+    def test_empty_sections_are_hidden_on_the_home_page(self, built: Path, paths: SitePaths) -> None:
+        content = load_content(paths.content)
+        home = (built / "index.html").read_text(encoding="utf-8")
+        if not content["news"]["items"]:
+            assert "No news yet." not in home
+        if not content["events"]["items"]:
+            assert "No events are scheduled" not in home
+
     def test_assets_and_nojekyll_are_copied(self, built: Path) -> None:
         assert (built / "assets" / "css" / "style.css").is_file()
         assert (built / ".nojekyll").is_file()
