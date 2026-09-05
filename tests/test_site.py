@@ -106,6 +106,9 @@ class TestBuild:
         teaching = (built / "teaching" / "index.html").read_text(encoding="utf-8")
         assert "No courses or student projects" in teaching or "plain-item" in teaching
 
+        join = (built / "join" / "index.html").read_text(encoding="utf-8")
+        assert "No positions are open" in join or "opening-level" in join
+
     def test_empty_sections_are_hidden_on_the_home_page(self, built: Path, paths: SitePaths) -> None:
         content = load_content(paths.content)
         home = (built / "index.html").read_text(encoding="utf-8")

@@ -151,6 +151,7 @@ org:
     # Profile links for the group as a whole. `icon` must match a key in the
     # icon set (see templates/partials/icons.html).
     links:
+        # PLACEHOLDER address — see the note in contact.yaml.
         - { label: 'Email', icon: 'email', url: 'mailto:gravity@kuleuven.be' }
         - {
               label: 'GitHub',

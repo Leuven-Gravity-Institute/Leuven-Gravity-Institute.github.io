@@ -2,6 +2,9 @@
   <div class="wrap">
     {% if show_title %}<h2 class="section-title">Join us</h2>{% endif %}
     {% if join.intro %}<div class="prose prose-wide">{{ join.intro | markdown }}</div>{% endif %}
+    {% if not openings %}
+    <p class="muted">No positions are open at the moment.</p>
+    {% endif %}
     {% if openings %}
     <ul class="cards cards-2 openings">
       {% for item in openings %}

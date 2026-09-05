@@ -7,6 +7,10 @@ intro: |
     The group is part of both the Laboratory for Semiconductor Physics and the
     Leuven Gravity Institute at KU Leuven.
 
+# PLACEHOLDER — NOT A VERIFIED ADDRESS. This was invented while scaffolding the
+# site and has never been checked; mail sent to it may bounce. Replace it with
+# the group's real address before the site goes live. It also appears in
+# `contact.links` below and in `org.links` in site.yaml.
 email: 'gravity@kuleuven.be'
 phone: ''
 address: |
