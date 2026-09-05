@@ -164,23 +164,23 @@ class TestPeopleGrouping:
     """Arranging people by group, then category."""
 
     GROUPS: ClassVar[list[dict[str, Any]]] = [
-        {"id": "li-group", "name": "Li Group"},
-        {"id": "other", "name": "Other Group"},
+        {"id": "group-one", "name": "Group One"},
+        {"id": "group-two", "name": "Group Two"},
     ]
 
     def test_groups_follow_the_order_declared_in_site_yaml(self) -> None:
         people = [
-            {"name": "B", "group": "other", "category": "Faculty"},
-            {"name": "A", "group": "li-group", "category": "Faculty"},
+            {"name": "B", "group": "group-two", "category": "Faculty"},
+            {"name": "A", "group": "group-one", "category": "Faculty"},
         ]
         sections = _group_people(people, self.GROUPS)
-        assert [block["group"]["id"] for block in sections] == ["li-group", "other"]
+        assert [block["group"]["id"] for block in sections] == ["group-one", "group-two"]
 
     def test_categories_are_nested_inside_each_group(self) -> None:
         people = [
-            {"name": "A", "group": "li-group", "category": "Faculty"},
-            {"name": "B", "group": "li-group", "category": "Students"},
-            {"name": "C", "group": "li-group", "category": "Faculty"},
+            {"name": "A", "group": "group-one", "category": "Faculty"},
+            {"name": "B", "group": "group-one", "category": "Students"},
+            {"name": "C", "group": "group-one", "category": "Faculty"},
         ]
         sections = _group_people(people, self.GROUPS)
         assert len(sections) == 1
@@ -189,12 +189,12 @@ class TestPeopleGrouping:
         assert [person["name"] for person in categories[0]["items"]] == ["A", "C"]
 
     def test_a_group_with_no_members_is_omitted(self) -> None:
-        sections = _group_people([{"name": "A", "group": "li-group", "category": "Faculty"}], self.GROUPS)
-        assert [block["group"]["id"] for block in sections] == ["li-group"]
+        sections = _group_people([{"name": "A", "group": "group-one", "category": "Faculty"}], self.GROUPS)
+        assert [block["group"]["id"] for block in sections] == ["group-one"]
 
     def test_untagged_people_still_appear_in_a_trailing_section(self) -> None:
         people = [
-            {"name": "A", "group": "li-group", "category": "Faculty"},
+            {"name": "A", "group": "group-one", "category": "Faculty"},
             {"name": "B", "category": "Faculty"},
         ]
         sections = _group_people(people, self.GROUPS)

@@ -25,7 +25,7 @@
       <a class="brand" href="/">
         <span class="brand-mark" aria-hidden="true">{{ icon("wave") }}</span>
         <span class="brand-text">
-          <span class="brand-name">{{ site.title }}</span>
+          <span class="brand-name">{{ site.short_title | default(site.title, true) }}</span>
           {% if site.tagline %}<span class="brand-tagline">{{ site.tagline }}</span>{% endif %}
         </span>
       </a>

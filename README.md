@@ -1,4 +1,4 @@
-# Li Group
+# Gravitational Wave Group
 
 [![Python CI](https://github.com/Leuven-Gravity-Institute/Leuven-Gravity-Institute.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/Leuven-Gravity-Institute/Leuven-Gravity-Institute.github.io/actions/workflows/ci.yml)
 [![Website](https://github.com/Leuven-Gravity-Institute/Leuven-Gravity-Institute.github.io/actions/workflows/deploy.yml/badge.svg)](https://leuven-gravity-institute.github.io/)
@@ -6,9 +6,9 @@
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](LICENSE)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
-The website of the Li Group at the Leuven Gravity Institute, KU Leuven. All
-information lives in plain, structured files; the site is rendered from them. To
-update the site, you edit data — not HTML.
+The website of the Gravitational Wave Group at the Leuven Gravity Institute, KU
+Leuven. All information lives in plain, structured files; the site is rendered
+from them. To update the site, you edit data — not HTML.
 
 ## Scope
 

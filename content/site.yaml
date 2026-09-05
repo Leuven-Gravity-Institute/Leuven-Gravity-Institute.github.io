@@ -6,13 +6,15 @@ site:
     # The full URL where the site is published (used for canonical links and metadata).
     url: 'https://leuven-gravity-institute.github.io'
     # Browser tab title and the name shown in the masthead.
-    title: 'Li Group'
-    # Optional shorter name, used where the full one does not fit.
-    short_title: 'Li Group'
+    title: 'Gravitational Wave Group'
+    # Shorter name, used in the masthead where the full one would crowd the
+    # navigation. Falls back to `title` when omitted.
+    short_title: 'GW Group'
     tagline: 'Leuven Gravity Institute · KU Leuven'
     description:
-        'The Li Group at the Leuven Gravity Institute, KU Leuven — research on
-        gravitational waves, their sources, and what they reveal about gravity.'
+        'The Gravitational Wave Group at the Leuven Gravity Institute, KU Leuven
+        — detector science, data analysis, and what gravitational-wave signals
+        reveal about gravity.'
     language: 'en'
     # Accent colour used across the site (any valid CSS colour).
     accent: '#0b6b8f'
@@ -30,8 +32,8 @@ site:
     #   name  Heading shown above the group's members, once there are several.
     #   lead  Person id of the group leader (from people.yaml).
     groups:
-        - id: 'li-group'
-          name: 'Li Group'
+        - id: 'gw-group'
+          name: 'Gravitational Wave Group'
           lead: 'tjonnie-li'
 
     # Pages of the site. Each entry becomes its own page at a clean URL:
@@ -100,7 +102,7 @@ site:
 # later grows to cover the whole Leuven Gravity Institute, this one block is
 # what you rewrite to describe the institute instead.
 org:
-    name: 'Li Group'
+    name: 'Gravitational Wave Group'
     # One-line positioning statement shown in the home-page hero.
     headline: 'Listening to spacetime.'
     # The hero paragraph. Markdown is supported.
