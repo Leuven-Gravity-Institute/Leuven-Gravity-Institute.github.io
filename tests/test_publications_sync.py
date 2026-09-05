@@ -16,18 +16,25 @@ import pytest
 import yaml
 
 from leuven_gravity_institute.site.publications_sync import (
+    Fetchers,
     Member,
+    SyncSummary,
     build_authors,
     clean_text,
+    collect_entries,
     date_span,
     deduplicate,
     emphasise_members,
     entry_key,
+    identity_keys,
     in_membership_window,
     members_from_people,
     merge_items,
+    normalize_inspire_record,
+    normalize_openalex_work,
     normalize_work,
     parse_date,
+    split_arxiv_doi,
     sync_publications,
     write_items,
 )
@@ -137,9 +144,9 @@ class TestMembers:
         assert members[0].start == date(2024, 1, 1)
         assert members[0].end is None
 
-    def test_family_name_and_initial_come_from_the_display_name(self) -> None:
+    def test_family_and_given_names_come_from_the_display_name(self) -> None:
         assert MEMBER.family == "wong"
-        assert MEMBER.initial == "i"
+        assert MEMBER.given == "isaac"
 
 
 class TestCleanText:
@@ -166,6 +173,17 @@ class TestAuthors:
     def test_a_different_person_with_the_same_surname_is_not_emphasised(self) -> None:
         rendered = emphasise_members(["Brian Wong"], [MEMBER])
         assert rendered == ["Brian Wong"]
+
+    def test_a_shared_surname_and_initial_is_not_enough_to_match(self) -> None:
+        # "Tie-Fu Li" and "Tjonnie G. F. Li" share a surname and a first
+        # initial but are different researchers; matching on the initial alone
+        # put another Li's quantum-computing papers on this group's page.
+        li = Member(id="tjonnie-li", name="Tjonnie G. F. Li", start=date(2021, 10, 1), orcid="x")
+        assert emphasise_members(["Tie-Fu Li"], [li]) == ["Tie-Fu Li"]
+        assert emphasise_members(["Tjonnie Guang Feng Li"], [li]) == ["**Tjonnie Guang Feng Li**"]
+
+    def test_an_initial_still_matches_the_name_it_abbreviates(self) -> None:
+        assert emphasise_members(["I. C. F. Wong"], [MEMBER]) == ["**I. C. F. Wong**"]
 
     def test_accented_spellings_still_match(self) -> None:
         member = Member(id="x", name="Renée Müller", orcid="0", start=date(2024, 1, 1))
@@ -360,8 +378,10 @@ class TestSyncEndToEnd:
         summary = sync_publications(
             publications,
             people_file,
-            works_fetcher=lambda orcid: works[orcid],
-            crossref_fetcher=lambda doi: crossref if doi == "10.1000/shared" else None,
+            fetchers=Fetchers(
+                orcid=lambda orcid: works[orcid],
+                crossref=lambda doi: crossref if doi == "10.1000/shared" else None,
+            ),
         )
 
         items = yaml.safe_load(publications.read_text(encoding="utf-8"))["items"]
@@ -380,7 +400,9 @@ class TestSyncEndToEnd:
             return [orcid_work(title="Still here", year=2024, month=11, day=1)]
 
         publications = tmp_path / "publications.yaml"
-        summary = sync_publications(publications, people_file, works_fetcher=fetcher, crossref_fetcher=lambda doi: None)
+        summary = sync_publications(
+            publications, people_file, fetchers=Fetchers(orcid=fetcher, crossref=lambda doi: None)
+        )
 
         assert summary.members_synced == 1
         assert len(summary.failures) == 1
@@ -401,3 +423,255 @@ class TestSyncEndToEnd:
         assert text.index("include:") < text.index("title:") < text.index("members:")
         # Internal bookkeeping never reaches the file.
         assert "_authors_raw" not in text
+
+
+def inspire_record(
+    *,
+    title: str = "A paper",
+    doi: str | None = "10.1000/abc",
+    arxiv: str | None = "2501.00001",
+    year: int = 2025,
+    authors: list[str] | None = None,
+    author_count: int | None = None,
+    collaborations: list[str] | None = None,
+) -> dict[str, Any]:
+    """Build a minimal INSPIRE record metadata mapping."""
+    names = authors if authors is not None else ["Wong, Isaac", "Doe, Jane"]
+    return {
+        "titles": [{"title": title}],
+        "dois": [{"value": doi}] if doi else [],
+        "arxiv_eprints": [{"value": arxiv}] if arxiv else [],
+        "authors": [{"full_name": name} for name in names],
+        "author_count": author_count if author_count is not None else len(names),
+        "collaborations": [{"value": name} for name in collaborations or []],
+        "publication_info": [{"journal_title": "Phys.Rev.D", "journal_volume": "111", "artid": "022001", "year": year}],
+        "document_type": ["article"],
+        "earliest_date": f"{year}-03-04",
+        "control_number": 1234567,
+    }
+
+
+def openalex_work(
+    *,
+    title: str = "A paper",
+    doi: str | None = "10.1000/abc",
+    date: str = "2025-03-04",
+    authors: list[str] | None = None,
+) -> dict[str, Any]:
+    """Build a minimal OpenAlex work document."""
+    names = authors if authors is not None else ["Isaac Wong", "Jane Doe"]
+    return {
+        "id": "https://openalex.org/W123",
+        "doi": f"https://doi.org/{doi}" if doi else None,
+        "display_name": title,
+        "publication_date": date,
+        "publication_year": int(date[:4]),
+        "type": "article",
+        "authorships": [{"author": {"display_name": name}} for name in names],
+        "primary_location": {"source": {"display_name": "Physical Review D"}},
+        "biblio": {"volume": "111", "first_page": "022001"},
+        "locations": [],
+    }
+
+
+class TestOtherSources:
+    """Normalizing INSPIRE and OpenAlex records into the common entry shape."""
+
+    def test_inspire_record_becomes_an_entry(self) -> None:
+        entry = normalize_inspire_record(inspire_record(), MEMBER)
+        assert entry["source"] == "inspire"
+        assert entry["title"] == "A paper"
+        assert entry["authors"] == ["**Isaac Wong**", "Jane Doe"]
+        assert entry["venue"] == "Phys.Rev.D 111, 022001 (2025)"
+        assert entry["date"] == "2025"
+        assert {link["label"] for link in entry["links"]} == {"DOI", "arXiv", "INSPIRE"}
+
+    def test_openalex_work_becomes_an_entry(self) -> None:
+        entry = normalize_openalex_work(openalex_work(), MEMBER)
+        assert entry["source"] == "openalex"
+        assert entry["authors"] == ["**Isaac Wong**", "Jane Doe"]
+        assert entry["venue"] == "Physical Review D 111, 022001 (2025)"
+        assert entry["date"] == "2025-03-04"
+
+    def test_the_same_paper_from_three_sources_is_one_entry(self) -> None:
+        # The whole point of unioning sources: overlap is the normal case.
+        entries = [
+            normalize_work(orcid_work(), MEMBER, crossref=crossref_message([{"given": "Isaac", "family": "Wong"}])),
+            normalize_inspire_record(inspire_record(), MEMBER),
+            normalize_openalex_work(openalex_work(), MEMBER),
+        ]
+        merged = deduplicate(entries, {MEMBER.id: MEMBER})
+        assert len(merged) == 1
+        assert merged[0]["key"] == "doi:10.1000/abc"
+
+
+class TestCollaborationClassification:
+    """Which papers are routed to the separate collaboration section."""
+
+    def test_a_named_collaboration_marks_the_paper_regardless_of_author_count(self) -> None:
+        entry = normalize_inspire_record(
+            inspire_record(authors=["Wong, Isaac"], collaborations=["LIGO Scientific Collaboration"]), MEMBER
+        )
+        assert entry["collaboration"] is True
+        assert entry["collaborations"] == ["LIGO Scientific Collaboration"]
+
+    def test_a_very_long_author_list_marks_the_paper(self) -> None:
+        names = [f"Author{index}, A" for index in range(40)]
+        entry = normalize_inspire_record(inspire_record(authors=names), MEMBER, threshold=15)
+        assert entry["collaboration"] is True
+
+    def test_an_ordinary_paper_is_not_marked(self) -> None:
+        entry = normalize_inspire_record(inspire_record(authors=["Wong, Isaac", "Doe, Jane"]), MEMBER)
+        assert entry["collaboration"] is False
+
+
+class TestMultiSourceCollection:
+    """Querying every source a member carries, and surviving one being down."""
+
+    MEMBER_ALL = Member(
+        id="isaac-wong",
+        name="Isaac Wong",
+        start=date(2024, 1, 1),
+        orcid="0000-0003-2166-0027",
+        inspire="Isaac.C.F.Wong.1",
+        openalex="A5033794708",
+    )
+
+    def test_sources_lists_only_configured_identifiers(self) -> None:
+        assert self.MEMBER_ALL.sources == ["orcid", "inspire", "openalex"]
+        assert Member(id="x", name="X Y", start=date(2024, 1, 1), inspire="X.Y.1").sources == ["inspire"]
+
+    def test_every_configured_source_is_queried(self) -> None:
+        summary = SyncSummary()
+        entries = collect_entries(
+            [self.MEMBER_ALL],
+            summary=summary,
+            fetchers=Fetchers(
+                orcid=lambda _: [orcid_work(title="from orcid", doi="10.1/a", year=2025, month=1, day=1)],
+                inspire=lambda _: [inspire_record(title="from inspire", doi="10.1/b")],
+                openalex=lambda _: [openalex_work(title="from openalex", doi="10.1/c")],
+                crossref=lambda _: None,
+            ),
+        )
+        assert {entry["source"] for entry in entries} == {"orcid", "inspire", "openalex"}
+        assert summary.source_counts == {"orcid": 1, "inspire": 1, "openalex": 1}
+        assert summary.members_synced == 1
+
+    def test_one_source_failing_does_not_lose_the_others(self) -> None:
+        def broken(_: str) -> list[dict[str, Any]]:
+            raise TimeoutError("INSPIRE unreachable")
+
+        summary = SyncSummary()
+        entries = collect_entries(
+            [self.MEMBER_ALL],
+            summary=summary,
+            fetchers=Fetchers(
+                orcid=lambda _: [orcid_work(doi="10.1/a", year=2025, month=1, day=1)],
+                inspire=broken,
+                openalex=lambda _: [openalex_work(doi="10.1/c")],
+                crossref=lambda _: None,
+            ),
+        )
+        assert {entry["source"] for entry in entries} == {"orcid", "openalex"}
+        assert len(summary.failures) == 1
+        assert "via inspire" in summary.failures[0]
+        # The member still counts as synced: two of three sources answered.
+        assert summary.members_synced == 1
+
+    def test_the_membership_window_applies_to_every_source(self) -> None:
+        summary = SyncSummary()
+        member = Member(id="x", name="X Y", start=date(2025, 1, 1), inspire="X.Y.1", openalex="A1")
+        entries = collect_entries(
+            [member],
+            summary=summary,
+            fetchers=Fetchers(
+                inspire=lambda _: [inspire_record(year=2020)],
+                openalex=lambda _: [openalex_work(date="2020-05-01")],
+            ),
+        )
+        assert entries == []
+        assert summary.out_of_window == 2
+
+
+class TestMisattributionGuard:
+    """Dropping records that auto-assigning databases filed under the wrong person."""
+
+    LI = Member(id="tjonnie-li", name="Tjonnie G. F. Li", start=date(2021, 10, 1), inspire="T.G.F.Li.1")
+
+    def test_a_short_paper_naming_no_member_is_dropped(self) -> None:
+        summary = SyncSummary()
+        record = inspire_record(title="Chip-yield analysis", authors=["Li, Zi-Ming", "Li, Tie-Fu", "Liu, Yu-xi"])
+        entries = collect_entries([self.LI], summary=summary, fetchers=Fetchers(inspire=lambda _: [record]))
+        assert entries == []
+        assert summary.misattributed == 1
+
+    def test_a_short_paper_naming_the_member_is_kept(self) -> None:
+        summary = SyncSummary()
+        record = inspire_record(title="A real paper", authors=["Li, Tjonnie G.F.", "Doe, Jane"])
+        entries = collect_entries([self.LI], summary=summary, fetchers=Fetchers(inspire=lambda _: [record]))
+        assert len(entries) == 1
+        assert summary.misattributed == 0
+
+    def test_collaboration_papers_are_exempt(self) -> None:
+        # A member may not be listed individually on a thousand-author paper.
+        summary = SyncSummary()
+        record = inspire_record(
+            title="An LVK paper", authors=["Abac, A. G."], author_count=2000, collaborations=["LIGO Scientific"]
+        )
+        entries = collect_entries([self.LI], summary=summary, fetchers=Fetchers(inspire=lambda _: [record]))
+        assert len(entries) == 1
+        assert summary.misattributed == 0
+
+    def test_orcid_is_trusted_because_it_is_self_asserted(self) -> None:
+        summary = SyncSummary()
+        member = Member(id="isaac-wong", name="Isaac Wong", start=date(2024, 1, 1), orcid="0000-0003-2166-0027")
+        work = orcid_work(title="Something they added themselves", year=2025, month=1, day=1)
+        entries = collect_entries(
+            [member], summary=summary, fetchers=Fetchers(orcid=lambda _: [work], crossref=lambda _: None)
+        )
+        assert len(entries) == 1
+        assert summary.misattributed == 0
+
+
+class TestPreprintAndPublishedVersions:
+    """The same paper arriving as a preprint from one source and an article from another."""
+
+    def test_arxiv_own_doi_becomes_an_arxiv_id(self) -> None:
+        assert split_arxiv_doi("10.48550/arXiv.2411.17893", None) == (None, "2411.17893")
+        assert split_arxiv_doi("10.1103/k3hv-cqfn", "2411.17893") == ("10.1103/k3hv-cqfn", "2411.17893")
+
+    def test_an_entry_is_identified_by_every_identifier_it_carries(self) -> None:
+        entry = {"doi": "10.1103/K3HV", "arxiv": "2411.17893", "title": "A Paper!"}
+        assert identity_keys(entry) == ["doi:10.1103/k3hv", "arxiv:2411.17893", "title:a-paper"]
+
+    def test_preprint_and_published_versions_merge_on_the_arxiv_id(self) -> None:
+        published = normalize_inspire_record(
+            inspire_record(title="A paper", doi="10.1103/k3hv-cqfn", arxiv="2411.17893"), MEMBER
+        )
+        preprint = normalize_openalex_work(openalex_work(title="A paper", doi="10.48550/arXiv.2411.17893"), OTHER)
+        merged = deduplicate([published, preprint], {MEMBER.id: MEMBER, OTHER.id: OTHER})
+        assert len(merged) == 1
+        # The journal DOI is the better identity, and both members are credited.
+        assert merged[0]["key"] == "doi:10.1103/k3hv-cqfn"
+        assert merged[0]["members"] == ["isaac-wong", "jane-doe"]
+
+    def test_records_sharing_only_a_title_still_merge(self) -> None:
+        with_ids = normalize_inspire_record(inspire_record(title="Same paper", doi="10.1/x", arxiv=None), MEMBER)
+        without = normalize_openalex_work(openalex_work(title="Same paper", doi=None), OTHER)
+        merged = deduplicate([with_ids, without], {MEMBER.id: MEMBER, OTHER.id: OTHER})
+        assert len(merged) == 1
+
+    def test_grouping_is_transitive_across_a_linking_record(self) -> None:
+        # A carries only the DOI, C only the arXiv id; B carries both and joins
+        # them, so all three are one work.
+        a = {"title": "T", "doi": "10.1/x", "members": ["a"], "links": [], "collaboration": False}
+        b = {"title": "T2", "doi": "10.1/x", "arxiv": "2501.1", "members": ["b"], "links": [], "collaboration": False}
+        c = {"title": "T3", "arxiv": "2501.1", "members": ["c"], "links": [], "collaboration": False}
+        merged = deduplicate([a, b, c], {})
+        assert len(merged) == 1
+        assert merged[0]["members"] == ["a", "b", "c"]
+
+    def test_unrelated_papers_stay_separate(self) -> None:
+        a = {"title": "One", "doi": "10.1/x", "members": ["a"], "links": [], "collaboration": False}
+        b = {"title": "Two", "doi": "10.1/y", "members": ["b"], "links": [], "collaboration": False}
+        assert len(deduplicate([a, b], {})) == 2

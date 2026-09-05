@@ -90,11 +90,13 @@ def serve(
 def publications_sync_command(
     root: Path = typer.Option(Path.cwd(), help="Project root directory."),
 ) -> None:
-    """Refresh the publication list from every member's ORCID record.
+    """Refresh the publication list from every source the members carry.
 
-    Only works published while a member was affiliated with the group are
-    listed, and a paper shared by several members is deduplicated into a single
-    entry crediting all of them.
+    Each member is queried on ORCID, INSPIRE-HEP, and OpenAlex according to the
+    identifiers in people.yaml, and the results are unioned. Only works
+    published while a member was affiliated with the group are listed, and a
+    paper reaching the sync several times — from several members, or from
+    several sources — is deduplicated into a single entry crediting all of them.
     """
     paths = _paths(root, "_site")
     try:
@@ -103,11 +105,19 @@ def publications_sync_command(
         typer.secho(f"Publication sync failed: {exc}", fg=typer.colors.RED, bold=True)
         raise typer.Exit(code=1) from exc
 
+    sources = ", ".join(f"{name} x{count}" for name, count in sorted(summary.source_counts.items())) or "none"
     typer.secho(
-        f"Synced {summary.members_synced} ORCID record(s): {len(summary.added)} added, "
-        f"{summary.updated} updated, {len(summary.removed)} removed "
+        f"Synced {summary.members_synced} member(s) across {sources}: "
+        f"{len(summary.added)} added, {summary.updated} updated, {len(summary.removed)} removed "
         f"({summary.out_of_window} outside a membership window, "
+        f"{summary.excluded} software/dataset record(s) skipped, "
+        f"{summary.misattributed} likely mis-assigned, "
         f"{summary.deduplicated} duplicate(s) merged).",
+        fg=typer.colors.GREEN,
+    )
+    typer.secho(
+        f"  {summary.total_fetched - summary.collaboration} group-led, "
+        f"{summary.collaboration} collaboration publication(s).",
         fg=typer.colors.GREEN,
     )
     for failure in summary.failures:

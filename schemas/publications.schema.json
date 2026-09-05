@@ -13,15 +13,28 @@
                 "required": ["title"],
                 "additionalProperties": false,
                 "properties": {
-                    "include": { "type": "boolean" },
-                    "highlight": { "type": "boolean" },
-                    "title": { "type": "string", "minLength": 1 },
+                    "include": {
+                        "type": "boolean"
+                    },
+                    "highlight": {
+                        "type": "boolean"
+                    },
+                    "title": {
+                        "type": "string",
+                        "minLength": 1
+                    },
                     "authors": {
                         "type": "array",
-                        "items": { "type": "string" }
+                        "items": {
+                            "type": "string"
+                        }
                     },
-                    "venue": { "type": "string" },
-                    "year": { "type": ["integer", "null"] },
+                    "venue": {
+                        "type": "string"
+                    },
+                    "year": {
+                        "type": ["integer", "null"]
+                    },
                     "date": {
                         "type": ["string", "null"],
                         "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$",
@@ -42,22 +55,48 @@
                             "other"
                         ]
                     },
-                    "doi": { "type": "string" },
-                    "arxiv": { "type": "string" },
-                    "url": { "type": "string" },
+                    "doi": {
+                        "type": "string"
+                    },
+                    "arxiv": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
                     "key": {
                         "type": "string",
                         "description": "Stable identity (doi:, arxiv:, or title:). Present on synced entries only."
                     },
-                    "source": { "type": "string", "enum": ["orcid", "manual"] },
+                    "source": {
+                        "type": "string",
+                        "enum": ["orcid", "inspire", "openalex", "manual"],
+                        "description": "Which database the entry came from; 'manual' entries are hand-authored and never touched by the sync."
+                    },
                     "members": {
                         "type": "array",
-                        "items": { "type": "string" },
+                        "items": {
+                            "type": "string"
+                        },
                         "description": "Ids of the group members credited; drives the per-member publication pages."
                     },
-                    "author_count": { "type": "integer", "minimum": 0 },
-                    "collaboration": { "type": "boolean" },
-                    "note": { "type": "string" },
+                    "author_count": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "collaboration": {
+                        "type": "boolean"
+                    },
+                    "collaborations": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Names of collaborations credited as authors; their presence routes the entry to the collaboration section."
+                    },
+                    "note": {
+                        "type": "string"
+                    },
                     "links": {
                         "type": "array",
                         "items": {
@@ -65,8 +104,12 @@
                             "required": ["label", "url"],
                             "additionalProperties": false,
                             "properties": {
-                                "label": { "type": "string" },
-                                "url": { "type": "string" }
+                                "label": {
+                                    "type": "string"
+                                },
+                                "url": {
+                                    "type": "string"
+                                }
                             }
                         }
                     }

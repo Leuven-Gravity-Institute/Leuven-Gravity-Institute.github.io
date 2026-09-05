@@ -24,7 +24,7 @@ jobs:
               with:
                   enable-cache: true
 
-            - name: Sync publications from the members' ORCID records
+            - name: Sync publications from ORCID, INSPIRE-HEP, and OpenAlex
               id: sync
               run: |
                   {
@@ -50,7 +50,8 @@ jobs:
                       publications
                       automated
                   body: |
-                      Automated weekly publication sync from the members' ORCID records.
+                      Automated weekly publication sync from the members' ORCID, INSPIRE-HEP,
+                      and OpenAlex records, unioned and deduplicated.
 
                       ```
                       ${{ steps.sync.outputs.summary }}
@@ -58,8 +59,11 @@ jobs:
 
                       Only works published while a member was affiliated with the group are
                       listed — their `start` and `end` dates in `content/people.yaml` set that
-                      window. Papers shared by several members are deduplicated into one entry
-                      crediting all of them.
+                      window. A paper reaching the sync several times, from several members or
+                      several sources, is deduplicated into one entry crediting all of them.
+
+                      Software/dataset deposits and records the automatic sources likely
+                      mis-assigned are filtered out; the counts are in the summary above.
 
                       Existing `include`, `highlight`, and `note` decisions are preserved, and
                       hand-authored entries (those without a `key`) are left untouched.

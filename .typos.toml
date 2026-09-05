@@ -20,6 +20,8 @@ extend-ignore-re = [
 
 [default.extend-words]
 STADIUS = "STADIUS"
+# The hyphenated prefix in "mis-assigned" / "mis-files", not a typo for "miss".
+mis = "mis"
 
 [files]
 # Generated from ORCID/Crossref and full of co-author names and domain terms

@@ -72,7 +72,7 @@ site:
           lead:
               'Work published by members during their time with the group,
               collected automatically from their ORCID records.'
-          sections: ['publications']
+          sections: ['publications', 'collaboration']
         - slug: 'software'
           label: 'Software & data'
           nav: true

@@ -40,6 +40,8 @@ from typing import Any
 import yaml
 
 from leuven_gravity_institute.site.content import load_yaml
+from leuven_gravity_institute.site.inspire import fetch_records as fetch_inspire_records
+from leuven_gravity_institute.site.openalex import fetch_works as fetch_openalex_works
 from leuven_gravity_institute.site.orcid import fetch_crossref_work, fetch_orcid_works
 
 # Above this many authors a paper is rendered as "First Author et al.", with the
@@ -60,8 +62,32 @@ _WORK_TYPE_MAP = {
     "dissertation-thesis": "thesis",
     "supervised-student-publication": "thesis",
     "data-set": "dataset",
+    "dataset": "dataset",
     "software": "software",
+    # Zenodo mints a fresh DOI for every GitHub release, and OpenAlex indexes
+    # each one as a work; without this mapping they fall through to "other".
+    "software-paper": "software",
+    "libraries": "software",
     "report": "report",
+    "review": "journal",
+    "letter": "journal",
+    "article": "journal",
+    "dissertation": "thesis",
+}
+
+# Software and datasets are catalogued on the Software & data page from
+# software.yaml, not in the publication list. Excluding them here is what keeps
+# a few hundred Zenodo release deposits out of the group's publications.
+EXCLUDED_PUBLICATION_TYPES = frozenset({"software", "dataset"})
+
+# INSPIRE document types, mapped onto the vocabulary the other sources use.
+_INSPIRE_TYPE_MAP = {
+    "article": "journal-article",
+    "conference paper": "conference-paper",
+    "proceedings": "conference-paper",
+    "thesis": "dissertation-thesis",
+    "book": "book",
+    "book chapter": "book-chapter",
 }
 
 _HEADER = """\
@@ -108,24 +134,40 @@ _FIELD_ORDER = [
 
 @dataclass(frozen=True)
 class Member:
-    """A group member whose ORCID record contributes to the publication list."""
+    """A group member whose records contribute to the publication list.
+
+    Identifiers are *pinned per person* rather than looked up by name. Both
+    lookups are unreliable in ways that quietly corrupt a publication list:
+    OpenAlex splits one researcher across several author entities, and a name
+    search readily returns a different researcher who happens to share it.
+    """
 
     id: str
     name: str
-    orcid: str
     start: date
     end: date | None = None
+    orcid: str = ""
+    inspire: str = ""
+    openalex: str = ""
+
+    @property
+    def sources(self) -> list[str]:
+        """The names of the sources configured for this member."""
+        return [
+            name
+            for name, value in (("orcid", self.orcid), ("inspire", self.inspire), ("openalex", self.openalex))
+            if value
+        ]
 
     @property
     def family(self) -> str:
-        """The member's family name, used to emphasise them in author lists."""
-        return _fold(self.name.split()[-1]) if self.name.split() else ""
+        """The member's family name, used to match them in author lists."""
+        return name_parts(self.name)[0]
 
     @property
-    def initial(self) -> str:
-        """The first letter of the member's given name."""
-        parts = self.name.split()
-        return _fold(parts[0][:1]) if len(parts) > 1 else ""
+    def given(self) -> str:
+        """The member's given name, used to tell them from a same-surname author."""
+        return name_parts(self.name)[1]
 
 
 @dataclass
@@ -136,6 +178,10 @@ class SyncSummary:
     total_fetched: int = 0
     out_of_window: int = 0
     deduplicated: int = 0
+    collaboration: int = 0
+    excluded: int = 0
+    misattributed: int = 0
+    source_counts: dict[str, int] = field(default_factory=dict)
     added: list[str] = field(default_factory=list)
     removed: list[str] = field(default_factory=list)
     updated: int = 0
@@ -250,31 +296,33 @@ def in_membership_window(span: tuple[date, date] | None, member: Member) -> bool
 def members_from_people(people: dict[str, Any] | None) -> list[Member]:
     """Build the syncable members from ``content/people.yaml``.
 
-    People without an ORCID iD, or without a ``start`` date, contribute nothing
-    to the publication list and are skipped.
+    A person contributes only when they have a ``start`` date and at least one
+    of ``orcid``, ``inspire``, or ``openalex``. Without a start date there is no
+    window to bound attribution with, so the person is skipped rather than
+    having their whole career attributed to the group.
 
     Args:
         people: The parsed ``people.yaml`` document.
 
     Returns:
-        One :class:`Member` per person with a usable ORCID iD and start date.
+        One :class:`Member` per person with a start date and an identifier.
 
     """
     members: list[Member] = []
     for person in (people or {}).get("items") or []:
-        orcid = (person.get("orcid") or "").strip()
         start = parse_date(person.get("start"))
-        if not orcid or start is None:
-            continue
-        members.append(
-            Member(
-                id=person["id"],
-                name=person.get("name", ""),
-                orcid=orcid,
-                start=start,
-                end=parse_date(person.get("end")),
-            )
+        member = Member(
+            id=person["id"],
+            name=person.get("name", ""),
+            start=start or date.min,
+            end=parse_date(person.get("end")),
+            orcid=(person.get("orcid") or "").strip(),
+            inspire=(person.get("inspire") or "").strip(),
+            openalex=(person.get("openalex") or "").strip(),
         )
+        if start is None or not member.sources:
+            continue
+        members.append(member)
     return members
 
 
@@ -338,6 +386,15 @@ def _orcid_contributors(work: dict[str, Any]) -> list[str]:
     return names
 
 
+def _crossref_collaborations(message: dict[str, Any]) -> list[str]:
+    """Names of any collaborations credited as authors on a Crossref record.
+
+    Crossref represents a collaboration as an author entry carrying ``name``
+    instead of ``given``/``family``.
+    """
+    return [str(a["name"]) for a in message.get("author") or [] if a.get("name")]
+
+
 def _crossref_venue(message: dict[str, Any]) -> str:
     """Build a human-readable venue string from a Crossref record."""
     titles = message.get("container-title") or []
@@ -378,6 +435,52 @@ def _publication_type(orcid_type: str | None, crossref_type: str | None, *, arxi
     return "preprint" if arxiv and not venue else "other"
 
 
+def name_parts(name: str) -> tuple[str, str]:
+    """Split a rendered ``"Given Middle Family"`` name into (family, given).
+
+    Initials are separated from the names they abbreviate, so ``"I. C. F.
+    Wong"`` yields ``("wong", "i")`` and ``"Isaac Wong"`` yields
+    ``("wong", "isaac")``.
+    """
+    tokens = _fold(name).replace(".", " ").split()
+    if not tokens:
+        return "", ""
+    return tokens[-1], tokens[0] if len(tokens) > 1 else ""
+
+
+def names_match(author: str, member: Member) -> bool:
+    """Whether an author name refers to a member.
+
+    Family names must be equal. Given names must be *compatible*: when either
+    side is a bare initial they need only share a letter, but when both are
+    spelled out they must be the same name. Comparing only initials is not
+    enough — it makes "Tie-Fu Li" indistinguishable from "Tjonnie G. F. Li",
+    which is precisely how another researcher's papers end up on a group page.
+
+    Args:
+        author: A rendered author name.
+        member: The member to test against.
+
+    Returns:
+        ``True`` when the names are consistent with being the same person.
+
+    """
+    family, given = name_parts(author)
+    if not family or family != member.family:
+        return False
+    theirs = member.given
+    if not given or not theirs:
+        return True
+    if len(given) == 1 or len(theirs) == 1:
+        return given[0] == theirs[0]
+    return given == theirs
+
+
+def member_appears(authors: Sequence[str], member: Member) -> bool:
+    """Whether a member is named among a record's authors."""
+    return any(names_match(author, member) for author in authors)
+
+
 def emphasise_members(authors: Sequence[str], members: Iterable[Member]) -> list[str]:
     """Wrap group members' names in ``**`` within an author list.
 
@@ -392,13 +495,10 @@ def emphasise_members(authors: Sequence[str], members: Iterable[Member]) -> list
         The author list with matching names wrapped in ``**``.
 
     """
-    targets = [(m.family, m.initial) for m in members if m.family]
+    targets = [member for member in members if member.family]
     rendered: list[str] = []
     for author in authors:
-        parts = author.split()
-        family = _fold(parts[-1]) if parts else ""
-        initial = _fold(parts[0][:1]) if len(parts) > 1 else ""
-        matched = any(family == fam and (not ini or not initial or initial == ini) for fam, ini in targets)
+        matched = any(names_match(author, member) for member in targets)
         rendered.append(f"**{author}**" if matched and not author.startswith("**") else author)
     return rendered
 
@@ -439,6 +539,52 @@ def build_authors(
     return emphasised, False
 
 
+_ARXIV_DOI_PREFIX = "10.48550/arxiv."
+
+
+def split_arxiv_doi(doi: str | None, arxiv: str | None) -> tuple[str | None, str | None]:
+    """Rewrite arXiv's own DataCite DOI into a plain arXiv identifier.
+
+    OpenAlex records a preprint under ``10.48550/arXiv.2411.17893`` while
+    INSPIRE records the published version under the journal's DOI and carries
+    the arXiv id separately. Left alone, the same paper is keyed two different
+    ways and appears twice.
+
+    Args:
+        doi: The DOI as supplied upstream.
+        arxiv: The arXiv identifier, if the source gave one.
+
+    Returns:
+        The ``(doi, arxiv)`` pair, with an arXiv DOI moved into ``arxiv``.
+
+    """
+    if doi and doi.lower().startswith(_ARXIV_DOI_PREFIX):
+        return None, arxiv or doi[len(_ARXIV_DOI_PREFIX) :]
+    return doi, arxiv
+
+
+def title_key(title: str) -> str:
+    """Return a normalized form of a title, used as a last-resort identity."""
+    return f"title:{re.sub(r'[^a-z0-9]+', '-', _fold(title)).strip('-')}"
+
+
+def identity_keys(entry: dict[str, Any]) -> list[str]:
+    """Every identifier by which an entry could be recognised as the same work.
+
+    A paper reaches the sync as a preprint from one source and as the published
+    article from another, and the two records rarely share a single identifier:
+    one has the journal DOI, the other the arXiv id, and sometimes neither. Two
+    records are the same work if they agree on *any* of these.
+    """
+    keys = []
+    if entry.get("doi"):
+        keys.append(f"doi:{str(entry['doi']).lower()}")
+    if entry.get("arxiv"):
+        keys.append(f"arxiv:{str(entry['arxiv']).lower()}")
+    keys.append(title_key(entry.get("title", "")))
+    return keys
+
+
 def entry_key(doi: str | None, arxiv: str | None, title: str) -> str:
     """Build the stable identity of a publication.
 
@@ -458,7 +604,79 @@ def entry_key(doi: str | None, arxiv: str | None, title: str) -> str:
         return f"doi:{doi.lower()}"
     if arxiv:
         return f"arxiv:{arxiv.lower()}"
-    return f"title:{re.sub(r'[^a-z0-9]+', '-', _fold(title)).strip('-')}"
+    return title_key(title)
+
+
+def _build_entry(  # noqa: PLR0913 - one keyword per metadata field, by design
+    *,
+    member: Member,
+    source: str,
+    title: str,
+    doi: str | None,
+    arxiv: str | None,
+    date_parts: tuple[int | None, int | None, int | None],
+    authors: Sequence[str],
+    author_count: int,
+    venue: str,
+    work_type: str,
+    collaborations: Sequence[str] = (),
+    url: str | None = None,
+    threshold: int = COLLABORATION_THRESHOLD,
+) -> dict[str, Any]:
+    """Assemble a publication entry from source-agnostic metadata.
+
+    Every source normalizer funnels through here, so the entry shape, the
+    collaboration classification, and the link list stay identical no matter
+    which database a record came from.
+
+    A paper counts as a *collaboration* paper when the record names a
+    collaboration, or when it has more authors than ``threshold``. That
+    classification is what routes it to its own section on the site, and it is
+    deliberately separate from whether the author list was collapsed for
+    display.
+
+    Returns:
+        A publication entry ready to be merged into ``publications.yaml``.
+
+    """
+    year, month, day = date_parts
+    rendered_authors, _ = build_authors(authors, [member], threshold=threshold)
+    is_collaboration = bool(collaborations) or author_count > threshold
+
+    links: list[dict[str, str]] = []
+    if doi:
+        links.append({"label": "DOI", "url": f"https://doi.org/{doi}"})
+    if arxiv:
+        links.append({"label": "arXiv", "url": f"https://arxiv.org/abs/{arxiv}"})
+    if url and not doi:
+        links.append({"label": "Link", "url": str(url)})
+
+    entry: dict[str, Any] = {
+        "include": True,
+        "highlight": False,
+        "title": title,
+        "authors": rendered_authors,
+        "venue": venue,
+        "year": year,
+        "date": _iso_date(year, month, day),
+        "type": work_type,
+        "key": entry_key(doi, arxiv, title),
+        "source": source,
+        "members": [member.id],
+        "author_count": author_count,
+        "collaboration": is_collaboration,
+        "links": links,
+    }
+    if doi:
+        entry["doi"] = doi
+    if arxiv:
+        entry["arxiv"] = arxiv
+    if url:
+        entry["url"] = str(url)
+    if collaborations:
+        entry["collaborations"] = list(collaborations)
+    entry["_authors_raw"] = list(authors)
+    return entry
 
 
 def normalize_work(
@@ -494,51 +712,204 @@ def normalize_work(
     authors = _crossref_authors(crossref) if crossref else []
     if not authors:
         authors = _orcid_contributors(work)
-    author_count = len(authors)
-    rendered_authors, collapsed = build_authors(authors, [member], threshold=threshold)
 
-    venue = _crossref_venue(crossref) if crossref else ""
-    if not venue:
-        venue = _fallback_venue(work, arxiv, str(work.get("type") or ""))
+    crossref_venue = _crossref_venue(crossref) if crossref else ""
+    venue = crossref_venue or _fallback_venue(work, arxiv, str(work.get("type") or ""))
 
-    url = (work.get("url") or {}).get("value")
-    links = []
-    if doi:
-        links.append({"label": "DOI", "url": f"https://doi.org/{doi}"})
-    if arxiv:
-        links.append({"label": "arXiv", "url": f"https://arxiv.org/abs/{arxiv}"})
-    if url and not doi:
-        links.append({"label": "Link", "url": str(url)})
-
-    entry: dict[str, Any] = {
-        "include": True,
-        "highlight": False,
-        "title": title,
-        "authors": rendered_authors,
-        "venue": venue,
-        "year": year,
-        "date": _iso_date(year, month, day),
-        "type": _publication_type(
+    return _build_entry(
+        member=member,
+        source="orcid",
+        title=title,
+        doi=doi,
+        arxiv=arxiv,
+        date_parts=(year, month, day),
+        authors=authors,
+        author_count=len(authors),
+        venue=venue,
+        work_type=_publication_type(
             str(work.get("type") or ""),
             str((crossref or {}).get("type") or ""),
             arxiv=arxiv,
-            venue=_crossref_venue(crossref) if crossref else "",
+            venue=crossref_venue,
         ),
-        "key": entry_key(doi, arxiv, title),
-        "source": "orcid",
-        "members": [member.id],
-        "author_count": author_count,
-        "collaboration": collapsed,
-        "links": links,
-    }
-    if doi:
-        entry["doi"] = doi
+        collaborations=_crossref_collaborations(crossref) if crossref else (),
+        url=(work.get("url") or {}).get("value"),
+        threshold=threshold,
+    )
+
+
+def _inspire_date(metadata: dict[str, Any]) -> tuple[int | None, int | None, int | None]:
+    """Extract (year, month, day) from an INSPIRE record, each possibly missing."""
+    for info in metadata.get("publication_info") or []:
+        if info.get("year"):
+            return int(info["year"]), None, None
+    for date_field in ("earliest_date", "preprint_date"):
+        parts = str(metadata.get(date_field) or "").split("-")
+        if parts and parts[0].isdigit():
+            numbers = [int(part) for part in parts if part.isdigit()]
+            numbers += [None, None]  # type: ignore[list-item]
+            return numbers[0], numbers[1], numbers[2]
+    return None, None, None
+
+
+def _inspire_venue(metadata: dict[str, Any], arxiv: str | None) -> str:
+    """Build a human-readable venue string from an INSPIRE record."""
+    for info in metadata.get("publication_info") or []:
+        journal = info.get("journal_title")
+        if journal:
+            venue = clean_text(journal)
+            if info.get("journal_volume"):
+                venue += f" {info['journal_volume']}"
+            page = info.get("artid") or info.get("page_start")
+            if page:
+                venue += f", {page}"
+            if info.get("year"):
+                venue += f" ({info['year']})"
+            return venue
+        if info.get("pubinfo_freetext"):
+            return clean_text(info["pubinfo_freetext"])
     if arxiv:
-        entry["arxiv"] = arxiv
-    if url:
-        entry["url"] = str(url)
-    entry["_authors_raw"] = list(authors)
+        return f"arXiv:{arxiv}"
+    doc_types = metadata.get("document_type") or []
+    return str(doc_types[0]).title() if doc_types else "Preprint"
+
+
+def normalize_inspire_record(
+    metadata: dict[str, Any], member: Member, *, threshold: int = COLLABORATION_THRESHOLD
+) -> dict[str, Any]:
+    """Turn one INSPIRE-HEP record into a publication entry.
+
+    Args:
+        metadata: The INSPIRE record ``metadata`` mapping.
+        member: The member whose profile this record came from.
+        threshold: Author count above which the author list collapses.
+
+    Returns:
+        A publication entry ready to be merged into ``publications.yaml``.
+
+    """
+    doi = (metadata.get("dois") or [{}])[0].get("value")
+    arxiv = (metadata.get("arxiv_eprints") or [{}])[0].get("value")
+    recid = metadata.get("control_number")
+    title = clean_text((metadata.get("titles") or [{}])[0].get("title") or "Untitled")
+    collaborations = [c["value"] for c in metadata.get("collaborations") or [] if c.get("value")]
+    authors = [_format_inspire_name(a.get("full_name", "")) for a in metadata.get("authors") or []]
+    author_count = metadata.get("author_count") or len(authors)
+
+    venue = _inspire_venue(metadata, arxiv)
+    has_journal = any(info.get("journal_title") for info in metadata.get("publication_info") or [])
+    entry = _build_entry(
+        member=member,
+        source="inspire",
+        title=title,
+        doi=doi,
+        arxiv=arxiv,
+        date_parts=_inspire_date(metadata),
+        authors=authors,
+        author_count=author_count,
+        venue=venue,
+        work_type=_publication_type(
+            _INSPIRE_TYPE_MAP.get((metadata.get("document_type") or [""])[0], ""),
+            None,
+            arxiv=arxiv,
+            venue=venue if has_journal else "",
+        ),
+        collaborations=collaborations,
+        threshold=threshold,
+    )
+    if recid:
+        entry["links"].append({"label": "INSPIRE", "url": f"https://inspirehep.net/literature/{recid}"})
     return entry
+
+
+def _format_inspire_name(full_name: str) -> str:
+    """Convert an INSPIRE ``"Last, First"`` name to ``"First Last"``."""
+    if "," in full_name:
+        last, first = full_name.split(",", 1)
+        return f"{first.strip()} {last.strip()}".strip()
+    return full_name.strip()
+
+
+def _openalex_authors(work: dict[str, Any]) -> tuple[list[str], list[str]]:
+    """Return an OpenAlex work's author names and any collaboration names."""
+    names: list[str] = []
+    collaborations: list[str] = []
+    for authorship in work.get("authorships") or []:
+        name = clean_text(
+            (authorship.get("author") or {}).get("display_name") or authorship.get("raw_author_name") or ""
+        )
+        if not name:
+            continue
+        # OpenAlex records consortium authors among the authorships.
+        if any(word in name.lower() for word in ("collaboration", "consortium")):
+            collaborations.append(name)
+        else:
+            names.append(name)
+    return names, collaborations
+
+
+def _openalex_venue(work: dict[str, Any]) -> str:
+    """Build a human-readable venue string from an OpenAlex work."""
+    source = ((work.get("primary_location") or {}).get("source") or {}).get("display_name")
+    if not source:
+        return ""
+    venue = clean_text(source)
+    biblio = work.get("biblio") or {}
+    if biblio.get("volume"):
+        venue += f" {biblio['volume']}"
+    if biblio.get("first_page"):
+        venue += f", {biblio['first_page']}"
+    if work.get("publication_year"):
+        venue += f" ({work['publication_year']})"
+    return venue
+
+
+def _openalex_arxiv(work: dict[str, Any]) -> str | None:
+    """Pull an arXiv identifier out of an OpenAlex work's locations, if present."""
+    for location in work.get("locations") or []:
+        for url in (location.get("landing_page_url"), location.get("pdf_url")):
+            if url and "arxiv.org/abs/" in str(url):
+                return str(url).rsplit("/abs/", 1)[-1].removesuffix(".pdf")
+    return None
+
+
+def normalize_openalex_work(
+    work: dict[str, Any], member: Member, *, threshold: int = COLLABORATION_THRESHOLD
+) -> dict[str, Any]:
+    """Turn one OpenAlex work into a publication entry.
+
+    Args:
+        work: The OpenAlex work document.
+        member: The member whose pinned author id this work came from.
+        threshold: Author count above which the author list collapses.
+
+    Returns:
+        A publication entry ready to be merged into ``publications.yaml``.
+
+    """
+    doi = str(work.get("doi") or "").removeprefix("https://doi.org/") or None
+    doi, arxiv = split_arxiv_doi(doi, _openalex_arxiv(work))
+    authors, collaborations = _openalex_authors(work)
+    venue = _openalex_venue(work)
+    date = str(work.get("publication_date") or "")
+    parts = [int(part) for part in date.split("-") if part.isdigit()] if date else []
+    parts += [None, None, None]  # type: ignore[list-item]
+
+    return _build_entry(
+        member=member,
+        source="openalex",
+        title=clean_text(work.get("display_name") or "Untitled"),
+        doi=doi,
+        arxiv=arxiv,
+        date_parts=(parts[0] or work.get("publication_year"), parts[1], parts[2]),
+        authors=authors,
+        author_count=len(authors) + len(collaborations),
+        venue=venue or "Preprint",
+        work_type=_publication_type(str(work.get("type") or ""), None, arxiv=arxiv, venue=venue),
+        collaborations=collaborations,
+        url=str(work.get("id") or "") or None,
+        threshold=threshold,
+    )
 
 
 def _iso_date(year: int | None, month: int | None, day: int | None) -> str | None:
@@ -552,50 +923,83 @@ def _iso_date(year: int | None, month: int | None, day: int | None) -> str | Non
     return f"{year:04d}-{month:02d}-{day:02d}"
 
 
-def deduplicate(entries: Sequence[dict[str, Any]], members_by_id: dict[str, Member]) -> list[dict[str, Any]]:
-    """Collapse entries describing the same work into one, merging members.
+def _merge_group(records: Sequence[dict[str, Any]], members_by_id: dict[str, Member]) -> dict[str, Any]:
+    """Fold several records of the same work into one entry.
 
-    The first entry seen for a key wins on metadata, except that a later entry
-    carrying a richer author list or a DOI upgrades it. Every contributing
-    member is recorded under ``members``, and the author list is re-rendered so
-    all of them are emphasised.
+    The record with the richest author list wins on metadata, since that is the
+    one whose source knew the most about the paper. Identifiers, links, and the
+    credited members are then taken from across the whole group, so nothing a
+    single source knew is lost.
+    """
+    best = max(records, key=lambda record: len(record.get("_authors_raw") or []))
+    entry = dict(best)
+
+    for record in records:
+        for member_id in record["members"]:
+            if member_id not in entry["members"]:
+                entry["members"].append(member_id)
+        # A published record beats a preprint on identity and dating, but any
+        # field the winner happens to lack is worth taking from a sibling.
+        for richer in ("doi", "arxiv", "url", "venue", "year", "date"):
+            if not entry.get(richer) and record.get(richer):
+                entry[richer] = record[richer]
+        if len(record.get("links") or []) > len(entry.get("links") or []):
+            entry["links"] = record["links"]
+        if record.get("collaboration"):
+            entry["collaboration"] = True
+
+    entry["key"] = entry_key(entry.get("doi"), entry.get("arxiv"), entry.get("title", ""))
+    entry["members"] = sorted(entry["members"])
+    credited = [members_by_id[mid] for mid in entry["members"] if mid in members_by_id]
+    authors, _ = build_authors(entry.pop("_authors_raw", []) or [], credited)
+    entry["authors"] = authors
+    return entry
+
+
+def deduplicate(entries: Sequence[dict[str, Any]], members_by_id: dict[str, Member]) -> list[dict[str, Any]]:
+    """Collapse records describing the same work into one entry.
+
+    Records are grouped transitively: two are the same work when they share
+    *any* identifier — DOI, arXiv id, or normalized title. Transitivity matters
+    because the link is often indirect. A preprint carrying only an arXiv id and
+    a published article carrying only a journal DOI may share nothing directly,
+    yet both match a third record that carries the two together.
 
     Args:
-        entries: Normalized entries, possibly with duplicates across members.
+        entries: Normalized entries, with duplicates across members and sources.
         members_by_id: Lookup from member id to member, for re-emphasising.
 
     Returns:
-        One entry per distinct work, in input order.
+        One entry per distinct work, in order of first appearance.
 
     """
-    merged: dict[str, dict[str, Any]] = {}
-    for entry in entries:
-        key = entry["key"]
-        existing = merged.get(key)
-        if existing is None:
-            merged[key] = dict(entry)
-            continue
-        for member_id in entry["members"]:
-            if member_id not in existing["members"]:
-                existing["members"].append(member_id)
-        if len(entry.get("_authors_raw") or []) > len(existing.get("_authors_raw") or []):
-            existing["_authors_raw"] = entry["_authors_raw"]
-            existing["author_count"] = entry["author_count"]
-        for richer in ("doi", "arxiv", "url", "venue", "date", "year"):
-            if not existing.get(richer) and entry.get(richer):
-                existing[richer] = entry[richer]
-        if len(entry.get("links") or []) > len(existing.get("links") or []):
-            existing["links"] = entry["links"]
+    parent: dict[int, int] = {index: index for index in range(len(entries))}
 
-    result: list[dict[str, Any]] = []
-    for entry in merged.values():
-        entry["members"] = sorted(entry["members"])
-        credited = [members_by_id[mid] for mid in entry["members"] if mid in members_by_id]
-        authors, collapsed = build_authors(entry.pop("_authors_raw", []) or [], credited)
-        entry["authors"] = authors
-        entry["collaboration"] = collapsed
-        result.append(entry)
-    return result
+    def find(index: int) -> int:
+        while parent[index] != index:
+            parent[index] = parent[parent[index]]
+            index = parent[index]
+        return index
+
+    def union(left: int, right: int) -> None:
+        left_root, right_root = find(left), find(right)
+        if left_root != right_root:
+            # Keep the earliest record as the root so input order is preserved.
+            parent[max(left_root, right_root)] = min(left_root, right_root)
+
+    owner: dict[str, int] = {}
+    for index, entry in enumerate(entries):
+        for key in identity_keys(entry):
+            if key in owner:
+                union(index, owner[key])
+            else:
+                owner[key] = index
+
+    grouped: dict[int, list[dict[str, Any]]] = {}
+    for index, entry in enumerate(entries):
+        grouped.setdefault(find(index), []).append(entry)
+
+    return [_merge_group(records, members_by_id) for _, records in sorted(grouped.items())]
 
 
 def merge_items(
@@ -676,46 +1080,137 @@ def write_items(path: Path, items: Sequence[dict[str, Any]]) -> None:
     path.write_text(f"{_HEADER}\n{body}", encoding="utf-8")
 
 
+@dataclass(frozen=True)
+class Fetchers:
+    """The per-source fetch callables, gathered so tests can inject fakes."""
+
+    orcid: Callable[[str], list[dict[str, Any]]] = fetch_orcid_works
+    inspire: Callable[[str], list[dict[str, Any]]] = fetch_inspire_records
+    openalex: Callable[[str], list[dict[str, Any]]] = fetch_openalex_works
+    crossref: Callable[[str], dict[str, Any] | None] = fetch_crossref_work
+
+
+def _collect_from_source(
+    member: Member,
+    source: str,
+    *,
+    summary: SyncSummary,
+    fetchers: Fetchers,
+    threshold: int,
+) -> list[dict[str, Any]]:
+    """Fetch and normalize one member's in-window works from one source.
+
+    Raises:
+        Exception: Whatever the fetcher raises; the caller records it as a
+            per-source failure so one unreachable database cannot fail the run.
+
+    """
+    entries: list[dict[str, Any]] = []
+    if source == "orcid":
+        for work in fetchers.orcid(member.orcid):
+            if not in_membership_window(date_span(*_orcid_publication_date(work)), member):
+                summary.out_of_window += 1
+                continue
+            doi = _external_ids(work).get("doi")
+            crossref = fetchers.crossref(doi) if doi else None
+            entries.append(normalize_work(work, member, crossref=crossref, threshold=threshold))
+    elif source == "inspire":
+        for record in fetchers.inspire(member.inspire):
+            if not in_membership_window(date_span(*_inspire_date(record)), member):
+                summary.out_of_window += 1
+                continue
+            entries.append(normalize_inspire_record(record, member, threshold=threshold))
+    elif source == "openalex":
+        for work in fetchers.openalex(member.openalex):
+            entry = normalize_openalex_work(work, member, threshold=threshold)
+            if not in_membership_window(date_span(*_split_iso(entry.get("date"))), member):
+                summary.out_of_window += 1
+                continue
+            entries.append(entry)
+
+    kept = [entry for entry in entries if entry["type"] not in EXCLUDED_PUBLICATION_TYPES]
+    summary.excluded += len(entries) - len(kept)
+
+    if source in _AUTO_ASSIGNING_SOURCES:
+        credited = [entry for entry in kept if _plausibly_theirs(entry, member, threshold)]
+        summary.misattributed += len(kept) - len(credited)
+        return credited
+    return kept
+
+
+# ORCID is self-asserted, so whatever it lists is the member's own claim.
+# INSPIRE and OpenAlex assign papers to profiles automatically, which keeps them
+# current without upkeep but also mis-files work by same-surname researchers.
+_AUTO_ASSIGNING_SOURCES = frozenset({"inspire", "openalex"})
+
+
+def _plausibly_theirs(entry: dict[str, Any], member: Member, threshold: int) -> bool:
+    """Whether an automatically assigned record really names the member.
+
+    Applied only to short author lists, where the full set of authors is known
+    and the member must therefore appear among them. Large-collaboration papers
+    are exempt: their author lists are long, sometimes truncated upstream, and
+    a member genuinely may not be listed individually.
+    """
+    authors = entry.get("_authors_raw") or []
+    if entry.get("collaboration") or entry.get("author_count", 0) > threshold or not authors:
+        return True
+    return member_appears(authors, member)
+
+
+def _split_iso(value: str | None) -> tuple[int | None, int | None, int | None]:
+    """Split a ``YYYY[-MM[-DD]]`` string back into its numeric parts."""
+    parts = [int(part) for part in str(value or "").split("-") if part.isdigit()]
+    parts += [None, None, None]  # type: ignore[list-item]
+    return parts[0], parts[1], parts[2]
+
+
 def collect_entries(
     members: Sequence[Member],
     *,
     summary: SyncSummary,
-    works_fetcher: Callable[[str], list[dict[str, Any]]] = fetch_orcid_works,
-    crossref_fetcher: Callable[[str], dict[str, Any] | None] = fetch_crossref_work,
+    fetchers: Fetchers | None = None,
     threshold: int = COLLABORATION_THRESHOLD,
 ) -> list[dict[str, Any]]:
     """Fetch and normalize every in-window work for the given members.
 
-    A member whose ORCID record cannot be fetched is recorded in ``summary``
-    and skipped, so one unreachable record never fails the whole sync.
+    Each member is queried on every source they carry an identifier for, and
+    the results are unioned: no single database is complete, and the ones that
+    stay current without upkeep are not the ones with the widest subject
+    coverage. Cross-source duplicates are expected and are resolved later by
+    :func:`deduplicate`, which already handles the same paper reaching the sync
+    from several members.
+
+    A source that cannot be reached is recorded in ``summary`` and skipped, so
+    one outage never fails the whole run or silently empties the list.
 
     Args:
         members: The members to fetch works for.
         summary: Summary object updated in place with counts and failures.
-        works_fetcher: Callable ``(orcid) -> works`` (injectable for tests).
-        crossref_fetcher: Callable ``(doi) -> message | None`` (injectable for tests).
+        fetchers: The per-source fetch callables (injectable for tests).
         threshold: Author count above which author lists collapse.
 
     Returns:
-        Normalized entries, still containing cross-member duplicates.
+        Normalized entries, still containing duplicates across members and
+        across sources.
 
     """
+    fetchers = fetchers or Fetchers()
     entries: list[dict[str, Any]] = []
     for member in members:
-        try:
-            works = works_fetcher(member.orcid)
-        except Exception as exc:  # noqa: BLE001 - one bad record must not fail the run
-            summary.failures.append(f"{member.name} ({member.orcid}): {exc}")
-            continue
-        summary.members_synced += 1
-        for work in works:
-            year, month, day = _orcid_publication_date(work)
-            if not in_membership_window(date_span(year, month, day), member):
-                summary.out_of_window += 1
+        fetched_any = False
+        for source in member.sources:
+            try:
+                entries.extend(
+                    _collect_from_source(member, source, summary=summary, fetchers=fetchers, threshold=threshold)
+                )
+            except Exception as exc:  # noqa: BLE001 - one bad source must not fail the run
+                summary.failures.append(f"{member.name} via {source}: {exc}")
                 continue
-            doi = _external_ids(work).get("doi")
-            crossref = crossref_fetcher(doi) if doi else None
-            entries.append(normalize_work(work, member, crossref=crossref, threshold=threshold))
+            fetched_any = True
+            summary.source_counts[source] = summary.source_counts.get(source, 0) + 1
+        if fetched_any:
+            summary.members_synced += 1
     return entries
 
 
@@ -723,38 +1218,33 @@ def sync_publications(
     publications_path: Path,
     people_path: Path,
     *,
-    works_fetcher: Callable[[str], list[dict[str, Any]]] = fetch_orcid_works,
-    crossref_fetcher: Callable[[str], dict[str, Any] | None] = fetch_crossref_work,
+    fetchers: Fetchers | None = None,
     threshold: int = COLLABORATION_THRESHOLD,
 ) -> SyncSummary:
-    """Refresh ``publications.yaml`` from the members' ORCID records.
+    """Refresh ``publications.yaml`` from every source the members carry.
 
     Args:
         publications_path: Path to ``content/publications.yaml``.
         people_path: Path to ``content/people.yaml``.
-        works_fetcher: Callable ``(orcid) -> works`` (injectable for tests).
-        crossref_fetcher: Callable ``(doi) -> message | None`` (injectable for tests).
+        fetchers: The per-source fetch callables (injectable for tests).
         threshold: Author count above which author lists collapse.
 
     Returns:
         A summary of the changes made.
 
     Raises:
-        LookupError: If no person has both an ORCID iD and a start date.
+        LookupError: If no person has both a start date and an identifier.
 
     """
     members = members_from_people(load_yaml(people_path) if people_path.exists() else None)
     if not members:
-        raise LookupError(f"No syncable members in {people_path}: each person needs an `orcid` iD and a `start` date.")
+        raise LookupError(
+            f"No syncable members in {people_path}: each person needs a `start` date "
+            "and at least one of `orcid`, `inspire`, or `openalex`."
+        )
 
     summary = SyncSummary()
-    raw = collect_entries(
-        members,
-        summary=summary,
-        works_fetcher=works_fetcher,
-        crossref_fetcher=crossref_fetcher,
-        threshold=threshold,
-    )
+    raw = collect_entries(members, summary=summary, fetchers=fetchers, threshold=threshold)
     members_by_id = {member.id: member for member in members}
     fetched = deduplicate(raw, members_by_id)
     summary.deduplicated = len(raw) - len(fetched)
@@ -767,6 +1257,7 @@ def sync_publications(
     summary.added = merge_summary.added
     summary.removed = merge_summary.removed
     summary.updated = merge_summary.updated
+    summary.collaboration = sum(1 for entry in merged if entry.get("collaboration"))
 
     write_items(publications_path, merged)
     return summary

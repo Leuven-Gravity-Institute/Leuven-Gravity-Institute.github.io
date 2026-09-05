@@ -18,10 +18,38 @@
 items:
 - include: true
   highlight: false
+  title: Updated Upper Limits on the Isotropic Gravitational-Wave Background from LIGO, Virgo, and KAGRA Data through April
+    2025
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2608.23477
+  year: 2026
+  date: '2026-08-24'
+  type: preprint
+  arxiv: '2608.23477'
+  key: arxiv:2608.23477
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1805
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2608.23477
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3195428
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
   title: Upper limits on the isotropic gravitational-wave background from the first part of LIGO, Virgo, and KAGRA’s fourth
     observing run
   authors:
-  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  - A. G. Abac et al. (incl. **T. G. F. Li**, **M. Wils**, **I. C. F. Wong**)
   venue: Physical Review D 114, 042001 (2026)
   year: 2026
   date: '2026-08-15'
@@ -33,6 +61,8 @@ items:
   source: orcid
   members:
   - isaac-wong
+  - milan-wils
+  - tjonnie-li
   author_count: 1770
   collaboration: true
   links:
@@ -40,11 +70,15 @@ items:
     url: https://doi.org/10.1103/wq57-sjt2
   - label: arXiv
     url: https://arxiv.org/abs/2508.20721
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2964643
+  collaborations:
+  - The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration
 - include: true
   highlight: false
   title: 'GW240925 and GW250207: Astrophysical Calibration of Gravitational Wave Detectors'
   authors:
-  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  - A. G. Abac et al. (incl. **T. G. F. Li**, **M. Wils**, **I. C. F. Wong**)
   venue: Physical Review Letters 137, 071401 (2026)
   year: 2026
   date: '2026-08-13'
@@ -56,6 +90,8 @@ items:
   source: orcid
   members:
   - isaac-wong
+  - milan-wils
+  - tjonnie-li
   author_count: 1840
   collaboration: true
   links:
@@ -63,60 +99,178 @@ items:
     url: https://doi.org/10.1103/gzrj-mwv3
   - label: arXiv
     url: https://arxiv.org/abs/2605.11703
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3154837
+  collaborations:
+  - LIGO Scientific Collaboration, Virgo Collaboration, and KAGRA Collaboration
 - include: true
   highlight: false
-  title: Search for planetary-mass ultracompact binaries using data from the first part of the LIGO–Virgo–KAGRA fourth observing
-    run
+  title: Constraints on ultralight bosons from merging binary and remnant black holes observed during the second and third
+    parts of the fourth LIGO-Virgo-KAGRA observing run
   authors:
-  - A. G. Abac et al. (incl. **I. C. F. Wong**)
-  venue: Physical Review D 114, 022005 (2026)
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2608.11620
   year: 2026
-  date: '2026-07-15'
-  type: journal
-  doi: 10.1103/s551-7pch
-  arxiv: '2511.19911'
-  url: http://inspirehep.net/record/3086383
-  key: doi:10.1103/s551-7pch
-  source: orcid
+  date: '2026-08-12'
+  type: preprint
+  arxiv: '2608.11620'
+  key: arxiv:2608.11620
+  source: inspire
   members:
   - isaac-wong
-  author_count: 1771
+  - milan-wils
+  - tjonnie-li
+  author_count: 1808
   collaboration: true
   links:
-  - label: DOI
-    url: https://doi.org/10.1103/s551-7pch
   - label: arXiv
-    url: https://arxiv.org/abs/2511.19911
+    url: https://arxiv.org/abs/2608.11620
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3190356
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
 - include: true
   highlight: false
-  title: Directed searches for gravitational waves from ultralight vector boson clouds around merger remnant and galactic
-    black holes during the first part of the fourth LIGO-Virgo-KAGRA observing run
+  title: Advanced Virgo during the LIGO-Virgo-KAGRA fourth observing run
   authors:
-  - A. G. Abac et al. (incl. **I. C. F. Wong**)
-  venue: Physical Review D 114, 022006 (2026)
+  - F. Acernese et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2607.26872
   year: 2026
-  date: '2026-07-15'
-  type: journal
-  doi: 10.1103/mjfs-m6t7
-  arxiv: '2509.07352'
-  url: http://inspirehep.net/record/2968096
-  key: doi:10.1103/mjfs-m6t7
-  source: orcid
+  date: '2026-07-29'
+  type: preprint
+  arxiv: '2607.26872'
+  key: arxiv:2607.26872
+  source: inspire
   members:
   - isaac-wong
-  author_count: 1770
+  - milan-wils
+  - tjonnie-li
+  author_count: 548
   collaboration: true
   links:
-  - label: DOI
-    url: https://doi.org/10.1103/mjfs-m6t7
   - label: arXiv
-    url: https://arxiv.org/abs/2509.07352
+    url: https://arxiv.org/abs/2607.26872
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3184454
+  collaborations:
+  - VIRGO
+- include: true
+  highlight: false
+  title: 'GWTC-5.0: Tests of General Relativity'
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2607.19293
+  year: 2026
+  date: '2026-07-21'
+  type: preprint
+  arxiv: '2607.19293'
+  key: arxiv:2607.19293
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1823
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2607.19293
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3182294
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: Calibration of the AdvancedVirgo+ Gravitational Wave Detector and Reconstruction of the Detector Strain h(t) during
+    the Observing Run O4
+  authors:
+  - F. Acernese et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2607.19273
+  year: 2026
+  date: '2026-07-21'
+  type: preprint
+  arxiv: '2607.19273'
+  key: arxiv:2607.19273
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 548
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2607.19273
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3182280
+  collaborations:
+  - VIRGO
+- include: true
+  highlight: false
+  title: The impact of physically motivated calibration errors on search pipeline detection parameters for broadband burst
+    Signals
+  authors:
+  - '**Milan Wils**'
+  - Brad Ratto
+  - Jeffrey S. Kissel
+  - '**Tjonnie G.F. Li**'
+  - Marek J. Szczepańczyk
+  - Gabriele Vedovato
+  - Michele Zanolin
+  venue: arXiv:2607.17439
+  year: 2026
+  date: '2026-07-19'
+  type: preprint
+  arxiv: '2607.17439'
+  key: arxiv:2607.17439
+  source: inspire
+  members:
+  - milan-wils
+  - tjonnie-li
+  author_count: 7
+  collaboration: false
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2607.17439
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3181886
+- include: true
+  highlight: false
+  title: Sub-Torque-Balance Upper Limits on Continuous Gravitational Waves from Scorpius X-1
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2607.07765
+  year: 2026
+  date: '2026-07-08'
+  type: preprint
+  arxiv: '2607.07765'
+  key: arxiv:2607.07765
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1833
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2607.07765
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3178804
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
 - include: true
   highlight: false
   title: Narrowband Searches for Continuous Gravitational Waves from known Pulsars in the First Two Parts of the Fourth LIGO–Virgo–KAGRA
     Observing Run
   authors:
-  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  - A. G. Abac et al. (incl. **T. G. F. Li**, **M. Wils**, **I. C. F. Wong**)
   venue: The Astrophysical Journal 1005, 221 (2026)
   year: 2026
   date: '2026-07-07'
@@ -129,6 +283,7 @@ items:
   members:
   - isaac-wong
   - milan-wils
+  - tjonnie-li
   author_count: 1854
   collaboration: true
   links:
@@ -136,35 +291,15 @@ items:
     url: https://doi.org/10.3847/1538-4357/ae77fc
   - label: arXiv
     url: https://arxiv.org/abs/2603.25938
-- include: true
-  highlight: false
-  title: 'Directional search for persistent gravitational waves: Results from the first part of LIGO-Virgo-KAGRA’s fourth
-    observing run'
-  authors:
-  - A. G. Abac et al. (incl. **I. C. F. Wong**)
-  venue: Physical Review D 114, 022001 (2026)
-  year: 2026
-  date: '2026-07-06'
-  type: journal
-  doi: 10.1103/wgp7-t8r8
-  arxiv: '2510.17487'
-  url: http://inspirehep.net/record/3071146
-  key: doi:10.1103/wgp7-t8r8
-  source: orcid
-  members:
-  - isaac-wong
-  author_count: 1765
-  collaboration: true
-  links:
-  - label: DOI
-    url: https://doi.org/10.1103/wgp7-t8r8
-  - label: arXiv
-    url: https://arxiv.org/abs/2510.17487
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3136113
+  collaborations:
+  - The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration
 - include: true
   highlight: false
   title: 'GWTC-4.0: Population Properties of Merging Compact Binaries'
   authors:
-  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  - A. G. Abac et al. (incl. **T. G. F. Li**, **M. Wils**, **I. C. F. Wong**)
   venue: The Astrophysical Journal Letters 1005, L51 (2026)
   year: 2026
   date: '2026-07-03'
@@ -177,6 +312,7 @@ items:
   members:
   - isaac-wong
   - milan-wils
+  - tjonnie-li
   author_count: 1806
   collaboration: true
   links:
@@ -184,11 +320,15 @@ items:
     url: https://doi.org/10.3847/2041-8213/ae771e
   - label: arXiv
     url: https://arxiv.org/abs/2508.18083
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2963711
+  collaborations:
+  - The LIGO Scientific Collaboration, The Virgo Collaboration, and The KAGRA Collaboration
 - include: true
   highlight: false
   title: Constraints on Gravitational Waves from the 2024 Vela Pulsar Glitch
   authors:
-  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  - A. G. Abac et al. (incl. **T. G. F. Li**, **M. Wils**, **I. C. F. Wong**)
   venue: The Astrophysical Journal 1005, 12 (2026)
   year: 2026
   date: '2026-06-19'
@@ -201,6 +341,7 @@ items:
   members:
   - isaac-wong
   - milan-wils
+  - tjonnie-li
   author_count: 1775
   collaboration: true
   links:
@@ -208,84 +349,15 @@ items:
     url: https://doi.org/10.3847/1538-4357/ae63bc
   - label: arXiv
     url: https://arxiv.org/abs/2512.17990
-- include: true
-  highlight: false
-  title: Open Data from LIGO, Virgo, and KAGRA through the First Part of the Fourth Observing Run
-  authors:
-  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
-  venue: The Astrophysical Journal 1004, 232 (2026)
-  year: 2026
-  date: '2026-06-18'
-  type: journal
-  doi: 10.3847/1538-4357/ae211e
-  arxiv: '2508.18079'
-  url: http://inspirehep.net/record/2963692
-  key: doi:10.3847/1538-4357/ae211e
-  source: orcid
-  members:
-  - isaac-wong
-  - milan-wils
-  author_count: 1773
-  collaboration: true
-  links:
-  - label: DOI
-    url: https://doi.org/10.3847/1538-4357/ae211e
-  - label: arXiv
-    url: https://arxiv.org/abs/2508.18079
-- include: true
-  highlight: false
-  title: 'GWTC-4.0: Updating the Gravitational-wave Transient Catalog with Observations from the First Part of the Fourth
-    LIGO–Virgo–KAGRA Observing Run'
-  authors:
-  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
-  venue: The Astrophysical Journal Letters 1004, L22 (2026)
-  year: 2026
-  date: '2026-06-18'
-  type: journal
-  doi: 10.3847/2041-8213/ae2c74
-  arxiv: '2508.18082'
-  url: http://inspirehep.net/record/2963698
-  key: doi:10.3847/2041-8213/ae2c74
-  source: orcid
-  members:
-  - isaac-wong
-  - milan-wils
-  author_count: 1787
-  collaboration: true
-  links:
-  - label: DOI
-    url: https://doi.org/10.3847/2041-8213/ae2c74
-  - label: arXiv
-    url: https://arxiv.org/abs/2508.18082
-- include: true
-  highlight: false
-  title: 'GWTC-4.0: Methods for Identifying and Characterizing Gravitational-wave Transients'
-  authors:
-  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
-  venue: The Astrophysical Journal Letters 1004, L21 (2026)
-  year: 2026
-  date: '2026-06-18'
-  type: journal
-  doi: 10.3847/2041-8213/ae447b
-  arxiv: '2508.18081'
-  url: http://inspirehep.net/record/3171346
-  key: doi:10.3847/2041-8213/ae447b
-  source: orcid
-  members:
-  - isaac-wong
-  - milan-wils
-  author_count: 1809
-  collaboration: true
-  links:
-  - label: DOI
-    url: https://doi.org/10.3847/2041-8213/ae447b
-  - label: arXiv
-    url: https://arxiv.org/abs/2508.18081
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3094760
+  collaborations:
+  - (The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration)
 - include: true
   highlight: false
   title: 'GW230814: Investigation of a Loud Gravitational-wave Signal Observed with a Single Detector'
   authors:
-  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  - A. G. Abac et al. (incl. **T. G. F. Li**, **M. Wils**, **I. C. F. Wong**)
   venue: The Astrophysical Journal Letters 1004, L23 (2026)
   year: 2026
   date: '2026-06-18'
@@ -297,6 +369,8 @@ items:
   source: orcid
   members:
   - isaac-wong
+  - milan-wils
+  - tjonnie-li
   author_count: 1783
   collaboration: true
   links:
@@ -304,37 +378,203 @@ items:
     url: https://doi.org/10.3847/2041-8213/ae2ad3
   - label: arXiv
     url: https://arxiv.org/abs/2509.07348
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2968116
+  collaborations:
+  - The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration
 - include: true
   highlight: false
-  title: Searches for Continuous Gravitational Waves from Supernova Remnants in the First Part of the LIGO-Virgo-KAGRA Fourth
-    Observing Run
+  title: Impact of the Einstein Telescope's duty cycle on the estimation of binary black holes parameters
   authors:
-  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
-  venue: The Astrophysical Journal 1004, 204 (2026)
+  - Luca Negr et al. (incl. **Francesco Cireddu**, **Isaac C.F. Wong**, **Tjonnie G.F. Li**)
+  venue: arXiv:2606.19201
   year: 2026
-  date: '2026-06-15'
-  type: journal
-  doi: 10.3847/1538-4357/ae6263
-  arxiv: '2603.25808'
-  url: http://inspirehep.net/record/3136106
-  key: doi:10.3847/1538-4357/ae6263
-  source: orcid
+  date: '2026-06-17'
+  type: preprint
+  arxiv: '2606.19201'
+  url: https://openalex.org/W7165121659
+  key: arxiv:2606.19201
+  source: inspire
+  members:
+  - francesco-cireddu
+  - isaac-wong
+  - tjonnie-li
+  author_count: 16
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2606.19201
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3169589
+- include: true
+  highlight: false
+  title: Open Data from LIGO, Virgo, and KAGRA through the Second Part of the Fourth Observing Run
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2605.27090
+  year: 2026
+  date: '2026-05-26'
+  type: preprint
+  arxiv: '2605.27090'
+  key: arxiv:2605.27090
+  source: inspire
   members:
   - isaac-wong
   - milan-wils
-  author_count: 1765
+  - tjonnie-li
+  author_count: 1809
   collaboration: true
   links:
-  - label: DOI
-    url: https://doi.org/10.3847/1538-4357/ae6263
   - label: arXiv
-    url: https://arxiv.org/abs/2603.25808
+    url: https://arxiv.org/abs/2605.27090
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3160304
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: 'GWTC-5.0: Population Properties of Merging Compact Binaries'
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2605.27226
+  year: 2026
+  date: '2026-05-26'
+  type: preprint
+  arxiv: '2605.27226'
+  key: arxiv:2605.27226
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1813
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2605.27226
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3160312
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: 'GWTC-5.0: Observations from the Second Part of the Fourth LIGO-Virgo-KAGRA Observing Run and Updates to the Gravitational-Wave
+    Transient Catalog'
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2605.27225
+  year: 2026
+  date: '2026-05-26'
+  type: preprint
+  arxiv: '2605.27225'
+  key: arxiv:2605.27225
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1827
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2605.27225
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3160310
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: 'GWTC-5.0: Methods for Identifying and Characterizing Gravitational-wave Transients'
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2605.27224
+  year: 2026
+  date: '2026-05-26'
+  type: preprint
+  arxiv: '2605.27224'
+  key: arxiv:2605.27224
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1821
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2605.27224
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3160314
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: 'GWTC-5.0: Constraints on the Cosmic Expansion Rate and Modified Gravitational-wave Propagation'
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2605.27227
+  year: 2026
+  date: '2026-05-26'
+  type: preprint
+  arxiv: '2605.27227'
+  key: arxiv:2605.27227
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1810
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2605.27227
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3160313
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: 'GWTC-5.0: An Introduction to Version 5.0 of the Gravitational-Wave Transient Catalog'
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2605.27223
+  year: 2026
+  date: '2026-05-26'
+  type: preprint
+  arxiv: '2605.27223'
+  key: arxiv:2605.27223
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1822
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2605.27223
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3160317
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
 - include: true
   highlight: false
   title: Deep Search for Joint Sources of Gravitational Waves and High-energy Neutrinos with IceCube during the Third Observing
     Run of LIGO and Virgo
   authors:
-  - R. Abbasi et al. (incl. **I. C. F. Wong**)
+  - R. Abbasi et al. (incl. **T. G. F. Li**, **M. Wils**, **I. C. F. Wong**)
   venue: The Astrophysical Journal 1003, 41 (2026)
   year: 2026
   date: '2026-05-13'
@@ -346,6 +586,8 @@ items:
   source: orcid
   members:
   - isaac-wong
+  - milan-wils
+  - tjonnie-li
   author_count: 2207
   collaboration: true
   links:
@@ -353,36 +595,73 @@ items:
     url: https://doi.org/10.3847/1538-4357/ae4e1b
   - label: arXiv
     url: https://arxiv.org/abs/2601.07595
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3103348
+  collaborations:
+  - (The IceCube Collaboration)
+  - (The LIGO Scientific Collaboration, The Virgo Collaboration, and The KAGRA Collaboration)
 - include: true
   highlight: false
-  title: All-sky search for long-duration gravitational-wave transients in the first part of the fourth LIGO-Virgo-KAGRA observing
-    run
+  title: Searches for Binary Mergers with Sub-solar Mass Components in Data from the First Part of LIGO--Virgo--KAGRA's Fourth
+    Observing Run
   authors:
-  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
-  venue: Physical Review D 113, 082004 (2026)
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2605.05444
   year: 2026
-  date: '2026-04-15'
-  type: journal
-  doi: 10.1103/83j3-pgk1
-  arxiv: '2507.12282'
-  url: http://inspirehep.net/record/2947443
-  key: doi:10.1103/83j3-pgk1
-  source: orcid
+  date: '2026-05-06'
+  type: preprint
+  arxiv: '2605.05444'
+  key: arxiv:2605.05444
+  source: inspire
   members:
   - isaac-wong
   - milan-wils
-  author_count: 1766
+  - tjonnie-li
+  author_count: 1835
   collaboration: true
   links:
-  - label: DOI
-    url: https://doi.org/10.1103/83j3-pgk1
   - label: arXiv
-    url: https://arxiv.org/abs/2507.12282
+    url: https://arxiv.org/abs/2605.05444
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3152831
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: Quadratic gravity corrections to scalar QNMs of rapidly rotating black holes
+  authors:
+  - Stef J.B. Husken
+  - Tom van der Steen
+  - Simon Maenaut
+  - Kelvin Ka-Ho Lam
+  - Maxim D. Jockwer
+  - Adrian Ka-Wai Chung
+  - Thomas Hertog
+  - '**Tjonnie G.F. Li**'
+  - Nicolás Yunes
+  venue: arXiv:2604.02214
+  year: 2026
+  date: '2026-04-02'
+  type: preprint
+  arxiv: '2604.02214'
+  key: arxiv:2604.02214
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 9
+  collaboration: false
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2604.02214
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3138881
 - include: true
   highlight: false
   title: The Science of the Einstein Telescope
   authors:
-  - Adrian Abac et al. (incl. **Milan Wils**, **Isaac C.F. Wong**)
+  - Adrian Abac et al. (incl. **Francesco Cireddu**, **T.G.F. Li**, **Milan Wils**, **Isaac C.F. Wong**)
   venue: Journal of Cosmology and Astroparticle Physics 2026, 081 (2026)
   year: 2026
   date: '2026-03-26'
@@ -393,8 +672,10 @@ items:
   key: doi:10.1088/1475-7516/2026/03/081
   source: orcid
   members:
+  - francesco-cireddu
   - isaac-wong
   - milan-wils
+  - tjonnie-li
   author_count: 490
   collaboration: true
   links:
@@ -402,11 +683,149 @@ items:
     url: https://doi.org/10.1088/1475-7516/2026/03/081
   - label: arXiv
     url: https://arxiv.org/abs/2503.12263
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2901213
+  collaborations:
+  - The Einstein Telescope collaboration
+- include: true
+  highlight: false
+  title: Advanced Virgo Plus for O5 -- Design Report Overview
+  authors:
+  - F. Acernese et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2603.20342
+  year: 2026
+  date: '2026-03-20'
+  type: preprint
+  arxiv: '2603.20342'
+  key: arxiv:2603.20342
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 581
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2603.20342
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3132850
+  collaborations:
+  - Virgo
+- include: true
+  highlight: false
+  title: 'GWTC-4.0: Tests of General Relativity. III. Tests of the Remnants'
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2603.19021
+  year: 2026
+  date: '2026-03-19'
+  type: preprint
+  arxiv: '2603.19021'
+  key: arxiv:2603.19021
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1779
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2603.19021
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3131604
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: 'GWTC-4.0: Tests of General Relativity. II. Parameterized Tests'
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2603.19020
+  year: 2026
+  date: '2026-03-19'
+  type: preprint
+  arxiv: '2603.19020'
+  key: arxiv:2603.19020
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1785
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2603.19020
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3131614
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: 'GWTC-4.0: Tests of General Relativity. I. Overview and General Tests'
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2603.19019
+  year: 2026
+  date: '2026-03-19'
+  type: preprint
+  arxiv: '2603.19019'
+  key: arxiv:2603.19019
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1781
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2603.19019
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3131608
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: All-sky Searches for Continuous Gravitational Waves from Isolated Neutron Stars in the Data from the First Part of
+    the Fourth LIGO-Virgo-KAGRA Observing Run
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2603.14168
+  year: 2026
+  date: '2026-03-15'
+  type: preprint
+  arxiv: '2603.14168'
+  key: arxiv:2603.14168
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1826
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2603.14168
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3129525
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
 - include: true
   highlight: false
   title: Black Hole Spectroscopy and Tests of General Relativity with GW250114
   authors:
-  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  - A. G. Abac et al. (incl. **T. G. F. Li**, **M. Wils**, **I. C. F. Wong**)
   venue: Physical Review Letters 136, 041403 (2026)
   year: 2026
   date: '2026-01-29'
@@ -419,6 +838,7 @@ items:
   members:
   - isaac-wong
   - milan-wils
+  - tjonnie-li
   author_count: 1783
   collaboration: true
   links:
@@ -426,12 +846,237 @@ items:
     url: https://doi.org/10.1103/6c61-fm1n
   - label: arXiv
     url: https://arxiv.org/abs/2509.08099
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2968656
+  collaborations:
+  - The LIGO Scientific Collaboration, The Virgo Collaboration, and The KAGRA Collaboration
+- include: true
+  highlight: false
+  title: Searches for Continuous Gravitational Waves from Supernova Remnants in the First Part of the LIGO-Virgo-KAGRA Fourth
+    Observing Run
+  authors:
+  - A.G. Abac et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
+  venue: Astrophys.J. 1004, 204 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.3847/1538-4357/ae6263
+  arxiv: '2603.25808'
+  url: http://inspirehep.net/record/3136106
+  key: doi:10.3847/1538-4357/ae6263
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1765
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ae6263
+  - label: arXiv
+    url: https://arxiv.org/abs/2603.25808
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3136106
+  collaborations:
+  - LIGO Scientific
+  - Virgo
+  - KAGRA
+- include: true
+  highlight: false
+  title: Search for planetary-mass ultracompact binaries using data from the first part of the LIGO–Virgo–KAGRA fourth observing
+    run
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: Phys.Rev.D 114, 022005 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.1103/s551-7pch
+  arxiv: '2511.19911'
+  url: http://inspirehep.net/record/3086383
+  key: doi:10.1103/s551-7pch
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1773
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/s551-7pch
+  - label: arXiv
+    url: https://arxiv.org/abs/2511.19911
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3086383
+  collaborations:
+  - KAGRA
+  - VIRGO
+  - LIGO Scientific
+- include: true
+  highlight: false
+  title: Ringing of rapidly rotating black holes in effective field theory
+  authors:
+  - Tom van der Steen
+  - Simon Maenaut
+  - Stef J.B. Husken
+  - Pedro G.S. Fernandes
+  - Maxim D. Jockwer
+  - Vitor Cardoso
+  - Thomas Hertog
+  - '**Tjonnie G.F. Li**'
+  venue: Phys.Rev.D 114, 044087 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.1103/xq7z-gh6p
+  arxiv: '2604.11755'
+  url: https://openalex.org/W7171849761
+  key: doi:10.1103/xq7z-gh6p
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 8
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/xq7z-gh6p
+  - label: arXiv
+    url: https://arxiv.org/abs/2604.11755
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3144184
+- include: true
+  highlight: false
+  title: Ringdown analysis of rotating black holes in effective field theory extensions of general relativity
+  authors:
+  - Simon Maenaut
+  - Gregorio Carullo
+  - Pablo A. Cano
+  - Anna Liu
+  - Vitor Cardoso
+  - Thomas Hertog
+  - '**Tjonnie G.F. Li**'
+  venue: Phys.Rev.D 113, 044039 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.1103/k3hv-cqfn
+  arxiv: '2411.17893'
+  url: https://openalex.org/W4404990227
+  key: doi:10.1103/k3hv-cqfn
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 7
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/k3hv-cqfn
+  - label: arXiv
+    url: https://arxiv.org/abs/2411.17893
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2853401
+- include: true
+  highlight: false
+  title: Open Data from LIGO, Virgo, and KAGRA through the First Part of the Fourth Observing Run
+  authors:
+  - A.G. Abac et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
+  venue: Astrophys.J. 1004, 232 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.3847/1538-4357/ae211e
+  arxiv: '2508.18079'
+  url: http://inspirehep.net/record/2963692
+  key: doi:10.3847/1538-4357/ae211e
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1775
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ae211e
+  - label: arXiv
+    url: https://arxiv.org/abs/2508.18079
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2963692
+  collaborations:
+  - LIGO Scientific
+  - Virgo
+  - KAGRA
+- include: true
+  highlight: false
+  title: 'GWTC-4.0: Updating the Gravitational-Wave Transient Catalog with Observations from the First Part of the Fourth
+    LIGO-Virgo-KAGRA Observing Run'
+  authors:
+  - A.G. Abac et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
+  venue: Astrophys.J.Lett. 1004, L22 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.3847/2041-8213/ae2c74
+  arxiv: '2508.18082'
+  url: http://inspirehep.net/record/2963698
+  key: doi:10.3847/2041-8213/ae2c74
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1788
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/ae2c74
+  - label: arXiv
+    url: https://arxiv.org/abs/2508.18082
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2963698
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: 'GWTC-4.0: Methods for Identifying and Characterizing Gravitational-wave Transients'
+  authors:
+  - A.G. Abac et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
+  venue: Astrophys.J.Lett. 1004, L21 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.3847/2041-8213/ae447b
+  arxiv: '2508.18081'
+  url: http://inspirehep.net/record/3171346
+  key: doi:10.3847/2041-8213/ae447b
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1810
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/ae447b
+  - label: arXiv
+    url: https://arxiv.org/abs/2508.18081
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3171346
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
 - include: true
   highlight: false
   title: 'GWTC-4.0: Constraints on the Cosmic Expansion Rate and Modified Gravitational-wave Propagation'
   authors:
-  - A. G. Abac et al. (incl. **I. C. F. Wong**)
-  venue: The Astrophysical Journal Letters 1007, L17 (2026)
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: Astrophys.J.Lett. 1007, L17 (2026)
   year: 2026
   date: '2026'
   type: journal
@@ -439,97 +1084,265 @@ items:
   arxiv: '2509.04348'
   url: http://inspirehep.net/record/2966674
   key: doi:10.3847/2041-8213/ae69dd
-  source: orcid
+  source: inspire
   members:
   - isaac-wong
-  author_count: 1771
+  - milan-wils
+  - tjonnie-li
+  author_count: 1774
   collaboration: true
   links:
   - label: DOI
     url: https://doi.org/10.3847/2041-8213/ae69dd
   - label: arXiv
     url: https://arxiv.org/abs/2509.04348
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2966674
+  collaborations:
+  - LIGO Scientific
+  - Virgo
+  - KAGRA
 - include: true
   highlight: false
-  title: 'GWTC-4.0: An Introduction to Version 4.0 of the Gravitational-Wave Transient Catalog'
+  title: 'Directional search for persistent gravitational waves: Results from the first part of LIGO-Virgo-KAGRA’s fourth
+    observing run'
   authors:
-  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
-  venue: The Astrophysical Journal Letters 995, L18 (2025)
-  year: 2025
-  date: '2025-12-09'
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: Phys.Rev.D 114, 022001 (2026)
+  year: 2026
+  date: '2026'
   type: journal
-  doi: 10.3847/2041-8213/ae0c06
-  arxiv: '2508.18080'
-  url: http://inspirehep.net/record/2963737
-  key: doi:10.3847/2041-8213/ae0c06
-  source: orcid
+  doi: 10.1103/wgp7-t8r8
+  arxiv: '2510.17487'
+  url: http://inspirehep.net/record/3071146
+  key: doi:10.1103/wgp7-t8r8
+  source: inspire
   members:
   - isaac-wong
   - milan-wils
-  author_count: 1809
+  - tjonnie-li
+  author_count: 1766
   collaboration: true
   links:
   - label: DOI
-    url: https://doi.org/10.3847/2041-8213/ae0c06
+    url: https://doi.org/10.1103/wgp7-t8r8
   - label: arXiv
-    url: https://arxiv.org/abs/2508.18080
+    url: https://arxiv.org/abs/2510.17487
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3071146
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
 - include: true
   highlight: false
-  title: Using overlap of sky localization probability maps for filtering potentially lensed pairs of gravitational-wave signals
+  title: Directed searches for gravitational waves from ultralight vector boson clouds around merger remnant and galactic
+    black holes during the first part of the fourth LIGO-Virgo-KAGRA observing run
   authors:
-  - Henry W. Y. Wong
-  - Lok W. L. Chan
-  - '**Isaac C. F. Wong**'
-  - Rico K. L. Lo
-  - Tjonnie G. F. Li
-  venue: Physical Review D 112, 124005 (2025)
-  year: 2025
-  date: '2025-12-01'
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: Phys.Rev.D 114, 022006 (2026)
+  year: 2026
+  date: '2026'
   type: journal
-  doi: 10.1103/qc7y-z9hy
-  arxiv: '2112.05932'
-  url: http://inspirehep.net/record/1989043
-  key: doi:10.1103/qc7y-z9hy
-  source: orcid
+  doi: 10.1103/mjfs-m6t7
+  arxiv: '2509.07352'
+  url: http://inspirehep.net/record/2968096
+  key: doi:10.1103/mjfs-m6t7
+  source: inspire
   members:
   - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1771
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/mjfs-m6t7
+  - label: arXiv
+    url: https://arxiv.org/abs/2509.07352
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2968096
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: Constraining initial orbital eccentricity of inspiral-dominated gravitational-wave events with an analytic approximant
+  authors:
+  - Hemantakumar Phurailatpam
+  - Gopakumar Achamveedu
+  - Maria Haney
+  - '**Tjonnie Li**'
+  - Srishti Tiwari
+  venue: Phys.Rev.D 114, 063003 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.1103/94fx-wnjx
+  arxiv: '2508.12697'
+  key: doi:10.1103/94fx-wnjx
+  source: inspire
+  members:
+  - tjonnie-li
   author_count: 5
   collaboration: false
   links:
   - label: DOI
-    url: https://doi.org/10.1103/qc7y-z9hy
+    url: https://doi.org/10.1103/94fx-wnjx
   - label: arXiv
-    url: https://arxiv.org/abs/2112.05932
+    url: https://arxiv.org/abs/2508.12697
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2961790
 - include: true
   highlight: false
-  title: All-sky search for short gravitational-wave bursts in the first part of the fourth LIGO-Virgo-KAGRA observing run
+  title: All-sky search for long-duration gravitational-wave transients in the first part of the fourth LIGO-Virgo-KAGRA observing
+    run
   authors:
-  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
-  venue: Physical Review D 112, 102005 (2025)
-  year: 2025
-  date: '2025-11-15'
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: Phys.Rev.D 113, 082004 (2026)
+  year: 2026
+  date: '2026'
   type: journal
-  doi: 10.1103/wjdz-jdby
-  arxiv: '2507.12374'
-  url: http://inspirehep.net/record/2947455
-  key: doi:10.1103/wjdz-jdby
-  source: orcid
+  doi: 10.1103/83j3-pgk1
+  arxiv: '2507.12282'
+  url: http://inspirehep.net/record/2947443
+  key: doi:10.1103/83j3-pgk1
+  source: inspire
   members:
   - isaac-wong
   - milan-wils
-  author_count: 1765
+  - tjonnie-li
+  author_count: 1772
   collaboration: true
   links:
   - label: DOI
-    url: https://doi.org/10.1103/wjdz-jdby
+    url: https://doi.org/10.1103/83j3-pgk1
   - label: arXiv
-    url: https://arxiv.org/abs/2507.12374
+    url: https://arxiv.org/abs/2507.12282
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2947443
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: 'GWTC-4.0: Searches for Gravitational-Wave Lensing Signatures'
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2512.16347
+  year: 2025
+  date: '2025-12-18'
+  type: preprint
+  arxiv: '2512.16347'
+  key: arxiv:2512.16347
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1775
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2512.16347
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3094005
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: All-sky search for continuous gravitational-wave signals from unknown neutron stars in binary systems in the first
+    part of the fourth LIGO-Virgo-KAGRA observing run
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2511.16863
+  year: 2025
+  date: '2025-11-21'
+  type: preprint
+  arxiv: '2511.16863'
+  key: arxiv:2511.16863
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1765
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2511.16863
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3085518
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: Direct multi-model dark-matter search with gravitational-wave interferometers using data from the first part of the
+    fourth LIGO-Virgo-KAGRA observing run
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2510.27022
+  year: 2025
+  date: '2025-10-30'
+  type: preprint
+  arxiv: '2510.27022'
+  key: arxiv:2510.27022
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1767
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2510.27022
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3075603
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: Cosmological and High Energy Physics implications from gravitational-wave background searches in LIGO-Virgo-KAGRA's
+    O1-O4a runs
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2510.26848
+  year: 2025
+  date: '2025-10-30'
+  type: preprint
+  arxiv: '2510.26848'
+  key: arxiv:2510.26848
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1769
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2510.26848
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3075635
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
 - include: true
   highlight: false
   title: 'GW241011 and GW241110: Exploring Binary Formation and Fundamental Physics with Asymmetric, High-spin Black Hole
     Coalescences'
   authors:
-  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  - A. G. Abac et al. (incl. **T. G. F. Li**, **M. Wils**, **I. C. F. Wong**)
   venue: The Astrophysical Journal Letters 993, L21 (2025)
   year: 2025
   date: '2025-10-28'
@@ -541,6 +1354,8 @@ items:
   source: orcid
   members:
   - isaac-wong
+  - milan-wils
+  - tjonnie-li
   author_count: 1784
   collaboration: true
   links:
@@ -548,11 +1363,15 @@ items:
     url: https://doi.org/10.3847/2041-8213/ae0d54
   - label: arXiv
     url: https://arxiv.org/abs/2510.26931
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3075132
+  collaborations:
+  - The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration
 - include: true
   highlight: false
   title: 'GW231123: A Binary Black Hole Merger with Total Mass 190–265 M ⊙'
   authors:
-  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
   venue: The Astrophysical Journal Letters 993, L25 (2025)
   year: 2025
   date: '2025-10-27'
@@ -564,6 +1383,7 @@ items:
   source: orcid
   members:
   - isaac-wong
+  - milan-wils
   author_count: 1771
   collaboration: true
   links:
@@ -571,34 +1391,98 @@ items:
     url: https://doi.org/10.3847/2041-8213/ae0c9c
   - label: arXiv
     url: https://arxiv.org/abs/2507.08219
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2944905
 - include: true
   highlight: false
-  title: Tests of general relativity with GWTC-3
+  title: 'Good things always come in 3s: trimodality in the binary black-hole chirp-mass distribution supports bimodal black-hole
+    formation'
   authors:
-  - R. Abbott et al. (incl. **I. C. F. Wong**)
-  venue: Physical Review D 112, 084080 (2025)
+  - Reinhold Willcox
+  - Fabian R.N. Schneider
+  - Eva Laplace
+  - Philipp Podsiadlowski
+  - Kiril Maltsev
+  - Ilya Mandel
+  - Pablo Marchant
+  - Hugues Sana
+  - '**Tjonnie G.F. Li**'
+  - Thomas Hertog
+  venue: arXiv:2510.07573
   year: 2025
-  date: '2025-10-15'
-  type: journal
-  doi: 10.1103/PhysRevD.112.084080
-  arxiv: '2112.06861'
-  url: http://inspirehep.net/record/1989112
-  key: doi:10.1103/physrevd.112.084080
-  source: orcid
+  date: '2025-10-08'
+  type: preprint
+  arxiv: '2510.07573'
+  key: arxiv:2510.07573
+  source: inspire
   members:
-  - isaac-wong
-  author_count: 1682
-  collaboration: true
+  - tjonnie-li
+  author_count: 10
+  collaboration: false
   links:
-  - label: DOI
-    url: https://doi.org/10.1103/PhysRevD.112.084080
   - label: arXiv
-    url: https://arxiv.org/abs/2112.06861
+    url: https://arxiv.org/abs/2510.07573
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3065881
+- include: true
+  highlight: false
+  title: Bayesian Calibration of Gravitational-Wave Detectors Using Null Streams Without Waveform Assumptions
+  authors:
+  - '**Isaac C.F. Wong**'
+  - '**Francesco Cireddu**'
+  - '**Milan Wils**'
+  - Tom Colemont
+  - Harsh Narola
+  - Chris Van Den Broeck
+  - '**Tjonnie G.F. Li**'
+  venue: arXiv:2510.06327
+  year: 2025
+  date: '2025-10-07'
+  type: preprint
+  arxiv: '2510.06327'
+  url: https://openalex.org/W4415314658
+  key: arxiv:2510.06327
+  source: inspire
+  members:
+  - francesco-cireddu
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 7
+  collaboration: false
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2510.06327
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3064782
+- include: true
+  highlight: false
+  title: Magnetic effects on fundamental modes in rotating neutron stars with a purely toroidal magnetic field
+  authors:
+  - Anson Ka Long Yip
+  - '**Tjonnie Guang Feng Li**'
+  venue: arXiv:2509.10150
+  year: 2025
+  date: '2025-09-12'
+  type: preprint
+  arxiv: '2509.10150'
+  url: https://openalex.org/W4414595182
+  key: arxiv:2509.10150
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 2
+  collaboration: false
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2509.10150
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2969386
 - include: true
   highlight: false
   title: 'GW250114: Testing Hawking’s Area Law and the Kerr Nature of Black Holes'
   authors:
-  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  - A. G. Abac et al. (incl. **T. G. F. Li**, **M. Wils**, **I. C. F. Wong**)
   venue: Physical Review Letters 135, 111403 (2025)
   year: 2025
   date: '2025-09-10'
@@ -610,6 +1494,8 @@ items:
   source: orcid
   members:
   - isaac-wong
+  - milan-wils
+  - tjonnie-li
   author_count: 1782
   collaboration: true
   links:
@@ -617,6 +1503,271 @@ items:
     url: https://doi.org/10.1103/kw5g-d732
   - label: arXiv
     url: https://arxiv.org/abs/2509.08054
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2968387
+  collaborations:
+  - LIGO Scientific, Virgo, and KAGRA Collaborations
+- include: true
+  highlight: false
+  title: 'Complete Hamiltonian Framework of Relativistic Hierarchical Triple Systems: Capabilities and Limitations of Secular
+    Perturbation Theory'
+  authors:
+  - Kaye Jiale Li
+  - Kinwah Wu
+  - Ziri Younsi
+  - '**Tjonnie G.F. Li**'
+  venue: arXiv:2501.08377
+  year: 2025
+  date: '2025-01-14'
+  type: preprint
+  arxiv: '2501.08377'
+  url: https://openalex.org/W4406457564
+  key: arxiv:2501.08377
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 4
+  collaboration: false
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2501.08377
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2869344
+- include: true
+  highlight: false
+  title: Using overlap of sky localization probability maps for filtering potentially lensed pairs of gravitational-wave signals
+  authors:
+  - Henry W.Y. Wong
+  - Lok W.L. Chan
+  - '**Isaac C.F. Wong**'
+  - Rico K.L. Lo
+  - '**Tjonnie G.F. Li**'
+  venue: Phys.Rev.D 112, 124005 (2025)
+  year: 2025
+  date: '2025'
+  type: journal
+  doi: 10.1103/qc7y-z9hy
+  arxiv: '2112.05932'
+  url: https://openalex.org/W4226278522
+  key: doi:10.1103/qc7y-z9hy
+  source: inspire
+  members:
+  - isaac-wong
+  - tjonnie-li
+  author_count: 5
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/qc7y-z9hy
+  - label: arXiv
+    url: https://arxiv.org/abs/2112.05932
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1989043
+- include: true
+  highlight: false
+  title: Tests of General Relativity with GWTC-3
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**, **I.C.F. Wong**)
+  venue: Phys.Rev.D 112, 084080 (2025)
+  year: 2025
+  date: '2025'
+  type: journal
+  doi: 10.1103/PhysRevD.112.084080
+  arxiv: '2112.06861'
+  url: http://inspirehep.net/record/1989112
+  key: doi:10.1103/physrevd.112.084080
+  source: inspire
+  members:
+  - isaac-wong
+  - tjonnie-li
+  author_count: 1682
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.112.084080
+  - label: arXiv
+    url: https://arxiv.org/abs/2112.06861
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1989112
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: Swift-BAT GUANO Follow-up of Gravitational-wave Triggers in the Third LIGO–Virgo–KAGRA Observing Run
+  authors:
+  - Gayathri Raman et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
+  venue: Astrophys.J. 980, 207 (2025)
+  year: 2025
+  date: '2025'
+  type: journal
+  doi: 10.3847/1538-4357/ad9749
+  arxiv: '2407.12867'
+  url: http://inspirehep.net/record/2808936
+  key: doi:10.3847/1538-4357/ad9749
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1823
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ad9749
+  - label: arXiv
+    url: https://arxiv.org/abs/2407.12867
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2808936
+  collaborations:
+  - LIGO Scientific
+  - KAGRA
+  - Virgo
+  - Swift
+  - Swift-BAT/GUANO
+- include: true
+  highlight: false
+  title: Search for Gravitational Waves Emitted from SN 2023ixf
+  authors:
+  - A.G. Abac et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
+  venue: Astrophys.J. 985, 183 (2025)
+  year: 2025
+  date: '2025'
+  type: journal
+  doi: 10.3847/1538-4357/adc681
+  arxiv: '2410.16565'
+  url: http://inspirehep.net/record/2842226
+  key: doi:10.3847/1538-4357/adc681
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1784
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/adc681
+  - label: arXiv
+    url: https://arxiv.org/abs/2410.16565
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2842226
+  collaborations:
+  - LIGO Scientific
+  - KAGRA
+  - VIRGO
+- include: true
+  highlight: false
+  title: Search for Continuous Gravitational Waves from Known Pulsars in the First Part of the Fourth LIGO-Virgo-KAGRA Observing
+    Run
+  authors:
+  - A.G. Abac et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
+  venue: Astrophys.J. 983, 99 (2025)
+  year: 2025
+  date: '2025'
+  type: journal
+  doi: 10.3847/1538-4357/adb3a0
+  arxiv: '2501.01495'
+  url: http://inspirehep.net/record/2864903
+  key: doi:10.3847/1538-4357/adb3a0
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1817
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/adb3a0
+  - label: arXiv
+    url: https://arxiv.org/abs/2501.01495
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2864903
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: Properties of neural networks identifying strongly lensed gravitational waves in timedomain
+  authors:
+  - Arthur Offermans
+  - '**Tjonnie G.F. Li**'
+  venue: Phil.Trans.Roy.Soc.Lond.A 383, 20240169 (2025)
+  year: 2025
+  date: '2025'
+  type: journal
+  doi: 10.1098/rsta.2024.0169
+  url: https://openalex.org/W4409343151
+  key: doi:10.1098/rsta.2024.0169
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 2
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1098/rsta.2024.0169
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2918093
+- include: true
+  highlight: false
+  title: Potential impact of noise correlation in next-generation gravitational wave detectors
+  authors:
+  - '**Isaac C.F. Wong**'
+  - Peter T.H. Pang
+  - '**Milan Wils**'
+  - '**Francesco Cireddu**'
+  - Walter Del Pozzo
+  - '**Tjonnie G.F. Li**'
+  venue: Phys.Rev.D 111, 044046 (2025)
+  year: 2025
+  date: '2025'
+  type: journal
+  doi: 10.1103/PhysRevD.111.044046
+  arxiv: '2407.08728'
+  url: https://openalex.org/W4407698751
+  key: doi:10.1103/physrevd.111.044046
+  source: inspire
+  members:
+  - francesco-cireddu
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 6
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.111.044046
+  - label: arXiv
+    url: https://arxiv.org/abs/2407.08728
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2806882
+- include: true
+  highlight: false
+  title: Optical characterization of the Advanced Virgo gravitational wave detector for the O4 observing run
+  authors:
+  - F. Acernese et al. (incl. **M. Wils**)
+  venue: Appl.Opt. 64, 4710 (2025)
+  year: 2025
+  date: '2025'
+  type: journal
+  doi: 10.1364/AO.555312
+  key: doi:10.1364/ao.555312
+  source: inspire
+  members:
+  - milan-wils
+  author_count: 582
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1364/AO.555312
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2937075
+  collaborations:
+  - VIRGO
 - include: true
   highlight: false
   title: Null-stream-based third-generation-ready glitch mitigation for gravitational wave measurements
@@ -628,25 +1779,26 @@ items:
   - Tom Dooney
   - '**Francesco Cireddu**'
   - '**Milan Wils**'
-  - '**Isaac C. F. Wong**'
-  - Peter T. H. Pang
+  - '**Isaac C.F. Wong**'
+  - Peter T.H. Pang
   - Justin Janquart
   - Anuradha Samajdar
   - Chris Van Den Broeck
-  - Tjonnie G. F. Li
-  venue: Physical Review D 112, 024079 (2025)
+  - '**Tjonnie G.F. Li**'
+  venue: Phys.Rev.D 112, 024079 (2025)
   year: 2025
-  date: '2025-07-15'
+  date: '2025'
   type: journal
   doi: 10.1103/l6tp-ykxp
   arxiv: '2411.15506'
-  url: http://inspirehep.net/record/2851694
+  url: https://openalex.org/W4404986601
   key: doi:10.1103/l6tp-ykxp
-  source: orcid
+  source: inspire
   members:
   - francesco-cireddu
   - isaac-wong
   - milan-wils
+  - tjonnie-li
   author_count: 13
   collaboration: false
   links:
@@ -654,187 +1806,205 @@ items:
     url: https://doi.org/10.1103/l6tp-ykxp
   - label: arXiv
     url: https://arxiv.org/abs/2411.15506
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2851694
 - include: true
   highlight: false
-  title: Optical characterization of the Advanced Virgo gravitational wave detector for the O4 observing run
+  title: Millilensing induced systematic biases in parametrized tests of general relativity
   authors:
-  - Virgo Collaboration (incl. **Milan Wils**)
-  venue: Applied Optics 64, 4710 (2025)
+  - Anna Liu
+  - Rohit S. Chandramouli
+  - Otto A. Hannuksela
+  - Nicolás Yunes
+  - '**Tjonnie G.F. Li**'
+  venue: Phys.Rev.D 112, 064043 (2025)
   year: 2025
-  date: '2025-06-10'
+  date: '2025'
   type: journal
-  doi: 10.1364/AO.555312
-  key: doi:10.1364/ao.555312
-  source: orcid
+  doi: 10.1103/bsml-2rdh
+  arxiv: '2410.21738'
+  url: https://openalex.org/W4404341024
+  key: doi:10.1103/bsml-2rdh
+  source: inspire
   members:
-  - milan-wils
-  author_count: 1
+  - tjonnie-li
+  author_count: 5
   collaboration: false
   links:
   - label: DOI
-    url: https://doi.org/10.1364/AO.555312
-- include: true
-  highlight: false
-  title: Search for Gravitational Waves Emitted from SN 2023ixf
-  authors:
-  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
-  venue: The Astrophysical Journal 985, 183 (2025)
-  year: 2025
-  date: '2025-05-22'
-  type: journal
-  doi: 10.3847/1538-4357/adc681
-  arxiv: '2410.16565'
-  url: http://inspirehep.net/record/2842226
-  key: doi:10.3847/1538-4357/adc681
-  source: orcid
-  members:
-  - isaac-wong
-  - milan-wils
-  author_count: 1780
-  collaboration: true
-  links:
-  - label: DOI
-    url: https://doi.org/10.3847/1538-4357/adc681
+    url: https://doi.org/10.1103/bsml-2rdh
   - label: arXiv
-    url: https://arxiv.org/abs/2410.16565
+    url: https://arxiv.org/abs/2410.21738
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2843520
 - include: true
   highlight: false
-  title: Search for Continuous Gravitational Waves from Known Pulsars in the First Part of the Fourth LIGO-Virgo-KAGRA Observing
-    Run
+  title: Gravitational wave signatures from the phase-transition-induced collapse of a magnetized neutron star
   authors:
-  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
-  venue: The Astrophysical Journal 983, 99 (2025)
+  - Anson Ka Long Yip
+  - Patrick Chi-Kit Cheong
+  - '**Tjonnie Guang Feng Li**'
+  venue: Phys.Rev.D 112, 043035 (2025)
   year: 2025
-  date: '2025-04-10'
+  date: '2025'
   type: journal
-  doi: 10.3847/1538-4357/adb3a0
-  arxiv: '2501.01495'
-  url: http://inspirehep.net/record/2864903
-  key: doi:10.3847/1538-4357/adb3a0
-  source: orcid
+  doi: 10.1103/nz17-wwp3
+  arxiv: '2305.15181'
+  url: https://openalex.org/W4413641580
+  key: doi:10.1103/nz17-wwp3
+  source: inspire
   members:
-  - isaac-wong
-  - milan-wils
-  author_count: 1817
-  collaboration: true
-  links:
-  - label: DOI
-    url: https://doi.org/10.3847/1538-4357/adb3a0
-  - label: arXiv
-    url: https://arxiv.org/abs/2501.01495
-- include: true
-  highlight: false
-  title: Potential impact of noise correlation in next-generation gravitational wave detectors
-  authors:
-  - '**Isaac C. F. Wong**'
-  - Peter T. H. Pang
-  - '**Milan Wils**'
-  - '**Francesco Cireddu**'
-  - Walter Del Pozzo
-  - Tjonnie G. F. Li
-  venue: Physical Review D 111, 044046 (2025)
-  year: 2025
-  date: '2025-02-15'
-  type: journal
-  doi: 10.1103/PhysRevD.111.044046
-  arxiv: '2407.08728'
-  url: http://inspirehep.net/record/2806882
-  key: doi:10.1103/physrevd.111.044046
-  source: orcid
-  members:
-  - francesco-cireddu
-  - isaac-wong
-  - milan-wils
-  author_count: 6
+  - tjonnie-li
+  author_count: 3
   collaboration: false
   links:
   - label: DOI
-    url: https://doi.org/10.1103/PhysRevD.111.044046
+    url: https://doi.org/10.1103/nz17-wwp3
   - label: arXiv
-    url: https://arxiv.org/abs/2407.08728
+    url: https://arxiv.org/abs/2305.15181
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2662434
 - include: true
   highlight: false
-  title: Swift-BAT GUANO Follow-up of Gravitational-wave Triggers in the Third LIGO–Virgo–KAGRA Observing Run
+  title: 'GWTC-4.0: An Introduction to Version 4.0 of the Gravitational-Wave Transient Catalog'
   authors:
-  - Gayathri Raman et al. (incl. **M. Wils**, **I. C. F. Wong**)
-  venue: The Astrophysical Journal 980, 207 (2025)
+  - A.G. Abac et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
+  venue: Astrophys.J.Lett. 995, L18 (2025)
   year: 2025
-  date: '2025-02-14'
+  date: '2025'
   type: journal
-  doi: 10.3847/1538-4357/ad9749
-  arxiv: '2407.12867'
-  url: http://inspirehep.net/record/2808936
-  key: doi:10.3847/1538-4357/ad9749
-  source: orcid
+  doi: 10.3847/2041-8213/ae0c06
+  arxiv: '2508.18080'
+  url: http://inspirehep.net/record/2963737
+  key: doi:10.3847/2041-8213/ae0c06
+  source: inspire
   members:
   - isaac-wong
   - milan-wils
-  author_count: 1820
+  - tjonnie-li
+  author_count: 1809
   collaboration: true
   links:
   - label: DOI
-    url: https://doi.org/10.3847/1538-4357/ad9749
+    url: https://doi.org/10.3847/2041-8213/ae0c06
   - label: arXiv
-    url: https://arxiv.org/abs/2407.12867
+    url: https://arxiv.org/abs/2508.18080
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2963737
+  collaborations:
+  - LIGO Scientific
+  - KAGRA
+  - VIRGO
 - include: true
   highlight: false
-  title: A Search Using GEO600 for Gravitational Waves Coincident with Fast Radio Bursts from SGR 1935+2154
+  title: Fundamental modes of rotating neutron stars with various degrees of differential rotation in dynamical spacetimes
   authors:
-  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
-  venue: The Astrophysical Journal 977, 255 (2024)
+  - Anson Ka Long Yip
+  - Patrick Chi-Kit Cheong
+  - '**Tjonnie Guang Feng Li**'
+  venue: Phys.Rev.D 112, 063057 (2025)
+  year: 2025
+  date: '2025'
+  type: journal
+  doi: 10.1103/q1ys-h13y
+  arxiv: '2401.13993'
+  url: https://openalex.org/W4391272506
+  key: doi:10.1103/q1ys-h13y
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 3
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/q1ys-h13y
+  - label: arXiv
+    url: https://arxiv.org/abs/2401.13993
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2751436
+- include: true
+  highlight: false
+  title: 'Computational science and unconceived alternatives: lessons from, and for, gravitational-wave astronomy'
+  authors:
+  - André Curtis-Trudel
+  - Darrell P. Rowbottom
+  - '**Tjonnie G.F. Li**'
+  venue: Synthese 206, 297 (2025)
+  year: 2025
+  date: '2025'
+  type: journal
+  doi: 10.1007/s11229-025-05362-3
+  url: https://openalex.org/W4417229213
+  key: doi:10.1007/s11229-025-05362-3
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 3
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1007/s11229-025-05362-3
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3104315
+- include: true
+  highlight: false
+  title: All-sky search for short gravitational-wave bursts in the first part of the fourth LIGO-Virgo-KAGRA observing run
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: Phys.Rev.D 112, 102005 (2025)
+  year: 2025
+  date: '2025'
+  type: journal
+  doi: 10.1103/wjdz-jdby
+  arxiv: '2507.12374'
+  url: http://inspirehep.net/record/2947455
+  key: doi:10.1103/wjdz-jdby
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1770
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/wjdz-jdby
+  - label: arXiv
+    url: https://arxiv.org/abs/2507.12374
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2947455
+  collaborations:
+  - KAGRA
+  - LIGO Scientific
+  - VIRGO
+- include: true
+  highlight: false
+  title: Using time series to identify strongly-lensed gravitational waves with deep learning
+  authors:
+  - Arthur Offermans
+  - '**Tjonnie G.F. Li**'
+  venue: arXiv:2411.12453
   year: 2024
-  date: '2024-12-18'
-  type: journal
-  doi: 10.3847/1538-4357/ad8de0
-  arxiv: '2410.09151'
-  url: http://inspirehep.net/record/2839777
-  key: doi:10.3847/1538-4357/ad8de0
-  source: orcid
+  date: '2024-11-19'
+  type: preprint
+  arxiv: '2411.12453'
+  url: https://openalex.org/W4404573908
+  key: arxiv:2411.12453
+  source: inspire
   members:
-  - isaac-wong
-  - milan-wils
-  author_count: 1781
-  collaboration: true
-  links:
-  - label: DOI
-    url: https://doi.org/10.3847/1538-4357/ad8de0
-  - label: arXiv
-    url: https://arxiv.org/abs/2410.09151
-- include: true
-  highlight: false
-  title: Likelihood for a network of gravitational-wave detectors with correlated noise
-  authors:
-  - '**Francesco Cireddu**'
-  - '**Milan Wils**'
-  - '**Isaac C. F. Wong**'
-  - Peter T. H. Pang
-  - Tjonnie G. F. Li
-  - Walter Del Pozzo
-  venue: Physical Review D 110, 104060 (2024)
-  year: 2024
-  date: '2024-11-15'
-  type: journal
-  doi: 10.1103/PhysRevD.110.104060
-  arxiv: '2312.14614'
-  url: http://inspirehep.net/record/2740429
-  key: doi:10.1103/physrevd.110.104060
-  source: orcid
-  members:
-  - francesco-cireddu
-  - isaac-wong
-  - milan-wils
-  author_count: 6
+  - tjonnie-li
+  author_count: 2
   collaboration: false
   links:
-  - label: DOI
-    url: https://doi.org/10.1103/PhysRevD.110.104060
   - label: arXiv
-    url: https://arxiv.org/abs/2312.14614
+    url: https://arxiv.org/abs/2411.12453
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2849950
 - include: true
   highlight: false
   title: Search for Eccentric Black Hole Coalescences during the Third Observing Run of LIGO and Virgo
   authors:
-  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  - A. G. Abac et al. (incl. **T. G. F. Li**, **M. Wils**, **I. C. F. Wong**)
   venue: The Astrophysical Journal 973, 132 (2024)
   year: 2024
   date: '2024-09-26'
@@ -846,6 +2016,8 @@ items:
   source: orcid
   members:
   - isaac-wong
+  - milan-wils
+  - tjonnie-li
   author_count: 1774
   collaboration: true
   links:
@@ -853,35 +2025,15 @@ items:
     url: https://doi.org/10.3847/1538-4357/ad65ce
   - label: arXiv
     url: https://arxiv.org/abs/2308.03822
-- include: true
-  highlight: false
-  title: Ultralight vector dark matter search using data from the KAGRA O3GK run
-  authors:
-  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
-  venue: Physical Review D 110, 042001 (2024)
-  year: 2024
-  date: '2024-08-15'
-  type: journal
-  doi: 10.1103/PhysRevD.110.042001
-  arxiv: '2403.03004'
-  url: http://inspirehep.net/record/2764911
-  key: doi:10.1103/physrevd.110.042001
-  source: orcid
-  members:
-  - isaac-wong
-  - milan-wils
-  author_count: 1801
-  collaboration: true
-  links:
-  - label: DOI
-    url: https://doi.org/10.1103/PhysRevD.110.042001
-  - label: arXiv
-    url: https://arxiv.org/abs/2403.03004
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2686392
+  collaborations:
+  - The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration
 - include: true
   highlight: false
   title: Search for Gravitational-lensing Signatures in the Full Third Observing Run of the LIGO–Virgo Network
   authors:
-  - R. Abbott et al. (incl. **I. C. F. Wong**)
+  - R. Abbott et al. (incl. **T. G. F. Li**, **I. C. F. Wong**)
   venue: The Astrophysical Journal 970, 191 (2024)
   year: 2024
   date: '2024-07-31'
@@ -893,6 +2045,7 @@ items:
   source: orcid
   members:
   - isaac-wong
+  - tjonnie-li
   author_count: 1695
   collaboration: true
   links:
@@ -900,60 +2053,16 @@ items:
     url: https://doi.org/10.3847/1538-4357/ad3e83
   - label: arXiv
     url: https://arxiv.org/abs/2304.08393
-- include: true
-  highlight: false
-  title: Observation of Gravitational Waves from the Coalescence of a 2.5–4.5 M ⊙ Compact Object and a Neutron Star
-  authors:
-  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
-  venue: The Astrophysical Journal Letters 970, L34 (2024)
-  year: 2024
-  date: '2024-07-26'
-  type: journal
-  doi: 10.3847/2041-8213/ad5beb
-  arxiv: '2404.04248'
-  url: http://inspirehep.net/record/2774720
-  key: doi:10.3847/2041-8213/ad5beb
-  source: orcid
-  members:
-  - isaac-wong
-  - milan-wils
-  author_count: 1796
-  collaboration: true
-  links:
-  - label: DOI
-    url: https://doi.org/10.3847/2041-8213/ad5beb
-  - label: arXiv
-    url: https://arxiv.org/abs/2404.04248
-- include: true
-  highlight: false
-  title: Search for Gravitational-wave Transients Associated with Magnetar Bursts in Advanced LIGO and Advanced Virgo Data
-    from the Third Observing Run
-  authors:
-  - R. Abbott et al. (incl. **I. C. F. Wong**)
-  venue: The Astrophysical Journal 966, 137 (2024)
-  year: 2024
-  date: '2024-04-30'
-  type: journal
-  doi: 10.3847/1538-4357/ad27d3
-  arxiv: '2210.10931'
-  url: http://inspirehep.net/record/2168155
-  key: doi:10.3847/1538-4357/ad27d3
-  source: orcid
-  members:
-  - isaac-wong
-  author_count: 1668
-  collaboration: true
-  links:
-  - label: DOI
-    url: https://doi.org/10.3847/1538-4357/ad27d3
-  - label: arXiv
-    url: https://arxiv.org/abs/2210.10931
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2651879
+  collaborations:
+  - The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration
 - include: true
   highlight: false
   title: A Joint Fermi-GBM and Swift-BAT Analysis of Gravitational-wave Candidates from the Third Gravitational-wave Observing
     Run
   authors:
-  - C. Fletcher et al. (incl. **I. C. F. Wong**)
+  - C. Fletcher et al. (incl. **T. G. F. Li**, **I. C. F. Wong**)
   venue: The Astrophysical Journal 964, 149 (2024)
   year: 2024
   date: '2024-03-27'
@@ -965,6 +2074,7 @@ items:
   source: orcid
   members:
   - isaac-wong
+  - tjonnie-li
   author_count: 1696
   collaboration: true
   links:
@@ -972,6 +2082,327 @@ items:
     url: https://doi.org/10.3847/1538-4357/ad1eed
   - label: arXiv
     url: https://arxiv.org/abs/2308.13666
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2691454
+  collaborations:
+  - Fermi Gamma-Ray Burst Monitor Team
+  - The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration
+- include: true
+  highlight: false
+  title: Ultralight vector dark matter search using data from the KAGRA O3GK run
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: Phys.Rev.D 110, 042001 (2024)
+  year: 2024
+  date: '2024'
+  type: journal
+  doi: 10.1103/PhysRevD.110.042001
+  arxiv: '2403.03004'
+  url: http://inspirehep.net/record/2764911
+  key: doi:10.1103/physrevd.110.042001
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1801
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.110.042001
+  - label: arXiv
+    url: https://arxiv.org/abs/2403.03004
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2764911
+  collaborations:
+  - KAGRA
+  - LIGO Scientific
+  - VIRGO
+- include: true
+  highlight: false
+  title: Search for Gravitational-wave Transients Associated with Magnetar Bursts in Advanced LIGO and Advanced Virgo Data
+    from the Third Observing Run
+  authors:
+  - R. Abbott et al. (incl. **T.G. F. Li**, **I.C. F. Wong**)
+  venue: Astrophys.J. 966, 137 (2024)
+  year: 2024
+  date: '2024'
+  type: journal
+  doi: 10.3847/1538-4357/ad27d3
+  arxiv: '2210.10931'
+  url: http://inspirehep.net/record/2168155
+  key: doi:10.3847/1538-4357/ad27d3
+  source: inspire
+  members:
+  - isaac-wong
+  - tjonnie-li
+  author_count: 1669
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ad27d3
+  - label: arXiv
+    url: https://arxiv.org/abs/2210.10931
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2168155
+  collaborations:
+  - LIGO Scientific
+  - KAGRA
+  - VIRGO
+- include: true
+  highlight: false
+  title: Observation of Gravitational Waves from the Coalescence of a 2.5–4.5 M $_{⊙}$ Compact Object and a Neutron Star
+  authors:
+  - A.G. Abac et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
+  venue: Astrophys.J.Lett. 970, L34 (2024)
+  year: 2024
+  date: '2024'
+  type: journal
+  doi: 10.3847/2041-8213/ad5beb
+  arxiv: '2404.04248'
+  url: http://inspirehep.net/record/2774720
+  key: doi:10.3847/2041-8213/ad5beb
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1799
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/ad5beb
+  - label: arXiv
+    url: https://arxiv.org/abs/2404.04248
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2774720
+  collaborations:
+  - LIGO Scientific
+  - KAGRA
+  - VIRGO
+- include: true
+  highlight: false
+  title: Likelihood for a network of gravitational-wave detectors with correlated noise
+  authors:
+  - '**Francesco Cireddu**'
+  - '**Milan Wils**'
+  - '**Isaac C.F. Wong**'
+  - Peter T.H. Pang
+  - '**Tjonnie G.F. Li**'
+  - Walter Del Pozzo
+  venue: Phys.Rev.D 110, 104060 (2024)
+  year: 2024
+  date: '2024'
+  type: journal
+  doi: 10.1103/PhysRevD.110.104060
+  arxiv: '2312.14614'
+  url: https://openalex.org/W4404631517
+  key: doi:10.1103/physrevd.110.104060
+  source: inspire
+  members:
+  - francesco-cireddu
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 6
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.110.104060
+  - label: arXiv
+    url: https://arxiv.org/abs/2312.14614
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2740429
+- include: true
+  highlight: false
+  title: Inferring Properties of Dark Galactic Halos Using Strongly Lensed Gravitational Waves
+  authors:
+  - Eungwang Seo
+  - '**Tjonnie Guan Feng Li**'
+  - Martin Anthony Hendry
+  venue: Astrophys.J. 966, 107 (2024)
+  year: 2024
+  date: '2024'
+  type: journal
+  doi: 10.3847/1538-4357/ad35bb
+  arxiv: '2311.05543'
+  url: https://openalex.org/W4396241532
+  key: doi:10.3847/1538-4357/ad35bb
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 3
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ad35bb
+  - label: arXiv
+    url: https://arxiv.org/abs/2311.05543
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2720772
+- include: true
+  highlight: false
+  title: General-relativistic Radiation Transport Scheme in Gmunu. II. Implementation of Novel Microphysical Library for Neutrino
+    Radiation—Weakhub
+  authors:
+  - Harry Ho-Yin Ng
+  - Patrick Chi-Kit Cheong
+  - Alan Tsz-Lok Lam
+  - '**Tjonnie Guang Feng Li**'
+  venue: Astrophys.J.Suppl. 272, 9 (2024)
+  year: 2024
+  date: '2024'
+  type: journal
+  doi: 10.3847/1538-4365/ad2fbd
+  arxiv: '2309.03526'
+  url: https://openalex.org/W4395466981
+  key: doi:10.3847/1538-4365/ad2fbd
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 4
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4365/ad2fbd
+  - label: arXiv
+    url: https://arxiv.org/abs/2309.03526
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2694519
+- include: true
+  highlight: false
+  title: 'GWTC-2.1: Deep extended catalog of compact binary coalescences observed by LIGO and Virgo during the first half
+    of the third observing run'
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**, **I.C.F. Wong**)
+  venue: Phys.Rev.D 109, 022001 (2024)
+  year: 2024
+  date: '2024'
+  type: journal
+  doi: 10.1103/PhysRevD.109.022001
+  arxiv: '2108.01045'
+  key: doi:10.1103/physrevd.109.022001
+  source: inspire
+  members:
+  - isaac-wong
+  - tjonnie-li
+  author_count: 1431
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.109.022001
+  - label: arXiv
+    url: https://arxiv.org/abs/2108.01045
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1897574
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+- include: true
+  highlight: false
+  title: Formation of a magnetized hybrid star with a purely toroidal field from phase-transition-induced collapse
+  authors:
+  - Anson Ka Long Yip
+  - Patrick Chi-Kit Cheong
+  - '**Tjonnie Guang Feng Li**'
+  venue: Mon.Not.Roy.Astron.Soc. 534, 3612 (2024)
+  year: 2024
+  date: '2024'
+  type: journal
+  doi: 10.1093/mnras/stae2321
+  arxiv: '2303.16820'
+  url: https://openalex.org/W4403307726
+  key: doi:10.1093/mnras/stae2321
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 3
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1093/mnras/stae2321
+  - label: arXiv
+    url: https://arxiv.org/abs/2303.16820
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2647065
+- include: true
+  highlight: false
+  title: 'Characterizing gravitational wave detector networks: from A$^\sharp$ to cosmic explorer'
+  authors:
+  - Ish Gupta et al. (incl. **Tjonnie G.F. Li**)
+  venue: Class.Quant.Grav. 41, 245001 (2024)
+  year: 2024
+  date: '2024'
+  type: journal
+  doi: 10.1088/1361-6382/ad7b99
+  arxiv: '2307.10421'
+  url: https://openalex.org/W4402639430
+  key: doi:10.1088/1361-6382/ad7b99
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 47
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1088/1361-6382/ad7b99
+  - label: arXiv
+    url: https://arxiv.org/abs/2307.10421
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2678804
+- include: true
+  highlight: false
+  title: A Search Using GEO600 for Gravitational Waves Coincident with Fast Radio Bursts from SGR 1935+2154
+  authors:
+  - A.G. Abac et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
+  venue: Astrophys.J. 977, 255 (2024)
+  year: 2024
+  date: '2024'
+  type: journal
+  doi: 10.3847/1538-4357/ad8de0
+  arxiv: '2410.09151'
+  url: http://inspirehep.net/record/2839777
+  key: doi:10.3847/1538-4357/ad8de0
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1781
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ad8de0
+  - label: arXiv
+    url: https://arxiv.org/abs/2410.09151
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2839777
+  collaborations:
+  - LIGO Scientific
+  - KAGRA
+  - VIRGO
+- include: true
+  highlight: false
+  title: 'Cosmic Explorer: A Submission to the NSF MPSAC ngGW Subcommittee'
+  authors:
+  - Matthew Evans et al. (incl. **Tjonnie G.F. Li**)
+  venue: arXiv:2306.13745
+  year: 2023
+  date: '2023-06-23'
+  type: preprint
+  arxiv: '2306.13745'
+  url: https://openalex.org/W4382319344
+  key: arxiv:2306.13745
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 76
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2306.13745
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2671848
 - include: true
   highlight: false
   title: Per-Wavelet Equalization for Discrete Wavelet Transform Based Multi-Carrier Modulation Systems
@@ -984,6 +2415,7 @@ items:
   date: 2023-02
   type: journal
   doi: 10.1109/OJSP.2023.3242122
+  url: https://openalex.org/W4319068623
   key: doi:10.1109/ojsp.2023.3242122
   source: orcid
   members:
@@ -993,3 +2425,2048 @@ items:
   links:
   - label: DOI
     url: https://doi.org/10.1109/OJSP.2023.3242122
+- include: true
+  highlight: false
+  title: Targeted subthreshold search for strongly lensed gravitational-wave events
+  authors:
+  - Alvin K.Y. Li
+  - Rico K.L. Lo
+  - Surabhi Sachdev
+  - Juno C.L. Chan
+  - E.T. Lin
+  - '**Tjonnie G.F. Li**'
+  - Alan J. Weinstein
+  venue: Phys.Rev.D 107, 123014 (2023)
+  year: 2023
+  date: '2023'
+  type: journal
+  doi: 10.1103/PhysRevD.107.123014
+  arxiv: '1904.06020'
+  url: https://openalex.org/W2935975487
+  key: doi:10.1103/physrevd.107.123014
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 7
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.107.123014
+  - label: arXiv
+    url: https://arxiv.org/abs/1904.06020
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1729548
+  collaborations:
+  - LIGO Scientific, Virgo
+- include: true
+  highlight: false
+  title: Searching for vector boson-star mergers within LIGO-Virgo intermediate-mass black-hole merger candidates
+  authors:
+  - Juan Calderon Bustillo
+  - Nicolas Sanchis-Gual
+  - Samson H.W. Leong
+  - Koustav Chandra
+  - Alejandro Torres-Forne
+  - Jose A. Font
+  - Carlos Herdeiro
+  - Eugen Radu
+  - Isaac C.F. Wong
+  - '**Tjonnie G.F. Li**'
+  venue: Phys.Rev.D 108, 123020 (2023)
+  year: 2023
+  date: '2023'
+  type: journal
+  doi: 10.1103/PhysRevD.108.123020
+  arxiv: '2206.02551'
+  url: https://openalex.org/W4389627314
+  key: doi:10.1103/physrevd.108.123020
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 10
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.108.123020
+  - label: arXiv
+    url: https://arxiv.org/abs/2206.02551
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2091701
+- include: true
+  highlight: false
+  title: Search for subsolar-mass black hole binaries in the second part of Advanced LIGO’s and Advanced Virgo’s third observing
+    run
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Mon.Not.Roy.Astron.Soc. 524, 5984 (2023)
+  year: 2023
+  date: '2023'
+  type: journal
+  doi: 10.1093/mnras/stad588
+  arxiv: '2212.01477'
+  key: doi:10.1093/mnras/stad588
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1702
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1093/mnras/stad588
+  - label: arXiv
+    url: https://arxiv.org/abs/2212.01477
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2610684
+  collaborations:
+  - LVK
+- include: true
+  highlight: false
+  title: Search for Gravitational Waves Associated with Fast Radio Bursts Detected by CHIME/FRB during the LIGO–Virgo Observing
+    Run O3a
+  authors:
+  - R. Abbott et al. (incl. **T.G. F. Li**)
+  venue: Astrophys.J. 955, 155 (2023)
+  year: 2023
+  date: '2023'
+  type: journal
+  doi: 10.3847/1538-4357/acd770
+  arxiv: '2203.12038'
+  key: doi:10.3847/1538-4357/acd770
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1656
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/acd770
+  - label: arXiv
+    url: https://arxiv.org/abs/2203.12038
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2059739
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+  - CHIME/FRB
+- include: true
+  highlight: false
+  title: 'Science with the Einstein Telescope: a comparison of different designs'
+  authors:
+  - Marica Branchesi et al. (incl. **Tjonnie G.F. Li**)
+  venue: JCAP 07, 068 (2023)
+  year: 2023
+  date: '2023'
+  type: journal
+  doi: 10.1088/1475-7516/2023/07/068
+  arxiv: '2303.15923'
+  url: https://openalex.org/W4361805875
+  key: doi:10.1088/1475-7516/2023/07/068
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 76
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1088/1475-7516/2023/07/068
+  - label: arXiv
+    url: https://arxiv.org/abs/2303.15923
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2646541
+- include: true
+  highlight: false
+  title: Population of Merging Compact Binaries Inferred Using Gravitational Waves through GWTC-3
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.X 13, 011048 (2023)
+  year: 2023
+  date: '2023'
+  type: journal
+  doi: 10.1103/PhysRevX.13.011048
+  arxiv: '2111.03634'
+  key: doi:10.1103/physrevx.13.011048
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1654
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevX.13.011048
+  - label: arXiv
+    url: https://arxiv.org/abs/2111.03634
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1961598
+  collaborations:
+  - KAGRA
+  - VIRGO
+  - LIGO Scientific
+- include: true
+  highlight: false
+  title: Open Data from the Third Observing Run of LIGO, Virgo, KAGRA, and GEO
+  authors:
+  - R. Abbott et al. (incl. **T.G. F. Li**)
+  venue: Astrophys.J.Suppl. 267, 29 (2023)
+  year: 2023
+  date: '2023'
+  type: journal
+  doi: 10.3847/1538-4365/acdc9f
+  arxiv: '2302.03676'
+  url: https://openalex.org/W4385341464
+  key: doi:10.3847/1538-4365/acdc9f
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1741
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4365/acdc9f
+  - label: arXiv
+    url: https://arxiv.org/abs/2302.03676
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2630216
+  collaborations:
+  - KAGRA
+  - VIRGO
+  - LIGO Scientific
+- include: true
+  highlight: false
+  title: Gravitational-Wave Parameter Inference with the Newman-Penrose Scalar
+  authors:
+  - Juan Calderon Bustillo
+  - Isaac C.F. Wong
+  - Nicolas Sanchis-Gual
+  - Samson H.W. Leong
+  - Alejandro Torres-Forne
+  - Koustav Chandra
+  - Jose A. Font
+  - Carlos Herdeiro
+  - Eugen Radu
+  - '**Tjonnie G.F. Li**'
+  venue: Phys.Rev.X 13, 041048 (2023)
+  year: 2023
+  date: '2023'
+  type: journal
+  doi: 10.1103/PhysRevX.13.041048
+  arxiv: '2205.15029'
+  url: https://openalex.org/W4389613091
+  key: doi:10.1103/physrevx.13.041048
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 10
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevX.13.041048
+  - label: arXiv
+    url: https://arxiv.org/abs/2205.15029
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2089074
+- include: true
+  highlight: false
+  title: General-relativistic Radiation Transport Scheme in Gmunu. I. Implementation of Two-moment-based Multifrequency Radiative
+    Transfer and Code Tests
+  authors:
+  - Patrick Chi-Kit Cheong
+  - Harry Ho-Yin Ng
+  - Alan Tsz-Lok Lam
+  - '**Tjonnie Guang Feng Li**'
+  venue: Astrophys.J.Suppl. 267, 38 (2023)
+  year: 2023
+  date: '2023'
+  type: journal
+  doi: 10.3847/1538-4365/acd931
+  arxiv: '2303.03261'
+  url: https://openalex.org/W4385549366
+  key: doi:10.3847/1538-4365/acd931
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 4
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4365/acd931
+  - label: arXiv
+    url: https://arxiv.org/abs/2303.03261
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2638861
+- include: true
+  highlight: false
+  title: 'GWTC-3: Compact Binary Coalescences Observed by LIGO and Virgo during the Second Part of the Third Observing Run'
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.X 13, 041039 (2023)
+  year: 2023
+  date: '2023'
+  type: journal
+  doi: 10.1103/PhysRevX.13.041039
+  arxiv: '2111.03606'
+  key: doi:10.1103/physrevx.13.041039
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1659
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevX.13.041039
+  - label: arXiv
+    url: https://arxiv.org/abs/2111.03606
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1961691
+  collaborations:
+  - KAGRA
+  - VIRGO
+  - LIGO Scientific
+- include: true
+  highlight: false
+  title: Follow-up analyses to the O3 LIGO–Virgo–KAGRA lensing searches
+  authors:
+  - Justin Janquart et al. (incl. **Tjonnie G.F. Li**)
+  venue: Mon.Not.Roy.Astron.Soc. 526, 3832 (2023)
+  year: 2023
+  date: '2023'
+  type: journal
+  doi: 10.1093/mnras/stad2909
+  arxiv: '2306.03827'
+  url: https://openalex.org/W4379925139
+  key: doi:10.1093/mnras/stad2909
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 32
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1093/mnras/stad2909
+  - label: arXiv
+    url: https://arxiv.org/abs/2306.03827
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2666551
+- include: true
+  highlight: false
+  title: 'Exploring the hidden Universe: a novel phenomenological approach for recovering arbitrary gravitational-wave millilensing
+    configurations'
+  authors:
+  - Anna Liu
+  - Isaac C.F. Wong
+  - Samson H.W. Leong
+  - Anupreeta More
+  - Otto A. Hannuksela
+  - '**Tjonnie G.F. Li**'
+  venue: Mon.Not.Roy.Astron.Soc. 525, 4149 (2023)
+  year: 2023
+  date: '2023'
+  type: journal
+  doi: 10.1093/mnras/stad1302
+  arxiv: '2302.09870'
+  url: https://openalex.org/W4368351232
+  key: doi:10.1093/mnras/stad1302
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 6
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1093/mnras/stad1302
+  - label: arXiv
+    url: https://arxiv.org/abs/2302.09870
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2634770
+- include: true
+  highlight: false
+  title: Dynamics and gravitational wave signatures of highly magnetized compact stars
+  authors:
+  - Anson Ka Long Yip
+  - Man Yin Leung
+  - Patrick Chi-Kit Cheong
+  - '**Tjonnie Guang Feng Li**'
+  venue: PoS ICRC2023, 1518 (2023)
+  year: 2023
+  date: '2023'
+  type: conference
+  doi: 10.22323/1.444.1518
+  url: https://openalex.org/W4385306019
+  key: doi:10.22323/1.444.1518
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 4
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.22323/1.444.1518
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2681473
+- include: true
+  highlight: false
+  title: Detectability of microlensed gravitational waves
+  authors:
+  - Simon M.C. Yeung
+  - Mark H.Y. Cheung
+  - Eungwang Seo
+  - Joseph A.J. Gais
+  - Otto A. Hannuksela
+  - '**Tjonnie G.F. Li**'
+  venue: Mon.Not.Roy.Astron.Soc. 526, 2230 (2023)
+  year: 2023
+  date: '2023'
+  type: journal
+  doi: 10.1093/mnras/stad2772
+  arxiv: '2112.07635'
+  url: https://openalex.org/W4386754787
+  key: doi:10.1093/mnras/stad2772
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 6
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1093/mnras/stad2772
+  - label: arXiv
+    url: https://arxiv.org/abs/2112.07635
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2714052
+- include: true
+  highlight: false
+  title: Constraints on the Cosmic Expansion History from GWTC–3
+  authors:
+  - R. Abbott et al. (incl. **T.G. F. Li**)
+  venue: Astrophys.J. 949, 76 (2023)
+  year: 2023
+  date: '2023'
+  type: journal
+  doi: 10.3847/1538-4357/ac74bb
+  arxiv: '2111.03604'
+  key: doi:10.3847/1538-4357/ac74bb
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1677
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ac74bb
+  - label: arXiv
+    url: https://arxiv.org/abs/2111.03604
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1961565
+  collaborations:
+  - LIGO Scientific
+  - Virgo
+  - KAGRA
+- include: true
+  highlight: false
+  title: Testing the robustness of simulation-based gravitational-wave population inference
+  authors:
+  - Damon H.T. Cheung
+  - Kaze W.K. Wong
+  - Otto A. Hannuksela
+  - '**Tjonnie G.F. Li**'
+  - Shirley Ho
+  venue: Phys.Rev.D 106, 083014 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.1103/PhysRevD.106.083014
+  arxiv: '2112.06707'
+  url: https://openalex.org/W4200631430
+  key: doi:10.1103/physrevd.106.083014
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 5
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.106.083014
+  - label: arXiv
+    url: https://arxiv.org/abs/2112.06707
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1989109
+- include: true
+  highlight: false
+  title: Signal space in the triangular network of the Einstein Telescope
+  authors:
+  - Isaac C.F. Wong
+  - '**Tjonnie G.F. Li**'
+  venue: Phys.Rev.D 105, 084002 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.1103/PhysRevD.105.084002
+  arxiv: '2108.05108'
+  url: https://openalex.org/W3192593541
+  key: doi:10.1103/physrevd.105.084002
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 2
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.105.084002
+  - label: arXiv
+    url: https://arxiv.org/abs/2108.05108
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1903602
+- include: true
+  highlight: false
+  title: Searches for Gravitational Waves from Known Pulsars at Two Harmonics in the Second and Third LIGO-Virgo Observing
+    Runs
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Astrophys.J. 935, 1 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.3847/1538-4357/ac6acf
+  arxiv: '2111.13106'
+  key: doi:10.3847/1538-4357/ac6acf
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1696
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ac6acf
+  - label: arXiv
+    url: https://arxiv.org/abs/2111.13106
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1977303
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: Search of the early O3 LIGO data for continuous gravitational waves from the Cassiopeia A and Vela Jr. supernova
+    remnants
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.D 105, 082005 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.1103/PhysRevD.105.082005
+  arxiv: '2111.15116'
+  key: doi:10.1103/physrevd.105.082005
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1412
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.105.082005
+  - label: arXiv
+    url: https://arxiv.org/abs/2111.15116
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1980754
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+- include: true
+  highlight: false
+  title: Search for intermediate-mass black hole binaries in the third observing run of Advanced LIGO and Advanced Virgo
+  authors:
+  - Rich Abbott et al. (incl. **Tjonnie G.F. Li**)
+  venue: Astron.Astrophys. 659, A84 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.1051/0004-6361/202141452
+  arxiv: '2105.15120'
+  key: doi:10.1051/0004-6361/202141452
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1639
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1051/0004-6361/202141452
+  - label: arXiv
+    url: https://arxiv.org/abs/2105.15120
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1866180
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: Search for gravitational waves from Scorpius X-1 with a hidden Markov model in O3 LIGO data
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.D 106, 062002 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.1103/PhysRevD.106.062002
+  arxiv: '2201.10104'
+  key: doi:10.1103/physrevd.106.062002
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1669
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.106.062002
+  - label: arXiv
+    url: https://arxiv.org/abs/2201.10104
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2017602
+  collaborations:
+  - KAGRA
+  - VIRGO
+  - LIGO Scientific
+- include: true
+  highlight: false
+  title: Search for continuous gravitational waves from 20 accreting millisecond x-ray pulsars in O3 LIGO data
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.D 105, 022002 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.1103/PhysRevD.105.022002
+  arxiv: '2109.09255'
+  key: doi:10.1103/physrevd.105.022002
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1634
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.105.022002
+  - label: arXiv
+    url: https://arxiv.org/abs/2109.09255
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1924407
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: Search for continuous gravitational wave emission from the Milky Way center in O3 LIGO-Virgo data
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.D 106, 042003 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.1103/PhysRevD.106.042003
+  arxiv: '2204.04523'
+  key: doi:10.1103/physrevd.106.042003
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1667
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.106.042003
+  - label: arXiv
+    url: https://arxiv.org/abs/2204.04523
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2065338
+  collaborations:
+  - KAGRA
+  - LIGO Scientific
+  - VIRGO
+- include: true
+  highlight: false
+  title: Search for Subsolar-Mass Binaries in the First Half of Advanced LIGO’s and Advanced Virgo’s Third Observing Run
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.Lett. 129, 061104 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.1103/PhysRevLett.129.061104
+  arxiv: '2109.12197'
+  key: doi:10.1103/physrevlett.129.061104
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1634
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevLett.129.061104
+  - label: arXiv
+    url: https://arxiv.org/abs/2109.12197
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1929315
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: Search for Gravitational Waves Associated with Gamma-Ray Bursts Detected by Fermi and Swift during the LIGO–Virgo
+    Run O3b
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Astrophys.J. 928, 186 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.3847/1538-4357/ac532b
+  arxiv: '2111.03608'
+  key: doi:10.3847/1538-4357/ac532b
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1422
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ac532b
+  - label: arXiv
+    url: https://arxiv.org/abs/2111.03608
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1961666
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: SPIIR online coherent pipeline to search for gravitational waves from compact binary coalescences
+  authors:
+  - Qi Chu et al. (incl. **Tjonnie G.F. Li**)
+  venue: Phys.Rev.D 105, 024023 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.1103/PhysRevD.105.024023
+  arxiv: '2011.06787'
+  url: https://openalex.org/W4206262510
+  key: doi:10.1103/physrevd.105.024023
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 19
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.105.024023
+  - label: arXiv
+    url: https://arxiv.org/abs/2011.06787
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1830218
+- include: true
+  highlight: false
+  title: Oscillations of highly magnetized non-rotating neutron stars
+  authors:
+  - Man Yin Leung
+  - Anson Ka Long Yip
+  - Patrick Chi-Kit Cheong
+  - '**Tjonnie Guang Feng Li**'
+  venue: Commun.Phys. 5, 334 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.1038/s42005-022-01112-w
+  arxiv: '2303.05684'
+  url: https://openalex.org/W4312116049
+  key: doi:10.1038/s42005-022-01112-w
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 4
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1038/s42005-022-01112-w
+  - label: arXiv
+    url: https://arxiv.org/abs/2303.05684
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2619896
+- include: true
+  highlight: false
+  title: Optimal sensor fusion method for active vibration isolation systems in ground-based gravitational-wave detectors
+  authors:
+  - T.T.L. Tsang
+  - '**T.G.F. Li**'
+  - T. Dehaeze
+  - C. Collette
+  venue: Class.Quant.Grav. 39, 185007 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.1088/1361-6382/ac8780
+  arxiv: '2111.14355'
+  key: doi:10.1088/1361-6382/ac8780
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 4
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1088/1361-6382/ac8780
+  - label: arXiv
+    url: https://arxiv.org/abs/2111.14355
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1979041
+- include: true
+  highlight: false
+  title: Narrowband Searches for Continuous and Long-duration Transient Gravitational Waves from Known Pulsars in the LIGO-Virgo
+    Third Observing Run
+  authors:
+  - R. Abbott et al. (incl. **T.G. F. Li**)
+  venue: Astrophys.J. 932, 133 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.3847/1538-4357/ac6ad0
+  arxiv: '2112.10990'
+  key: doi:10.3847/1538-4357/ac6ad0
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1659
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ac6ad0
+  - label: arXiv
+    url: https://arxiv.org/abs/2112.10990
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1995402
+  collaborations:
+  - LIGO Scientific
+  - KAGRA
+  - VIRGO
+- include: true
+  highlight: false
+  title: Model-based Cross-correlation Search for Gravitational Waves from the Low-mass X-Ray Binary Scorpius X-1 in LIGO
+    O3 Data
+  authors:
+  - R. Abbott et al. (incl. **T.G. F. Li**)
+  venue: Astrophys.J.Lett. 941, L30 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.3847/2041-8213/aca1b0
+  arxiv: '2209.02863'
+  key: doi:10.3847/2041-8213/aca1b0
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1696
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/aca1b0
+  - label: arXiv
+    url: https://arxiv.org/abs/2209.02863
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2148230
+  collaborations:
+  - LIGO Scientific
+  - KAGRA
+  - VIRGO
+- include: true
+  highlight: false
+  title: Investigation of the effects of non-Gaussian noise transients and their mitigation in parameterized gravitational-wave
+    tests of general relativity
+  authors:
+  - Jack Y.L. Kwok
+  - Rico K.L. Lo
+  - Alan J. Weinstein
+  - '**Tjonnie G.F. Li**'
+  venue: Phys.Rev.D 105, 024066 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.1103/PhysRevD.105.024066
+  arxiv: '2109.07642'
+  url: https://openalex.org/W4207011339
+  key: doi:10.1103/physrevd.105.024066
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 4
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.105.024066
+  - label: arXiv
+    url: https://arxiv.org/abs/2109.07642
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1922773
+- include: true
+  highlight: false
+  title: Inferring the Intermediate-mass Black Hole Number Density from Gravitational-wave Lensing Statistics
+  authors:
+  - Joseph Gais
+  - Ken K.Y. Ng
+  - Eungwang Seo
+  - Kaze W.K. Wong
+  - '**Tjonnie G.F. Li**'
+  venue: Astrophys.J.Lett. 932, L4 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.3847/2041-8213/ac7052
+  arxiv: '2201.01817'
+  url: https://openalex.org/W4221151784
+  key: doi:10.3847/2041-8213/ac7052
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 5
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/ac7052
+  - label: arXiv
+    url: https://arxiv.org/abs/2201.01817
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2004467
+- include: true
+  highlight: false
+  title: Improving Detection of Gravitational-wave Microlensing Using Repeated Signals Induced by Strong Lensing
+  authors:
+  - Eungwang Seo
+  - Otto A. Hannuksela
+  - '**Tjonnie G.F. Li**'
+  venue: Astrophys.J. 932, 50 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.3847/1538-4357/ac6dea
+  arxiv: '2110.03308'
+  url: https://openalex.org/W4282977221
+  key: doi:10.3847/1538-4357/ac6dea
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 3
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ac6dea
+  - label: arXiv
+    url: https://arxiv.org/abs/2110.03308
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2098126
+- include: true
+  highlight: false
+  title: First joint observation by the underground gravitational-wave detector KAGRA with GEO 600
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: PTEP 2022, 063F01 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.1093/ptep/ptac073
+  arxiv: '2203.01270'
+  key: doi:10.1093/ptep/ptac073
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1669
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1093/ptep/ptac073
+  - label: arXiv
+    url: https://arxiv.org/abs/2203.01270
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2043764
+  collaborations:
+  - KAGRA
+  - VIRGO
+  - LIGO Scientific
+- include: true
+  highlight: false
+  title: Deep Learning–based Search for Microlensing Signature from Binary Black Hole Events in GWTC-1 and -2
+  authors:
+  - Kyungmin Kim
+  - Joongoo Lee
+  - Otto A. Hannuksela
+  - '**Tjonnie G.F. Li**'
+  venue: Astrophys.J. 938, 157 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.3847/1538-4357/ac92f3
+  arxiv: '2206.08234'
+  url: https://openalex.org/W4307272348
+  key: doi:10.3847/1538-4357/ac92f3
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 4
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ac92f3
+  - label: arXiv
+    url: https://arxiv.org/abs/2206.08234
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2097117
+- include: true
+  highlight: false
+  title: Constraints on dark photon dark matter using data from LIGO’s and Virgo’s third observing run
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.D 105, 063030 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.1103/PhysRevD.105.063030
+  arxiv: '2105.13085'
+  key: doi:10.1103/physrevd.105.063030
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1627
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.105.063030
+  - label: arXiv
+    url: https://arxiv.org/abs/2105.13085
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1865806
+  collaborations:
+  - LIGO Scientific
+  - KAGRA
+  - Virgo
+- include: true
+  highlight: false
+  title: 'An Extension of Gmunu: General-relativistic Resistive Magnetohydrodynamics Based on Staggered-meshed Constrained
+    Transport with Elliptic Cleaning'
+  authors:
+  - Patrick Chi-Kit Cheong
+  - David Yat Tung Pong
+  - Anson Ka Long Yip
+  - '**Tjonnie Guang Feng Li**'
+  venue: Astrophys.J.Suppl. 261, 22 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.3847/1538-4365/ac6cec
+  arxiv: '2110.03732'
+  url: https://openalex.org/W3206039792
+  key: doi:10.3847/1538-4365/ac6cec
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 4
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4365/ac6cec
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2655146
+- include: true
+  highlight: false
+  title: All-sky, all-frequency directional search for persistent gravitational waves from Advanced LIGO’s and Advanced Virgo’s
+    first three observing runs
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.D 105, 122001 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.1103/PhysRevD.105.122001
+  arxiv: '2110.09834'
+  key: doi:10.1103/physrevd.105.122001
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1627
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.105.122001
+  - label: arXiv
+    url: https://arxiv.org/abs/2110.09834
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1947455
+  collaborations:
+  - KAGRA
+  - Virgo
+  - LIGO Scientific
+- include: true
+  highlight: false
+  title: All-sky search for gravitational wave emission from scalar boson clouds around spinning black holes in LIGO O3 data
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.D 105, 102001 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.1103/PhysRevD.105.102001
+  arxiv: '2111.15507'
+  key: doi:10.1103/physrevd.105.102001
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1667
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.105.102001
+  - label: arXiv
+    url: https://arxiv.org/abs/2111.15507
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1981120
+  collaborations:
+  - LIGO Scientific
+  - Virgo
+  - KAGRA
+- include: true
+  highlight: false
+  title: All-sky search for continuous gravitational waves from isolated neutron stars using Advanced LIGO and Advanced Virgo
+    O3 data
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.D 106, 102008 (2022)
+  year: 2022
+  date: '2022'
+  type: journal
+  doi: 10.1103/PhysRevD.106.102008
+  arxiv: '2201.00697'
+  key: doi:10.1103/physrevd.106.102008
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1669
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.106.102008
+  - label: arXiv
+    url: https://arxiv.org/abs/2201.00697
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1999893
+  collaborations:
+  - KAGRA
+  - LIGO Scientific
+  - VIRGO
+- include: true
+  highlight: false
+  title: On the identification of individual image types of a lensed system using higher-order modes.
+  authors:
+  - Justin Janquart
+  - E. G. Seo
+  - O. A. Hannuksela
+  - '**Tjonnie G. F. Li**'
+  - Chris Van Den Broeck
+  venue: arXiv (Cornell University) (2021)
+  year: 2021
+  date: '2021-10-13'
+  type: preprint
+  url: https://openalex.org/W3205203037
+  key: title:on-the-identification-of-individual-image-types-of-a-lensed-system-using-higher-order-modes
+  source: openalex
+  members:
+  - tjonnie-li
+  author_count: 5
+  collaboration: false
+  links:
+  - label: Link
+    url: https://openalex.org/W3205203037
+- include: true
+  highlight: false
+  title: Upper limits on the isotropic gravitational-wave background from Advanced LIGO and Advanced Virgo’s third observing
+    run
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.D 104, 022004 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1103/PhysRevD.104.022004
+  arxiv: '2101.12130'
+  key: doi:10.1103/physrevd.104.022004
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1588
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.104.022004
+  - label: arXiv
+    url: https://arxiv.org/abs/2101.12130
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1843263
+  collaborations:
+  - KAGRA
+  - Virgo
+  - LIGO Scientific
+- include: true
+  highlight: false
+  title: Tests of general relativity with binary black holes from the second LIGO-Virgo gravitational-wave transient catalog
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.D 103, 122002 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1103/PhysRevD.103.122002
+  arxiv: '2010.14529'
+  key: doi:10.1103/physrevd.103.122002
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1346
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.103.122002
+  - label: arXiv
+    url: https://arxiv.org/abs/2010.14529
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1826681
+  collaborations:
+  - LIGO Scientific
+  - Virgo
+- include: true
+  highlight: false
+  title: Template bank for spinning compact binary mergers in the second observation run of Advanced LIGO and the first observation
+    run of Advanced Virgo
+  authors:
+  - Debnandini Mukherjee et al. (incl. **Tjonnie G.F. Li**)
+  venue: Phys.Rev.D 103, 084047 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1103/PhysRevD.103.084047
+  arxiv: '1812.05121'
+  key: doi:10.1103/physrevd.103.084047
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 28
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.103.084047
+  - label: arXiv
+    url: https://arxiv.org/abs/1812.05121
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1708951
+- include: true
+  highlight: false
+  title: Stellar-mass microlensing of gravitational waves
+  authors:
+  - Mark H.Y. Cheung
+  - Joseph Gais
+  - Otto A. Hannuksela
+  - '**Tjonnie G.F. Li**'
+  venue: Mon.Not.Roy.Astron.Soc. 503, 3326 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1093/mnras/stab579
+  arxiv: '2012.07800'
+  key: doi:10.1093/mnras/stab579
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 4
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1093/mnras/stab579
+  - label: arXiv
+    url: https://arxiv.org/abs/2012.07800
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1836450
+- include: true
+  highlight: false
+  title: Searching for ultralight bosons within spin measurements of a population of binary black hole mergers
+  authors:
+  - Ken K.Y. Ng
+  - Otto A. Hannuksela
+  - Salvatore Vitale
+  - '**Tjonnie G.F. Li**'
+  venue: Phys.Rev.D 103, 063010 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1103/PhysRevD.103.063010
+  arxiv: '1908.02312'
+  key: doi:10.1103/physrevd.103.063010
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 4
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.103.063010
+  - label: arXiv
+    url: https://arxiv.org/abs/1908.02312
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1748292
+- include: true
+  highlight: false
+  title: Searching for ultralight bosons with supermassive black hole ringdown
+  authors:
+  - Adrian Ka-Wai Chung
+  - Joseph Gais
+  - Mark Ho-Yeuk Cheung
+  - '**Tjonnie G.F. Li**'
+  venue: Phys.Rev.D 104, 084028 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1103/PhysRevD.104.084028
+  arxiv: '2107.05492'
+  url: https://openalex.org/W3179192552
+  key: doi:10.1103/physrevd.104.084028
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 4
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.104.084028
+  - label: arXiv
+    url: https://arxiv.org/abs/2107.05492
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1881748
+- include: true
+  highlight: false
+  title: Searches for Continuous Gravitational Waves from Young Supernova Remnants in the Early Third Observing Run of Advanced
+    LIGO and Virgo
+  authors:
+  - R. Abbott et al. (incl. **T.G. F. Li**)
+  venue: Astrophys.J. 921, 80 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.3847/1538-4357/ac17ea
+  arxiv: '2105.11641'
+  key: doi:10.3847/1538-4357/ac17ea
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1589
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ac17ea
+  - label: arXiv
+    url: https://arxiv.org/abs/2105.11641
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1865057
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+  - Virgo
+- include: true
+  highlight: false
+  title: Search for gravitational waves from Scorpius X-1 in the second Advanced LIGO observing run with an improved hidden
+    Markov model
+  authors:
+  - B.P. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.D 104, 109903 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1103/PhysRevD.104.109903
+  arxiv: '1906.12040'
+  key: doi:10.1103/physrevd.104.109903
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1135
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.104.109903
+  - label: arXiv
+    url: https://arxiv.org/abs/1906.12040
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1742196
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+- include: true
+  highlight: false
+  title: Search for anisotropic gravitational-wave backgrounds using data from Advanced LIGO and Advanced Virgo’s first three
+    observing runs
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.D 104, 022005 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1103/PhysRevD.104.022005
+  arxiv: '2103.08520'
+  key: doi:10.1103/physrevd.104.022005
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1591
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.104.022005
+  - label: arXiv
+    url: https://arxiv.org/abs/2103.08520
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1851731
+  collaborations:
+  - KAGRA
+  - Virgo
+  - LIGO Scientific
+- include: true
+  highlight: false
+  title: Search for Lensing Signatures in the Gravitational-Wave Observations from the First Half of LIGO–Virgo’s Third Observing
+    Run
+  authors:
+  - R. Abbott et al. (incl. **T.G. F. Li**)
+  venue: Astrophys.J. 923, 14 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.3847/1538-4357/ac23db
+  arxiv: '2105.06384'
+  url: https://openalex.org/W3160029929
+  key: doi:10.3847/1538-4357/ac23db
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1378
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ac23db
+  - label: arXiv
+    url: https://arxiv.org/abs/2105.06384
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1863186
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+- include: true
+  highlight: false
+  title: Search for Gravitational Waves Associated with Gamma-Ray Bursts Detected by Fermi and Swift During the LIGO-Virgo
+    Run O3a
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Astrophys.J. 915, 86 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.3847/1538-4357/abee15
+  arxiv: '2010.14550'
+  key: doi:10.3847/1538-4357/abee15
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1251
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/abee15
+  - label: arXiv
+    url: https://arxiv.org/abs/2010.14550
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1826678
+  collaborations:
+  - LIGO Scientific
+  - Virgo
+- include: true
+  highlight: false
+  title: Ringdown spectroscopy of rotating black holes pierced by cosmic strings
+  authors:
+  - Mark Ho-Yeuk Cheung
+  - Levi Wing-Hei Poon
+  - Adrian Ka-Wai Chung
+  - '**Tjonnie Guang Feng Li**'
+  venue: JCAP 02, 040 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1088/1475-7516/2021/02/040
+  arxiv: '2002.01695'
+  key: doi:10.1088/1475-7516/2021/02/040
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 4
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1088/1475-7516/2021/02/040
+  - label: arXiv
+    url: https://arxiv.org/abs/2002.01695
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1778722
+- include: true
+  highlight: false
+  title: Population Properties of Compact Objects from the Second LIGO-Virgo Gravitational-Wave Transient Catalog
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Astrophys.J.Lett. 913, L7 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.3847/2041-8213/abe949
+  arxiv: '2010.14533'
+  key: doi:10.3847/2041-8213/abe949
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1340
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/abe949
+  - label: arXiv
+    url: https://arxiv.org/abs/2010.14533
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1826636
+  collaborations:
+  - LIGO Scientific
+  - Virgo
+- include: true
+  highlight: false
+  title: 'Overview of KAGRA : KAGRA science'
+  authors:
+  - T. Akutsu et al. (incl. **T.G.F. Li**)
+  venue: PTEP 2021, 05A103 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1093/ptep/ptaa120
+  arxiv: '2008.02921'
+  key: doi:10.1093/ptep/ptaa120
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 246
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1093/ptep/ptaa120
+  - label: arXiv
+    url: https://arxiv.org/abs/2008.02921
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1810572
+  collaborations:
+  - KAGRA
+- include: true
+  highlight: false
+  title: Open data from the first and second observing runs of Advanced LIGO and Advanced Virgo
+  authors:
+  - Rich Abbott et al. (incl. **Tjonnie G.F. Li**)
+  venue: SoftwareX 13, 100658 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1016/j.softx.2021.100658
+  arxiv: '1912.11716'
+  key: doi:10.1016/j.softx.2021.100658
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1246
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1016/j.softx.2021.100658
+  - label: arXiv
+    url: https://arxiv.org/abs/1912.11716
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1773351
+  collaborations:
+  - LIGO Scientific
+  - Virgo
+- include: true
+  highlight: false
+  title: On the Identification of Individual Gravitational-wave Image Types of a Lensed System Using Higher-order Modes
+  authors:
+  - Justin Janquart
+  - Eungwang Seo
+  - Otto A. Hannuksela
+  - '**Tjonnie G.F. Li**'
+  - Chris Van Den Broeck
+  venue: Astrophys.J.Lett. 923, L1 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.3847/2041-8213/ac3bcf
+  arxiv: '2110.06873'
+  url: https://openalex.org/W4200170089
+  key: doi:10.3847/2041-8213/ac3bcf
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 5
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/ac3bcf
+  - label: arXiv
+    url: https://arxiv.org/abs/2110.06873
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1944263
+- include: true
+  highlight: false
+  title: Observation of Gravitational Waves from Two Neutron Star–Black Hole Coalescences
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Astrophys.J.Lett. 915, L5 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.3847/2041-8213/ac082e
+  arxiv: '2106.15163'
+  key: doi:10.3847/2041-8213/ac082e
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1599
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/ac082e
+  - label: arXiv
+    url: https://arxiv.org/abs/2106.15163
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1871882
+  collaborations:
+  - LIGO Scientific
+  - KAGRA
+  - VIRGO
+- include: true
+  highlight: false
+  title: Lensing of gravitational waves as a novel probe of graviton mass
+  authors:
+  - Adrian Ka-Wai Chung
+  - '**Tjonnie Guang Feng Li**'
+  venue: Phys.Rev.D 104, 124060 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1103/PhysRevD.104.124060
+  arxiv: '2106.09630'
+  url: https://openalex.org/W3173064806
+  key: doi:10.1103/physrevd.104.124060
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 2
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.104.124060
+  - label: arXiv
+    url: https://arxiv.org/abs/2106.09630
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1869090
+- include: true
+  highlight: false
+  title: Identification of Lensed Gravitational Waves with Deep Learning
+  authors:
+  - Kyungmin Kim
+  - Joongoo Lee
+  - Robin S.H. Yuen
+  - Otto Akseli Hannuksela
+  - '**Tjonnie G.F. Li**'
+  venue: Astrophys.J. 915, 119 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.3847/1538-4357/ac0143
+  arxiv: '2010.12093'
+  key: doi:10.3847/1538-4357/ac0143
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 5
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ac0143
+  - label: arXiv
+    url: https://arxiv.org/abs/2010.12093
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1825955
+- include: true
+  highlight: false
+  title: Gravitational-wave Asteroseismology with f-modes from Neutron Star Binaries at the Merger Phase
+  authors:
+  - Harry Ho-Yin Ng
+  - Patrick Chi-Kit Cheong
+  - Lap-Ming Lin
+  - '**Tjonnie Guang Feng Li**'
+  venue: Astrophys.J. 915, 108 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.3847/1538-4357/ac0141
+  arxiv: '2012.08263'
+  key: doi:10.3847/1538-4357/ac0141
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 4
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ac0141
+  - label: arXiv
+    url: https://arxiv.org/abs/2012.08263
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1836773
+- include: true
+  highlight: false
+  title: 'Gmunu: paralleled, grid-adaptive, general-relativistic magnetohydrodynamics in curvilinear geometries in dynamical
+    space–times'
+  authors:
+  - Patrick Chi-Kit Cheong
+  - Alan Tsz-Lok Lam
+  - Harry Ho-Yin Ng
+  - '**Tjonnie Guang Feng Li**'
+  venue: Mon.Not.Roy.Astron.Soc. 508, 2279 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1093/mnras/stab2606
+  arxiv: '2012.07322'
+  key: doi:10.1093/mnras/stab2606
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 4
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1093/mnras/stab2606
+  - label: arXiv
+    url: https://arxiv.org/abs/2012.07322
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1836411
+- include: true
+  highlight: false
+  title: 'GWTC-2: Compact Binary Coalescences Observed by LIGO and Virgo During the First Half of the Third Observing Run'
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.X 11, 021053 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1103/PhysRevX.11.021053
+  arxiv: '2010.14527'
+  key: doi:10.1103/physrevx.11.021053
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1352
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevX.11.021053
+  - label: arXiv
+    url: https://arxiv.org/abs/2010.14527
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1826648
+  collaborations:
+  - LIGO Scientific
+  - Virgo
+- include: true
+  highlight: false
+  title: Finding the Ultralight Boson from a Black Hole’s Ringdown
+  authors:
+  - Joseph Gais
+  - Adrian Ka-Wai Chung
+  - Mark Ho-Yeuk Cheung
+  - '**Tjonnie G.F. Li**'
+  venue: J.Phys.Conf.Ser. 2156, 012078 (2021)
+  year: 2021
+  date: '2021'
+  type: conference
+  doi: 10.1088/1742-6596/2156/1/012078
+  url: https://openalex.org/W4213071205
+  key: doi:10.1088/1742-6596/2156/1/012078
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 4
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1088/1742-6596/2156/1/012078
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/2037534
+- include: true
+  highlight: false
+  title: 'Diving below the Spin-down Limit: Constraints on Gravitational Waves from the Energetic Young Pulsar PSR J0537-6910'
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Astrophys.J. 913, L27 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.3847/2041-8213/abffcd
+  arxiv: '2012.12926'
+  key: doi:10.3847/2041-8213/abffcd
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1585
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/abffcd
+  - label: arXiv
+    url: https://arxiv.org/abs/2012.12926
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1838201
+  collaborations:
+  - LIGO Scientific
+  - Virgo
+  - KAGRA
+- include: true
+  highlight: false
+  title: Constraints on Ultralight Scalar Bosons within Black Hole Spin Measurements from the LIGO-Virgo GWTC-2
+  authors:
+  - Ken K.Y. Ng
+  - Salvatore Vitale
+  - Otto A. Hannuksela
+  - '**Tjonnie G.F. Li**'
+  venue: Phys.Rev.Lett. 126, 151102 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1103/PhysRevLett.126.151102
+  arxiv: '2011.06010'
+  key: doi:10.1103/physrevlett.126.151102
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 4
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevLett.126.151102
+  - label: arXiv
+    url: https://arxiv.org/abs/2011.06010
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1829760
+- include: true
+  highlight: false
+  title: Constraints on Cosmic Strings Using Data from the Third Advanced LIGO–Virgo Observing Run
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.Lett. 126, 241102 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1103/PhysRevLett.126.241102
+  arxiv: '2101.12248'
+  key: doi:10.1103/physrevlett.126.241102
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1587
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevLett.126.241102
+  - label: arXiv
+    url: https://arxiv.org/abs/2101.12248
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1844012
+  collaborations:
+  - LIGO Scientific
+  - Virgo
+  - KAGRA
+- include: true
+  highlight: false
+  title: Constraints from LIGO O3 Data on Gravitational-wave Emission Due to R-modes in the Glitching Pulsar PSR J0537–6910
+  authors:
+  - R. Abbott et al. (incl. **T.G. F. Li**)
+  venue: Astrophys.J. 922, 71 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.3847/1538-4357/ac0d52
+  arxiv: '2104.14417'
+  key: doi:10.3847/1538-4357/ac0d52
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1598
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ac0d52
+  - label: arXiv
+    url: https://arxiv.org/abs/2104.14417
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1861382
+  collaborations:
+  - LIGO Scientific
+  - Virgo
+  - KAGRA
+- include: true
+  highlight: false
+  title: All-sky search in early O3 LIGO data for continuous gravitational-wave signals from unknown neutron stars in binary
+    systems
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.D 103, 064017 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1103/PhysRevD.103.064017
+  arxiv: '2012.12128'
+  key: doi:10.1103/physrevd.103.064017
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1370
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.103.064017
+  - label: arXiv
+    url: https://arxiv.org/abs/2012.12128
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1837916
+  collaborations:
+  - LIGO Scientific
+  - Virgo
+  - VIRGO
+- include: true
+  highlight: false
+  title: All-sky search for short gravitational-wave bursts in the third Advanced LIGO and Advanced Virgo run
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.D 104, 122004 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1103/PhysRevD.104.122004
+  arxiv: '2107.03701'
+  key: doi:10.1103/physrevd.104.122004
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1630
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.104.122004
+  - label: arXiv
+    url: https://arxiv.org/abs/2107.03701
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1880104
+  collaborations:
+  - KAGRA
+  - VIRGO
+  - LIGO Scientific
+- include: true
+  highlight: false
+  title: All-sky search for long-duration gravitational-wave bursts in the third Advanced LIGO and Advanced Virgo run
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.D 104, 102001 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1103/PhysRevD.104.102001
+  arxiv: '2107.13796'
+  key: doi:10.1103/physrevd.104.102001
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1627
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.104.102001
+  - label: arXiv
+    url: https://arxiv.org/abs/2107.13796
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1895599
+  collaborations:
+  - KAGRA
+  - VIRGO
+  - LIGO Scientific
+- include: true
+  highlight: false
+  title: All-sky search for continuous gravitational waves from isolated neutron stars in the early O3 LIGO data
+  authors:
+  - R. Abbott et al. (incl. **T.G.F. Li**)
+  venue: Phys.Rev.D 104, 082004 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.1103/PhysRevD.104.082004
+  arxiv: '2107.00600'
+  url: https://openalex.org/W3174039195
+  key: doi:10.1103/physrevd.104.082004
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1587
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.104.082004
+  - label: arXiv
+    url: https://arxiv.org/abs/2107.00600
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1874412
+  collaborations:
+  - KAGRA
+  - VIRGO
+  - LIGO Scientific
+- include: true
+  highlight: false
+  title: A Gravitational-wave Measurement of the Hubble Constant Following the Second Observing Run of Advanced LIGO and Virgo
+  authors:
+  - B.P. Abbott et al. (incl. **T.G. F. Li**)
+  venue: Astrophys.J. 909, 218 (2021)
+  year: 2021
+  date: '2021'
+  type: journal
+  doi: 10.3847/1538-4357/abdcb7
+  arxiv: '1908.06060'
+  key: doi:10.3847/1538-4357/abdcb7
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 1189
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/abdcb7
+  - label: arXiv
+    url: https://arxiv.org/abs/1908.06060
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/1749963
+  collaborations:
+  - LIGO Scientific
+  - Virgo
+  - VIRGO

@@ -53,6 +53,15 @@
                         "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{3}[0-9X]$",
                         "description": "ORCID iD; required for the publication sync to pick this person up."
                     },
+                    "inspire": {
+                        "type": "string",
+                        "description": "INSPIRE-HEP author identifier (BAI), e.g. 'T.G.F.Li.1'. Pin it explicitly; name search is unreliable."
+                    },
+                    "openalex": {
+                        "type": "string",
+                        "pattern": "^A[0-9]+$",
+                        "description": "OpenAlex author id, e.g. 'A5047727655'. Pin it: one researcher is often split across several entities."
+                    },
                     "start": {
                         "type": "string",
                         "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$",
@@ -93,7 +102,9 @@
                     }
                 },
                 "dependentRequired": {
-                    "orcid": ["start"]
+                    "orcid": ["start"],
+                    "inspire": ["start"],
+                    "openalex": ["start"]
                 }
             }
         }

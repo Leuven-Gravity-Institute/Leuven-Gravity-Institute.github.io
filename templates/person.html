@@ -36,11 +36,19 @@
     {% if person.publications %}
     <p class="muted">
       {{ person.publications | length }} publication{{ '' if person.publications | length == 1 else 's' }}
-      from {{ person.name }}'s time with the group, drawn from their ORCID record.
+      from {{ person.name }}'s time with the group.
     </p>
+    {% if person.group_publications %}
     <ul class="pub-list">
-      {% for pub in person.publications %}{{ pub_item(pub) }}{% endfor %}
+      {% for pub in person.group_publications %}{{ pub_item(pub) }}{% endfor %}
     </ul>
+    {% endif %}
+    {% if person.collaboration_publications %}
+    <h3 class="group-heading">Collaboration publications</h3>
+    <ul class="pub-list">
+      {% for pub in person.collaboration_publications %}{{ pub_item(pub) }}{% endfor %}
+    </ul>
+    {% endif %}
     {% else %}
     <p class="muted">
       No publications are listed yet for {{ person.name }}'s time with the org.

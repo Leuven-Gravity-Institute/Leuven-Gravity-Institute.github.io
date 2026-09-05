@@ -131,7 +131,10 @@ def _prepare_people(
     for person in people:
         person["url"] = _person_url(person)
         person["group_name"] = (groups_by_id.get(person.get("group")) or {}).get("name", "")
-        person["publications"] = [pub for pub in publications if person["id"] in (pub.get("members") or [])]
+        own = [pub for pub in publications if person["id"] in (pub.get("members") or [])]
+        person["publications"] = own
+        person["group_publications"] = [pub for pub in own if not pub.get("collaboration")]
+        person["collaboration_publications"] = [pub for pub in own if pub.get("collaboration")]
     return people
 
 
@@ -206,6 +209,12 @@ def _build_context(content: dict[str, Any], today: date | None = None) -> dict[s
     news = sorted(_items(content, "news"), key=lambda item: str(item.get("date", "")), reverse=True)
     upcoming_events, past_events = _split_events(_items(content, "events"), today)
 
+    # Large-collaboration papers are separated out: on a list of this shape they
+    # would otherwise bury the group's own work, since one can carry thousands
+    # of authors.
+    group_led = [pub for pub in publications if not pub.get("collaboration")]
+    collaboration = [pub for pub in publications if pub.get("collaboration")]
+
     return {
         "site": site_doc.get("site", {}),
         "org": site_doc.get("org", {}),
@@ -222,8 +231,11 @@ def _build_context(content: dict[str, Any], today: date | None = None) -> dict[s
         "past_events": past_events,
         "research": _items(content, "research"),
         "publications": publications,
-        "publications_by_year": _by_year(publications),
-        "selected_publications": [pub for pub in publications if pub.get("highlight")],
+        "group_publications": group_led,
+        "publications_by_year": _by_year(group_led),
+        "collaboration_publications": collaboration,
+        "collaboration_by_year": _by_year(collaboration),
+        "selected_publications": [pub for pub in group_led if pub.get("highlight")],
         "software_groups": _group_by(_items(content, "software"), "category"),
         "teaching": _items(content, "teaching"),
         "openings": _items(content, "join"),

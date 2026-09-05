@@ -6,7 +6,6 @@ template is caught here rather than in the deploy workflow.
 
 from __future__ import annotations
 
-import html
 import shutil
 from collections.abc import Iterator
 from datetime import date
@@ -15,6 +14,7 @@ from typing import Any, ClassVar
 from xml.etree import ElementTree
 
 import pytest
+from markupsafe import escape
 
 from leuven_gravity_institute.site import SitePaths, build_site, load_content, validate_content
 from leuven_gravity_institute.site.builder import _build_context, _group_people, _split_events
@@ -88,8 +88,9 @@ class TestBuild:
         person = next(p for p in content["people"]["items"] if p["id"] == "isaac-wong")
         page = (built / "people" / person["slug"] / "index.html").read_text(encoding="utf-8")
         for pub in publications:
-            # Titles are HTML-escaped on the way into the page.
-            title = html.escape(pub["title"], quote=False)
+            # Titles are HTML-escaped on the way into the page; markupsafe is
+            # what Jinja uses, and it escapes apostrophes too.
+            title = str(escape(pub["title"]))
             if person["id"] in (pub.get("members") or []):
                 assert title in page
             else:

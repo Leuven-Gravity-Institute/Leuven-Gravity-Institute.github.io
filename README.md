@@ -110,43 +110,90 @@ fields.
 
 ## Publication sync
 
-`content/publications.yaml` is generated from the members' **ORCID** records:
+`content/publications.yaml` is generated from several bibliographic databases:
 
 ```bash
 uv run lgi publications sync
 ```
 
+### Why more than one source
+
+No single database is reliable for a whole group, and the failure modes are
+opposites of each other:
+
+| Source          | Strength                                                               | Weakness                                                                 |
+| --------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| **ORCID**       | Self-asserted, so what is there is authoritative.                      | Only as current as its owner keeps it; one member's stops in 2018.       |
+| **INSPIRE-HEP** | Assigns papers to profiles itself, so it stays current with no upkeep. | High-energy and gravitational-wave literature only; mis-files homonyms.  |
+| **OpenAlex**    | Widest subject coverage, reaching work the other two never list.       | Splits one researcher across many author entities; indexes software too. |
+
+Each member therefore carries whichever of `orcid`, `inspire`, and `openalex`
+apply, in `content/people.yaml`. Every configured source is queried and the
+results are unioned. A source that cannot be reached is reported and skipped;
+one outage never fails the run or empties the list.
+
+**Identifiers are pinned, never looked up by name.** Both lookups fail in ways
+that quietly corrupt a list: one member here is split across nine OpenAlex
+author entities holding between 1 and 264 works, and a name search readily
+returns a different researcher who shares the name. To find the right OpenAlex
+id, `find_authors_by_orcid` lists every entity for an ORCID, fullest first.
+
 ### Only work produced here
 
-Each person in `content/people.yaml` carries an `orcid` iD together with `start`
-— the date they joined — and, once they leave, `end`. The sync keeps only the
-works published **inside that window**, so a new member's earlier career does
-not appear under the group's name, and a departed member's later work stops
-being attributed to us.
+Each person carries `start` — the date they joined — and, once they leave,
+`end`. The sync keeps only works published **inside that window**, so a new
+member's earlier career does not appear under the group's name, and a departed
+member's later work stops being attributed to us.
 
-ORCID often records only a year, or a year and month. Such a date is treated as
-the whole period it names: a work dated `2024` counts if any part of 2024 falls
-in the member's window, rather than being dropped for want of a precise day. A
-work with no date at all is excluded, since there is no way to place it.
+`start` must be the date they joined _this group_, which is not always the date
+on their ORCID employment record: for someone who did their PhD here and stayed
+on, that record points at the PhD. Where the date is unknown, `people.yaml`
+keeps the identifier as a comment rather than a field, so the person still
+appears on the site but nothing is attributed to them by guesswork.
+
+Partial dates are treated as the period they name: a work dated `2024` counts if
+any part of 2024 falls in the window, rather than being dropped for want of a
+day. A work with no date at all is excluded, since there is no way to place it.
 
 ### One entry per paper
 
-A paper written by several members reaches the sync once per member. Entries are
-keyed on DOI, then arXiv id, then a normalized title, and duplicates are
-collapsed into a single record listing every contributing member under
-`members`. That field is also what the per-member publication pages filter on,
-so one paper appears on each of its authors' pages and exactly once in the group
-list.
+A paper reaches the sync repeatedly — once per member who wrote it, and once per
+source that indexes it. Records are grouped **transitively**: two are the same
+work when they share _any_ of DOI, arXiv id, or normalized title. Transitivity
+is what catches the common case where a preprint carries only an arXiv id and
+the published article only a journal DOI, and neither matches the other directly
+but both match a third record carrying the two together. arXiv's own
+`10.48550/arXiv.*` DOI is rewritten to a plain arXiv id first, so a preprint is
+not mistaken for a separate publication.
 
-### Metadata
+The surviving entry lists every contributing member under `members`, which is
+what the per-member pages filter on: one paper, appearing on each of its
+authors' pages and exactly once in the group list.
 
-ORCID's own records are sparse, so where a DOI is available the entry is
-enriched from **Crossref**, which supplies the full author list and journal
-details. If Crossref is unreachable the entry falls back to what ORCID provided;
-the sync never fails over it. Group members' names are emphasised in author
-lists (matched on family name plus given initial, so a co-author sharing a
-surname is not emphasised by mistake), and author lists longer than fifteen
-names collapse to `First Author et al. (incl. …)`.
+### What is filtered out
+
+- **Software and datasets.** Zenodo mints a fresh DOI for every GitHub release,
+  and OpenAlex indexes each as a work; a first run pulled in several hundred.
+  These belong on the Software & data page, from `software.yaml`.
+- **Likely mis-assignments.** INSPIRE and OpenAlex assign papers automatically,
+  which is what keeps them current but also files work by same-surname
+  researchers under the wrong profile. A record from those sources with a short
+  author list is dropped unless the member is actually named among its authors.
+  Large-collaboration papers are exempt, since a member may not be listed
+  individually. ORCID is trusted as it stands, being self-asserted.
+
+Author names are matched on family name plus given name, where a bare initial
+matches the name it abbreviates but two spelled-out names must agree. Matching
+on the initial alone is not enough — it makes "Tie-Fu Li" indistinguishable from
+"Tjonnie G. F. Li", which is exactly how another researcher's papers reached
+this group's page during development.
+
+### Collaboration publications
+
+A paper counts as a collaboration paper when the record names a collaboration or
+when it has more than fifteen authors. Those are listed in their own section, so
+thousand-author papers do not bury the group's own work, and their author lists
+are abbreviated to the lead author plus the group members credited.
 
 ### Curation
 

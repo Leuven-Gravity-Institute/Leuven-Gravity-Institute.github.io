@@ -1,18 +1,19 @@
 {% from "partials/macros.html" import pub_item %}
-{% if publications %}
+{% if group_publications %}
 <section id="publications" class="section">
   <div class="wrap">
-    {% if show_title %}<h2 class="section-title">{% if s.preview %}Selected publications{% else %}Publications{% endif %}</h2>{% endif %}
+    {% if show_title %}<h2 class="section-title">{% if s.preview %}Selected publications{% else %}Group publications{% endif %}</h2>{% endif %}
     {% if s.preview %}
     <ul class="pub-list">
-      {% for pub in (selected_publications or publications)[:s.preview] %}{{ pub_item(pub, people_by_id) }}{% endfor %}
+      {% for pub in (selected_publications or group_publications)[:s.preview] %}{{ pub_item(pub, people_by_id) }}{% endfor %}
     </ul>
     <p class="more"><a href="/publications/">All publications →</a></p>
     {% else %}
     <p class="muted">
-      {{ publications | length }} publication{{ '' if publications | length == 1 else 's' }}.
+      {{ group_publications | length }} publication{{ '' if group_publications | length == 1 else 's' }} led by the group.
       {% if selected_publications %}★ marks selected work. {% endif %}
       Each entry links the group members credited on it; their profile pages carry their own lists.
+      {% if collaboration_publications %}Large-collaboration papers are listed <a href="#collaboration">separately below</a>.{% endif %}
     </p>
     {% for group in publications_by_year %}
     <h3 class="year-heading">{{ group.year | default('Undated', true) }}</h3>
