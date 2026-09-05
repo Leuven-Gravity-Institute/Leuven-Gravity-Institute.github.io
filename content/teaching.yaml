@@ -7,7 +7,7 @@ items:
       code: 'G0X99A'
       institution: 'KU Leuven'
       term: 'Spring 2026'
-      people: ['jane-doe']
+      people: ['tjonnie-li']
       summary:
           'Master-level introduction to gravitational-wave sources, detectors,
           and data analysis.'
@@ -24,7 +24,7 @@ items:
       title: 'Master thesis topics in gravitational-wave data analysis'
       institution: 'KU Leuven'
       term: 'Year-round'
-      people: ['jane-doe', 'isaac-wong']
+      people: ['tjonnie-li', 'isaac-wong']
       summary:
           'We supervise master theses on inference methods, detector
           characterisation, and machine learning for signal detection. Get in

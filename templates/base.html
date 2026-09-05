@@ -53,17 +53,17 @@
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-block">
-        <p class="footer-name">{{ institute.name }}</p>
-        {% if institute.affiliation %}<p>{{ institute.affiliation }}{% if institute.location %} · {{ institute.location }}{% endif %}</p>{% endif %}
+        <p class="footer-name">{{ org.name }}</p>
+        {% if org.affiliation %}<p>{{ org.affiliation }}{% if org.location %} · {{ org.location }}{% endif %}</p>{% endif %}
       </div>
       <div class="footer-block footer-links">
-        {% for link in institute.links %}
+        {% for link in org.links %}
         <a href="{{ link.url }}"{% if not link.url.startswith('mailto:') %} target="_blank" rel="noopener"{% endif %}>{{ icon(link.icon) }}<span>{{ link.label }}</span></a>
         {% endfor %}
         <a href="/feed.xml" title="Subscribe via Atom feed">{{ icon("rss") }}<span>Feed</span></a>
       </div>
     </div>
-    <p class="footer-legal">© <span id="year"></span> {{ institute.name }}. Built from structured content.</p>
+    <p class="footer-legal">© <span id="year"></span> {{ org.name }}. Built from structured content.</p>
   </footer>
 
   <script src="/assets/js/main.js"></script>

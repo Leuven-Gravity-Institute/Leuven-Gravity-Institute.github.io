@@ -25,7 +25,7 @@ items:
           'Simulation of correlated noise across co-located interferometers.'
       role: 'Contributor'
       license: 'MIT'
-      people: ['jane-doe']
+      people: ['tjonnie-li']
       links:
           - {
                 label: 'Source',

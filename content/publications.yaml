@@ -22,13 +22,13 @@ items:
     - include: true
       highlight: true
       title: 'Null-stream reranking for triangular detector configurations'
-      authors: ['**Isaac C. F. Wong**', '**Jane Doe**']
+      authors: ['**Isaac C. F. Wong**', '**Tjonnie G. F. Li**']
       venue: 'Example Journal 1, 012345 (2026)'
       year: 2026
       date: '2026-06-15'
       type: 'preprint'
       source: 'manual'
-      members: ['isaac-wong', 'jane-doe']
+      members: ['isaac-wong', 'tjonnie-li']
       note: 'Placeholder entry — replace with the first synced results.'
       links:
           - { label: 'arXiv', url: 'https://arxiv.org/' }

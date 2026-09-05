@@ -1,4 +1,4 @@
-# Leuven Gravity Institute
+# Li Group
 
 [![Python CI](https://github.com/Leuven-Gravity-Institute/Leuven-Gravity-Institute.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/Leuven-Gravity-Institute/Leuven-Gravity-Institute.github.io/actions/workflows/ci.yml)
 [![Website](https://github.com/Leuven-Gravity-Institute/Leuven-Gravity-Institute.github.io/actions/workflows/deploy.yml/badge.svg)](https://leuven-gravity-institute.github.io/)
@@ -6,9 +6,41 @@
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](LICENSE)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
-The website of the Leuven Gravity Institute. All information lives in plain,
-structured files; the site is rendered from them. To update the site, you edit
-data — not HTML.
+The website of the Li Group at the Leuven Gravity Institute, KU Leuven. All
+information lives in plain, structured files; the site is rendered from them. To
+update the site, you edit data — not HTML.
+
+## Scope
+
+The site covers **one research group**, not the whole institute, and says so on
+the home page. It is published at the institute's URL because the repository
+lives in the institute's GitHub organisation.
+
+Groups are nonetheless a first-class dimension of the content. `site.groups` in
+`content/site.yaml` registers each group, and every person carries a `group:`
+tag pointing at one. With a single group registered the group headings stay
+hidden and the People page reads exactly as it would without them — but if
+another Leuven Gravity Institute group later joins, you add it to `site.groups`,
+tag its members, and the People page grows a heading per group on its own. No
+existing entry has to be rewritten, and nothing else has to change.
+
+Note that in-page links and asset paths are **root-absolute** (`/assets/…`,
+`/people/<slug>/`). The site therefore has to be served from the domain root; a
+subpath deployment would need a base-URL prefix threaded through the builder and
+templates first.
+
+## Who needs a GitHub account
+
+Nobody needs one to appear on the site. `content/people.yaml` is data that a
+maintainer writes, so anyone can have a profile page, a biography, and an
+automatically synced publication list without touching GitHub. The only
+identifier the automation needs is an **ORCID iD**.
+
+A GitHub account is needed only to _edit_ the site — and only a couple of
+maintainers need write access. Everyone else can send changes to a maintainer,
+be added as an outside collaborator on the repository without joining the
+organisation, or open a pull request through GitHub's web editor without
+installing anything.
 
 ## How it is organised
 
@@ -47,30 +79,32 @@ Each file under `content/` is a YAML document validated against the matching
 `schemas/<name>.schema.json`. Every file begins with comments explaining its
 fields.
 
-| File                        | Contents                                                                                  |
-| --------------------------- | ----------------------------------------------------------------------------------------- |
-| `content/site.yaml`         | Site-wide settings (URL, title, accent, navigation, pages) and the institute description. |
-| `content/people.yaml`       | Members: role, category, biography, ORCID iD, and the dates they joined and left.         |
-| `content/research.yaml`     | Research themes.                                                                          |
-| `content/publications.yaml` | Publications. **Generated** — see [Publication sync](#publication-sync).                  |
-| `content/software.yaml`     | Software releases and public datasets.                                                    |
-| `content/news.yaml`         | Dated announcements.                                                                      |
-| `content/events.yaml`       | Seminars, workshops, and visits; split into upcoming and past by date.                    |
-| `content/teaching.yaml`     | Courses, lecture series, and student projects.                                            |
-| `content/join.yaml`         | Open positions and the text around them.                                                  |
-| `content/contact.yaml`      | Address, contact details, and directions.                                                 |
+| File                        | Contents                                                                                      |
+| --------------------------- | --------------------------------------------------------------------------------------------- |
+| `content/site.yaml`         | Site-wide settings (URL, title, accent, navigation, pages, groups) and the group description. |
+| `content/people.yaml`       | Members: role, category, group, biography, ORCID iD, and the dates they joined and left.      |
+| `content/research.yaml`     | Research themes.                                                                              |
+| `content/publications.yaml` | Publications. **Generated** — see [Publication sync](#publication-sync).                      |
+| `content/software.yaml`     | Software releases and public datasets.                                                        |
+| `content/news.yaml`         | Dated announcements.                                                                          |
+| `content/events.yaml`       | Seminars, workshops, and visits; split into upcoming and past by date.                        |
+| `content/teaching.yaml`     | Courses, lecture series, and student projects.                                                |
+| `content/join.yaml`         | Open positions and the text around them.                                                      |
+| `content/contact.yaml`      | Address, contact details, and directions.                                                     |
 
 ### Editing rules
 
 - Keep the existing keys and nesting; change the values.
-- Markdown is supported in the longer prose fields (`institute.intro`,
-  `institute.about`, `people[].bio`, `news[].body`, `join.intro`, …) and in
-  author names (wrap a group member's name in `**double asterisks**`).
+- Markdown is supported in the longer prose fields (`org.intro`, `org.about`,
+  `people[].bio`, `news[].body`, `join.intro`, …) and in author names (wrap a
+  group member's name in `**double asterisks**`).
 - Dates are ISO format (`YYYY-MM-DD`); a person's `start`/`end` may be shortened
   to `YYYY-MM` or `YYYY`.
 - A person's `id` is referenced from `publications.yaml` and from the `people`
   lists in `research.yaml`, `software.yaml`, and `teaching.yaml`. Do not change
   an `id` once publications have been synced against it.
+- A person's `group` must match an `id` under `site.groups`. The test suite
+  checks both of these, so a broken reference fails CI rather than the page.
 - After any edit, run `validate` (below) to confirm the structure is still
   correct.
 
@@ -87,7 +121,7 @@ uv run lgi publications sync
 Each person in `content/people.yaml` carries an `orcid` iD together with `start`
 — the date they joined — and, once they leave, `end`. The sync keeps only the
 works published **inside that window**, so a new member's earlier career does
-not appear under the institute's name, and a departed member's later work stops
+not appear under the group's name, and a departed member's later work stops
 being attributed to us.
 
 ORCID often records only a year, or a year and month. Such a date is treated as

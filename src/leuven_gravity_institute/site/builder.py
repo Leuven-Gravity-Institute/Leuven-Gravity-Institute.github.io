@@ -87,21 +87,50 @@ def _group_by(items: list[dict[str, Any]], key: str, label: str = "category") ->
     return groups
 
 
+def _group_people(people: list[dict[str, Any]], groups: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Arrange people by research group, and within a group by category.
+
+    Groups appear in the order they are declared under ``site.groups``; anyone
+    whose ``group`` is unset or unrecognised falls into a trailing section with
+    no group of its own. Templates hide the group heading while a single group
+    is configured, so a one-group site reads exactly as it would without this
+    dimension — but a second group can be added later as pure data.
+    """
+    buckets: dict[str | None, list[dict[str, Any]]] = {}
+    for person in people:
+        buckets.setdefault(person.get("group"), []).append(person)
+
+    sections: list[dict[str, Any]] = []
+    for group in groups:
+        members = buckets.pop(group["id"], [])
+        if members:
+            sections.append({"group": group, "categories": _group_by(members, "category")})
+    for members in buckets.values():
+        sections.append({"group": None, "categories": _group_by(members, "category")})
+    return sections
+
+
 def _person_url(person: dict[str, Any]) -> str:
     """Return the clean URL of a person's profile page."""
     return f"/people/{person['slug']}/"
 
 
-def _prepare_people(people: list[dict[str, Any]], publications: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Attach each person's own publications and profile URL.
+def _prepare_people(
+    people: list[dict[str, Any]],
+    publications: list[dict[str, Any]],
+    groups: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Attach each person's own publications, profile URL, and group name.
 
     A publication lists every credited group member under ``members``; a
     person's page shows the subset naming them, newest first. Deduplication has
     already happened during the sync, so a paper shared by two members is one
     record appearing on both of their pages.
     """
+    groups_by_id = {group["id"]: group for group in groups}
     for person in people:
         person["url"] = _person_url(person)
+        person["group_name"] = (groups_by_id.get(person.get("group")) or {}).get("name", "")
         person["publications"] = [pub for pub in publications if person["id"] in (pub.get("members") or [])]
     return people
 
@@ -168,8 +197,9 @@ def _build_context(content: dict[str, Any], today: date | None = None) -> dict[s
         reverse=True,
     )
 
+    groups = list(site_doc.get("site", {}).get("groups") or [])
     people = _items(content, "people")
-    people = _prepare_people(people, publications)
+    people = _prepare_people(people, publications, groups)
     current = [person for person in people if person.get("status", "current") != "alumni"]
     alumni = [person for person in people if person.get("status") == "alumni"]
 
@@ -178,10 +208,13 @@ def _build_context(content: dict[str, Any], today: date | None = None) -> dict[s
 
     return {
         "site": site_doc.get("site", {}),
-        "institute": site_doc.get("institute", {}),
+        "org": site_doc.get("org", {}),
+        "groups": groups,
+        # A single group needs no heading of its own; several do.
+        "show_group_headings": len(groups) > 1,
         "people": people,
         "people_by_id": {person["id"]: person for person in people},
-        "people_groups": _group_by(current, "category"),
+        "people_sections": _group_people(current, groups),
         "alumni": alumni,
         "news": news,
         "events": upcoming_events + past_events,

@@ -509,6 +509,19 @@ main > .section:first-child,
 }
 
 /* People */
+
+/* Only rendered once the site covers more than one research group; it sits a
+   level above the category headings, so it needs more weight than they carry. */
+.people-group-heading {
+    font-size: 1.35rem;
+    margin: 2.4rem 0 0.4rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--accent);
+}
+.people-group-heading:first-child {
+    margin-top: 0;
+}
+
 .person-grid {
     list-style: none;
     display: grid;

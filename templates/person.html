@@ -10,7 +10,7 @@
     <div class="person-headings">
       <h1 class="person-name">{{ person.name }}</h1>
       <p class="person-role">{{ person.role }}</p>
-      {% if person.start %}<p class="person-period">{{ period(person.start, person.end) }} · {{ institute.name }}</p>{% endif %}
+      {% if person.start %}<p class="person-period">{{ period(person.start, person.end) }} · {{ person.group_name | default(org.name, true) }}</p>{% endif %}
       {% if person.interests %}
       <ul class="tags">
         {% for interest in person.interests %}<li class="tag">{{ interest }}</li>{% endfor %}
@@ -36,14 +36,14 @@
     {% if person.publications %}
     <p class="muted">
       {{ person.publications | length }} publication{{ '' if person.publications | length == 1 else 's' }}
-      from {{ person.name }}'s time with the institute, drawn from their ORCID record.
+      from {{ person.name }}'s time with the group, drawn from their ORCID record.
     </p>
     <ul class="pub-list">
       {% for pub in person.publications %}{{ pub_item(pub) }}{% endfor %}
     </ul>
     {% else %}
     <p class="muted">
-      No publications are listed yet for {{ person.name }}'s time with the institute.
+      No publications are listed yet for {{ person.name }}'s time with the org.
     </p>
     {% endif %}
     <p class="more"><a href="/publications/">All group publications →</a></p>

@@ -1,22 +1,39 @@
-# Site-wide configuration and the institute's own description.
+# Site-wide configuration and the description of whose site this is.
 # Validated against schemas/site.schema.json. Edit values in place; keep the
 # structure (keys and nesting) intact.
 
 site:
     # The full URL where the site is published (used for canonical links and metadata).
     url: 'https://leuven-gravity-institute.github.io'
-    # Short name used in the browser tab, the masthead, and metadata.
-    title: 'Leuven Gravity Institute'
-    # Optional short name shown in the masthead when the full one is too long.
-    short_title: 'LGI'
-    tagline: 'Gravitational-wave astronomy and fundamental physics'
+    # Browser tab title and the name shown in the masthead.
+    title: 'Li Group'
+    # Optional shorter name, used where the full one does not fit.
+    short_title: 'Li Group'
+    tagline: 'Leuven Gravity Institute · KU Leuven'
     description:
-        'The Leuven Gravity Institute studies gravitational waves, their
-        sources, and what they reveal about gravity — from detector physics and
-        data analysis to fundamental theory.'
+        'The Li Group at the Leuven Gravity Institute, KU Leuven — research on
+        gravitational waves, their sources, and what they reveal about gravity.'
     language: 'en'
     # Accent colour used across the site (any valid CSS colour).
     accent: '#0b6b8f'
+
+    # Research groups covered by this site.
+    #
+    # Today this site covers one group, so group headings stay hidden and the
+    # People page reads exactly as it would without them. If another Leuven
+    # Gravity Institute group later joins, add it here and tag its members with
+    # `group:` in people.yaml — the People page then grows a heading per group
+    # on its own. Nothing else has to change, and no existing entry has to be
+    # rewritten.
+    #
+    #   id    Stable identifier, referenced by `group:` in people.yaml.
+    #   name  Heading shown above the group's members, once there are several.
+    #   lead  Person id of the group leader (from people.yaml).
+    groups:
+        - id: 'li-group'
+          name: 'Li Group'
+          lead: 'tjonnie-li'
+
     # Pages of the site. Each entry becomes its own page at a clean URL:
     #   slug ""              -> "/"              (the home page)
     #   slug "publications"  -> "/publications/"
@@ -40,8 +57,7 @@ site:
         - slug: 'people'
           label: 'People'
           nav: true
-          lead:
-              'The researchers, students, and staff who make up the institute.'
+          lead: 'The researchers and students who make up the group.'
           sections: ['people']
         - slug: 'research'
           label: 'Research'
@@ -52,7 +68,7 @@ site:
           label: 'Publications'
           nav: true
           lead:
-              'Work published by members during their time with the institute,
+              'Work published by members during their time with the group,
               collected automatically from their ORCID records.'
           sections: ['publications']
         - slug: 'software'
@@ -80,38 +96,43 @@ site:
           nav: true
           sections: ['contact']
 
-institute:
-    name: 'Leuven Gravity Institute'
+# The organisation this site is about. Today that is the group; if the site
+# later grows to cover the whole Leuven Gravity Institute, this one block is
+# what you rewrite to describe the institute instead.
+org:
+    name: 'Li Group'
     # One-line positioning statement shown in the home-page hero.
     headline: 'Listening to spacetime.'
     # The hero paragraph. Markdown is supported.
     intro: |
-        We are a research group at KU Leuven working on gravitational-wave
-        astronomy: how to build and characterise the next generation of
-        detectors, how to extract astrophysical signals from their data, and
-        what those signals tell us about gravity, compact objects, and the early
-        universe.
-    # Longer description used on the home page under the hero.
+        We are a research group at KU Leuven, part of the Leuven Gravity
+        Institute, working on gravitational-wave astronomy: how to build and
+        characterise the next generation of detectors, how to extract
+        astrophysical signals from their data, and what those signals tell us
+        about gravity, compact objects, and the early universe.
+    # Longer description shown on the home page under the hero.
     about: |
-        The institute brings together researchers in signal processing,
-        statistics, and gravitational physics. Our work spans the full chain
-        from raw detector output to inference on astrophysical and cosmological
-        models — with a particular focus on the Einstein Telescope and the
-        analysis challenges that come with it.
+        The group brings together researchers in signal processing, statistics,
+        and gravitational physics. Our work spans the full chain from raw
+        detector output to inference on astrophysical and cosmological models —
+        with a particular focus on the Einstein Telescope and the analysis
+        challenges that come with it.
 
         We build our methods in the open: the software and datasets behind our
         results are released publicly, and our publication list is generated
         directly from our members' ORCID records.
-    # Institutional affiliation shown in the footer and hero.
-    affiliation: 'KU Leuven'
+
+        The group is one of several at the Leuven Gravity Institute; this site
+        covers our own work rather than the institute as a whole.
+    # The parent institution, shown in the hero and the footer.
+    affiliation: 'Leuven Gravity Institute · KU Leuven'
     location: 'Leuven, Belgium'
     # Optional headline figures shown in the hero. Remove the list to hide them.
     facts:
         - { label: 'Members', value: '12' }
         - { label: 'Research themes', value: '4' }
-        - { label: 'Founded', value: '2024' }
-    # Institute-level profile links. `icon` must match a key in the icon set
-    # (see templates/partials/icons.html).
+    # Profile links for the group as a whole. `icon` must match a key in the
+    # icon set (see templates/partials/icons.html).
     links:
         - { label: 'Email', icon: 'email', url: 'mailto:gravity@kuleuven.be' }
         - {

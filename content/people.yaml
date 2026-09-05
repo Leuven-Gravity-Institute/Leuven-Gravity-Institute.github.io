@@ -1,4 +1,4 @@
-# The people of the institute. This file drives three things at once:
+# The people of the group. This file drives three things at once:
 #   1. the People page (grouped by `category`, in the order categories first
 #      appear below),
 #   2. one profile page per person at /people/<slug>/, and
@@ -10,6 +10,10 @@
 #             never change it once publications have been synced.
 #   slug      URL segment for the profile page (/people/<slug>/).
 #   category  Heading the person appears under on the People page.
+#   group     Which research group they belong to, referencing an `id` under
+#             `site.groups` in site.yaml. With a single group configured the
+#             heading stays hidden, but tagging people now means a second group
+#             can be added later without rewriting any of these entries.
 #   status    "current" (default) or "alumni". Alumni are listed separately.
 #   orcid     ORCID iD. Omit for people whose publications should not be synced.
 #   start     Date the person joined the group (YYYY-MM-DD, or YYYY / YYYY-MM).
@@ -19,28 +23,31 @@
 # these two dates are what keep a new member's earlier career out of the list.
 
 items:
-    - id: 'jane-doe'
-      slug: 'jane-doe'
-      name: 'Jane Doe'
-      role: 'Professor, Group Leader'
+    - id: 'tjonnie-li'
+      slug: 'tjonnie-li'
+      name: 'Tjonnie G. F. Li'
+      role: 'Associate Professor, Group Leader'
       category: 'Faculty'
+      group: 'li-group'
       status: 'current'
       photo: '/assets/img/people/placeholder.svg'
-      email: 'jane.doe@kuleuven.be'
-      orcid: '0000-0002-1825-0097'
-      start: '2024-01-01'
+      email: 'tjonnie.li@kuleuven.be'
+      orcid: '0000-0003-4297-7365'
+      # From the KU Leuven employment record on their ORCID profile.
+      start: '2021-10'
       interests:
-          - 'Gravitational-wave detectors'
+          - 'Gravitational-wave astronomy'
           - 'Tests of general relativity'
+          - 'Machine learning for physics'
       bio: |
-          Jane leads the institute's work on detector characterisation and
-          model-independent tests of gravity. Before founding the group she
-          worked on the calibration of second-generation interferometers.
+          Tjonnie leads the group's work on gravitational-wave astronomy,
+          spanning detector science, data analysis, and tests of general
+          relativity with compact binary coalescences.
       links:
           - {
                 label: 'ORCID',
                 icon: 'orcid',
-                url: 'https://orcid.org/0000-0002-1825-0097',
+                url: 'https://orcid.org/0000-0003-4297-7365',
             }
 
     - id: 'isaac-wong'
@@ -48,6 +55,7 @@ items:
       name: 'Isaac C. F. Wong'
       role: 'Postdoctoral Researcher'
       category: 'Postdoctoral researchers'
+      group: 'li-group'
       status: 'current'
       photo: '/assets/img/people/placeholder.svg'
       email: 'chunfung.wong@kuleuven.be'
@@ -78,6 +86,7 @@ items:
       name: 'Alex Student'
       role: 'PhD Candidate'
       category: 'Doctoral researchers'
+      group: 'li-group'
       status: 'current'
       photo: '/assets/img/people/placeholder.svg'
       email: 'alex.student@kuleuven.be'
@@ -93,9 +102,10 @@ items:
       name: 'Sam Former'
       role: 'Postdoctoral Researcher (2024–2025)'
       category: 'Postdoctoral researchers'
+      group: 'li-group'
       status: 'alumni'
       photo: '/assets/img/people/placeholder.svg'
       start: '2024-03-01'
       end: '2025-08-31'
       bio: |
-          Sam worked on glitch classification and is now at another institute.
+          Sam worked on glitch classification and has since moved on.

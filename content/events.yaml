@@ -10,7 +10,7 @@ items:
       kind: 'Seminar'
       speaker: 'Invited speaker, TBC'
       location: 'Room 01.02, Department of Physics, KU Leuven'
-      summary: 'Weekly institute seminar. Open to all.'
+      summary: 'Weekly group seminar. Open to all.'
 
     - date: '2026-11-03'
       end: '2026-11-05'

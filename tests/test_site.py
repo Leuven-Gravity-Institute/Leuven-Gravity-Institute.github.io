@@ -10,12 +10,13 @@ import shutil
 from collections.abc import Iterator
 from datetime import date
 from pathlib import Path
+from typing import Any, ClassVar
 from xml.etree import ElementTree
 
 import pytest
 
 from leuven_gravity_institute.site import SitePaths, build_site, load_content, validate_content
-from leuven_gravity_institute.site.builder import _build_context, _split_events
+from leuven_gravity_institute.site.builder import _build_context, _group_people, _split_events
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -43,6 +44,19 @@ class TestContent:
     def test_every_content_file_has_a_schema(self, paths: SitePaths) -> None:
         missing = [name for name in load_content(paths.content) if not (paths.schemas / f"{name}.schema.json").exists()]
         assert missing == []
+
+    def test_person_group_ids_are_registered_in_site_yaml(self, paths: SitePaths) -> None:
+        content = load_content(paths.content)
+        known = {group["id"] for group in content["site"]["site"]["groups"]}
+        for person in content["people"]["items"]:
+            assert person.get("group") in known, f"{person['id']} has an unregistered group"
+
+    def test_group_leads_name_real_people(self, paths: SitePaths) -> None:
+        content = load_content(paths.content)
+        known = {person["id"] for person in content["people"]["items"]}
+        for group in content["site"]["site"]["groups"]:
+            if group.get("lead"):
+                assert group["lead"] in known
 
     def test_person_ids_referenced_elsewhere_exist(self, paths: SitePaths) -> None:
         content = load_content(paths.content)
@@ -106,9 +120,25 @@ class TestContext:
 
     def test_alumni_are_separated_from_current_members(self, paths: SitePaths) -> None:
         context = _build_context(load_content(paths.content))
-        grouped = [person for group in context["people_groups"] for person in group["items"]]
-        assert all(person.get("status") != "alumni" for person in grouped)
+        listed = [
+            person
+            for block in context["people_sections"]
+            for category in block["categories"]
+            for person in category["items"]
+        ]
+        assert all(person.get("status") != "alumni" for person in listed)
         assert all(person["status"] == "alumni" for person in context["alumni"])
+
+    def test_group_headings_stay_hidden_while_one_group_is_configured(self, paths: SitePaths) -> None:
+        context = _build_context(load_content(paths.content))
+        assert len(context["groups"]) == 1
+        assert context["show_group_headings"] is False
+
+    def test_each_person_carries_their_group_name(self, paths: SitePaths) -> None:
+        context = _build_context(load_content(paths.content))
+        names = {group["id"]: group["name"] for group in context["groups"]}
+        for person in context["people"]:
+            assert person["group_name"] == names[person["group"]]
 
     def test_excluded_publications_are_not_rendered(self, paths: SitePaths) -> None:
         content = load_content(paths.content)
@@ -128,3 +158,45 @@ class TestContext:
         upcoming, past = _split_events(events, date(2026, 6, 1))
         assert [item["title"] for item in upcoming] == ["ongoing", "future"]
         assert [item["title"] for item in past] == ["past"]
+
+
+class TestPeopleGrouping:
+    """Arranging people by group, then category."""
+
+    GROUPS: ClassVar[list[dict[str, Any]]] = [
+        {"id": "li-group", "name": "Li Group"},
+        {"id": "other", "name": "Other Group"},
+    ]
+
+    def test_groups_follow_the_order_declared_in_site_yaml(self) -> None:
+        people = [
+            {"name": "B", "group": "other", "category": "Faculty"},
+            {"name": "A", "group": "li-group", "category": "Faculty"},
+        ]
+        sections = _group_people(people, self.GROUPS)
+        assert [block["group"]["id"] for block in sections] == ["li-group", "other"]
+
+    def test_categories_are_nested_inside_each_group(self) -> None:
+        people = [
+            {"name": "A", "group": "li-group", "category": "Faculty"},
+            {"name": "B", "group": "li-group", "category": "Students"},
+            {"name": "C", "group": "li-group", "category": "Faculty"},
+        ]
+        sections = _group_people(people, self.GROUPS)
+        assert len(sections) == 1
+        categories = sections[0]["categories"]
+        assert [category["category"] for category in categories] == ["Faculty", "Students"]
+        assert [person["name"] for person in categories[0]["items"]] == ["A", "C"]
+
+    def test_a_group_with_no_members_is_omitted(self) -> None:
+        sections = _group_people([{"name": "A", "group": "li-group", "category": "Faculty"}], self.GROUPS)
+        assert [block["group"]["id"] for block in sections] == ["li-group"]
+
+    def test_untagged_people_still_appear_in_a_trailing_section(self) -> None:
+        people = [
+            {"name": "A", "group": "li-group", "category": "Faculty"},
+            {"name": "B", "category": "Faculty"},
+        ]
+        sections = _group_people(people, self.GROUPS)
+        assert sections[-1]["group"] is None
+        assert [person["name"] for person in sections[-1]["categories"][0]["items"]] == ["B"]

@@ -1,24 +1,24 @@
 {% from "partials/icons.html" import icon %}
 <section id="hero" class="hero">
   <div class="wrap hero-inner">
-    <p class="hero-eyebrow">{{ institute.affiliation }}{% if institute.location %} · {{ institute.location }}{% endif %}</p>
-    <h1 class="hero-headline">{{ institute.headline | default(institute.name, true) }}</h1>
-    <div class="hero-intro">{{ institute.intro | markdown }}</div>
+    <p class="hero-eyebrow">{{ org.affiliation }}{% if org.location %} · {{ org.location }}{% endif %}</p>
+    <h1 class="hero-headline">{{ org.headline | default(org.name, true) }}</h1>
+    <div class="hero-intro">{{ org.intro | markdown }}</div>
     <div class="link-row">
       <a class="button" href="/research/">Our research {{ icon("arrow") }}</a>
       <a class="button button-quiet" href="/join/">Join us</a>
     </div>
-    {% if institute.facts %}
+    {% if org.facts %}
     <ul class="facts">
-      {% for fact in institute.facts %}
+      {% for fact in org.facts %}
       <li class="fact"><span class="fact-value">{{ fact.value }}</span><span class="fact-label">{{ fact.label }}</span></li>
       {% endfor %}
     </ul>
     {% endif %}
   </div>
 </section>
-{% if institute.about %}
+{% if org.about %}
 <section id="about" class="section">
-  <div class="wrap prose prose-wide">{{ institute.about | markdown }}</div>
+  <div class="wrap prose prose-wide">{{ org.about | markdown }}</div>
 </section>
 {% endif %}
