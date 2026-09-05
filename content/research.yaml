@@ -10,7 +10,7 @@ items:
           overlapping-signal problem that comes with a much higher detection
           rate.
       tags: ['Einstein Telescope', 'Detector characterisation']
-      people: ['tjonnie-li', 'isaac-wong']
+      # people: ['<person-id>']  # who works on this; ids from people.yaml
 
     - name: 'Statistical inference'
       summary: |
@@ -18,14 +18,14 @@ items:
           including simulation-based inference, normalising flows, and
           diagnostics for when those methods can be trusted.
       tags: ['Bayesian inference', 'Machine learning']
-      people: ['isaac-wong', 'alex-student']
+      # people: ['<person-id>']  # who works on this; ids from people.yaml
 
     - name: 'Tests of gravity'
       summary: |
           Model-independent tests of general relativity with compact binary
           coalescences, and the systematics that limit them.
       tags: ['Fundamental physics']
-      people: ['tjonnie-li']
+      # people: ['<person-id>']  # who works on this; ids from people.yaml
 
     - name: 'Noise and data quality'
       summary: |
@@ -33,4 +33,4 @@ items:
           and understanding how data quality propagates into astrophysical
           conclusions.
       tags: ['Data quality']
-      people: ['tjonnie-li']
+      # people: ['<person-id>']  # who works on this; ids from people.yaml

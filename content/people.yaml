@@ -16,33 +16,45 @@
 #             can be added later without rewriting any of these entries.
 #   status    "current" (default) or "alumni". Alumni are listed separately.
 #   orcid     ORCID iD. Omit for people whose publications should not be synced.
-#   start     Date the person joined the group (YYYY-MM-DD, or YYYY / YYYY-MM).
+#   start     Date they joined THIS group (YYYY-MM-DD, or YYYY-MM / YYYY).
 #   end       Date they left. Omit or leave empty while they are still here.
 #
 # Only works published between `start` and `end` are attributed to the group, so
-# these two dates are what keep a new member's earlier career out of the list.
+# these two dates are what keep a member's earlier career out of the list.
+#
+# `start` must be the date they joined *this group*, which is not always the
+# date on their ORCID employment record — for someone who did their PhD here and
+# stayed on as a postdoc, the ORCID entry points at the PhD. Where that start
+# date is not known, the ORCID iD below is recorded as a comment rather than as
+# an `orcid:` field: the person still appears on the site, and the sync picks
+# them up as soon as someone fills in both lines. Adding an `orcid:` without a
+# correct `start:` would silently attribute their earlier work to the group.
+#
+# Individual email addresses are left out unless known first-hand. KU Leuven
+# addresses do not reliably follow firstname.lastname (see Isaac's below), so
+# guessing them would publish wrong addresses for real people.
+#
+# Biographies are left blank for people who have not written one. Please add
+# your own rather than having one written for you; `bio` supports Markdown.
 
 items:
     - id: 'tjonnie-li'
       slug: 'tjonnie-li'
       name: 'Tjonnie G. F. Li'
-      role: 'Associate Professor, Group Leader'
+      role: 'Associate Professor, Principal Investigator'
       category: 'Faculty'
       group: 'gw-group'
       status: 'current'
       photo: '/assets/img/people/placeholder.svg'
-      email: 'tjonnie.li@kuleuven.be'
       orcid: '0000-0003-4297-7365'
       # From the KU Leuven employment record on their ORCID profile.
       start: '2021-10'
+      # Self-declared keywords from their ORCID profile.
       interests:
-          - 'Gravitational-wave astronomy'
-          - 'Tests of general relativity'
-          - 'Machine learning for physics'
-      bio: |
-          Tjonnie leads the group's work on gravitational-wave astronomy,
-          spanning detector science, data analysis, and tests of general
-          relativity with compact binary coalescences.
+          - 'Gravitational waves'
+          - 'Black holes'
+          - 'Neutron stars'
+          - 'General relativity'
       links:
           - {
                 label: 'ORCID',
@@ -60,11 +72,11 @@ items:
       photo: '/assets/img/people/placeholder.svg'
       email: 'chunfung.wong@kuleuven.be'
       orcid: '0000-0003-2166-0027'
-      start: '2024-09-01'
+      # From the KU Leuven employment record on their ORCID profile.
+      start: '2024-02-01'
       interests:
-          - 'Bayesian inference'
-          - 'Einstein Telescope'
-          - 'Null-stream methods'
+          - 'Gravitational-wave astronomy'
+          - 'Statistical data analysis'
       bio: |
           Isaac works on statistical inference for next-generation
           gravitational-wave detectors, including correlated noise modelling and
@@ -81,31 +93,116 @@ items:
                 url: 'https://github.com/isaac-cf-wong',
             }
 
-    - id: 'alex-student'
-      slug: 'alex-student'
-      name: 'Alex Student'
+    - id: 'brecht-evens'
+      slug: 'brecht-evens'
+      name: 'Brecht Evens'
+      role: 'Postdoctoral Researcher'
+      category: 'Postdoctoral researchers'
+      group: 'gw-group'
+      status: 'current'
+      photo: '/assets/img/people/placeholder.svg'
+      # TODO: add `orcid: '0000-0002-2317-9395'` together with the date the
+      # postdoc began. The ORCID employment record starts 2020-10-01, but that
+      # is the PhD; syncing from it would attribute the optimisation and
+      # operator-theory work of that PhD to this group.
+      # Self-declared keywords from their ORCID profile.
+      interests:
+          - 'Optimization'
+          - 'Optimal control'
+          - 'Machine learning'
+          - 'Systems theory'
+      links:
+          - {
+                label: 'ORCID',
+                icon: 'orcid',
+                url: 'https://orcid.org/0000-0002-2317-9395',
+            }
+
+    - id: 'arthur-offerman'
+      slug: 'arthur-offerman'
+      name: 'Arthur Offerman'
       role: 'PhD Candidate'
       category: 'Doctoral researchers'
       group: 'gw-group'
       status: 'current'
       photo: '/assets/img/people/placeholder.svg'
-      email: 'alex.student@kuleuven.be'
-      start: '2025-02-01'
-      interests:
-          - 'Simulation-based inference'
-      bio: |
-          Alex is developing simulation-based inference methods for compact
-          binary populations.
+      # No ORCID iD on file; add one plus a `start` date to sync publications.
+      links:
+          - {
+                label: 'GitHub',
+                icon: 'github',
+                url: 'https://github.com/aoffermans',
+            }
 
-    - id: 'sam-former'
-      slug: 'sam-former'
-      name: 'Sam Former'
-      role: 'Postdoctoral Researcher (2024–2025)'
-      category: 'Postdoctoral researchers'
+    - id: 'francesco-cireddu'
+      slug: 'francesco-cireddu'
+      name: 'Francesco Cireddu'
+      role: 'PhD Candidate'
+      category: 'Doctoral researchers'
       group: 'gw-group'
-      status: 'alumni'
+      status: 'current'
       photo: '/assets/img/people/placeholder.svg'
-      start: '2024-03-01'
-      end: '2025-08-31'
-      bio: |
-          Sam worked on glitch classification and has since moved on.
+      orcid: '0009-0002-7074-4278'
+      # From the KU Leuven employment record on their ORCID profile.
+      start: '2023-10-15'
+      links:
+          - {
+                label: 'ORCID',
+                icon: 'orcid',
+                url: 'https://orcid.org/0009-0002-7074-4278',
+            }
+          - {
+                label: 'GitHub',
+                icon: 'github',
+                url: 'https://github.com/fcireddu',
+            }
+
+    - id: 'milan-wils'
+      slug: 'milan-wils'
+      name: 'Milan Wils'
+      role: 'PhD Candidate'
+      category: 'Doctoral researchers'
+      group: 'gw-group'
+      status: 'current'
+      photo: '/assets/img/people/placeholder.svg'
+      orcid: '0000-0002-1544-7193'
+      # From the KU Leuven employment record on their ORCID profile, which runs
+      # to 2026-09-25. That is a contract end, not a departure, so no `end` is
+      # set — add one when they actually leave, or their later work stops being
+      # attributed to the group.
+      start: '2022-09-26'
+      links:
+          - {
+                label: 'ORCID',
+                icon: 'orcid',
+                url: 'https://orcid.org/0000-0002-1544-7193',
+            }
+          - {
+                label: 'GitHub',
+                icon: 'github',
+                url: 'https://github.com/milanwils',
+            }
+
+    - id: 'tom-colemont'
+      slug: 'tom-colemont'
+      name: 'Tom Colemont'
+      role: 'PhD Candidate'
+      category: 'Doctoral researchers'
+      group: 'gw-group'
+      status: 'current'
+      photo: '/assets/img/people/placeholder.svg'
+      # TODO: add `orcid: '0009-0003-4408-5894'` together with the date the PhD
+      # began. That profile carries no employment record to take a date from,
+      # and its one listed work is on cochlear-implant stimulation, so it needs
+      # a deliberate decision before it feeds the group's publication list.
+      links:
+          - {
+                label: 'ORCID',
+                icon: 'orcid',
+                url: 'https://orcid.org/0009-0003-4408-5894',
+            }
+          - {
+                label: 'GitHub',
+                icon: 'github',
+                url: 'https://github.com/TomColemont',
+            }

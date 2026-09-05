@@ -11,7 +11,7 @@ items:
           configurations.'
       role: 'Maintainer'
       license: 'BSD-3-Clause'
-      people: ['isaac-wong']
+      # people: ['<person-id>']  # who works on this; ids from people.yaml
       links:
           - {
                 label: 'Source',
@@ -25,7 +25,7 @@ items:
           'Simulation of correlated noise across co-located interferometers.'
       role: 'Contributor'
       license: 'MIT'
-      people: ['tjonnie-li']
+      # people: ['<person-id>']  # who works on this; ids from people.yaml
       links:
           - {
                 label: 'Source',
@@ -39,6 +39,6 @@ items:
           'Five thousand binary black-hole injections with tunable SNR, used for
           null-stream validation.'
       license: 'CC-BY-4.0'
-      people: ['isaac-wong']
+      # people: ['<person-id>']  # who works on this; ids from people.yaml
       links:
           - { label: 'Zenodo', url: 'https://zenodo.org' }

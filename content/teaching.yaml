@@ -7,7 +7,7 @@ items:
       code: 'G0X99A'
       institution: 'KU Leuven'
       term: 'Spring 2026'
-      people: ['tjonnie-li']
+      # people: ['<person-id>']  # who works on this; ids from people.yaml
       summary:
           'Master-level introduction to gravitational-wave sources, detectors,
           and data analysis.'
@@ -16,7 +16,7 @@ items:
       title: 'Bayesian Inference for Physicists'
       institution: 'KU Leuven'
       term: 'Autumn 2025'
-      people: ['isaac-wong']
+      # people: ['<person-id>']  # who works on this; ids from people.yaml
       summary:
           'Six lectures on Bayesian methods, sampling, and model comparison.'
 
@@ -24,7 +24,7 @@ items:
       title: 'Master thesis topics in gravitational-wave data analysis'
       institution: 'KU Leuven'
       term: 'Year-round'
-      people: ['tjonnie-li', 'isaac-wong']
+      # people: ['<person-id>']  # who works on this; ids from people.yaml
       summary:
           'We supervise master theses on inference methods, detector
           characterisation, and machine learning for signal detection. Get in

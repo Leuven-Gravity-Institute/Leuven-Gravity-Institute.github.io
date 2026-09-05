@@ -131,7 +131,7 @@ org:
     location: 'Leuven, Belgium'
     # Optional headline figures shown in the hero. Remove the list to hide them.
     facts:
-        - { label: 'Members', value: '12' }
+        - { label: 'Members', value: '7' }
         - { label: 'Research themes', value: '4' }
     # Profile links for the group as a whole. `icon` must match a key in the
     # icon set (see templates/partials/icons.html).
