@@ -1,0 +1,34 @@
+# Publications of the group — GENERATED FILE.
+#
+# Managed entries (those with a `key` and `source: orcid`) are written by
+# `lgi publications sync`, which reads every member's ORCID record and keeps
+# only the works published while that member was affiliated with the group
+# (their `start`/`end` dates in content/people.yaml). Papers shared by several
+# members are deduplicated into one entry listing all of them under `members`.
+#
+# Curation below is preserved across syncs:
+#   include:   set false to hide an entry from the site.
+#   highlight: set true to feature it as selected work (rendered with a star).
+#   note:      optional one-line editorial note shown under the entry.
+#
+# To add something ORCID does not know about, append an entry *without* a
+# `key`; hand-authored entries are never touched by the sync. Wrap a group
+# member's name in **double asterisks** to emphasise it.
+
+items:
+    # Seed entry so the site builds before the first sync. It has no `key`, so
+    # the sync treats it as hand-authored and leaves it alone; delete it once
+    # real entries arrive.
+    - include: true
+      highlight: true
+      title: 'Null-stream reranking for triangular detector configurations'
+      authors: ['**Isaac C. F. Wong**', '**Jane Doe**']
+      venue: 'Example Journal 1, 012345 (2026)'
+      year: 2026
+      date: '2026-06-15'
+      type: 'preprint'
+      source: 'manual'
+      members: ['isaac-wong', 'jane-doe']
+      note: 'Placeholder entry — replace with the first synced results.'
+      links:
+          - { label: 'arXiv', url: 'https://arxiv.org/' }

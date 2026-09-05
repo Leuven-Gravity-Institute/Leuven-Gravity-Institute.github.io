@@ -1,0 +1,101 @@
+# The people of the institute. This file drives three things at once:
+#   1. the People page (grouped by `category`, in the order categories first
+#      appear below),
+#   2. one profile page per person at /people/<slug>/, and
+#   3. the publication sync — `orcid`, `start`, and `end` decide which of a
+#      person's works count as work produced here.
+#
+# Fields:
+#   id        Stable identifier. Referenced by publications.yaml `members`;
+#             never change it once publications have been synced.
+#   slug      URL segment for the profile page (/people/<slug>/).
+#   category  Heading the person appears under on the People page.
+#   status    "current" (default) or "alumni". Alumni are listed separately.
+#   orcid     ORCID iD. Omit for people whose publications should not be synced.
+#   start     Date the person joined the group (YYYY-MM-DD, or YYYY / YYYY-MM).
+#   end       Date they left. Omit or leave empty while they are still here.
+#
+# Only works published between `start` and `end` are attributed to the group, so
+# these two dates are what keep a new member's earlier career out of the list.
+
+items:
+    - id: 'jane-doe'
+      slug: 'jane-doe'
+      name: 'Jane Doe'
+      role: 'Professor, Group Leader'
+      category: 'Faculty'
+      status: 'current'
+      photo: '/assets/img/people/placeholder.svg'
+      email: 'jane.doe@kuleuven.be'
+      orcid: '0000-0002-1825-0097'
+      start: '2024-01-01'
+      interests:
+          - 'Gravitational-wave detectors'
+          - 'Tests of general relativity'
+      bio: |
+          Jane leads the institute's work on detector characterisation and
+          model-independent tests of gravity. Before founding the group she
+          worked on the calibration of second-generation interferometers.
+      links:
+          - {
+                label: 'ORCID',
+                icon: 'orcid',
+                url: 'https://orcid.org/0000-0002-1825-0097',
+            }
+
+    - id: 'isaac-wong'
+      slug: 'isaac-wong'
+      name: 'Isaac C. F. Wong'
+      role: 'Postdoctoral Researcher'
+      category: 'Postdoctoral researchers'
+      status: 'current'
+      photo: '/assets/img/people/placeholder.svg'
+      email: 'chunfung.wong@kuleuven.be'
+      orcid: '0000-0003-2166-0027'
+      start: '2024-09-01'
+      interests:
+          - 'Bayesian inference'
+          - 'Einstein Telescope'
+          - 'Null-stream methods'
+      bio: |
+          Isaac works on statistical inference for next-generation
+          gravitational-wave detectors, including correlated noise modelling and
+          null-stream methods for the Einstein Telescope.
+      links:
+          - {
+                label: 'ORCID',
+                icon: 'orcid',
+                url: 'https://orcid.org/0000-0003-2166-0027',
+            }
+          - {
+                label: 'GitHub',
+                icon: 'github',
+                url: 'https://github.com/isaac-cf-wong',
+            }
+
+    - id: 'alex-student'
+      slug: 'alex-student'
+      name: 'Alex Student'
+      role: 'PhD Candidate'
+      category: 'Doctoral researchers'
+      status: 'current'
+      photo: '/assets/img/people/placeholder.svg'
+      email: 'alex.student@kuleuven.be'
+      start: '2025-02-01'
+      interests:
+          - 'Simulation-based inference'
+      bio: |
+          Alex is developing simulation-based inference methods for compact
+          binary populations.
+
+    - id: 'sam-former'
+      slug: 'sam-former'
+      name: 'Sam Former'
+      role: 'Postdoctoral Researcher (2024–2025)'
+      category: 'Postdoctoral researchers'
+      status: 'alumni'
+      photo: '/assets/img/people/placeholder.svg'
+      start: '2024-03-01'
+      end: '2025-08-31'
+      bio: |
+          Sam worked on glitch classification and is now at another institute.

@@ -1,0 +1,31 @@
+# Contact details shown on the Contact page.
+
+intro: |
+    For research enquiries, collaboration proposals, and press, write to the
+    institute address below. For matters concerning a specific project, contact
+    the relevant group member directly — their addresses are on their profile
+    pages.
+
+email: 'gravity@kuleuven.be'
+phone: ''
+address: |
+    Leuven Gravity Institute
+    Department of Physics and Astronomy
+    KU Leuven
+    Celestijnenlaan 200D
+    3001 Leuven
+    Belgium
+
+# Optional: a link to a map, and directions in prose.
+map_url: 'https://www.openstreetmap.org/'
+directions: |
+    The department is a twenty-minute bus ride from Leuven station (lines 3 and
+    616 stop nearby). Visitors should report to the reception desk on arrival.
+
+links:
+    - { label: 'Email', icon: 'email', url: 'mailto:gravity@kuleuven.be' }
+    - {
+          label: 'GitHub',
+          icon: 'github',
+          url: 'https://github.com/Leuven-Gravity-Institute',
+      }

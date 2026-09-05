@@ -1,0 +1,23 @@
+<section id="join" class="section">
+  <div class="wrap">
+    {% if show_title %}<h2 class="section-title">Join us</h2>{% endif %}
+    {% if join.intro %}<div class="prose prose-wide">{{ join.intro | markdown }}</div>{% endif %}
+    {% if openings %}
+    <ul class="cards cards-2 openings">
+      {% for item in openings %}
+      <li class="card{% if item.open is defined and not item.open %} card-closed{% endif %}">
+        <p class="opening-level">{{ item.level }}{% if item.open is defined and not item.open %} · closed{% endif %}</p>
+        <h3 class="card-title">{{ item.title }}</h3>
+        <p class="card-summary">{{ item.summary }}</p>
+        {% if item.deadline %}<p class="opening-deadline">Apply by <strong>{{ item.deadline }}</strong></p>{% endif %}
+        <p class="card-links">
+          {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">Details</a>{% endif %}
+          {% if item.contact %}<a href="mailto:{{ item.contact }}">Contact</a>{% endif %}
+        </p>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% if join.closing %}<div class="prose prose-wide">{{ join.closing | markdown }}</div>{% endif %}
+  </div>
+</section>

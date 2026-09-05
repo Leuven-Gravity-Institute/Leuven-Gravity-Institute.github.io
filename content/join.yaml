@@ -1,0 +1,43 @@
+# The Join us page: open positions plus the standing text around them.
+#   intro    Shown above the list of positions. Markdown supported.
+#   closing  Shown below the list — how to get in touch speculatively.
+#   items    Open positions. Set `open: false` to keep a closed call visible.
+
+intro: |
+    We are always interested in hearing from people who want to work on
+    gravitational-wave data analysis — whether or not a position is currently
+    advertised below.
+
+closing: |
+    If nothing here matches but our work interests you, write to
+    [gravity@kuleuven.be](mailto:gravity@kuleuven.be) with a short description
+    of what you would like to work on and a CV. Prospective PhD students should
+    also look at the KU Leuven doctoral scholarship calls, which we are happy to
+    support applications for.
+
+items:
+    - title: 'PhD position: inference for the Einstein Telescope'
+      level: 'Doctoral'
+      open: true
+      deadline: '2026-12-01'
+      summary:
+          'Four-year position developing statistical methods for next-generation
+          detector data. Funded through the institute.'
+      contact: 'jane.doe@kuleuven.be'
+
+    - title: 'Postdoctoral researcher: detector characterisation'
+      level: 'Postdoctoral'
+      open: true
+      deadline: '2026-10-15'
+      summary:
+          'Two-year position on noise modelling and data quality, with scope to
+          shape the direction of the work.'
+      contact: 'jane.doe@kuleuven.be'
+
+    - title: 'Master thesis projects'
+      level: 'Master'
+      open: true
+      summary:
+          'Several topics available each year; see the Teaching page or contact
+          us directly.'
+      contact: 'gravity@kuleuven.be'

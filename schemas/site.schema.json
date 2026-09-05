@@ -1,0 +1,105 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "site.schema.json",
+    "title": "Site configuration",
+    "type": "object",
+    "required": ["site", "institute"],
+    "additionalProperties": false,
+    "properties": {
+        "site": {
+            "type": "object",
+            "required": ["url", "title", "pages"],
+            "additionalProperties": false,
+            "properties": {
+                "url": { "type": "string", "format": "uri" },
+                "title": { "type": "string", "minLength": 1 },
+                "short_title": { "type": "string" },
+                "tagline": { "type": "string" },
+                "description": { "type": "string" },
+                "language": { "type": "string" },
+                "accent": { "type": "string" },
+                "pages": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": { "$ref": "#/$defs/page" }
+                }
+            }
+        },
+        "institute": {
+            "type": "object",
+            "required": ["name"],
+            "additionalProperties": false,
+            "properties": {
+                "name": { "type": "string", "minLength": 1 },
+                "headline": { "type": "string" },
+                "intro": { "type": "string" },
+                "about": { "type": "string" },
+                "affiliation": { "type": "string" },
+                "location": { "type": "string" },
+                "facts": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": ["label", "value"],
+                        "additionalProperties": false,
+                        "properties": {
+                            "label": { "type": "string" },
+                            "value": { "type": "string" }
+                        }
+                    }
+                },
+                "links": {
+                    "type": "array",
+                    "items": { "$ref": "#/$defs/link" }
+                }
+            }
+        }
+    },
+    "$defs": {
+        "page": {
+            "type": "object",
+            "required": ["slug", "label", "sections"],
+            "additionalProperties": false,
+            "properties": {
+                "slug": { "type": "string" },
+                "label": { "type": "string", "minLength": 1 },
+                "title": { "type": "string" },
+                "lead": { "type": "string" },
+                "nav": { "type": "boolean" },
+                "sections": {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            { "type": "string", "minLength": 1 },
+                            {
+                                "type": "object",
+                                "required": ["name"],
+                                "additionalProperties": false,
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "preview": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "link": {
+            "type": "object",
+            "required": ["label", "url"],
+            "additionalProperties": false,
+            "properties": {
+                "label": { "type": "string" },
+                "icon": { "type": "string" },
+                "url": { "type": "string" }
+            }
+        }
+    }
+}

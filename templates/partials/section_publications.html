@@ -1,0 +1,26 @@
+{% from "partials/macros.html" import pub_item %}
+{% if publications %}
+<section id="publications" class="section">
+  <div class="wrap">
+    {% if show_title %}<h2 class="section-title">{% if s.preview %}Selected publications{% else %}Publications{% endif %}</h2>{% endif %}
+    {% if s.preview %}
+    <ul class="pub-list">
+      {% for pub in (selected_publications or publications)[:s.preview] %}{{ pub_item(pub, people_by_id) }}{% endfor %}
+    </ul>
+    <p class="more"><a href="/publications/">All publications →</a></p>
+    {% else %}
+    <p class="muted">
+      {{ publications | length }} publication{{ '' if publications | length == 1 else 's' }}.
+      {% if selected_publications %}★ marks selected work. {% endif %}
+      Each entry links the group members credited on it; their profile pages carry their own lists.
+    </p>
+    {% for group in publications_by_year %}
+    <h3 class="year-heading">{{ group.year | default('Undated', true) }}</h3>
+    <ul class="pub-list">
+      {% for pub in group['items'] %}{{ pub_item(pub, people_by_id) }}{% endfor %}
+    </ul>
+    {% endfor %}
+    {% endif %}
+  </div>
+</section>
+{% endif %}

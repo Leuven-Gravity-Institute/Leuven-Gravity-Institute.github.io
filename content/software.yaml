@@ -1,0 +1,44 @@
+# Software and public datasets released by the group. Items are grouped under
+# their `category`, in the order the categories first appear below.
+# `kind` is either "software" or "dataset" and is shown as a badge.
+
+items:
+    - name: 'gw-nullstream'
+      category: 'Software'
+      kind: 'software'
+      summary:
+          'Null-stream construction and reranking for triangular detector
+          configurations.'
+      role: 'Maintainer'
+      license: 'BSD-3-Clause'
+      people: ['isaac-wong']
+      links:
+          - {
+                label: 'Source',
+                url: 'https://github.com/Leuven-Gravity-Institute',
+            }
+
+    - name: 'et-noise-toolkit'
+      category: 'Software'
+      kind: 'software'
+      summary:
+          'Simulation of correlated noise across co-located interferometers.'
+      role: 'Contributor'
+      license: 'MIT'
+      people: ['jane-doe']
+      links:
+          - {
+                label: 'Source',
+                url: 'https://github.com/Leuven-Gravity-Institute',
+            }
+
+    - name: 'ET injection set (2025)'
+      category: 'Data releases'
+      kind: 'dataset'
+      summary:
+          'Five thousand binary black-hole injections with tunable SNR, used for
+          null-stream validation.'
+      license: 'CC-BY-4.0'
+      people: ['isaac-wong']
+      links:
+          - { label: 'Zenodo', url: 'https://zenodo.org' }

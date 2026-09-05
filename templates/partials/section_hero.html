@@ -1,0 +1,24 @@
+{% from "partials/icons.html" import icon %}
+<section id="hero" class="hero">
+  <div class="wrap hero-inner">
+    <p class="hero-eyebrow">{{ institute.affiliation }}{% if institute.location %} · {{ institute.location }}{% endif %}</p>
+    <h1 class="hero-headline">{{ institute.headline | default(institute.name, true) }}</h1>
+    <div class="hero-intro">{{ institute.intro | markdown }}</div>
+    <div class="link-row">
+      <a class="button" href="/research/">Our research {{ icon("arrow") }}</a>
+      <a class="button button-quiet" href="/join/">Join us</a>
+    </div>
+    {% if institute.facts %}
+    <ul class="facts">
+      {% for fact in institute.facts %}
+      <li class="fact"><span class="fact-value">{{ fact.value }}</span><span class="fact-label">{{ fact.label }}</span></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
+{% if institute.about %}
+<section id="about" class="section">
+  <div class="wrap prose prose-wide">{{ institute.about | markdown }}</div>
+</section>
+{% endif %}

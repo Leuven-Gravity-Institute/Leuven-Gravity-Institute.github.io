@@ -1,0 +1,121 @@
+# Site-wide configuration and the institute's own description.
+# Validated against schemas/site.schema.json. Edit values in place; keep the
+# structure (keys and nesting) intact.
+
+site:
+    # The full URL where the site is published (used for canonical links and metadata).
+    url: 'https://leuven-gravity-institute.github.io'
+    # Short name used in the browser tab, the masthead, and metadata.
+    title: 'Leuven Gravity Institute'
+    # Optional short name shown in the masthead when the full one is too long.
+    short_title: 'LGI'
+    tagline: 'Gravitational-wave astronomy and fundamental physics'
+    description:
+        'The Leuven Gravity Institute studies gravitational waves, their
+        sources, and what they reveal about gravity — from detector physics and
+        data analysis to fundamental theory.'
+    language: 'en'
+    # Accent colour used across the site (any valid CSS colour).
+    accent: '#0b6b8f'
+    # Pages of the site. Each entry becomes its own page at a clean URL:
+    #   slug ""              -> "/"              (the home page)
+    #   slug "publications"  -> "/publications/"
+    # `nav: true` shows the page in the navigation bar (in this order).
+    # `lead` is an optional sentence shown under the page title.
+    # `sections` lists the content blocks rendered on the page, top to bottom.
+    # A block is either a plain name, or {name: <block>, preview: N} to show
+    # only the N most recent items with a link through to its full page.
+    # Available blocks: hero, about, research, people, publications, software,
+    # news, events, teaching, join, contact.
+    pages:
+        - slug: ''
+          label: 'Home'
+          nav: true
+          sections:
+              - 'hero'
+              - { name: 'research', preview: 3 }
+              - { name: 'publications', preview: 3 }
+              - { name: 'news', preview: 4 }
+              - { name: 'events', preview: 3 }
+        - slug: 'people'
+          label: 'People'
+          nav: true
+          lead:
+              'The researchers, students, and staff who make up the institute.'
+          sections: ['people']
+        - slug: 'research'
+          label: 'Research'
+          nav: true
+          lead: 'What we work on, and why.'
+          sections: ['research']
+        - slug: 'publications'
+          label: 'Publications'
+          nav: true
+          lead:
+              'Work published by members during their time with the institute,
+              collected automatically from their ORCID records.'
+          sections: ['publications']
+        - slug: 'software'
+          label: 'Software & data'
+          nav: true
+          lead: 'Open-source tools and public datasets released by the group.'
+          sections: ['software']
+        - slug: 'news'
+          label: 'News & events'
+          nav: true
+          lead: 'Announcements, seminars, workshops, and visits.'
+          sections: ['events', 'news']
+        - slug: 'teaching'
+          label: 'Teaching'
+          nav: true
+          lead: 'Courses, lecture series, and student projects.'
+          sections: ['teaching']
+        - slug: 'join'
+          label: 'Join us'
+          nav: true
+          lead: 'Open positions and how to apply.'
+          sections: ['join']
+        - slug: 'contact'
+          label: 'Contact'
+          nav: true
+          sections: ['contact']
+
+institute:
+    name: 'Leuven Gravity Institute'
+    # One-line positioning statement shown in the home-page hero.
+    headline: 'Listening to spacetime.'
+    # The hero paragraph. Markdown is supported.
+    intro: |
+        We are a research group at KU Leuven working on gravitational-wave
+        astronomy: how to build and characterise the next generation of
+        detectors, how to extract astrophysical signals from their data, and
+        what those signals tell us about gravity, compact objects, and the early
+        universe.
+    # Longer description used on the home page under the hero.
+    about: |
+        The institute brings together researchers in signal processing,
+        statistics, and gravitational physics. Our work spans the full chain
+        from raw detector output to inference on astrophysical and cosmological
+        models — with a particular focus on the Einstein Telescope and the
+        analysis challenges that come with it.
+
+        We build our methods in the open: the software and datasets behind our
+        results are released publicly, and our publication list is generated
+        directly from our members' ORCID records.
+    # Institutional affiliation shown in the footer and hero.
+    affiliation: 'KU Leuven'
+    location: 'Leuven, Belgium'
+    # Optional headline figures shown in the hero. Remove the list to hide them.
+    facts:
+        - { label: 'Members', value: '12' }
+        - { label: 'Research themes', value: '4' }
+        - { label: 'Founded', value: '2024' }
+    # Institute-level profile links. `icon` must match a key in the icon set
+    # (see templates/partials/icons.html).
+    links:
+        - { label: 'Email', icon: 'email', url: 'mailto:gravity@kuleuven.be' }
+        - {
+              label: 'GitHub',
+              icon: 'github',
+              url: 'https://github.com/Leuven-Gravity-Institute',
+          }

@@ -1,0 +1,8 @@
+{% if institute.about %}
+<section id="about" class="section">
+  <div class="wrap">
+    {% if show_title %}<h2 class="section-title">About the institute</h2>{% endif %}
+    <div class="prose prose-wide">{{ institute.about | markdown }}</div>
+  </div>
+</section>
+{% endif %}

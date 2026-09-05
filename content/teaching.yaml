@@ -1,0 +1,31 @@
+# Courses, lecture series, and supervised student projects.
+#   kind  "course", "lecture series", or "project"
+
+items:
+    - kind: 'course'
+      title: 'Gravitational-Wave Astronomy'
+      code: 'G0X99A'
+      institution: 'KU Leuven'
+      term: 'Spring 2026'
+      people: ['jane-doe']
+      summary:
+          'Master-level introduction to gravitational-wave sources, detectors,
+          and data analysis.'
+
+    - kind: 'lecture series'
+      title: 'Bayesian Inference for Physicists'
+      institution: 'KU Leuven'
+      term: 'Autumn 2025'
+      people: ['isaac-wong']
+      summary:
+          'Six lectures on Bayesian methods, sampling, and model comparison.'
+
+    - kind: 'project'
+      title: 'Master thesis topics in gravitational-wave data analysis'
+      institution: 'KU Leuven'
+      term: 'Year-round'
+      people: ['jane-doe', 'isaac-wong']
+      summary:
+          'We supervise master theses on inference methods, detector
+          characterisation, and machine learning for signal detection. Get in
+          touch to discuss a topic.'

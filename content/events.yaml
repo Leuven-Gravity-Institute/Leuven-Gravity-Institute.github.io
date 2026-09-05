@@ -1,0 +1,29 @@
+# Seminars, workshops, visits, and conferences. Events dated today or later are
+# listed as upcoming; the rest fall under past events.
+#   date  Start date (YYYY-MM-DD).
+#   end   Optional end date for multi-day events.
+#   kind  Seminar, Workshop, Conference, Visit, ...
+
+items:
+    - date: '2026-10-14'
+      title: 'LGI Seminar: Overlapping signals in third-generation detectors'
+      kind: 'Seminar'
+      speaker: 'Invited speaker, TBC'
+      location: 'Room 01.02, Department of Physics, KU Leuven'
+      summary: 'Weekly institute seminar. Open to all.'
+
+    - date: '2026-11-03'
+      end: '2026-11-05'
+      title: 'Workshop on Einstein Telescope data analysis'
+      kind: 'Workshop'
+      location: 'Leuven, Belgium'
+      summary:
+          'Three days of talks and hands-on sessions on the analysis challenges
+          of the Einstein Telescope.'
+      url: 'https://leuven-gravity-institute.github.io'
+
+    - date: '2026-02-11'
+      title: 'LGI Seminar: Glitch classification with deep learning'
+      kind: 'Seminar'
+      speaker: 'Sam Former'
+      location: 'Room 01.02, Department of Physics, KU Leuven'

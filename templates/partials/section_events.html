@@ -1,0 +1,47 @@
+{% from "partials/icons.html" import icon %}
+{% macro event_row(item) %}
+<li class="event">
+  <div class="event-date">
+    <span class="event-day">{{ item.date[8:10] }}</span>
+    <span class="event-month">{{ item.date[0:7] }}</span>
+  </div>
+  <div class="event-body">
+    <p class="event-title">
+      {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}
+      <span class="badge">{{ item.kind }}</span>
+    </p>
+    <p class="event-meta">
+      {% if item.speaker %}{{ item.speaker }}{% endif %}
+      {% if item.end %}{% if item.speaker %} · {% endif %}until {{ item.end }}{% endif %}
+      {% if item.location %}{% if item.speaker or item.end %} · {% endif %}{{ item.location }}{% endif %}
+    </p>
+    {% if item.summary %}<p class="event-summary">{{ item.summary }}</p>{% endif %}
+  </div>
+</li>
+{% endmacro %}
+{% if upcoming_events or past_events %}
+<section id="events" class="section">
+  <div class="wrap">
+    {% if show_title %}<h2 class="section-title">Events</h2>{% endif %}
+    {% if s.preview %}
+    <ul class="event-list">
+      {% for item in (upcoming_events or past_events)[:s.preview] %}{{ event_row(item) }}{% endfor %}
+    </ul>
+    <p class="more"><a href="/news/">All news &amp; events →</a></p>
+    {% else %}
+    {% if upcoming_events %}
+    <h3 class="group-heading">Upcoming</h3>
+    <ul class="event-list">
+      {% for item in upcoming_events %}{{ event_row(item) }}{% endfor %}
+    </ul>
+    {% endif %}
+    {% if past_events %}
+    <h3 class="group-heading">Past</h3>
+    <ul class="event-list event-list-past">
+      {% for item in past_events %}{{ event_row(item) }}{% endfor %}
+    </ul>
+    {% endif %}
+    {% endif %}
+  </div>
+</section>
+{% endif %}

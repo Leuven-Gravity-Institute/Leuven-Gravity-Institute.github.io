@@ -1,0 +1,68 @@
+name: Sync publications
+
+on:
+    schedule:
+        - cron: '0 6 * * 1' # Weekly, Mondays at 06:00 UTC
+    workflow_dispatch:
+
+permissions:
+    contents: write
+    pull-requests: write
+
+concurrency:
+    group: sync-publications
+    cancel-in-progress: true
+
+jobs:
+    sync:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+            - name: Install uv
+              uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+              with:
+                  enable-cache: true
+
+            - name: Sync publications from the members' ORCID records
+              id: sync
+              run: |
+                  {
+                      echo 'summary<<SYNC_EOF'
+                      uv run lgi publications sync
+                      echo 'SYNC_EOF'
+                  } >> "$GITHUB_OUTPUT"
+
+            - name: Check the site still validates and builds
+              run: |
+                  uv run lgi validate
+                  uv run lgi build --output _site
+
+            - name: Open pull request for review
+              uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676 # v7
+              with:
+                  branch: chore/sync-publications
+                  delete-branch: true
+                  add-paths: content/publications.yaml
+                  commit-message: 'chore: sync publications from ORCID'
+                  title: 'chore: sync publications from ORCID'
+                  labels: |
+                      publications
+                      automated
+                  body: |
+                      Automated weekly publication sync from the members' ORCID records.
+
+                      ```
+                      ${{ steps.sync.outputs.summary }}
+                      ```
+
+                      Only works published while a member was affiliated with the group are
+                      listed — their `start` and `end` dates in `content/people.yaml` set that
+                      window. Papers shared by several members are deduplicated into one entry
+                      crediting all of them.
+
+                      Existing `include`, `highlight`, and `note` decisions are preserved, and
+                      hand-authored entries (those without a `key`) are left untouched.
+
+                      **To change what appears here:** correct the member's ORCID record, or
+                      adjust their dates in `content/people.yaml`, and re-run this workflow.

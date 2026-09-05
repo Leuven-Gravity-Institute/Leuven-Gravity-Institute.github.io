@@ -1,0 +1,130 @@
+[build-system]
+requires = ["hatchling", "uv-dynamic-versioning"]
+build-backend = "hatchling.build"
+
+[project]
+name = "leuven-gravity-institute"
+authors = [{ name = "Leuven Gravity Institute" }]
+description = "Website of the Leuven Gravity Institute"
+readme = "README.md"
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: BSD License",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+]
+requires-python = ">=3.12"
+dependencies = [
+  "typer>=0.27.2",
+  "jinja2>=3.1.6",
+  "pyyaml>=6.0.3",
+  "jsonschema>=4.26.0",
+  "markdown>=3.10.3",
+]
+dynamic = ["version"]
+
+[dependency-groups]
+dev = [
+  "ruff>=0.16.5",
+  "prek>=0.5.1",
+  "pytest-github-actions-annotate-failures>=0.4.2",
+  "pytest-cov>=7.1.0",
+  "pytest-mock>=3.15.1",
+  "pytest>=9.1.1",
+]
+build = ["hatch>=1.18.0"]
+
+[project.scripts]
+lgi = "leuven_gravity_institute.cli.main:app"
+
+[project.urls]
+Documentation = "https://leuven-gravity-institute.github.io"
+Source = "https://github.com/Leuven-Gravity-Institute/Leuven-Gravity-Institute.github.io"
+Tracker = "https://github.com/Leuven-Gravity-Institute/Leuven-Gravity-Institute.github.io/issues"
+Home = "https://github.com/Leuven-Gravity-Institute/Leuven-Gravity-Institute.github.io"
+
+[tool.uv-dynamic-versioning]
+vcs = "git"
+style = "semver"
+
+[tool.hatch.version]
+source = "uv-dynamic-versioning"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/leuven_gravity_institute"]
+
+[tool.dependency-support-policy]
+policy = "spec0"
+groups = ["project", "optional"]
+lock = "minimal"
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+fail_under = 0
+
+[tool.pytest.ini_options]
+addopts = "--cov-report xml:coverage.xml --cov src --cov-append -m 'not integration'"
+pythonpath = ["src"]
+testpaths = "tests"
+junit_family = "xunit2"
+markers = [
+  "integration: marks as integration test",
+  "slow: marks tests as slow",
+  "unit: fast offline tests",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+fix = true
+
+[tool.ruff.lint]
+extend-select = [
+  "E",
+  "F",
+  "W",
+  "I",
+  "UP",
+  "C90",
+  "N",
+  "B",
+  "A",
+  "C4",
+  "PT",
+  "RUF",
+  "PL",
+  "SIM",
+  "T10",
+  "D",
+  "S",
+]
+ignore = [
+  "E501", # Line length (handled by the formatter)
+  "C901", # Complexity is guarded by review, not a hard threshold
+  "D203", # Incompatible with D211 (no blank line before class); keep D211
+  "D213", # Incompatible with D212 (multi-line summary on first line); keep D212
+]
+unfixable = []
+
+[tool.ruff.lint.per-file-ignores]
+# S101: allow assert; PLC0415: local imports in tests; PLR2004: magic values;
+# S314: tests parse the build's own generated feed.xml (trusted local output);
+# D102: a test method's name is its documentation;
+# PLR0913: record-building helpers take one keyword per field on purpose.
+"tests/*" = ["S101", "ARG001", "PLC0415", "PLR2004", "S314", "D102", "PLR0913"]
+# Typer reads option/argument defaults from the function signature, so calls in
+# defaults (typer.Option(...), Path.cwd()) are the intended pattern here.
+"src/leuven_gravity_institute/cli/*" = ["B008"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = true
+
+[tool.uv]
+required-version = ">=0.10.6"

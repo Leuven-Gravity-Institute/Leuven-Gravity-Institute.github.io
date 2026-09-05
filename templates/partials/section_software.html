@@ -1,0 +1,30 @@
+{% from "partials/macros.html" import people_links %}
+{% if software_groups %}
+<section id="software" class="section">
+  <div class="wrap">
+    {% if show_title %}<h2 class="section-title">Software &amp; data</h2>{% endif %}
+    {% for group in software_groups %}
+    <h3 class="group-heading">{{ group.category }}</h3>
+    <ul class="release-list">
+      {% for item in group['items'] %}
+      <li class="release">
+        <p class="release-title">
+          <span class="release-name">{{ item.name }}</span>
+          <span class="badge badge-{{ item.kind }}">{{ item.kind }}</span>
+          {% if item.role %}<span class="badge">{{ item.role }}</span>{% endif %}
+          {% if item.license %}<span class="badge badge-license">{{ item.license }}</span>{% endif %}
+        </p>
+        <p class="release-summary">{{ item.summary }}</p>
+        {% if item.people %}<p class="release-people">{{ people_links(item.people, people_by_id) }}</p>{% endif %}
+        {% if item.links %}
+        <p class="card-links">
+          {% for link in item.links %}<a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>{% endfor %}
+        </p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

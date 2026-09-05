@@ -1,0 +1,36 @@
+# Research themes shown on the Research page and (in preview) on the home page.
+# `people` lists person ids from people.yaml; each becomes a link to that
+# person's profile. `publications` lists publication `key` values to feature.
+
+items:
+    - name: 'Next-generation detectors'
+      summary: |
+          Preparing the analysis infrastructure for the Einstein Telescope: null
+          streams, correlated noise between co-located interferometers, and the
+          overlapping-signal problem that comes with a much higher detection
+          rate.
+      tags: ['Einstein Telescope', 'Detector characterisation']
+      people: ['jane-doe', 'isaac-wong']
+
+    - name: 'Statistical inference'
+      summary: |
+          Scalable Bayesian methods for gravitational-wave parameter estimation,
+          including simulation-based inference, normalising flows, and
+          diagnostics for when those methods can be trusted.
+      tags: ['Bayesian inference', 'Machine learning']
+      people: ['isaac-wong', 'alex-student']
+
+    - name: 'Tests of gravity'
+      summary: |
+          Model-independent tests of general relativity with compact binary
+          coalescences, and the systematics that limit them.
+      tags: ['Fundamental physics']
+      people: ['jane-doe']
+
+    - name: 'Noise and data quality'
+      summary: |
+          Characterising instrumental artefacts, classifying transient glitches,
+          and understanding how data quality propagates into astrophysical
+          conclusions.
+      tags: ['Data quality']
+      people: ['jane-doe']
