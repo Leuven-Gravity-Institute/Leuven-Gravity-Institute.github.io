@@ -103,6 +103,9 @@ class TestBuild:
         assert "No news yet." in page or "news-item" in page
         assert "No events are scheduled" in page or "event-list" in page
 
+        teaching = (built / "teaching" / "index.html").read_text(encoding="utf-8")
+        assert "No courses or student projects" in teaching or "plain-item" in teaching
+
     def test_empty_sections_are_hidden_on_the_home_page(self, built: Path, paths: SitePaths) -> None:
         content = load_content(paths.content)
         home = (built / "index.html").read_text(encoding="utf-8")
