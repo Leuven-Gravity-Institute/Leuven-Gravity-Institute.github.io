@@ -82,7 +82,6 @@ jobs:
                   echo "previous_tag=$PREVIOUS_TAG" >> $GITHUB_OUTPUT
 
             - name: Output tag information
-              if: ${{ steps.check_commits.outputs.has-changes == 'true' }}
               run: |
                   echo "### Tag Created :rocket:" >> $GITHUB_STEP_SUMMARY
                   echo "- **New tag**: ${{ steps.tag_version.outputs.new_tag }}" >> $GITHUB_STEP_SUMMARY
