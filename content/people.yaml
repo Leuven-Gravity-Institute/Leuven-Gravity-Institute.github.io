@@ -61,6 +61,11 @@ items:
                 icon: 'orcid',
                 url: 'https://orcid.org/0000-0003-4297-7365',
             }
+          - {
+                label: 'GitHub',
+                icon: 'github',
+                url: 'https://github.com/tjonnie-li',
+            }
 
     - id: 'isaac-wong'
       slug: 'isaac-wong'
