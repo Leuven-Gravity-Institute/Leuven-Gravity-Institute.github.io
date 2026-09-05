@@ -1,36 +1,63 @@
 # Research themes shown on the Research page and (in preview) on the home page.
+#
+# These follow the group's official KU Leuven page:
+# https://fys.kuleuven.be/hf/research-groups/copy_of_M2T
+# Keep the two consistent when either changes.
+#
 # `people` lists person ids from people.yaml; each becomes a link to that
 # person's profile. `publications` lists publication `key` values to feature.
 
 items:
-    - name: 'Next-generation detectors'
+    - name: 'Data analysis for current and future observatories'
       summary: |
-          Preparing the analysis infrastructure for the Einstein Telescope: null
-          streams, correlated noise between co-located interferometers, and the
-          overlapping-signal problem that comes with a much higher detection
-          rate.
-      tags: ['Einstein Telescope', 'Detector characterisation']
+          The group is actively involved in the scientific exploitation of the
+          current generation of gravitational-wave detectors — LIGO and Virgo —
+          and in preparing the analyses for the observatories that follow. Work
+          here spans Bayesian parameter estimation, methods for signal
+          detection, and the machine-learning techniques that increasingly
+          support both.
+      tags:
+          - 'LIGO'
+          - 'Virgo'
+          - 'Bayesian inference'
+          - 'Signal detection'
       # people: ['<person-id>']  # who works on this; ids from people.yaml
 
-    - name: 'Statistical inference'
+    - name: 'Detector noise, data quality, and calibration'
       summary: |
-          Scalable Bayesian methods for gravitational-wave parameter estimation,
-          including simulation-based inference, normalising flows, and
-          diagnostics for when those methods can be trusted.
-      tags: ['Bayesian inference', 'Machine learning']
+          Real detector output is not stationary Gaussian noise. The group
+          develops robust approaches to transient glitches and to noise
+          correlated across a detector network, together with machine-learning
+          methods for noise mitigation and techniques supporting the
+          calibration of current and future observatories.
+      tags:
+          - 'Detector characterisation'
+          - 'Glitches'
+          - 'Correlated noise'
+          - 'Calibration'
       # people: ['<person-id>']  # who works on this; ids from people.yaml
 
-    - name: 'Tests of gravity'
+    - name: 'The Einstein Telescope'
       summary: |
-          Model-independent tests of general relativity with compact binary
-          coalescences, and the systematics that limit them.
-      tags: ['Fundamental physics']
+          A major effort is dedicated to the specific challenges and
+          opportunities that arise from the triangular configuration of the
+          Einstein Telescope, and more broadly to the science case and data
+          challenges of next-generation detectors.
+      tags:
+          - 'Einstein Telescope'
+          - 'Triangular configuration'
+          - 'Next-generation detectors'
       # people: ['<person-id>']  # who works on this; ids from people.yaml
 
-    - name: 'Noise and data quality'
+    - name: 'Core-collapse supernovae and strong-field gravity'
       summary: |
-          Characterising instrumental artefacts, classifying transient glitches,
-          and understanding how data quality propagates into astrophysical
-          conclusions.
-      tags: ['Data quality']
+          The group investigates gravitational waves from core-collapse
+          supernovae, using large-scale numerical simulations and modern
+          data-analytics tools to explore the strong-field dynamics of
+          spacetime and the behaviour of ultra-dense matter.
+      tags:
+          - 'Core-collapse supernovae'
+          - 'Strong-field gravity'
+          - 'Ultra-dense matter'
+          - 'Large-scale computing'
       # people: ['<person-id>']  # who works on this; ids from people.yaml

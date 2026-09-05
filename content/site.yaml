@@ -12,9 +12,9 @@ site:
     short_title: 'GW Group'
     tagline: 'Leuven Gravity Institute · KU Leuven'
     description:
-        'The Gravitational Wave Group at the Leuven Gravity Institute, KU Leuven
-        — detector science, data analysis, and what gravitational-wave signals
-        reveal about gravity.'
+        'The Gravitational Wave Group at KU Leuven — data analysis for LIGO,
+        Virgo, and the Einstein Telescope, detector noise and calibration, and
+        gravitational waves from core-collapse supernovae.'
     language: 'en'
     # Accent colour used across the site (any valid CSS colour).
     accent: '#0b6b8f'
@@ -107,22 +107,28 @@ org:
     headline: 'Listening to spacetime.'
     # The hero paragraph. Markdown is supported.
     intro: |
-        We are a research group at KU Leuven, part of the Leuven Gravity
-        Institute, working on gravitational-wave astronomy: how to build and
-        characterise the next generation of detectors, how to extract
-        astrophysical signals from their data, and what those signals tell us
-        about gravity, compact objects, and the early universe.
+        The Gravitational Wave Group is actively involved in the scientific
+        exploitation of the current generation of gravitational-wave detectors —
+        LIGO and Virgo — and in the preparation of next-generation observatories,
+        particularly the Einstein Telescope.
     # Longer description shown on the home page under the hero.
     about: |
-        The group brings together researchers in signal processing, statistics,
-        and gravitational physics. Our work spans the full chain from raw
-        detector output to inference on astrophysical and cosmological models —
-        with a particular focus on the Einstein Telescope and the analysis
-        challenges that come with it.
+        Our research follows several interconnected lines. We develop advanced
+        data-analysis techniques for gravitational-wave signals, including
+        Bayesian parameter estimation, machine-learning methods for noise
+        mitigation, and methods for signal detection. We work on robust
+        approaches to realistic detector noise — transient glitches, and noise
+        correlated across a network — and on supporting detector calibration for
+        current and future observatories. A major effort is dedicated to the
+        challenges and opportunities arising from the triangular configuration of
+        the Einstein Telescope. We also investigate gravitational waves from
+        core-collapse supernovae, using large-scale numerical simulations and
+        modern data-analytics tools to explore the strong-field regime of general
+        relativity.
 
         We build our methods in the open: the software and datasets behind our
         results are released publicly, and our publication list is generated
-        directly from our members' ORCID records.
+        directly from our members' bibliographic records.
 
         The group is one of several at the Leuven Gravity Institute; this site
         covers our own work rather than the institute as a whole.
