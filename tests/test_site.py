@@ -6,6 +6,7 @@ template is caught here rather than in the deploy workflow.
 
 from __future__ import annotations
 
+import html
 import shutil
 from collections.abc import Iterator
 from datetime import date
@@ -85,12 +86,14 @@ class TestBuild:
         content = load_content(paths.content)
         publications = content["publications"]["items"]
         person = next(p for p in content["people"]["items"] if p["id"] == "isaac-wong")
-        html = (built / "people" / person["slug"] / "index.html").read_text(encoding="utf-8")
+        page = (built / "people" / person["slug"] / "index.html").read_text(encoding="utf-8")
         for pub in publications:
+            # Titles are HTML-escaped on the way into the page.
+            title = html.escape(pub["title"], quote=False)
             if person["id"] in (pub.get("members") or []):
-                assert pub["title"] in html
+                assert title in page
             else:
-                assert pub["title"] not in html
+                assert title not in page
 
     def test_assets_and_nojekyll_are_copied(self, built: Path) -> None:
         assert (built / "assets" / "css" / "style.css").is_file()

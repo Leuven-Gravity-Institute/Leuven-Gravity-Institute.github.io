@@ -28,6 +28,7 @@ without a ``key``) are never modified or removed.
 from __future__ import annotations
 
 import calendar
+import html
 import re
 import unicodedata
 from collections.abc import Callable, Iterable, Sequence
@@ -144,6 +145,26 @@ class SyncSummary:
     def changed(self) -> bool:
         """Whether the merge produced any additions, removals, or updates."""
         return bool(self.added) or bool(self.removed) or self.updated > 0
+
+
+def clean_text(value: str) -> str:
+    """Flatten a Crossref/ORCID string into plain text.
+
+    Crossref returns titles and journal names containing presentation markup
+    and JATS entities — ``Total Mass 190-265 <i>M</i><sub>&#8857;</sub>`` spread
+    over several indented lines. Templates escape their input, so those tags
+    would otherwise appear literally on the page.
+
+    Args:
+        value: The raw string from the upstream API.
+
+    Returns:
+        The string with tags removed, entities resolved, and whitespace
+        collapsed to single spaces.
+
+    """
+    without_tags = re.sub(r"<[^>]+>", " ", str(value))
+    return re.sub(r"\s+", " ", html.unescape(without_tags)).strip()
 
 
 def _fold(text: str) -> str:
@@ -320,7 +341,7 @@ def _orcid_contributors(work: dict[str, Any]) -> list[str]:
 def _crossref_venue(message: dict[str, Any]) -> str:
     """Build a human-readable venue string from a Crossref record."""
     titles = message.get("container-title") or []
-    journal = str(titles[0]) if titles else ""
+    journal = clean_text(titles[0]) if titles else ""
     if not journal:
         return str((message.get("institution") or [{}])[0].get("name") or "") if message.get("institution") else ""
     volume = str(message.get("volume") or "")
@@ -340,7 +361,7 @@ def _fallback_venue(work: dict[str, Any], arxiv: str | None, work_type: str) -> 
     """Build a venue string from the ORCID record alone."""
     journal = (work.get("journal-title") or {}).get("value")
     if journal:
-        return str(journal)
+        return clean_text(journal)
     if arxiv:
         return f"arXiv:{arxiv}"
     return work_type.replace("-", " ").title() if work_type else "Preprint"
@@ -402,12 +423,20 @@ def build_authors(
     if not authors:
         return [f"**{member.name}**" for member in members], False
     emphasised = emphasise_members(authors, members)
-    if len(authors) <= threshold:
-        return emphasised, False
-    lead = emphasised[0]
     named = [name for name in emphasised if name.startswith("**")]
-    incl = f" (incl. {', '.join(named)})" if named and lead not in named else ""
-    return [f"{lead} et al.{incl}"], True
+    # Crossref sometimes records a large collaboration as a single author, so no
+    # member's name appears in the list at all. Fall back to naming the credited
+    # members outright, otherwise the entry gives no clue why it is on the
+    # group's page.
+    credited = named or [f"**{member.name}**" for member in members]
+
+    if len(authors) > threshold:
+        lead = emphasised[0]
+        incl = f" (incl. {', '.join(credited)})" if credited and lead not in credited else ""
+        return [f"{lead} et al.{incl}"], True
+    if not named and credited:
+        return [*emphasised[:-1], f"{emphasised[-1]} (incl. {', '.join(credited)})"], False
+    return emphasised, False
 
 
 def entry_key(doi: str | None, arxiv: str | None, title: str) -> str:
@@ -454,9 +483,9 @@ def normalize_work(
     ids = _external_ids(work)
     doi = ids.get("doi")
     arxiv = ids.get("arxiv")
-    title = str(((work.get("title") or {}).get("title") or {}).get("value") or "Untitled").strip()
+    title = clean_text(((work.get("title") or {}).get("title") or {}).get("value") or "Untitled")
     if crossref and crossref.get("title"):
-        title = str(crossref["title"][0]).strip() or title
+        title = clean_text(crossref["title"][0]) or title
 
     year, month, day = _orcid_publication_date(work)
     if year is None and crossref:

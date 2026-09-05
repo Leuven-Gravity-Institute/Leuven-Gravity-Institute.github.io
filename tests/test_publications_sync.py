@@ -18,6 +18,7 @@ import yaml
 from leuven_gravity_institute.site.publications_sync import (
     Member,
     build_authors,
+    clean_text,
     date_span,
     deduplicate,
     emphasise_members,
@@ -141,6 +142,20 @@ class TestMembers:
         assert MEMBER.initial == "i"
 
 
+class TestCleanText:
+    """Flattening upstream markup, which templates would otherwise escape."""
+
+    def test_presentation_markup_is_stripped_and_whitespace_collapsed(self) -> None:
+        raw = "GW231123: Total Mass 190-265\n                    <i>M</i>\n                    <sub>&#8857;</sub>"
+        assert clean_text(raw) == "GW231123: Total Mass 190-265 M \u2299"
+
+    def test_entities_are_resolved(self) -> None:
+        assert clean_text("Nuclear R&amp;D") == "Nuclear R&D"
+
+    def test_plain_titles_pass_through_unchanged(self) -> None:
+        assert clean_text("A perfectly ordinary title") == "A perfectly ordinary title"
+
+
 class TestAuthors:
     """Rendering author lists."""
 
@@ -166,6 +181,24 @@ class TestAuthors:
         rendered, collapsed = build_authors(["Isaac Wong", "Jane Doe"], [MEMBER, OTHER])
         assert collapsed is False
         assert rendered == ["**Isaac Wong**", "**Jane Doe**"]
+
+    def test_a_collaboration_listed_as_one_author_still_names_the_members(self) -> None:
+        # Crossref records some collaboration papers with a single "author"
+        # entry, so no member name appears and the list never reaches the
+        # collapse threshold; the entry must still show who is credited.
+        rendered, collapsed = build_authors(["Virgo Collaboration"], [MEMBER])
+        assert rendered == ["Virgo Collaboration (incl. **Isaac Wong**)"]
+        assert collapsed is False
+
+    def test_several_members_are_all_named_on_such_a_paper(self) -> None:
+        rendered, _ = build_authors(["LIGO Scientific Collaboration"], [MEMBER, OTHER])
+        assert rendered == ["LIGO Scientific Collaboration (incl. **Isaac Wong**, **Jane Doe**)"]
+
+    def test_a_long_list_that_names_no_member_still_credits_them(self) -> None:
+        authors = [f"Author {index}" for index in range(30)]
+        rendered, collapsed = build_authors(authors, [MEMBER], threshold=15)
+        assert rendered == ["Author 0 et al. (incl. **Isaac Wong**)"]
+        assert collapsed is True
 
     def test_missing_author_list_falls_back_to_the_credited_members(self) -> None:
         rendered, collapsed = build_authors([], [MEMBER])

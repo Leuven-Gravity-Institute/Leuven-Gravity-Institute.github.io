@@ -15,6 +15,981 @@
 # `key`; hand-authored entries are never touched by the sync. Wrap a group
 # member's name in **double asterisks** to emphasise it.
 
-items: []
-# Empty until the first `lgi publications sync`. The Publications section and
-# its home-page preview simply do not render while this list is empty.
+items:
+- include: true
+  highlight: false
+  title: Upper limits on the isotropic gravitational-wave background from the first part of LIGO, Virgo, and KAGRA’s fourth
+    observing run
+  authors:
+  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  venue: Physical Review D 114, 042001 (2026)
+  year: 2026
+  date: '2026-08-15'
+  type: journal
+  doi: 10.1103/wq57-sjt2
+  arxiv: '2508.20721'
+  url: http://inspirehep.net/record/2964643
+  key: doi:10.1103/wq57-sjt2
+  source: orcid
+  members:
+  - isaac-wong
+  author_count: 1770
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/wq57-sjt2
+  - label: arXiv
+    url: https://arxiv.org/abs/2508.20721
+- include: true
+  highlight: false
+  title: 'GW240925 and GW250207: Astrophysical Calibration of Gravitational Wave Detectors'
+  authors:
+  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  venue: Physical Review Letters 137, 071401 (2026)
+  year: 2026
+  date: '2026-08-13'
+  type: journal
+  doi: 10.1103/gzrj-mwv3
+  arxiv: '2605.11703'
+  url: http://inspirehep.net/record/3154837
+  key: doi:10.1103/gzrj-mwv3
+  source: orcid
+  members:
+  - isaac-wong
+  author_count: 1840
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/gzrj-mwv3
+  - label: arXiv
+    url: https://arxiv.org/abs/2605.11703
+- include: true
+  highlight: false
+  title: Search for planetary-mass ultracompact binaries using data from the first part of the LIGO–Virgo–KAGRA fourth observing
+    run
+  authors:
+  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  venue: Physical Review D 114, 022005 (2026)
+  year: 2026
+  date: '2026-07-15'
+  type: journal
+  doi: 10.1103/s551-7pch
+  arxiv: '2511.19911'
+  url: http://inspirehep.net/record/3086383
+  key: doi:10.1103/s551-7pch
+  source: orcid
+  members:
+  - isaac-wong
+  author_count: 1771
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/s551-7pch
+  - label: arXiv
+    url: https://arxiv.org/abs/2511.19911
+- include: true
+  highlight: false
+  title: Directed searches for gravitational waves from ultralight vector boson clouds around merger remnant and galactic
+    black holes during the first part of the fourth LIGO-Virgo-KAGRA observing run
+  authors:
+  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  venue: Physical Review D 114, 022006 (2026)
+  year: 2026
+  date: '2026-07-15'
+  type: journal
+  doi: 10.1103/mjfs-m6t7
+  arxiv: '2509.07352'
+  url: http://inspirehep.net/record/2968096
+  key: doi:10.1103/mjfs-m6t7
+  source: orcid
+  members:
+  - isaac-wong
+  author_count: 1770
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/mjfs-m6t7
+  - label: arXiv
+    url: https://arxiv.org/abs/2509.07352
+- include: true
+  highlight: false
+  title: Narrowband Searches for Continuous Gravitational Waves from known Pulsars in the First Two Parts of the Fourth LIGO–Virgo–KAGRA
+    Observing Run
+  authors:
+  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  venue: The Astrophysical Journal 1005, 221 (2026)
+  year: 2026
+  date: '2026-07-07'
+  type: journal
+  doi: 10.3847/1538-4357/ae77fc
+  arxiv: '2603.25938'
+  url: http://inspirehep.net/record/3136113
+  key: doi:10.3847/1538-4357/ae77fc
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 1854
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ae77fc
+  - label: arXiv
+    url: https://arxiv.org/abs/2603.25938
+- include: true
+  highlight: false
+  title: 'Directional search for persistent gravitational waves: Results from the first part of LIGO-Virgo-KAGRA’s fourth
+    observing run'
+  authors:
+  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  venue: Physical Review D 114, 022001 (2026)
+  year: 2026
+  date: '2026-07-06'
+  type: journal
+  doi: 10.1103/wgp7-t8r8
+  arxiv: '2510.17487'
+  url: http://inspirehep.net/record/3071146
+  key: doi:10.1103/wgp7-t8r8
+  source: orcid
+  members:
+  - isaac-wong
+  author_count: 1765
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/wgp7-t8r8
+  - label: arXiv
+    url: https://arxiv.org/abs/2510.17487
+- include: true
+  highlight: false
+  title: 'GWTC-4.0: Population Properties of Merging Compact Binaries'
+  authors:
+  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  venue: The Astrophysical Journal Letters 1005, L51 (2026)
+  year: 2026
+  date: '2026-07-03'
+  type: journal
+  doi: 10.3847/2041-8213/ae771e
+  arxiv: '2508.18083'
+  url: http://inspirehep.net/record/2963711
+  key: doi:10.3847/2041-8213/ae771e
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 1806
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/ae771e
+  - label: arXiv
+    url: https://arxiv.org/abs/2508.18083
+- include: true
+  highlight: false
+  title: Constraints on Gravitational Waves from the 2024 Vela Pulsar Glitch
+  authors:
+  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  venue: The Astrophysical Journal 1005, 12 (2026)
+  year: 2026
+  date: '2026-06-19'
+  type: journal
+  doi: 10.3847/1538-4357/ae63bc
+  arxiv: '2512.17990'
+  url: http://inspirehep.net/record/3094760
+  key: doi:10.3847/1538-4357/ae63bc
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 1775
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ae63bc
+  - label: arXiv
+    url: https://arxiv.org/abs/2512.17990
+- include: true
+  highlight: false
+  title: Open Data from LIGO, Virgo, and KAGRA through the First Part of the Fourth Observing Run
+  authors:
+  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  venue: The Astrophysical Journal 1004, 232 (2026)
+  year: 2026
+  date: '2026-06-18'
+  type: journal
+  doi: 10.3847/1538-4357/ae211e
+  arxiv: '2508.18079'
+  url: http://inspirehep.net/record/2963692
+  key: doi:10.3847/1538-4357/ae211e
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 1773
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ae211e
+  - label: arXiv
+    url: https://arxiv.org/abs/2508.18079
+- include: true
+  highlight: false
+  title: 'GWTC-4.0: Updating the Gravitational-wave Transient Catalog with Observations from the First Part of the Fourth
+    LIGO–Virgo–KAGRA Observing Run'
+  authors:
+  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  venue: The Astrophysical Journal Letters 1004, L22 (2026)
+  year: 2026
+  date: '2026-06-18'
+  type: journal
+  doi: 10.3847/2041-8213/ae2c74
+  arxiv: '2508.18082'
+  url: http://inspirehep.net/record/2963698
+  key: doi:10.3847/2041-8213/ae2c74
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 1787
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/ae2c74
+  - label: arXiv
+    url: https://arxiv.org/abs/2508.18082
+- include: true
+  highlight: false
+  title: 'GWTC-4.0: Methods for Identifying and Characterizing Gravitational-wave Transients'
+  authors:
+  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  venue: The Astrophysical Journal Letters 1004, L21 (2026)
+  year: 2026
+  date: '2026-06-18'
+  type: journal
+  doi: 10.3847/2041-8213/ae447b
+  arxiv: '2508.18081'
+  url: http://inspirehep.net/record/3171346
+  key: doi:10.3847/2041-8213/ae447b
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 1809
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/ae447b
+  - label: arXiv
+    url: https://arxiv.org/abs/2508.18081
+- include: true
+  highlight: false
+  title: 'GW230814: Investigation of a Loud Gravitational-wave Signal Observed with a Single Detector'
+  authors:
+  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  venue: The Astrophysical Journal Letters 1004, L23 (2026)
+  year: 2026
+  date: '2026-06-18'
+  type: journal
+  doi: 10.3847/2041-8213/ae2ad3
+  arxiv: '2509.07348'
+  url: http://inspirehep.net/record/2968116
+  key: doi:10.3847/2041-8213/ae2ad3
+  source: orcid
+  members:
+  - isaac-wong
+  author_count: 1783
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/ae2ad3
+  - label: arXiv
+    url: https://arxiv.org/abs/2509.07348
+- include: true
+  highlight: false
+  title: Searches for Continuous Gravitational Waves from Supernova Remnants in the First Part of the LIGO-Virgo-KAGRA Fourth
+    Observing Run
+  authors:
+  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  venue: The Astrophysical Journal 1004, 204 (2026)
+  year: 2026
+  date: '2026-06-15'
+  type: journal
+  doi: 10.3847/1538-4357/ae6263
+  arxiv: '2603.25808'
+  url: http://inspirehep.net/record/3136106
+  key: doi:10.3847/1538-4357/ae6263
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 1765
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ae6263
+  - label: arXiv
+    url: https://arxiv.org/abs/2603.25808
+- include: true
+  highlight: false
+  title: Deep Search for Joint Sources of Gravitational Waves and High-energy Neutrinos with IceCube during the Third Observing
+    Run of LIGO and Virgo
+  authors:
+  - R. Abbasi et al. (incl. **I. C. F. Wong**)
+  venue: The Astrophysical Journal 1003, 41 (2026)
+  year: 2026
+  date: '2026-05-13'
+  type: journal
+  doi: 10.3847/1538-4357/ae4e1b
+  arxiv: '2601.07595'
+  url: http://inspirehep.net/record/3103348
+  key: doi:10.3847/1538-4357/ae4e1b
+  source: orcid
+  members:
+  - isaac-wong
+  author_count: 2207
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ae4e1b
+  - label: arXiv
+    url: https://arxiv.org/abs/2601.07595
+- include: true
+  highlight: false
+  title: All-sky search for long-duration gravitational-wave transients in the first part of the fourth LIGO-Virgo-KAGRA observing
+    run
+  authors:
+  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  venue: Physical Review D 113, 082004 (2026)
+  year: 2026
+  date: '2026-04-15'
+  type: journal
+  doi: 10.1103/83j3-pgk1
+  arxiv: '2507.12282'
+  url: http://inspirehep.net/record/2947443
+  key: doi:10.1103/83j3-pgk1
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 1766
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/83j3-pgk1
+  - label: arXiv
+    url: https://arxiv.org/abs/2507.12282
+- include: true
+  highlight: false
+  title: The Science of the Einstein Telescope
+  authors:
+  - Adrian Abac et al. (incl. **Milan Wils**, **Isaac C.F. Wong**)
+  venue: Journal of Cosmology and Astroparticle Physics 2026, 081 (2026)
+  year: 2026
+  date: '2026-03-26'
+  type: journal
+  doi: 10.1088/1475-7516/2026/03/081
+  arxiv: '2503.12263'
+  url: http://inspirehep.net/record/2901213
+  key: doi:10.1088/1475-7516/2026/03/081
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 490
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1088/1475-7516/2026/03/081
+  - label: arXiv
+    url: https://arxiv.org/abs/2503.12263
+- include: true
+  highlight: false
+  title: Black Hole Spectroscopy and Tests of General Relativity with GW250114
+  authors:
+  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  venue: Physical Review Letters 136, 041403 (2026)
+  year: 2026
+  date: '2026-01-29'
+  type: journal
+  doi: 10.1103/6c61-fm1n
+  arxiv: '2509.08099'
+  url: http://inspirehep.net/record/2968656
+  key: doi:10.1103/6c61-fm1n
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 1783
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/6c61-fm1n
+  - label: arXiv
+    url: https://arxiv.org/abs/2509.08099
+- include: true
+  highlight: false
+  title: 'GWTC-4.0: Constraints on the Cosmic Expansion Rate and Modified Gravitational-wave Propagation'
+  authors:
+  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  venue: The Astrophysical Journal Letters 1007, L17 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.3847/2041-8213/ae69dd
+  arxiv: '2509.04348'
+  url: http://inspirehep.net/record/2966674
+  key: doi:10.3847/2041-8213/ae69dd
+  source: orcid
+  members:
+  - isaac-wong
+  author_count: 1771
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/ae69dd
+  - label: arXiv
+    url: https://arxiv.org/abs/2509.04348
+- include: true
+  highlight: false
+  title: 'GWTC-4.0: An Introduction to Version 4.0 of the Gravitational-Wave Transient Catalog'
+  authors:
+  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  venue: The Astrophysical Journal Letters 995, L18 (2025)
+  year: 2025
+  date: '2025-12-09'
+  type: journal
+  doi: 10.3847/2041-8213/ae0c06
+  arxiv: '2508.18080'
+  url: http://inspirehep.net/record/2963737
+  key: doi:10.3847/2041-8213/ae0c06
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 1809
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/ae0c06
+  - label: arXiv
+    url: https://arxiv.org/abs/2508.18080
+- include: true
+  highlight: false
+  title: Using overlap of sky localization probability maps for filtering potentially lensed pairs of gravitational-wave signals
+  authors:
+  - Henry W. Y. Wong
+  - Lok W. L. Chan
+  - '**Isaac C. F. Wong**'
+  - Rico K. L. Lo
+  - Tjonnie G. F. Li
+  venue: Physical Review D 112, 124005 (2025)
+  year: 2025
+  date: '2025-12-01'
+  type: journal
+  doi: 10.1103/qc7y-z9hy
+  arxiv: '2112.05932'
+  url: http://inspirehep.net/record/1989043
+  key: doi:10.1103/qc7y-z9hy
+  source: orcid
+  members:
+  - isaac-wong
+  author_count: 5
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/qc7y-z9hy
+  - label: arXiv
+    url: https://arxiv.org/abs/2112.05932
+- include: true
+  highlight: false
+  title: All-sky search for short gravitational-wave bursts in the first part of the fourth LIGO-Virgo-KAGRA observing run
+  authors:
+  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  venue: Physical Review D 112, 102005 (2025)
+  year: 2025
+  date: '2025-11-15'
+  type: journal
+  doi: 10.1103/wjdz-jdby
+  arxiv: '2507.12374'
+  url: http://inspirehep.net/record/2947455
+  key: doi:10.1103/wjdz-jdby
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 1765
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/wjdz-jdby
+  - label: arXiv
+    url: https://arxiv.org/abs/2507.12374
+- include: true
+  highlight: false
+  title: 'GW241011 and GW241110: Exploring Binary Formation and Fundamental Physics with Asymmetric, High-spin Black Hole
+    Coalescences'
+  authors:
+  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  venue: The Astrophysical Journal Letters 993, L21 (2025)
+  year: 2025
+  date: '2025-10-28'
+  type: journal
+  doi: 10.3847/2041-8213/ae0d54
+  arxiv: '2510.26931'
+  url: http://inspirehep.net/record/3075132
+  key: doi:10.3847/2041-8213/ae0d54
+  source: orcid
+  members:
+  - isaac-wong
+  author_count: 1784
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/ae0d54
+  - label: arXiv
+    url: https://arxiv.org/abs/2510.26931
+- include: true
+  highlight: false
+  title: 'GW231123: A Binary Black Hole Merger with Total Mass 190–265 M ⊙'
+  authors:
+  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  venue: The Astrophysical Journal Letters 993, L25 (2025)
+  year: 2025
+  date: '2025-10-27'
+  type: journal
+  doi: 10.3847/2041-8213/ae0c9c
+  arxiv: '2507.08219'
+  url: http://inspirehep.net/record/2944905
+  key: doi:10.3847/2041-8213/ae0c9c
+  source: orcid
+  members:
+  - isaac-wong
+  author_count: 1771
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/ae0c9c
+  - label: arXiv
+    url: https://arxiv.org/abs/2507.08219
+- include: true
+  highlight: false
+  title: Tests of general relativity with GWTC-3
+  authors:
+  - R. Abbott et al. (incl. **I. C. F. Wong**)
+  venue: Physical Review D 112, 084080 (2025)
+  year: 2025
+  date: '2025-10-15'
+  type: journal
+  doi: 10.1103/PhysRevD.112.084080
+  arxiv: '2112.06861'
+  url: http://inspirehep.net/record/1989112
+  key: doi:10.1103/physrevd.112.084080
+  source: orcid
+  members:
+  - isaac-wong
+  author_count: 1682
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.112.084080
+  - label: arXiv
+    url: https://arxiv.org/abs/2112.06861
+- include: true
+  highlight: false
+  title: 'GW250114: Testing Hawking’s Area Law and the Kerr Nature of Black Holes'
+  authors:
+  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  venue: Physical Review Letters 135, 111403 (2025)
+  year: 2025
+  date: '2025-09-10'
+  type: journal
+  doi: 10.1103/kw5g-d732
+  arxiv: '2509.08054'
+  url: http://inspirehep.net/record/2968387
+  key: doi:10.1103/kw5g-d732
+  source: orcid
+  members:
+  - isaac-wong
+  author_count: 1782
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/kw5g-d732
+  - label: arXiv
+    url: https://arxiv.org/abs/2509.08054
+- include: true
+  highlight: false
+  title: Null-stream-based third-generation-ready glitch mitigation for gravitational wave measurements
+  authors:
+  - Harsh Narola
+  - Thibeau Wouters
+  - Luca Negri
+  - Melissa Lopez
+  - Tom Dooney
+  - '**Francesco Cireddu**'
+  - '**Milan Wils**'
+  - '**Isaac C. F. Wong**'
+  - Peter T. H. Pang
+  - Justin Janquart
+  - Anuradha Samajdar
+  - Chris Van Den Broeck
+  - Tjonnie G. F. Li
+  venue: Physical Review D 112, 024079 (2025)
+  year: 2025
+  date: '2025-07-15'
+  type: journal
+  doi: 10.1103/l6tp-ykxp
+  arxiv: '2411.15506'
+  url: http://inspirehep.net/record/2851694
+  key: doi:10.1103/l6tp-ykxp
+  source: orcid
+  members:
+  - francesco-cireddu
+  - isaac-wong
+  - milan-wils
+  author_count: 13
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/l6tp-ykxp
+  - label: arXiv
+    url: https://arxiv.org/abs/2411.15506
+- include: true
+  highlight: false
+  title: Optical characterization of the Advanced Virgo gravitational wave detector for the O4 observing run
+  authors:
+  - Virgo Collaboration (incl. **Milan Wils**)
+  venue: Applied Optics 64, 4710 (2025)
+  year: 2025
+  date: '2025-06-10'
+  type: journal
+  doi: 10.1364/AO.555312
+  key: doi:10.1364/ao.555312
+  source: orcid
+  members:
+  - milan-wils
+  author_count: 1
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1364/AO.555312
+- include: true
+  highlight: false
+  title: Search for Gravitational Waves Emitted from SN 2023ixf
+  authors:
+  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  venue: The Astrophysical Journal 985, 183 (2025)
+  year: 2025
+  date: '2025-05-22'
+  type: journal
+  doi: 10.3847/1538-4357/adc681
+  arxiv: '2410.16565'
+  url: http://inspirehep.net/record/2842226
+  key: doi:10.3847/1538-4357/adc681
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 1780
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/adc681
+  - label: arXiv
+    url: https://arxiv.org/abs/2410.16565
+- include: true
+  highlight: false
+  title: Search for Continuous Gravitational Waves from Known Pulsars in the First Part of the Fourth LIGO-Virgo-KAGRA Observing
+    Run
+  authors:
+  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  venue: The Astrophysical Journal 983, 99 (2025)
+  year: 2025
+  date: '2025-04-10'
+  type: journal
+  doi: 10.3847/1538-4357/adb3a0
+  arxiv: '2501.01495'
+  url: http://inspirehep.net/record/2864903
+  key: doi:10.3847/1538-4357/adb3a0
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 1817
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/adb3a0
+  - label: arXiv
+    url: https://arxiv.org/abs/2501.01495
+- include: true
+  highlight: false
+  title: Potential impact of noise correlation in next-generation gravitational wave detectors
+  authors:
+  - '**Isaac C. F. Wong**'
+  - Peter T. H. Pang
+  - '**Milan Wils**'
+  - '**Francesco Cireddu**'
+  - Walter Del Pozzo
+  - Tjonnie G. F. Li
+  venue: Physical Review D 111, 044046 (2025)
+  year: 2025
+  date: '2025-02-15'
+  type: journal
+  doi: 10.1103/PhysRevD.111.044046
+  arxiv: '2407.08728'
+  url: http://inspirehep.net/record/2806882
+  key: doi:10.1103/physrevd.111.044046
+  source: orcid
+  members:
+  - francesco-cireddu
+  - isaac-wong
+  - milan-wils
+  author_count: 6
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.111.044046
+  - label: arXiv
+    url: https://arxiv.org/abs/2407.08728
+- include: true
+  highlight: false
+  title: Swift-BAT GUANO Follow-up of Gravitational-wave Triggers in the Third LIGO–Virgo–KAGRA Observing Run
+  authors:
+  - Gayathri Raman et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  venue: The Astrophysical Journal 980, 207 (2025)
+  year: 2025
+  date: '2025-02-14'
+  type: journal
+  doi: 10.3847/1538-4357/ad9749
+  arxiv: '2407.12867'
+  url: http://inspirehep.net/record/2808936
+  key: doi:10.3847/1538-4357/ad9749
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 1820
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ad9749
+  - label: arXiv
+    url: https://arxiv.org/abs/2407.12867
+- include: true
+  highlight: false
+  title: A Search Using GEO600 for Gravitational Waves Coincident with Fast Radio Bursts from SGR 1935+2154
+  authors:
+  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  venue: The Astrophysical Journal 977, 255 (2024)
+  year: 2024
+  date: '2024-12-18'
+  type: journal
+  doi: 10.3847/1538-4357/ad8de0
+  arxiv: '2410.09151'
+  url: http://inspirehep.net/record/2839777
+  key: doi:10.3847/1538-4357/ad8de0
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 1781
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ad8de0
+  - label: arXiv
+    url: https://arxiv.org/abs/2410.09151
+- include: true
+  highlight: false
+  title: Likelihood for a network of gravitational-wave detectors with correlated noise
+  authors:
+  - '**Francesco Cireddu**'
+  - '**Milan Wils**'
+  - '**Isaac C. F. Wong**'
+  - Peter T. H. Pang
+  - Tjonnie G. F. Li
+  - Walter Del Pozzo
+  venue: Physical Review D 110, 104060 (2024)
+  year: 2024
+  date: '2024-11-15'
+  type: journal
+  doi: 10.1103/PhysRevD.110.104060
+  arxiv: '2312.14614'
+  url: http://inspirehep.net/record/2740429
+  key: doi:10.1103/physrevd.110.104060
+  source: orcid
+  members:
+  - francesco-cireddu
+  - isaac-wong
+  - milan-wils
+  author_count: 6
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.110.104060
+  - label: arXiv
+    url: https://arxiv.org/abs/2312.14614
+- include: true
+  highlight: false
+  title: Search for Eccentric Black Hole Coalescences during the Third Observing Run of LIGO and Virgo
+  authors:
+  - A. G. Abac et al. (incl. **I. C. F. Wong**)
+  venue: The Astrophysical Journal 973, 132 (2024)
+  year: 2024
+  date: '2024-09-26'
+  type: journal
+  doi: 10.3847/1538-4357/ad65ce
+  arxiv: '2308.03822'
+  url: http://inspirehep.net/record/2686392
+  key: doi:10.3847/1538-4357/ad65ce
+  source: orcid
+  members:
+  - isaac-wong
+  author_count: 1774
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ad65ce
+  - label: arXiv
+    url: https://arxiv.org/abs/2308.03822
+- include: true
+  highlight: false
+  title: Ultralight vector dark matter search using data from the KAGRA O3GK run
+  authors:
+  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  venue: Physical Review D 110, 042001 (2024)
+  year: 2024
+  date: '2024-08-15'
+  type: journal
+  doi: 10.1103/PhysRevD.110.042001
+  arxiv: '2403.03004'
+  url: http://inspirehep.net/record/2764911
+  key: doi:10.1103/physrevd.110.042001
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 1801
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/PhysRevD.110.042001
+  - label: arXiv
+    url: https://arxiv.org/abs/2403.03004
+- include: true
+  highlight: false
+  title: Search for Gravitational-lensing Signatures in the Full Third Observing Run of the LIGO–Virgo Network
+  authors:
+  - R. Abbott et al. (incl. **I. C. F. Wong**)
+  venue: The Astrophysical Journal 970, 191 (2024)
+  year: 2024
+  date: '2024-07-31'
+  type: journal
+  doi: 10.3847/1538-4357/ad3e83
+  arxiv: '2304.08393'
+  url: http://inspirehep.net/record/2651879
+  key: doi:10.3847/1538-4357/ad3e83
+  source: orcid
+  members:
+  - isaac-wong
+  author_count: 1695
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ad3e83
+  - label: arXiv
+    url: https://arxiv.org/abs/2304.08393
+- include: true
+  highlight: false
+  title: Observation of Gravitational Waves from the Coalescence of a 2.5–4.5 M ⊙ Compact Object and a Neutron Star
+  authors:
+  - A. G. Abac et al. (incl. **M. Wils**, **I. C. F. Wong**)
+  venue: The Astrophysical Journal Letters 970, L34 (2024)
+  year: 2024
+  date: '2024-07-26'
+  type: journal
+  doi: 10.3847/2041-8213/ad5beb
+  arxiv: '2404.04248'
+  url: http://inspirehep.net/record/2774720
+  key: doi:10.3847/2041-8213/ad5beb
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  author_count: 1796
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/ad5beb
+  - label: arXiv
+    url: https://arxiv.org/abs/2404.04248
+- include: true
+  highlight: false
+  title: Search for Gravitational-wave Transients Associated with Magnetar Bursts in Advanced LIGO and Advanced Virgo Data
+    from the Third Observing Run
+  authors:
+  - R. Abbott et al. (incl. **I. C. F. Wong**)
+  venue: The Astrophysical Journal 966, 137 (2024)
+  year: 2024
+  date: '2024-04-30'
+  type: journal
+  doi: 10.3847/1538-4357/ad27d3
+  arxiv: '2210.10931'
+  url: http://inspirehep.net/record/2168155
+  key: doi:10.3847/1538-4357/ad27d3
+  source: orcid
+  members:
+  - isaac-wong
+  author_count: 1668
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ad27d3
+  - label: arXiv
+    url: https://arxiv.org/abs/2210.10931
+- include: true
+  highlight: false
+  title: A Joint Fermi-GBM and Swift-BAT Analysis of Gravitational-wave Candidates from the Third Gravitational-wave Observing
+    Run
+  authors:
+  - C. Fletcher et al. (incl. **I. C. F. Wong**)
+  venue: The Astrophysical Journal 964, 149 (2024)
+  year: 2024
+  date: '2024-03-27'
+  type: journal
+  doi: 10.3847/1538-4357/ad1eed
+  arxiv: '2308.13666'
+  url: http://inspirehep.net/record/2691454
+  key: doi:10.3847/1538-4357/ad1eed
+  source: orcid
+  members:
+  - isaac-wong
+  author_count: 1696
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/1538-4357/ad1eed
+  - label: arXiv
+    url: https://arxiv.org/abs/2308.13666
+- include: true
+  highlight: false
+  title: Per-Wavelet Equalization for Discrete Wavelet Transform Based Multi-Carrier Modulation Systems
+  authors:
+  - '**Milan Wils**'
+  - Mohit Sharma
+  - Marc Moonen
+  venue: IEEE Open Journal of Signal Processing 4, 52-60 (2023)
+  year: 2023
+  date: 2023-02
+  type: journal
+  doi: 10.1109/OJSP.2023.3242122
+  key: doi:10.1109/ojsp.2023.3242122
+  source: orcid
+  members:
+  - milan-wils
+  author_count: 3
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1109/OJSP.2023.3242122
