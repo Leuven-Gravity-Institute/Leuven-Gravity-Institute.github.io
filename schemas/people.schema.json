@@ -54,13 +54,36 @@
                         "description": "ORCID iD; required for the publication sync to pick this person up."
                     },
                     "inspire": {
-                        "type": "string",
-                        "description": "INSPIRE-HEP author identifier (BAI), e.g. 'T.G.F.Li.1'. Pin it explicitly; name search is unreliable."
+                        "description": "INSPIRE-HEP author identifier(s) (BAI), e.g. 'T.G.F.Li.1'. Pin explicitly; name search is unreliable.",
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "minItems": 1
+                            }
+                        ]
                     },
                     "openalex": {
-                        "type": "string",
-                        "pattern": "^A[0-9]+$",
-                        "description": "OpenAlex author id, e.g. 'A5047727655'. Pin it: one researcher is often split across several entities."
+                        "description": "OpenAlex author id(s), e.g. 'A5047727655'. One researcher is often split across several entities, each holding different papers; list every one of theirs.",
+                        "oneOf": [
+                            {
+                                "type": "string",
+                                "pattern": "^A[0-9]+$"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "pattern": "^A[0-9]+$"
+                                },
+                                "minItems": 1
+                            }
+                        ]
                     },
                     "start": {
                         "type": "string",

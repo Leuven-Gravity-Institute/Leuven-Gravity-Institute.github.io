@@ -723,3 +723,57 @@ class TestThreshold:
     def test_a_thousand_author_paper_is_still_caught_without_a_named_collaboration(self) -> None:
         entry = normalize_inspire_record(inspire_record(authors=["Wong, Isaac"], author_count=1771), MEMBER)
         assert entry["collaboration"] is True
+
+
+class TestMultipleIdentifiersPerSource:
+    """A person can hold several profiles on one database."""
+
+    def test_ids_for_accepts_one_id_or_many(self) -> None:
+        one = Member(id="x", name="X Y", start=date(2024, 1, 1), openalex="A1")
+        many = Member(id="x", name="X Y", start=date(2024, 1, 1), openalex=["A1", "A2"])
+        assert one.ids_for("openalex") == ("A1",)
+        assert many.ids_for("openalex") == ("A1", "A2")
+        assert one.ids_for("inspire") == ()
+
+    def test_a_bare_string_is_one_id_not_a_sequence_of_characters(self) -> None:
+        assert Member(id="x", name="X Y", start=date(2024, 1, 1), inspire="T.G.F.Li.1").ids_for("inspire") == (
+            "T.G.F.Li.1",
+        )
+
+    def test_every_entity_is_queried_and_their_works_unioned(self) -> None:
+        # The reason this matters: OpenAlex files different papers under
+        # different entities for the same researcher, so querying only the
+        # fullest silently loses the rest.
+        works = {
+            "A1": [openalex_work(title="from the big entity", doi="10.1/a", authors=["Xavier Young"])],
+            "A2": [openalex_work(title="from the small entity", doi="10.1/b", authors=["Xavier Young"])],
+        }
+        member = Member(id="x", name="Xavier Young", start=date(2024, 1, 1), openalex=["A1", "A2"])
+        summary = SyncSummary()
+        entries = collect_entries([member], summary=summary, fetchers=Fetchers(openalex=lambda i: works[i]))
+        assert {entry["title"] for entry in entries} == {"from the big entity", "from the small entity"}
+
+
+class TestCrossCrediting:
+    """Crediting every member named on a paper, not only the one who found it."""
+
+    ISAAC = Member(id="isaac-wong", name="Isaac Wong", start=date(2024, 1, 1), orcid="o1")
+    JANE = Member(id="jane-doe", name="Jane Doe", start=date(2024, 1, 1), orcid="o2")
+    LATE = Member(id="late-joiner", name="Jane Doe", start=date(2026, 1, 1), orcid="o3")
+
+    def test_a_member_named_in_the_authors_is_credited_even_if_another_found_it(self) -> None:
+        entry = normalize_inspire_record(inspire_record(authors=["Wong, Isaac", "Doe, Jane"], year=2025), self.ISAAC)
+        assert entry["members"] == ["isaac-wong"]
+        merged = deduplicate([entry], {"isaac-wong": self.ISAAC, "jane-doe": self.JANE})
+        assert merged[0]["members"] == ["isaac-wong", "jane-doe"]
+        assert merged[0]["authors"] == ["**Isaac Wong**", "**Jane Doe**"]
+
+    def test_a_member_who_joined_after_publication_is_not_credited(self) -> None:
+        entry = normalize_inspire_record(inspire_record(authors=["Wong, Isaac", "Doe, Jane"], year=2025), self.ISAAC)
+        merged = deduplicate([entry], {"isaac-wong": self.ISAAC, "late-joiner": self.LATE})
+        assert merged[0]["members"] == ["isaac-wong"]
+
+    def test_a_non_member_author_is_not_turned_into_a_member(self) -> None:
+        entry = normalize_inspire_record(inspire_record(authors=["Wong, Isaac", "Stranger, Sam"]), self.ISAAC)
+        merged = deduplicate([entry], {"isaac-wong": self.ISAAC, "jane-doe": self.JANE})
+        assert merged[0]["members"] == ["isaac-wong"]

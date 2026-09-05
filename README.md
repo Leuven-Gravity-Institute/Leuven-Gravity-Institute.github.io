@@ -135,8 +135,23 @@ one outage never fails the run or empties the list.
 **Identifiers are pinned, never looked up by name.** Both lookups fail in ways
 that quietly corrupt a list: one member here is split across nine OpenAlex
 author entities holding between 1 and 264 works, and a name search readily
-returns a different researcher who shares the name. To find the right OpenAlex
-id, `find_authors_by_orcid` lists every entity for an ORCID, fullest first.
+returns a different researcher who shares the name.
+
+**`inspire` and `openalex` accept a list**, and on OpenAlex you usually need
+one. Its author entities hold _different papers_, not overlapping copies, so
+pinning only the fullest silently loses whatever the others hold — that is how a
+2026 preprint by three members went missing until all of the group leader's
+entities were listed. Worse, an entity need not carry the ORCID it belongs to,
+so `find_authors_by_orcid` will not surface it; those are found from the author
+lists of papers the person is known to have co-written, or with `find_authors`
+by name.
+
+**Everyone named on a paper is credited**, not only the member whose record
+returned it. Attribution otherwise depends on which database happened to index
+which co-author, so a paper by three members could land on one member's page. A
+member named in the author list whose membership window contains the publication
+date is credited too — the window check keeps a later joiner off work published
+before they arrived.
 
 ### Only work produced here
 

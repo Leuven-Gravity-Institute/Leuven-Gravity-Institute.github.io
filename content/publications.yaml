@@ -52,6 +52,32 @@ items:
   - KAGRA
 - include: true
   highlight: false
+  title: Modified Bryson-Frazier Smoothing and Hyperparameter Learning for Temporal Gaussian Process Regression
+  authors:
+  - '**Tom Colemont**'
+  - Brecht Evens
+  - '**Tjonnie G. F. Li**'
+  - Frederik De Ceuster
+  venue: arXiv (Cornell University) (2026)
+  year: 2026
+  date: '2026-08-18'
+  type: preprint
+  arxiv: '2608.17595'
+  url: https://openalex.org/W7203792603
+  key: arxiv:2608.17595
+  source: openalex
+  members:
+  - tjonnie-li
+  - tom-colemont
+  author_count: 4
+  collaboration: false
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2608.17595
+  - label: Link
+    url: https://openalex.org/W7203792603
+- include: true
+  highlight: false
   title: Upper limits on the isotropic gravitational-wave background from the first part of LIGO, Virgo, and KAGRA’s fourth
     observing run
   authors:

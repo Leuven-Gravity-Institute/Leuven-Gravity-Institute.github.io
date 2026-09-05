@@ -61,7 +61,10 @@ items:
       photo: '/assets/img/people/placeholder.svg'
       orcid: '0000-0003-4297-7365'
       inspire: 'T.G.F.Li.1'
-      openalex: 'A5047727655'
+      # OpenAlex splits him across entities that hold different papers, so all
+      # of his are listed: A5047727655 holds the bulk, A5147484353 holds work
+      # the first one does not.
+      openalex: ['A5047727655', 'A5147484353']
       # From the KU Leuven employment record on their ORCID profile.
       start: '2021-10'
       # Self-declared keywords from their ORCID profile.
@@ -228,6 +231,9 @@ items:
       photo: '/assets/img/people/placeholder.svg'
       orcid: '0009-0003-4408-5894'
       inspire: 'T.Colemont.1'
+      # This entity carries no ORCID, so it cannot be found by ORCID lookup;
+      # it was identified from the author list of a paper he co-wrote.
+      openalex: 'A5120049122'
       # PROVISIONAL START DATE — please replace with the real one.
       # This profile carries no employment record to take a date from, unlike
       # everyone else here. 2025 is the year of his first group paper, so it is

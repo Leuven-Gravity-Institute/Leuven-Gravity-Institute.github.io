@@ -162,17 +162,26 @@ class Member:
     start: date
     end: date | None = None
     orcid: str = ""
-    inspire: str = ""
-    openalex: str = ""
+    # One id or several: a person can hold more than one profile on a database.
+    inspire: str | tuple[str, ...] = ()
+    openalex: str | tuple[str, ...] = ()
 
     @property
     def sources(self) -> list[str]:
         """The names of the sources configured for this member."""
-        return [
-            name
-            for name, value in (("orcid", self.orcid), ("inspire", self.inspire), ("openalex", self.openalex))
-            if value
-        ]
+        return [name for name in ("orcid", "inspire", "openalex") if self.ids_for(name)]
+
+    def ids_for(self, source: str) -> tuple[str, ...]:
+        """Every identifier this member carries on one source.
+
+        A person can legitimately hold several profiles on one database — most
+        often on OpenAlex, which splits one researcher across author entities
+        and files different papers under each. Querying only the fullest entity
+        silently loses whatever the others hold, so all of them are queried.
+        """
+        if source == "orcid":
+            return (self.orcid,) if self.orcid else ()
+        return _as_ids(self.inspire if source == "inspire" else self.openalex)
 
     @property
     def family(self) -> str:
@@ -329,6 +338,14 @@ def in_membership_window(span: tuple[date, date] | None, member: Member) -> bool
     return not (member.end and earliest > member.end)
 
 
+def _as_ids(value: Any) -> tuple[str, ...]:
+    """Read an identifier field that may hold one id or a list of them."""
+    if not value:
+        return ()
+    values = value if isinstance(value, (list, tuple)) else [value]
+    return tuple(str(item).strip() for item in values if str(item).strip())
+
+
 def members_from_people(people: dict[str, Any] | None) -> list[Member]:
     """Build the syncable members from ``content/people.yaml``.
 
@@ -353,8 +370,8 @@ def members_from_people(people: dict[str, Any] | None) -> list[Member]:
             start=start or date.min,
             end=parse_date(person.get("end")),
             orcid=(person.get("orcid") or "").strip(),
-            inspire=(person.get("inspire") or "").strip(),
-            openalex=(person.get("openalex") or "").strip(),
+            inspire=_as_ids(person.get("inspire")),
+            openalex=_as_ids(person.get("openalex")),
         )
         if start is None or not member.sources:
             continue
@@ -969,8 +986,11 @@ def _merge_group(records: Sequence[dict[str, Any]], members_by_id: dict[str, Mem
     """
     best = max(records, key=lambda record: len(record.get("_authors_raw") or []))
     entry = dict(best)
+    authors_raw = list(best.get("_authors_raw") or [])
 
     for record in records:
+        if len(record.get("_authors_raw") or []) > len(authors_raw):
+            authors_raw = list(record["_authors_raw"])
         for member_id in record["members"]:
             if member_id not in entry["members"]:
                 entry["members"].append(member_id)
@@ -985,11 +1005,38 @@ def _merge_group(records: Sequence[dict[str, Any]], members_by_id: dict[str, Mem
             entry["collaboration"] = True
 
     entry["key"] = entry_key(entry.get("doi"), entry.get("arxiv"), entry.get("title", ""))
+    entry["_authors_raw"] = authors_raw
+    _credit_named_members(entry, members_by_id)
+
     entry["members"] = sorted(entry["members"])
     credited = [members_by_id[mid] for mid in entry["members"] if mid in members_by_id]
     authors, _ = build_authors(entry.pop("_authors_raw", []) or [], credited)
     entry["authors"] = authors
     return entry
+
+
+def _credit_named_members(entry: dict[str, Any], members_by_id: dict[str, Member]) -> None:
+    """Credit every member named among a paper's authors, not just the finder.
+
+    Attribution otherwise depends on *whose* record happened to return the
+    paper, which under-credits constantly: a database indexes one co-author's
+    profile and not another's, so a paper written by three members lands on one
+    member's page. If a member is named in the author list and the paper falls
+    inside their membership window, they wrote it, whichever profile it arrived
+    through.
+
+    The window check matters: a co-author who joined the group later should not
+    be credited with work they did before arriving.
+    """
+    authors = entry.get("_authors_raw") or []
+    if not authors:
+        return
+    span = date_span(*_split_iso(entry.get("date")))
+    for member_id, member in members_by_id.items():
+        if member_id in entry["members"]:
+            continue
+        if member_appears(authors, member) and in_membership_window(span, member):
+            entry["members"].append(member_id)
 
 
 def deduplicate(entries: Sequence[dict[str, Any]], members_by_id: dict[str, Member]) -> list[dict[str, Any]]:
@@ -1144,27 +1191,28 @@ def _collect_from_source(
 
     """
     entries: list[dict[str, Any]] = []
-    if source == "orcid":
-        for work in fetchers.orcid(member.orcid):
-            if not in_membership_window(date_span(*_orcid_publication_date(work)), member):
-                summary.out_of_window += 1
-                continue
-            doi = _external_ids(work).get("doi")
-            crossref = fetchers.crossref(doi) if doi else None
-            entries.append(normalize_work(work, member, crossref=crossref, threshold=threshold))
-    elif source == "inspire":
-        for record in fetchers.inspire(member.inspire):
-            if not in_membership_window(date_span(*_inspire_date(record)), member):
-                summary.out_of_window += 1
-                continue
-            entries.append(normalize_inspire_record(record, member, threshold=threshold))
-    elif source == "openalex":
-        for work in fetchers.openalex(member.openalex):
-            entry = normalize_openalex_work(work, member, threshold=threshold)
-            if not in_membership_window(date_span(*_split_iso(entry.get("date"))), member):
-                summary.out_of_window += 1
-                continue
-            entries.append(entry)
+    for identifier in member.ids_for(source):
+        if source == "orcid":
+            for work in fetchers.orcid(identifier):
+                if not in_membership_window(date_span(*_orcid_publication_date(work)), member):
+                    summary.out_of_window += 1
+                    continue
+                doi = _external_ids(work).get("doi")
+                crossref = fetchers.crossref(doi) if doi else None
+                entries.append(normalize_work(work, member, crossref=crossref, threshold=threshold))
+        elif source == "inspire":
+            for record in fetchers.inspire(identifier):
+                if not in_membership_window(date_span(*_inspire_date(record)), member):
+                    summary.out_of_window += 1
+                    continue
+                entries.append(normalize_inspire_record(record, member, threshold=threshold))
+        elif source == "openalex":
+            for work in fetchers.openalex(identifier):
+                entry = normalize_openalex_work(work, member, threshold=threshold)
+                if not in_membership_window(date_span(*_split_iso(entry.get("date"))), member):
+                    summary.out_of_window += 1
+                    continue
+                entries.append(entry)
 
     kept = [entry for entry in entries if entry["type"] not in EXCLUDED_PUBLICATION_TYPES]
     summary.excluded += len(entries) - len(kept)
