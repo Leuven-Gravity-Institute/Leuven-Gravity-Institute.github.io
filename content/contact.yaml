@@ -22,11 +22,15 @@ address: |
     3001 Leuven
     Belgium
 
-# Optional: a link to a map, and directions in prose.
-# The coordinates are those of Celestijnenlaan 200D (the physics research
-# building), so the link opens with a marker on the address rather than on a
-# generic map. Update them if the address changes.
-map_url: 'https://www.openstreetmap.org/?mlat=50.86280&mlon=4.67692#map=18/50.86280/4.67692'
+# Optional: a link to route planning, and directions in prose.
+# Google Maps rather than OpenStreetMap because it routes public transport,
+# which OpenStreetMap's site does not — and the directions below describe a bus
+# journey. `dir/?api=1` opens directly in directions mode and hands off to the
+# phone app where one is installed. The destination is given as the coordinates
+# of Celestijnenlaan 200D (the physics research building) rather than as an
+# address string, so it cannot drift to a different entrance; update them if the
+# address changes.
+map_url: 'https://www.google.com/maps/dir/?api=1&destination=50.86280,4.67692'
 directions: |
     The department is a twenty-minute bus ride from Leuven station (lines 3 and
     616 stop nearby). Visitors should report to the reception desk on arrival.
