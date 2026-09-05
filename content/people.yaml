@@ -126,10 +126,13 @@ items:
       group: 'gw-group'
       status: 'current'
       photo: '/assets/img/people/placeholder.svg'
-      # TODO: add `orcid: '0000-0002-2317-9395'` together with the date the
-      # postdoc began. The ORCID employment record starts 2020-10-01, but that
-      # is the PhD; syncing from it would attribute the optimisation and
-      # operator-theory work of that PhD to this group.
+      orcid: '0000-0002-2317-9395'
+      openalex: 'A5019280099'
+      # Confirmed by the group: the postdoc began in 2026. Note that his ORCID
+      # employment record still shows only the PhD, as ongoing from 2020-10-01;
+      # syncing from that date would attribute years of optimisation and
+      # operator-theory work from another group to this one.
+      start: '2026'
       # Self-declared keywords from their ORCID profile.
       interests:
           - 'Optimization'

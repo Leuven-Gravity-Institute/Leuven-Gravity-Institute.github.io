@@ -24,6 +24,31 @@
 items:
 - include: true
   highlight: false
+  title: Spingarn’s method and progressive decoupling beyond elicitable monotonicity
+  authors:
+  - '**Brecht Evens**'
+  - Puya Latafat
+  - Panagiotis Patrinos
+  venue: Computational Optimization and Applications (2026)
+  year: 2026
+  date: '2026-08-27'
+  type: journal
+  doi: 10.1007/s10589-026-00812-1
+  arxiv: '2504.00836'
+  url: https://doi.org/10.1007/s10589-026-00812-1
+  key: doi:10.1007/s10589-026-00812-1
+  source: orcid
+  members:
+  - brecht-evens
+  author_count: 3
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1007/s10589-026-00812-1
+  - label: arXiv
+    url: https://arxiv.org/abs/2504.00836
+- include: true
+  highlight: false
   title: Updated Upper Limits on the Isotropic Gravitational-Wave Background from LIGO, Virgo, and KAGRA Data through April
     2025
   authors:
@@ -55,7 +80,7 @@ items:
   title: Modified Bryson-Frazier Smoothing and Hyperparameter Learning for Temporal Gaussian Process Regression
   authors:
   - '**Tom Colemont**'
-  - Brecht Evens
+  - '**Brecht Evens**'
   - '**Tjonnie G. F. Li**'
   - Frederik De Ceuster
   venue: arXiv (Cornell University) (2026)
@@ -67,6 +92,7 @@ items:
   key: arxiv:2608.17595
   source: openalex
   members:
+  - brecht-evens
   - tjonnie-li
   - tom-colemont
   author_count: 4
