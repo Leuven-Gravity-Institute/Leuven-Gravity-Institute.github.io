@@ -18,6 +18,7 @@ from markupsafe import escape
 
 from leuven_gravity_institute.site import SitePaths, build_site, load_content, validate_content
 from leuven_gravity_institute.site.builder import _build_context, _group_people, _split_events
+from leuven_gravity_institute.site.validate import semantic_errors
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -88,6 +89,8 @@ class TestBuild:
         person = next(p for p in content["people"]["items"] if p["id"] == "isaac-wong")
         page = (built / "people" / person["slug"] / "index.html").read_text(encoding="utf-8")
         for pub in publications:
+            if pub.get("include") is False:
+                continue  # hidden by curation, so absent from every page
             # Titles are HTML-escaped on the way into the page; markupsafe is
             # what Jinja uses, and it escapes apostrophes too.
             title = str(escape(pub["title"]))
@@ -225,3 +228,70 @@ class TestPeopleGrouping:
         sections = _group_people(people, self.GROUPS)
         assert sections[-1]["group"] is None
         assert [person["name"] for person in sections[-1]["categories"][0]["items"]] == ["B"]
+
+
+class TestOutputSafety:
+    """The build empties its output directory, and `--output` is caller-supplied."""
+
+    def test_building_into_the_project_root_is_refused(self) -> None:
+        with pytest.raises(ValueError, match="contains the project itself"):
+            build_site(SitePaths(root=ROOT, output_dir="."))
+
+    def test_building_into_a_content_directory_is_refused(self) -> None:
+        # `--output content` would delete the source before rendering it.
+        with pytest.raises(ValueError, match="not a previous build"):
+            build_site(SitePaths(root=ROOT, output_dir="content"))
+
+    def test_a_directory_of_someone_elses_files_is_refused(self, tmp_path: Path) -> None:
+        target = tmp_path / "not-a-build"
+        target.mkdir()
+        (target / "important.txt").write_text("keep me", encoding="utf-8")
+        with pytest.raises(ValueError, match="not a previous build"):
+            build_site(SitePaths(root=ROOT, output_dir=str(target)))
+        assert (target / "important.txt").exists()
+
+    def test_an_empty_directory_is_accepted(self, tmp_path: Path) -> None:
+        target = tmp_path / "empty"
+        target.mkdir()
+        assert build_site(SitePaths(root=ROOT, output_dir=str(target))).is_dir()
+
+    def test_a_previous_build_is_replaced(self, tmp_path: Path) -> None:
+        target = tmp_path / "build"
+        out = build_site(SitePaths(root=ROOT, output_dir=str(target)))
+        stale = out / "stale" / "index.html"
+        stale.parent.mkdir(parents=True)
+        stale.write_text("old", encoding="utf-8")
+        build_site(SitePaths(root=ROOT, output_dir=str(target)))
+        assert not stale.exists()
+
+
+class TestSemanticValidation:
+    """Rules that span files, which a per-file schema cannot see."""
+
+    def test_duplicate_ids_and_slugs_are_reported(self) -> None:
+        content = {
+            "people": {"items": [{"id": "a", "slug": "x"}, {"id": "a", "slug": "x"}]},
+            "site": {"site": {"groups": []}},
+        }
+        errors = semantic_errors(content)
+        # A shared slug means both profiles render to the same path, so one
+        # silently replaces the other.
+        assert any("duplicate slug" in error for error in errors)
+        assert any("duplicate id" in error for error in errors)
+
+    def test_an_unknown_group_reference_is_reported(self) -> None:
+        content = {
+            "people": {"items": [{"id": "a", "slug": "a", "group": "ghost"}]},
+            "site": {"site": {"groups": [{"id": "real", "name": "Real"}]}},
+        }
+        assert any("unknown group" in error for error in semantic_errors(content))
+
+    def test_an_unknown_group_lead_is_reported(self) -> None:
+        content = {
+            "people": {"items": [{"id": "a", "slug": "a"}]},
+            "site": {"site": {"groups": [{"id": "g", "name": "G", "lead": "ghost"}]}},
+        }
+        assert any("unknown lead" in error for error in semantic_errors(content))
+
+    def test_the_repository_content_passes(self, paths: SitePaths) -> None:
+        assert semantic_errors(load_content(paths.content)) == []

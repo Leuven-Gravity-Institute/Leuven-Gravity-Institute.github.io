@@ -32,7 +32,9 @@ jobs:
             - name: Delete existing draft release
               continue-on-error: true
               run: |
-                  gh release delete next-release --yes
+                  # --cleanup-tag: without it the tag survives and the next draft
+                  # would be created against the old commit it points at.
+                  gh release delete next-release --yes --cleanup-tag
               env:
                   GH_TOKEN: ${{ github.token }}
 

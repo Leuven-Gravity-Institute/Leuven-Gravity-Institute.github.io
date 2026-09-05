@@ -1086,7 +1086,10 @@ def deduplicate(entries: Sequence[dict[str, Any]], members_by_id: dict[str, Memb
 
 
 def merge_items(
-    existing: Sequence[dict[str, Any]], fetched: Sequence[dict[str, Any]]
+    existing: Sequence[dict[str, Any]],
+    fetched: Sequence[dict[str, Any]],
+    *,
+    fetch_complete: bool = True,
 ) -> tuple[list[dict[str, Any]], SyncSummary]:
     """Merge freshly fetched entries into the existing list, preserving curation.
 
@@ -1099,6 +1102,10 @@ def merge_items(
     Args:
         existing: The current publication entries.
         fetched: Freshly normalized, deduplicated entries.
+        fetch_complete: Whether every source answered. When false, nothing is
+            removed: the entries a failed source alone supplied are still the
+            group's work, and the sync's own pull request would commit their
+            deletion.
 
     Returns:
         The merged list, newest first, and a summary of what changed.
@@ -1132,7 +1139,7 @@ def merge_items(
     for key, entry in by_key.items():
         if key in seen:
             continue
-        if fetched:
+        if fetched and fetch_complete:
             summary.removed.append(entry.get("title", ""))
         else:
             managed.append(entry)
@@ -1175,6 +1182,61 @@ class Fetchers:
     crossref: Callable[[str], dict[str, Any] | None] = fetch_crossref_work
 
 
+def _collect_orcid(
+    identifier: str, member: Member, *, summary: SyncSummary, fetchers: Fetchers, threshold: int
+) -> list[dict[str, Any]]:
+    """Fetch one member's in-window works from one ORCID record."""
+    entries: list[dict[str, Any]] = []
+    for work in fetchers.orcid(identifier):
+        doi = _external_ids(work).get("doi")
+        parts = _orcid_publication_date(work)
+        crossref = None
+        # ORCID records often carry no date at all. Resolving it from Crossref
+        # first keeps those works from being discarded as undated before the
+        # metadata that dates them has been fetched.
+        if parts[0] is None and doi:
+            crossref = fetchers.crossref(doi)
+            if crossref:
+                parts = _crossref_publication_date(crossref)
+        if not in_membership_window(date_span(*parts), member):
+            summary.out_of_window += 1
+            continue
+        if crossref is None and doi:
+            crossref = fetchers.crossref(doi)
+        entries.append(normalize_work(work, member, crossref=crossref, threshold=threshold))
+    return entries
+
+
+def _collect_inspire(
+    identifier: str, member: Member, *, summary: SyncSummary, fetchers: Fetchers, threshold: int
+) -> list[dict[str, Any]]:
+    """Fetch one member's in-window records from one INSPIRE profile."""
+    entries: list[dict[str, Any]] = []
+    for record in fetchers.inspire(identifier):
+        if not in_membership_window(date_span(*_inspire_date(record)), member):
+            summary.out_of_window += 1
+            continue
+        entries.append(normalize_inspire_record(record, member, threshold=threshold))
+    return entries
+
+
+def _collect_openalex(
+    identifier: str, member: Member, *, summary: SyncSummary, fetchers: Fetchers, threshold: int
+) -> list[dict[str, Any]]:
+    """Fetch one member's in-window works from one OpenAlex author entity."""
+    entries: list[dict[str, Any]] = []
+    for work in fetchers.openalex(identifier):
+        entry = normalize_openalex_work(work, member, threshold=threshold)
+        if not in_membership_window(date_span(*_split_iso(entry.get("date"))), member):
+            summary.out_of_window += 1
+            continue
+        entries.append(entry)
+    return entries
+
+
+_COLLECTORS = {"orcid": _collect_orcid, "inspire": _collect_inspire, "openalex": _collect_openalex}
+
+
 def _collect_from_source(
     member: Member,
     source: str,
@@ -1190,29 +1252,10 @@ def _collect_from_source(
             per-source failure so one unreachable database cannot fail the run.
 
     """
+    collect = _COLLECTORS[source]
     entries: list[dict[str, Any]] = []
     for identifier in member.ids_for(source):
-        if source == "orcid":
-            for work in fetchers.orcid(identifier):
-                if not in_membership_window(date_span(*_orcid_publication_date(work)), member):
-                    summary.out_of_window += 1
-                    continue
-                doi = _external_ids(work).get("doi")
-                crossref = fetchers.crossref(doi) if doi else None
-                entries.append(normalize_work(work, member, crossref=crossref, threshold=threshold))
-        elif source == "inspire":
-            for record in fetchers.inspire(identifier):
-                if not in_membership_window(date_span(*_inspire_date(record)), member):
-                    summary.out_of_window += 1
-                    continue
-                entries.append(normalize_inspire_record(record, member, threshold=threshold))
-        elif source == "openalex":
-            for work in fetchers.openalex(identifier):
-                entry = normalize_openalex_work(work, member, threshold=threshold)
-                if not in_membership_window(date_span(*_split_iso(entry.get("date"))), member):
-                    summary.out_of_window += 1
-                    continue
-                entries.append(entry)
+        entries.extend(collect(identifier, member, summary=summary, fetchers=fetchers, threshold=threshold))
 
     kept = [entry for entry in entries if entry["type"] not in EXCLUDED_PUBLICATION_TYPES]
     summary.excluded += len(entries) - len(kept)
@@ -1338,7 +1381,7 @@ def sync_publications(
     existing_doc = load_yaml(publications_path) if publications_path.exists() else None
     existing = (existing_doc or {}).get("items") or []
 
-    merged, merge_summary = merge_items(existing, fetched)
+    merged, merge_summary = merge_items(existing, fetched, fetch_complete=not summary.failures)
     summary.total_fetched = merge_summary.total_fetched
     summary.added = merge_summary.added
     summary.removed = merge_summary.removed

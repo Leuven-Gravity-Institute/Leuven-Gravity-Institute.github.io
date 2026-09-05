@@ -13,7 +13,8 @@
             "properties": {
                 "url": {
                     "type": "string",
-                    "format": "uri"
+                    "pattern": "^https?://[^\\s]+[^/\\s]$",
+                    "description": "Full published URL, no trailing slash. A pattern rather than format: uri, which jsonschema does not enforce without extra dependencies."
                 },
                 "title": {
                     "type": "string",

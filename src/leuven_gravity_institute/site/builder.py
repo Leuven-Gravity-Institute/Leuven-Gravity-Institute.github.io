@@ -31,6 +31,11 @@ from leuven_gravity_institute.site.paths import SitePaths
 from leuven_gravity_institute.site.publications_sync import is_collaboration
 
 _MD_EXTENSIONS = ["extra", "sane_lists", "smarty"]
+
+# Written into every build, and required before the output directory may be
+# cleared: the build wipes its output, and `--output` puts that path in a
+# caller's hands.
+_OUTPUT_MARKER = ".nojekyll"
 _FEED_MAX_ENTRIES = 30
 
 
@@ -343,6 +348,44 @@ def _render_feed(env: Environment, context: dict[str, Any]) -> str:
     )
 
 
+def _prepare_output(paths: SitePaths) -> Path:
+    """Empty the output directory, refusing anything that is not a build.
+
+    The build clears its output before writing, and ``--output`` lets a caller
+    choose that path — so ``--output .`` would delete the project. Only an
+    absent, empty, or previously-built directory (one carrying the marker this
+    build writes) may be removed.
+
+    Args:
+        paths: Resolved input/output locations for the build.
+
+    Returns:
+        The empty output directory, created if it did not exist.
+
+    Raises:
+        ValueError: If the output path contains the project, or holds anything
+            that this build did not produce.
+
+    """
+    output = paths.output.resolve()
+    root = paths.root.resolve()
+    if output == root or root.is_relative_to(output):
+        raise ValueError(f"Refusing to build into {output}: it contains the project itself.")
+
+    if output.exists():
+        if not output.is_dir():
+            raise ValueError(f"Refusing to build into {output}: it is not a directory.")
+        if any(output.iterdir()) and not (output / _OUTPUT_MARKER).exists():
+            raise ValueError(
+                f"Refusing to empty {output}: it is not a previous build "
+                f"(no {_OUTPUT_MARKER} marker). Choose another --output, or remove it yourself."
+            )
+        shutil.rmtree(output)
+
+    output.mkdir(parents=True, exist_ok=True)
+    return output
+
+
 def build_site(paths: SitePaths) -> Path:
     """Build the site and return the path to the output directory.
 
@@ -363,10 +406,7 @@ def build_site(paths: SitePaths) -> Path:
     page_template = env.get_template("page.html")
     person_template = env.get_template("person.html")
 
-    output = paths.output
-    if output.exists():
-        shutil.rmtree(output)
-    output.mkdir(parents=True, exist_ok=True)
+    output = _prepare_output(paths)
 
     for page in pages:
         html = page_template.render(page=page, nav_pages=nav_pages, **context)
@@ -388,7 +428,8 @@ def build_site(paths: SitePaths) -> Path:
     if paths.assets.is_dir():
         shutil.copytree(paths.assets, output / paths.assets_dir, dirs_exist_ok=True)
 
-    # Disable GitHub Pages' default Jekyll processing of the pre-built output.
-    (output / ".nojekyll").write_text("", encoding="utf-8")
+    # Disables GitHub Pages' default Jekyll processing, and marks the directory
+    # as ours so the next build may clear it.
+    (output / _OUTPUT_MARKER).write_text("", encoding="utf-8")
 
     return output

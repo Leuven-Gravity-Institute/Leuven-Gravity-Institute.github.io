@@ -75,6 +75,13 @@ def serve(
 ) -> None:
     """Build the site and serve it locally for preview."""
     paths = _paths(root, output)
+    # The preview should fail the same way `build` does, not render invalid content.
+    try:
+        validate_or_raise(paths.content, paths.schemas)
+    except Exception as exc:
+        typer.secho("Content validation failed:", fg=typer.colors.RED, bold=True)
+        typer.secho(str(exc), fg=typer.colors.RED)
+        raise typer.Exit(code=1) from exc
     out = build_site(paths)
     handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(out))
     os.chdir(out)

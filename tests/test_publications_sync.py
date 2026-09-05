@@ -408,7 +408,9 @@ class TestSyncEndToEnd:
         assert summary.members_synced == 1
         assert len(summary.failures) == 1
         assert "Jane Doe" in summary.failures[0]
-        assert [item["title"] for item in yaml.safe_load(publications.read_text())["items"]] == ["Still here"]
+        assert [item["title"] for item in yaml.safe_load(publications.read_text(encoding="utf-8"))["items"]] == [
+            "Still here"
+        ]
 
     def test_sync_refuses_to_run_without_syncable_members(self, tmp_path: Path) -> None:
         people = tmp_path / "people.yaml"
@@ -777,3 +779,94 @@ class TestCrossCrediting:
         entry = normalize_inspire_record(inspire_record(authors=["Wong, Isaac", "Stranger, Sam"]), self.ISAAC)
         merged = deduplicate([entry], {"isaac-wong": self.ISAAC, "jane-doe": self.JANE})
         assert merged[0]["members"] == ["isaac-wong"]
+
+
+class TestPartialFetchFailures:
+    """A source that fails must not look like work that no longer exists."""
+
+    def test_an_incomplete_fetch_removes_nothing(self) -> None:
+        existing = [{"key": "doi:only-from-orcid", "title": "Kept"}, {"key": "doi:1", "title": "Old"}]
+        fetched = [{"key": "doi:1", "title": "New", "include": True, "highlight": False}]
+        merged, summary = merge_items(existing, fetched, fetch_complete=False)
+        assert summary.removed == []
+        assert {entry["key"] for entry in merged} == {"doi:only-from-orcid", "doi:1"}
+
+    def test_a_complete_fetch_still_removes(self) -> None:
+        existing = [{"key": "doi:gone", "title": "Gone"}]
+        fetched = [{"key": "doi:1", "title": "New", "include": True, "highlight": False}]
+        merged, summary = merge_items(existing, fetched, fetch_complete=True)
+        assert summary.removed == ["Gone"]
+        assert [entry["key"] for entry in merged] == ["doi:1"]
+
+    def test_one_failing_source_does_not_delete_the_existing_list(self, tmp_path: Path) -> None:
+        # The weekly workflow commits whatever the sync writes, so a single
+        # rate-limited request must not erase a member's contribution.
+        people = tmp_path / "people.yaml"
+        people.write_text(
+            yaml.safe_dump(
+                {
+                    "items": [
+                        {"id": "isaac-wong", "name": "Isaac Wong", "orcid": "o1", "start": "2024-01-01"},
+                        {"id": "jane-doe", "name": "Jane Doe", "inspire": "J.Doe.1", "start": "2024-01-01"},
+                    ]
+                }
+            ),
+            encoding="utf-8",
+        )
+        publications = tmp_path / "publications.yaml"
+        write_items(
+            publications,
+            [{"key": "doi:janes-paper", "title": "Jane's only paper", "members": ["jane-doe"], "include": True}],
+        )
+
+        def broken(_: str) -> list[dict[str, Any]]:
+            raise TimeoutError("HTTP 429")
+
+        summary = sync_publications(
+            publications,
+            people,
+            fetchers=Fetchers(
+                orcid=lambda _: [orcid_work(title="Isaac's paper", year=2025, month=1, day=1)],
+                inspire=broken,
+                crossref=lambda _: None,
+            ),
+        )
+        titles = {item["title"] for item in yaml.safe_load(publications.read_text(encoding="utf-8"))["items"]}
+        assert "Jane's only paper" in titles
+        assert summary.removed == []
+        assert len(summary.failures) == 1
+
+
+class TestDateResolution:
+    """ORCID records frequently omit the publication date entirely."""
+
+    def test_an_undated_orcid_work_is_dated_from_crossref(self) -> None:
+        member = Member(id="isaac-wong", name="Isaac Wong", start=date(2024, 1, 1), orcid="o1")
+        undated = orcid_work(title="Undated on ORCID", doi="10.1/x", year=None, month=None, day=None)
+        summary = SyncSummary()
+        entries = collect_entries(
+            [member],
+            summary=summary,
+            fetchers=Fetchers(
+                orcid=lambda _: [undated],
+                crossref=lambda _: crossref_message([{"given": "Isaac", "family": "Wong"}], title="Undated on ORCID"),
+            ),
+        )
+        # Without the Crossref lookup this was discarded as out of window.
+        assert [entry["title"] for entry in entries] == ["Undated on ORCID"]
+        assert entries[0]["date"] == "2025-03-04"
+        assert summary.out_of_window == 0
+
+    def test_a_work_undated_everywhere_is_still_excluded(self) -> None:
+        member = Member(id="isaac-wong", name="Isaac Wong", start=date(2024, 1, 1), orcid="o1")
+        summary = SyncSummary()
+        entries = collect_entries(
+            [member],
+            summary=summary,
+            fetchers=Fetchers(
+                orcid=lambda _: [orcid_work(doi="10.1/x", year=None, month=None, day=None)],
+                crossref=lambda _: None,
+            ),
+        )
+        assert entries == []
+        assert summary.out_of_window == 1
