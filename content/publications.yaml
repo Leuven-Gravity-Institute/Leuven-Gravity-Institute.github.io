@@ -10,6 +10,12 @@
 #   include:   set false to hide an entry from the site.
 #   highlight: set true to feature it as selected work (rendered with a star).
 #   note:      optional one-line editorial note shown under the entry.
+#   treat_as_collaboration:
+#              overrides which section an entry appears in. The `collaboration`
+#              field below is DERIVED from what the sources said and is
+#              rewritten on every sync, so editing it has no lasting effect; add
+#              `treat_as_collaboration: false` to move a paper out of the
+#              collaboration section, or `true` to move one in.
 #
 # To add something ORCID does not know about, append an entry *without* a
 # `key`; hand-authored entries are never touched by the sync. Wrap a group
@@ -386,7 +392,22 @@ items:
   highlight: false
   title: Impact of the Einstein Telescope's duty cycle on the estimation of binary black holes parameters
   authors:
-  - Luca Negr et al. (incl. **Francesco Cireddu**, **Isaac C.F. Wong**, **Tjonnie G.F. Li**)
+  - Luca Negr
+  - Thomas C.K. Ng
+  - Thibeau Wouters
+  - Tim J. Kuhlbusch
+  - Harsh Narol
+  - Robin Chan
+  - Kailib Ryan Doney
+  - '**Francesco Cireddu**'
+  - '**Isaac C.F. Wong**'
+  - Fabian Gittins
+  - Peter T.H. Pang
+  - Anuradha Samajdar
+  - Achim Stahl
+  - Justin Janquart
+  - Chris Van Den Broeck
+  - '**Tjonnie G.F. Li**'
   venue: arXiv:2606.19201
   year: 2026
   date: '2026-06-17'
@@ -400,7 +421,7 @@ items:
   - isaac-wong
   - tjonnie-li
   author_count: 16
-  collaboration: true
+  collaboration: false
   links:
   - label: arXiv
     url: https://arxiv.org/abs/2606.19201
@@ -2329,7 +2350,53 @@ items:
   highlight: false
   title: 'Characterizing gravitational wave detector networks: from A$^\sharp$ to cosmic explorer'
   authors:
-  - Ish Gupta et al. (incl. **Tjonnie G.F. Li**)
+  - Ish Gupta
+  - Chaitanya Afle
+  - K.G. Arun
+  - Ananya Bandopadhyay
+  - Masha Baryakhtar
+  - Sylvia Biscoveanu
+  - Ssohrab Borhanian
+  - Floor Broekgaarden
+  - Alessandra Corsi
+  - Arnab Dhani
+  - Matthew Evans
+  - Evan D. Hall
+  - Otto A. Hannuksela
+  - Keisi Kacanja
+  - Rahul Kashyap
+  - Sanika Khadkikar
+  - Kevin Kuns
+  - '**Tjonnie G.F. Li**'
+  - Andrew L. Miller
+  - Alexander Harvey Nitz
+  - Benjamin J. Owen
+  - Cristiano Palomba
+  - Anthony Pearce
+  - Hemantakumar Phurailatpam
+  - Binod Rajbhandari
+  - Jocelyn Read
+  - Joseph D. Romano
+  - Bangalore S. Sathyaprakash
+  - David H. Shoemaker
+  - Divya Singh
+  - Salvatore Vitale
+  - Lisa Barsotti
+  - Emanuele Berti
+  - Craig Cahillane
+  - Hsin-Yu Chen
+  - Peter Fritschel
+  - Carl-Johan Haster
+  - Philippe Landry
+  - Geoffrey Lovelace
+  - David McClelland
+  - Bram J.J. Slagmolen
+  - Joshua R Smith
+  - Marcelle Soares-Santos
+  - Ling Sun
+  - David Tanner
+  - Hiro Yamamoto
+  - Michael Zucker
   venue: Class.Quant.Grav. 41, 245001 (2024)
   year: 2024
   date: '2024'
@@ -2342,7 +2409,7 @@ items:
   members:
   - tjonnie-li
   author_count: 47
-  collaboration: true
+  collaboration: false
   links:
   - label: DOI
     url: https://doi.org/10.1088/1361-6382/ad7b99
@@ -2726,7 +2793,38 @@ items:
   highlight: false
   title: Follow-up analyses to the O3 LIGO–Virgo–KAGRA lensing searches
   authors:
-  - Justin Janquart et al. (incl. **Tjonnie G.F. Li**)
+  - Justin Janquart
+  - Mick Wright
+  - Srashti Goyal
+  - Juno C.L. Chan
+  - Apratim Ganguly
+  - Ángel Garrón
+  - David Keitel
+  - Alvin K.Y. Li
+  - Anna Liu
+  - Rico K.L. Lo
+  - Anuj Mishra
+  - Anupreeta More
+  - Hemantakumar Phurailatpam
+  - Prasia Pankunni
+  - P. Ajith
+  - Sylvia Biscoveanu
+  - Paolo Cremonese
+  - Jean-René Cudell
+  - José M. Ezquiaga
+  - Juan Garcia-Bellido
+  - Otto A. Hannuksela
+  - K. Haris
+  - Ian Harry
+  - Martin Hendry
+  - Sascha Husa
+  - Shasvath Kapadia
+  - '**Tjonnie G.F. Li**'
+  - Ignacio Magaña Hernandez
+  - Suvodip Mukherjee
+  - Eungwang Seo
+  - Chris Van Den Broeck
+  - John Veitch
   venue: Mon.Not.Roy.Astron.Soc. 526, 3832 (2023)
   year: 2023
   date: '2023'
@@ -2739,7 +2837,7 @@ items:
   members:
   - tjonnie-li
   author_count: 32
-  collaboration: true
+  collaboration: false
   links:
   - label: DOI
     url: https://doi.org/10.1093/mnras/stad2909
@@ -3146,7 +3244,25 @@ items:
   highlight: false
   title: SPIIR online coherent pipeline to search for gravitational waves from compact binary coalescences
   authors:
-  - Qi Chu et al. (incl. **Tjonnie G.F. Li**)
+  - Qi Chu
+  - Manoj Kovalam
+  - Linqing Wen
+  - Teresa Slaven-Blair
+  - Joel Bosveld
+  - Yanbei Chen
+  - Patrick Clearwater
+  - Alex Codoreanu
+  - Zhihui Du
+  - Xiangyu Guo
+  - Xiaoyang Guo
+  - Kyungmin Kim
+  - '**Tjonnie G.F. Li**'
+  - Victor Oloworaran
+  - Fiona Panther
+  - Jade Powell
+  - Anand S. Sengupta
+  - Karl Wette
+  - Xingjiang Zhu
   venue: Phys.Rev.D 105, 024023 (2022)
   year: 2022
   date: '2022'
@@ -3159,7 +3275,7 @@ items:
   members:
   - tjonnie-li
   author_count: 19
-  collaboration: true
+  collaboration: false
   links:
   - label: DOI
     url: https://doi.org/10.1103/PhysRevD.105.024023
@@ -3646,7 +3762,34 @@ items:
   title: Template bank for spinning compact binary mergers in the second observation run of Advanced LIGO and the first observation
     run of Advanced Virgo
   authors:
-  - Debnandini Mukherjee et al. (incl. **Tjonnie G.F. Li**)
+  - Debnandini Mukherjee
+  - Sarah Caudill
+  - Ryan Magee
+  - Cody Messick
+  - Stephen Privitera
+  - Surabhi Sachdev
+  - Kent Blackburn
+  - Patrick Brady
+  - Patrick Brockill
+  - Kipp Cannon
+  - Sydney J. Chamberlin
+  - Deep Chatterjee
+  - Jolien D.E. Creighton
+  - Heather Fong
+  - Patrick Godwin
+  - Chad Hanna
+  - Shasvath Kapadia
+  - Ryan N. Lang
+  - '**Tjonnie G.F. Li**'
+  - Rico K.L. Lo
+  - Duncan Meacher
+  - Alex Pace
+  - Laleh Sadeghian
+  - Leo Tsukada
+  - Leslie Wade
+  - Madeline Wade
+  - Alan Weinstein
+  - Liting Xiao
   venue: Phys.Rev.D 103, 084047 (2021)
   year: 2021
   date: '2021'
@@ -3658,7 +3801,7 @@ items:
   members:
   - tjonnie-li
   author_count: 28
-  collaboration: true
+  collaboration: false
   links:
   - label: DOI
     url: https://doi.org/10.1103/PhysRevD.103.084047

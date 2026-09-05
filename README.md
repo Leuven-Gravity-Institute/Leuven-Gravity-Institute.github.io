@@ -190,10 +190,29 @@ this group's page during development.
 
 ### Collaboration publications
 
-A paper counts as a collaboration paper when the record names a collaboration or
-when it has more than fifteen authors. Those are listed in their own section, so
-thousand-author papers do not bury the group's own work, and their author lists
-are abbreviated to the lead author plus the group members credited.
+Collaboration papers are listed in their own section, so thousand-author papers
+do not bury the group's own work; their author lists are abbreviated to the lead
+author plus the group members credited.
+
+A paper is classified as one when **the record names a collaboration** — the
+reliable signal, and the one that accounts for 99 of the 102 currently listed.
+Failing that, an author count above `COLLABORATION_THRESHOLD` (50) is used as a
+fallback, which catches large-collaboration papers reaching the sync from a
+source that records no collaboration name. The threshold is deliberately high:
+ordinary multi-institution work regularly carries twenty or thirty authors
+without being a collaboration paper, and an earlier threshold of fifteen was
+misfiling the group's own papers.
+
+Where the classification is still wrong, override it by hand:
+
+```yaml
+- title: A sixty-author paper that is not a collaboration paper
+  treat_as_collaboration: false
+```
+
+`treat_as_collaboration` wins in either direction, is never written by the sync,
+and is preserved across runs. Do not edit `collaboration` itself — it records
+what the sources said and is recomputed on every sync.
 
 ### Curation
 

@@ -85,7 +85,8 @@
                         "minimum": 0
                     },
                     "collaboration": {
-                        "type": "boolean"
+                        "type": "boolean",
+                        "description": "Derived by the sync from what the sources said; rewritten every run. Use treat_as_collaboration to override."
                     },
                     "collaborations": {
                         "type": "array",
@@ -93,6 +94,10 @@
                             "type": "string"
                         },
                         "description": "Names of collaborations credited as authors; their presence routes the entry to the collaboration section."
+                    },
+                    "treat_as_collaboration": {
+                        "type": "boolean",
+                        "description": "Human override for which section the entry appears in. Never written by the sync; always preserved across runs."
                     },
                     "note": {
                         "type": "string"

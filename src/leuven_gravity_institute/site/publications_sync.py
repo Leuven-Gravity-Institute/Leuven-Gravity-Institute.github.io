@@ -44,9 +44,17 @@ from leuven_gravity_institute.site.inspire import fetch_records as fetch_inspire
 from leuven_gravity_institute.site.openalex import fetch_works as fetch_openalex_works
 from leuven_gravity_institute.site.orcid import fetch_crossref_work, fetch_orcid_works
 
-# Above this many authors a paper is rendered as "First Author et al.", with the
-# group's own members named, rather than listing hundreds of collaborators.
-COLLABORATION_THRESHOLD = 15
+# Above this many authors a paper is treated as a collaboration paper when the
+# record names no collaboration, and its author list is rendered as "First
+# Author et al." with the group's own members named.
+#
+# This is a blunt fallback, not the main signal: a named collaboration accounts
+# for the overwhelming majority of such papers, and plenty of ordinary
+# multi-institution work carries twenty or thirty authors without being a
+# collaboration paper at all. The threshold is therefore set high enough to
+# catch only what is unambiguously collaboration-scale, and any paper it still
+# gets wrong can be corrected by hand with `treat_as_collaboration`.
+COLLABORATION_THRESHOLD = 50
 
 _WORK_TYPE_MAP = {
     "journal-article": "journal",
@@ -103,6 +111,12 @@ _HEADER = """\
 #   include:   set false to hide an entry from the site.
 #   highlight: set true to feature it as selected work (rendered with a star).
 #   note:      optional one-line editorial note shown under the entry.
+#   treat_as_collaboration:
+#              overrides which section an entry appears in. The `collaboration`
+#              field below is DERIVED from what the sources said and is
+#              rewritten on every sync, so editing it has no lasting effect; add
+#              `treat_as_collaboration: false` to move a paper out of the
+#              collaboration section, or `true` to move one in.
 #
 # To add something ORCID does not know about, append an entry *without* a
 # `key`; hand-authored entries are never touched by the sync. Wrap a group
@@ -127,6 +141,7 @@ _FIELD_ORDER = [
     "members",
     "author_count",
     "collaboration",
+    "treat_as_collaboration",
     "note",
     "links",
 ]
@@ -211,6 +226,27 @@ def clean_text(value: str) -> str:
     """
     without_tags = re.sub(r"<[^>]+>", " ", str(value))
     return re.sub(r"\s+", " ", html.unescape(without_tags)).strip()
+
+
+def is_collaboration(entry: dict[str, Any]) -> bool:
+    """Whether an entry belongs in the collaboration section.
+
+    ``collaboration`` is derived by the sync from what the sources said, and is
+    rewritten on every run. ``treat_as_collaboration`` is the human override: it
+    is never written by the sync, always preserved across runs, and wins
+    outright in either direction.
+
+    Args:
+        entry: A publication entry.
+
+    Returns:
+        ``True`` when the entry should be listed as a collaboration paper.
+
+    """
+    override = entry.get("treat_as_collaboration")
+    if override is not None:
+        return bool(override)
+    return bool(entry.get("collaboration"))
 
 
 def _fold(text: str) -> str:
@@ -1040,6 +1076,8 @@ def merge_items(
         refreshed["highlight"] = prior.get("highlight", entry["highlight"])
         if prior.get("note"):
             refreshed["note"] = prior["note"]
+        if prior.get("treat_as_collaboration") is not None:
+            refreshed["treat_as_collaboration"] = prior["treat_as_collaboration"]
         if refreshed != prior:
             summary.updated += 1
         managed.append(refreshed)
@@ -1257,7 +1295,7 @@ def sync_publications(
     summary.added = merge_summary.added
     summary.removed = merge_summary.removed
     summary.updated = merge_summary.updated
-    summary.collaboration = sum(1 for entry in merged if entry.get("collaboration"))
+    summary.collaboration = sum(1 for entry in merged if is_collaboration(entry))
 
     write_items(publications_path, merged)
     return summary

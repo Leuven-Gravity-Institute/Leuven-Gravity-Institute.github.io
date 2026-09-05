@@ -28,6 +28,7 @@ from markupsafe import Markup
 
 from leuven_gravity_institute.site.content import load_content
 from leuven_gravity_institute.site.paths import SitePaths
+from leuven_gravity_institute.site.publications_sync import is_collaboration
 
 _MD_EXTENSIONS = ["extra", "sane_lists", "smarty"]
 _FEED_MAX_ENTRIES = 30
@@ -133,8 +134,8 @@ def _prepare_people(
         person["group_name"] = (groups_by_id.get(person.get("group")) or {}).get("name", "")
         own = [pub for pub in publications if person["id"] in (pub.get("members") or [])]
         person["publications"] = own
-        person["group_publications"] = [pub for pub in own if not pub.get("collaboration")]
-        person["collaboration_publications"] = [pub for pub in own if pub.get("collaboration")]
+        person["group_publications"] = [pub for pub in own if not is_collaboration(pub)]
+        person["collaboration_publications"] = [pub for pub in own if is_collaboration(pub)]
     return people
 
 
@@ -212,8 +213,8 @@ def _build_context(content: dict[str, Any], today: date | None = None) -> dict[s
     # Large-collaboration papers are separated out: on a list of this shape they
     # would otherwise bury the group's own work, since one can carry thousands
     # of authors.
-    group_led = [pub for pub in publications if not pub.get("collaboration")]
-    collaboration = [pub for pub in publications if pub.get("collaboration")]
+    group_led = [pub for pub in publications if not is_collaboration(pub)]
+    collaboration = [pub for pub in publications if is_collaboration(pub)]
 
     return {
         "site": site_doc.get("site", {}),

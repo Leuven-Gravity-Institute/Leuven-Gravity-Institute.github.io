@@ -28,6 +28,7 @@ from leuven_gravity_institute.site.publications_sync import (
     entry_key,
     identity_keys,
     in_membership_window,
+    is_collaboration,
     members_from_people,
     merge_items,
     normalize_inspire_record,
@@ -675,3 +676,50 @@ class TestPreprintAndPublishedVersions:
         a = {"title": "One", "doi": "10.1/x", "members": ["a"], "links": [], "collaboration": False}
         b = {"title": "Two", "doi": "10.1/y", "members": ["b"], "links": [], "collaboration": False}
         assert len(deduplicate([a, b], {})) == 2
+
+
+class TestCollaborationOverride:
+    """The hand override that decides which section a paper appears in."""
+
+    def test_the_derived_value_is_used_when_no_override_is_set(self) -> None:
+        assert is_collaboration({"collaboration": True}) is True
+        assert is_collaboration({"collaboration": False}) is False
+        assert is_collaboration({}) is False
+
+    def test_the_override_wins_in_both_directions(self) -> None:
+        # A big multi-institution paper that is not a collaboration paper.
+        assert is_collaboration({"collaboration": True, "treat_as_collaboration": False}) is False
+        # A community paper the record happens not to name a collaboration on.
+        assert is_collaboration({"collaboration": False, "treat_as_collaboration": True}) is True
+
+    def test_the_override_survives_a_resync_but_the_derived_value_does_not(self) -> None:
+        existing = [
+            {"key": "doi:1", "title": "Old", "collaboration": True, "treat_as_collaboration": False},
+        ]
+        fetched = [{"key": "doi:1", "title": "New", "include": True, "highlight": False, "collaboration": True}]
+        merged, _ = merge_items(existing, fetched)
+        assert merged[0]["treat_as_collaboration"] is False
+        # The derived field is refreshed from the sources, not frozen.
+        assert merged[0]["collaboration"] is True
+        assert is_collaboration(merged[0]) is False
+
+    def test_an_untouched_entry_keeps_no_override(self) -> None:
+        existing = [{"key": "doi:1", "title": "Old", "collaboration": True}]
+        fetched = [{"key": "doi:1", "title": "New", "include": True, "highlight": False, "collaboration": False}]
+        merged, _ = merge_items(existing, fetched)
+        assert "treat_as_collaboration" not in merged[0]
+        # Nothing is frozen: a changed classification takes effect.
+        assert is_collaboration(merged[0]) is False
+
+
+class TestThreshold:
+    """The author-count fallback, used only when no collaboration is named."""
+
+    def test_the_default_threshold_ignores_ordinary_multi_author_papers(self) -> None:
+        names = [f"Author{index}, A" for index in range(30)]
+        entry = normalize_inspire_record(inspire_record(authors=names), MEMBER)
+        assert entry["collaboration"] is False
+
+    def test_a_thousand_author_paper_is_still_caught_without_a_named_collaboration(self) -> None:
+        entry = normalize_inspire_record(inspire_record(authors=["Wong, Isaac"], author_count=1771), MEMBER)
+        assert entry["collaboration"] is True
