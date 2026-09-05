@@ -10,11 +10,14 @@ site:
     # Shorter name, used in the masthead where the full one would crowd the
     # navigation. Falls back to `title` when omitted.
     short_title: 'GW Group'
-    tagline: 'Leuven Gravity Institute · KU Leuven'
+    # Kept short: the masthead is space-constrained. The full affiliation
+    # chain lives in `org.affiliation`, shown in the hero and the footer.
+    tagline: 'KU Leuven'
     description:
-        'The Gravitational Wave Group at KU Leuven — data analysis for LIGO,
-        Virgo, and the Einstein Telescope, detector noise and calibration, and
-        gravitational waves from core-collapse supernovae.'
+        'The Gravitational Wave Group at KU Leuven — part of the Laboratory for
+        Semiconductor Physics and the Leuven Gravity Institute. Data analysis
+        for LIGO, Virgo, and the Einstein Telescope, detector noise and
+        calibration, and gravitational waves from core-collapse supernovae.'
     language: 'en'
     # Accent colour used across the site (any valid CSS colour).
     accent: '#0b6b8f'
@@ -130,10 +133,16 @@ org:
         results are released publicly, and our publication list is generated
         directly from our members' bibliographic records.
 
-        The group is one of several at the Leuven Gravity Institute; this site
-        covers our own work rather than the institute as a whole.
-    # The parent institution, shown in the hero and the footer.
-    affiliation: 'Leuven Gravity Institute · KU Leuven'
+        The group sits within the Laboratory for Semiconductor Physics and is
+        part of the Leuven Gravity Institute. It is one of several groups in the
+        institute; this site covers our own work rather than the institute as a
+        whole.
+    # The parent institutions, shown in the hero and the footer. The group
+    # belongs to both the Laboratory for Semiconductor Physics and the Leuven
+    # Gravity Institute.
+    affiliation:
+        'Laboratory for Semiconductor Physics · Leuven Gravity Institute · KU
+        Leuven'
     location: 'Leuven, Belgium'
     # Optional headline figures shown in the hero. Remove the list to hide them.
     facts:

@@ -1,44 +1,125 @@
 # Software and public datasets released by the group. Items are grouped under
 # their `category`, in the order the categories first appear below.
 # `kind` is either "software" or "dataset" and is shown as a badge.
+#
+# These mirror the repositories under
+# https://github.com/orgs/Leuven-Gravity-Institute/repositories
+# `people` is taken from each repository's contributor list. The repository
+# holding this website is deliberately not listed: it is the site itself, not a
+# research output.
 
 items:
-    - name: 'gw-nullstream'
-      category: 'Software'
+    - name: 'gwmock'
+      category: 'gwmock suite'
       kind: 'software'
       summary:
-          'Null-stream construction and reranking for triangular detector
-          configurations.'
-      role: 'Maintainer'
+          'Generates Mock Data Challenge datasets for the gravitational-wave
+          community, simulating strain data for detectors such as the Einstein
+          Telescope behind one interface for reproducible data generation.'
+      license: 'GPL-3.0'
+      people: ['isaac-wong', 'francesco-cireddu']
+      links:
+          - {
+                label: 'Source',
+                url: 'https://github.com/Leuven-Gravity-Institute/gwmock',
+            }
+          - {
+                label: 'Docs',
+                url: 'https://leuven-gravity-institute.github.io/gwmock/',
+            }
+          - { label: 'DOI', url: 'https://doi.org/10.5281/zenodo.17925458' }
+
+    - name: 'gwmock-signal'
+      category: 'gwmock suite'
+      kind: 'software'
+      summary: 'Simulates gravitational-wave signals.'
+      license: 'GPL-3.0'
+      people: ['isaac-wong', 'francesco-cireddu']
+      links:
+          - {
+                label: 'Source',
+                url: 'https://github.com/Leuven-Gravity-Institute/gwmock-signal',
+            }
+          - {
+                label: 'Docs',
+                url: 'https://leuven-gravity-institute.github.io/gwmock-signal/',
+            }
+          - { label: 'DOI', url: 'https://doi.org/10.5281/zenodo.19202406' }
+
+    - name: 'gwmock-noise'
+      category: 'gwmock suite'
+      kind: 'software'
+      summary:
+          'Simulates instrumental detector noise: coloured and correlated
+          models, spectral lines, glitches, and optional Schumann-resonance
+          coupling, with CLI-driven batch runs.'
       license: 'BSD-3-Clause'
-      # people: ['<person-id>']  # who works on this; ids from people.yaml
+      people: ['isaac-wong', 'francesco-cireddu']
       links:
           - {
                 label: 'Source',
-                url: 'https://github.com/Leuven-Gravity-Institute',
+                url: 'https://github.com/Leuven-Gravity-Institute/gwmock-noise',
             }
+          - {
+                label: 'Docs',
+                url: 'https://leuven-gravity-institute.github.io/gwmock-noise/',
+            }
+          - { label: 'DOI', url: 'https://doi.org/10.5281/zenodo.20032221' }
 
-    - name: 'et-noise-toolkit'
-      category: 'Software'
+    - name: 'gwmock-pop'
+      category: 'gwmock suite'
+      kind: 'software'
+      summary: 'Simulates populations of gravitational-wave sources.'
+      license: 'BSD-3-Clause'
+      people: ['isaac-wong', 'francesco-cireddu']
+      links:
+          - {
+                label: 'Source',
+                url: 'https://github.com/Leuven-Gravity-Institute/gwmock-pop',
+            }
+          - {
+                label: 'Docs',
+                url: 'https://leuven-gravity-institute.github.io/gwmock-pop/',
+            }
+          - { label: 'DOI', url: 'https://doi.org/10.5281/zenodo.18574076' }
+
+    - name: 'gwmock-benchmark'
+      category: 'gwmock suite'
       kind: 'software'
       summary:
-          'Simulation of correlated noise across co-located interferometers.'
-      role: 'Contributor'
-      license: 'MIT'
-      # people: ['<person-id>']  # who works on this; ids from people.yaml
+          'Shared benchmarking for the gwmock packages — one harness, the
+          committed results, and the rendered report site in one place — so
+          every package is measured the same way.'
+      license: 'GPL-3.0'
+      people: ['isaac-wong']
       links:
           - {
                 label: 'Source',
-                url: 'https://github.com/Leuven-Gravity-Institute',
+                url: 'https://github.com/Leuven-Gravity-Institute/gwmock-benchmark',
             }
+          - {
+                label: 'Docs',
+                url: 'https://leuven-gravity-institute.github.io/gwmock-benchmark/',
+            }
+          - { label: 'DOI', url: 'https://doi.org/10.5281/zenodo.20777458' }
 
-    - name: 'ET injection set (2025)'
-      category: 'Data releases'
-      kind: 'dataset'
+    - name: 'nullcal'
+      category: 'Calibration'
+      kind: 'software'
       summary:
-          'Five thousand binary black-hole injections with tunable SNR, used for
-          null-stream validation.'
-      license: 'CC-BY-4.0'
-      # people: ['<person-id>']  # who works on this; ids from people.yaml
+          'Constrains calibration errors across a closed-geometry network of
+          gravitational-wave detectors, providing the null-stream formalism for
+          noise-only data combinations together with Bayesian recalibration
+          likelihoods.'
+      license: 'MIT'
+      people: ['isaac-wong', 'milan-wils']
       links:
-          - { label: 'Zenodo', url: 'https://zenodo.org' }
+          - {
+                label: 'Source',
+                url: 'https://github.com/Leuven-Gravity-Institute/nullcal',
+            }
+          - {
+                label: 'Docs',
+                url: 'https://leuven-gravity-institute.github.io/nullcal/',
+            }
+          # No DOI yet: the README's Zenodo badge is still the template placeholder.
