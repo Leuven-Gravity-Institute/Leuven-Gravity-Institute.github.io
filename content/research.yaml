@@ -1,0 +1,82 @@
+# Research themes shown on the Research page and (in preview) on the home page.
+#
+# These follow the group's official KU Leuven page:
+# https://fys.kuleuven.be/hf/research-groups/copy_of_M2T
+# Keep the two consistent when either changes.
+#
+# `people` lists person ids from people.yaml; each becomes a link to that
+# person's profile.
+#
+# The lists below were INFERRED from co-authorship in the synced publication
+# list, not stated by the group — they say who has published on a theme, which
+# is not quite the same as who works on it. Please confirm and correct them.
+
+items:
+    - name: 'Data analysis for current and future observatories'
+      summary: |
+          The group is actively involved in the scientific exploitation of the
+          current generation of gravitational-wave detectors — LIGO and Virgo —
+          and in preparing the analyses for the observatories that follow. Work
+          here spans Bayesian parameter estimation, methods for signal
+          detection, and the machine-learning techniques that increasingly
+          support both.
+      tags:
+          - 'LIGO'
+          - 'Virgo'
+          - 'Bayesian inference'
+          - 'Signal detection'
+      people:
+          [
+              'tjonnie-li',
+              'isaac-wong',
+              'arthur-offermans',
+              'francesco-cireddu',
+              'milan-wils',
+          ]
+
+    - name: 'Detector noise, data quality, and calibration'
+      summary: |
+          Real detector output is not stationary Gaussian noise. The group
+          develops robust approaches to transient glitches and to noise
+          correlated across a detector network, together with machine-learning
+          methods for noise mitigation and techniques supporting the
+          calibration of current and future observatories.
+      tags:
+          - 'Detector characterisation'
+          - 'Glitches'
+          - 'Correlated noise'
+          - 'Calibration'
+      people:
+          [
+              'tjonnie-li',
+              'isaac-wong',
+              'brecht-evens',
+              'francesco-cireddu',
+              'milan-wils',
+              'tom-colemont',
+          ]
+
+    - name: 'The Einstein Telescope'
+      summary: |
+          A major effort is dedicated to the specific challenges and
+          opportunities that arise from the triangular configuration of the
+          Einstein Telescope, and more broadly to the science case and data
+          challenges of next-generation detectors.
+      tags:
+          - 'Einstein Telescope'
+          - 'Triangular configuration'
+          - 'Next-generation detectors'
+      people: ['tjonnie-li', 'isaac-wong', 'francesco-cireddu', 'milan-wils']
+
+    - name: 'Core-collapse supernovae and strong-field gravity'
+      summary: |
+          The group investigates gravitational waves from core-collapse
+          supernovae, using large-scale numerical simulations and modern
+          data-analytics tools to explore the strong-field dynamics of
+          spacetime and the behaviour of ultra-dense matter.
+      tags:
+          - 'Core-collapse supernovae'
+          - 'Strong-field gravity'
+          - 'Ultra-dense matter'
+          - 'Large-scale computing'
+      people: ['tjonnie-li', 'arthur-offermans']

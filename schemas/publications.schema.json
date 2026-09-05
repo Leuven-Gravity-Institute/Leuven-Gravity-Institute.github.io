@@ -1,0 +1,125 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "publications.schema.json",
+    "title": "Publications",
+    "type": "object",
+    "required": ["items"],
+    "additionalProperties": false,
+    "properties": {
+        "items": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": ["title"],
+                "additionalProperties": false,
+                "properties": {
+                    "include": {
+                        "type": "boolean"
+                    },
+                    "highlight": {
+                        "type": "boolean"
+                    },
+                    "title": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "authors": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "venue": {
+                        "type": "string"
+                    },
+                    "year": {
+                        "type": ["integer", "null"]
+                    },
+                    "date": {
+                        "type": ["string", "null"],
+                        "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$",
+                        "description": "Publication date as known; ORCID often supplies only a year."
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "journal",
+                            "preprint",
+                            "conference",
+                            "thesis",
+                            "book",
+                            "chapter",
+                            "dataset",
+                            "software",
+                            "report",
+                            "other"
+                        ]
+                    },
+                    "doi": {
+                        "type": "string"
+                    },
+                    "arxiv": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "key": {
+                        "type": "string",
+                        "description": "Stable identity (doi:, arxiv:, or title:). Present on synced entries only."
+                    },
+                    "source": {
+                        "type": "string",
+                        "enum": ["orcid", "inspire", "openalex", "manual"],
+                        "description": "Which database the entry came from; 'manual' entries are hand-authored and never touched by the sync."
+                    },
+                    "members": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Ids of the group members credited; drives the per-member publication pages."
+                    },
+                    "author_count": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "collaboration": {
+                        "type": "boolean",
+                        "description": "Derived by the sync from what the sources said; rewritten every run. Use treat_as_collaboration to override."
+                    },
+                    "collaborations": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Names of collaborations credited as authors; their presence routes the entry to the collaboration section."
+                    },
+                    "treat_as_collaboration": {
+                        "type": "boolean",
+                        "description": "Human override for which section the entry appears in. Never written by the sync; always preserved across runs."
+                    },
+                    "note": {
+                        "type": "string"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "required": ["label", "url"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "label": {
+                                    "type": "string"
+                                },
+                                "url": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

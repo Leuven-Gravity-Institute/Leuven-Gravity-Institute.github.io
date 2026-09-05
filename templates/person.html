@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% from "partials/icons.html" import icon %}
+{% from "partials/macros.html" import pub_item, period %}
+{% block content %}
+<article class="wrap person-page">
+  <p class="breadcrumb"><a href="/people/">← People</a></p>
+
+  <header class="person-header">
+    <img class="person-photo" src="{{ person.photo | default('/assets/img/people/placeholder.svg', true) }}" alt="Portrait of {{ person.name }}" loading="lazy">
+    <div class="person-headings">
+      <h1 class="person-name">{{ person.name }}</h1>
+      <p class="person-role">{{ person.role }}</p>
+      {% if person.start %}<p class="person-period">{{ period(person.start, person.end) }} · {{ person.group_name | default(org.name, true) }}</p>{% endif %}
+      {% if person.interests %}
+      <ul class="tags">
+        {% for interest in person.interests %}<li class="tag">{{ interest }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+      <div class="link-row">
+        {% if person.email %}<a class="pill-link" href="mailto:{{ person.email }}">{{ icon("email") }}<span>{{ person.email }}</span></a>{% endif %}
+        {% for link in person.links %}
+        <a class="pill-link" href="{{ link.url }}" target="_blank" rel="noopener">{{ icon(link.icon) }}<span>{{ link.label }}</span></a>
+        {% endfor %}
+      </div>
+    </div>
+  </header>
+
+  {% if person.bio %}
+  <section class="section">
+    <div class="prose">{{ person.bio | markdown }}</div>
+  </section>
+  {% endif %}
+
+  <section class="section" id="publications">
+    <h2 class="section-title">Publications</h2>
+    {% if person.publications %}
+    <p class="muted">
+      {{ person.publications | length }} publication{{ '' if person.publications | length == 1 else 's' }}
+      from {{ person.name }}'s time with the group.
+    </p>
+    {% if person.group_publications %}
+    <ul class="pub-list">
+      {% for pub in person.group_publications %}{{ pub_item(pub) }}{% endfor %}
+    </ul>
+    {% endif %}
+    {% if person.collaboration_publications %}
+    <h3 class="group-heading">Collaboration publications</h3>
+    <ul class="pub-list">
+      {% for pub in person.collaboration_publications %}{{ pub_item(pub) }}{% endfor %}
+    </ul>
+    {% endif %}
+    {% else %}
+    <p class="muted">
+      No publications are listed yet for {{ person.name }}'s time with the org.
+    </p>
+    {% endif %}
+    <p class="more"><a href="/publications/">All group publications →</a></p>
+  </section>
+</article>
+{% endblock %}

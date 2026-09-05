@@ -1,0 +1,30 @@
+{% from "partials/icons.html" import icon %}
+<section id="contact" class="section">
+  <div class="wrap">
+    {% if show_title %}<h2 class="section-title">Contact</h2>{% endif %}
+    {% if contact.intro %}<div class="prose prose-wide">{{ contact.intro | markdown }}</div>{% endif %}
+    <div class="contact-grid">
+      <div class="contact-block">
+        <h3 class="group-heading">Address</h3>
+        <address class="contact-address">{{ contact.address | markdown }}</address>
+        {% if contact.map_url %}<p class="card-links"><a href="{{ contact.map_url }}" target="_blank" rel="noopener">Directions</a></p>{% endif %}
+      </div>
+      <div class="contact-block">
+        <h3 class="group-heading">Get in touch</h3>
+        <div class="link-row">
+          {% if contact.email %}<a class="pill-link" href="mailto:{{ contact.email }}">{{ icon("email") }}<span>{{ contact.email }}</span></a>{% endif %}
+          {% if contact.phone %}<span class="pill-link">{{ contact.phone }}</span>{% endif %}
+          {% for link in contact.links %}
+          {% if not link.url.startswith('mailto:') %}
+          <a class="pill-link" href="{{ link.url }}" target="_blank" rel="noopener">{{ icon(link.icon) }}<span>{{ link.label }}</span></a>
+          {% endif %}
+          {% endfor %}
+        </div>
+        {% if contact.directions %}
+        <h3 class="group-heading">Getting here</h3>
+        <div class="prose">{{ contact.directions | markdown }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

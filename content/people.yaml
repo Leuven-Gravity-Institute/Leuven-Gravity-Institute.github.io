@@ -1,0 +1,275 @@
+# The people of the group. This file drives three things at once:
+#   1. the People page (grouped by `category`, in the order categories first
+#      appear below),
+#   2. one profile page per person at /people/<slug>/, and
+#   3. the publication sync — `orcid`, `start`, and `end` decide which of a
+#      person's works count as work produced here.
+#
+# Fields:
+#   id        Stable identifier. Referenced by publications.yaml `members`;
+#             never change it once publications have been synced.
+#   slug      URL segment for the profile page (/people/<slug>/).
+#   category  Heading the person appears under on the People page.
+#   group     Which research group they belong to, referencing an `id` under
+#             `site.groups` in site.yaml. With a single group configured the
+#             heading stays hidden, but tagging people now means a second group
+#             can be added later without rewriting any of these entries.
+#   status    "current" (default) or "alumni". Alumni are listed separately.
+#   orcid     ORCID iD. Self-asserted, so it is authoritative when kept up to
+#             date — and silent about everything the person never added.
+#   inspire   INSPIRE-HEP author identifier (BAI). INSPIRE assigns papers to
+#             profiles by itself, so it stays current without upkeep, but it
+#             only covers high-energy and gravitational-wave literature.
+#   openalex  OpenAlex author id. Widest subject coverage, but one researcher is
+#             often split across several author entities — one member here has
+#             nine, holding between 1 and 264 works. Pin the fullest; never let
+#             the sync pick by name, or a different researcher of the same name
+#             ends up in the list.
+#
+# Give a person as many of the three as apply: they are queried independently
+# and unioned, and the same paper arriving from several of them is merged into
+# one entry. Any one of them requires a `start` date.
+#   start     Date they joined THIS group (YYYY-MM-DD, or YYYY-MM / YYYY).
+#   end       Date they left. Omit or leave empty while they are still here.
+#
+# Only works published between `start` and `end` are attributed to the group, so
+# these two dates are what keep a member's earlier career out of the list.
+#
+# `start` must be the date they joined *this group*, which is not always the
+# date on their ORCID employment record — for someone who did their PhD here and
+# stayed on as a postdoc, the ORCID entry points at the PhD. Where that start
+# date is not known, the ORCID iD below is recorded as a comment rather than as
+# an `orcid:` field: the person still appears on the site, and the sync picks
+# them up as soon as someone fills in both lines. Adding an `orcid:` without a
+# correct `start:` would silently attribute their earlier work to the group.
+#
+# Individual email addresses are left out unless known first-hand. KU Leuven
+# addresses do not reliably follow firstname.lastname (see Isaac's below), so
+# guessing them would publish wrong addresses for real people.
+#
+# Biographies are left blank for people who have not written one. Please add
+# your own rather than having one written for you; `bio` supports Markdown.
+#
+# `links` holds any profile links you want on your page. To add a personal
+# website, append an entry with the `globe` icon:
+#
+#   - { label: 'Website', icon: 'globe', url: 'https://example.org' }
+#
+# Available icons are the keys in templates/partials/icons.html: globe, orcid,
+# github, scholar, linkedin, bluesky, mastodon, twitter, email.
+
+items:
+    - id: 'tjonnie-li'
+      slug: 'tjonnie-li'
+      name: 'Tjonnie G. F. Li'
+      role: 'Associate Professor, Principal Investigator'
+      category: 'Faculty'
+      group: 'gw-group'
+      status: 'current'
+      photo: '/assets/img/people/placeholder.svg'
+      email: 'tjonnie.li@kuleuven.be'
+      orcid: '0000-0003-4297-7365'
+      inspire: 'T.G.F.Li.1'
+      # OpenAlex splits him across entities that hold different papers, so all
+      # of his are listed: A5047727655 holds the bulk, A5147484353 holds work
+      # the first one does not.
+      openalex: ['A5047727655', 'A5147484353']
+      # From the KU Leuven employment record on their ORCID profile.
+      start: '2021-10'
+      # Self-declared keywords from their ORCID profile.
+      interests:
+          - 'Gravitational waves'
+          - 'Black holes'
+          - 'Neutron stars'
+          - 'General relativity'
+      links:
+          - {
+                label: 'ORCID',
+                icon: 'orcid',
+                url: 'https://orcid.org/0000-0003-4297-7365',
+            }
+          - {
+                label: 'GitHub',
+                icon: 'github',
+                url: 'https://github.com/tjonnie-li',
+            }
+
+    - id: 'isaac-wong'
+      slug: 'isaac-wong'
+      name: 'Isaac C. F. Wong'
+      role: 'Postdoctoral Researcher'
+      category: 'Postdoctoral researchers'
+      group: 'gw-group'
+      status: 'current'
+      photo: '/assets/img/people/placeholder.svg'
+      email: 'chunfung.wong@kuleuven.be'
+      orcid: '0000-0003-2166-0027'
+      inspire: 'Isaac.C.F.Wong.1'
+      openalex: 'A5033794708'
+      # From the KU Leuven employment record on their ORCID profile.
+      start: '2024-02-01'
+      interests:
+          - 'Gravitational-wave astronomy'
+          - 'Statistical data analysis'
+      bio: |
+          Isaac works on statistical inference for next-generation
+          gravitational-wave detectors, including correlated noise modelling and
+          null-stream methods for the Einstein Telescope.
+      links:
+          - {
+                label: 'Website',
+                icon: 'globe',
+                url: 'https://isaac-cf-wong.github.io',
+            }
+          - {
+                label: 'ORCID',
+                icon: 'orcid',
+                url: 'https://orcid.org/0000-0003-2166-0027',
+            }
+          - {
+                label: 'GitHub',
+                icon: 'github',
+                url: 'https://github.com/isaac-cf-wong',
+            }
+
+    - id: 'brecht-evens'
+      slug: 'brecht-evens'
+      name: 'Brecht Evens'
+      role: 'Postdoctoral Researcher'
+      category: 'Postdoctoral researchers'
+      group: 'gw-group'
+      status: 'current'
+      photo: '/assets/img/people/placeholder.svg'
+      email: 'brecht.evens@kuleuven.be'
+      orcid: '0000-0002-2317-9395'
+      openalex: 'A5019280099'
+      # Confirmed by the group: the postdoc began in 2026. Note that his ORCID
+      # employment record still shows only the PhD, as ongoing from 2020-10-01;
+      # syncing from that date would attribute years of optimisation and
+      # operator-theory work from another group to this one.
+      start: '2026'
+      # Self-declared keywords from their ORCID profile.
+      interests:
+          - 'Optimization'
+          - 'Optimal control'
+          - 'Machine learning'
+          - 'Systems theory'
+      links:
+          - {
+                label: 'ORCID',
+                icon: 'orcid',
+                url: 'https://orcid.org/0000-0002-2317-9395',
+            }
+
+    - id: 'arthur-offermans'
+      slug: 'arthur-offermans'
+      name: 'Arthur Offermans'
+      role: 'PhD Candidate'
+      category: 'Doctoral researchers'
+      group: 'gw-group'
+      status: 'current'
+      photo: '/assets/img/people/placeholder.svg'
+      email: 'arthur.offermans@kuleuven.be'
+      orcid: '0000-0002-8313-5976'
+      inspire: 'A.Offermans.2'
+      openalex: 'A5114450396'
+      # From the KU Leuven employment record on their ORCID profile.
+      start: '2022-09-01'
+      links:
+          - {
+                label: 'ORCID',
+                icon: 'orcid',
+                url: 'https://orcid.org/0000-0002-8313-5976',
+            }
+          - {
+                label: 'GitHub',
+                icon: 'github',
+                url: 'https://github.com/aoffermans',
+            }
+
+    - id: 'francesco-cireddu'
+      slug: 'francesco-cireddu'
+      name: 'Francesco Cireddu'
+      role: 'PhD Candidate'
+      category: 'Doctoral researchers'
+      group: 'gw-group'
+      status: 'current'
+      photo: '/assets/img/people/placeholder.svg'
+      email: 'francesco.cireddu@kuleuven.be'
+      orcid: '0009-0002-7074-4278'
+      inspire: 'F.Cireddu.1'
+      openalex: 'A5093581602'
+      # From the KU Leuven employment record on their ORCID profile.
+      start: '2023-10-15'
+      links:
+          - {
+                label: 'ORCID',
+                icon: 'orcid',
+                url: 'https://orcid.org/0009-0002-7074-4278',
+            }
+          - {
+                label: 'GitHub',
+                icon: 'github',
+                url: 'https://github.com/fcireddu',
+            }
+
+    - id: 'milan-wils'
+      slug: 'milan-wils'
+      name: 'Milan Wils'
+      role: 'PhD Candidate'
+      category: 'Doctoral researchers'
+      group: 'gw-group'
+      status: 'current'
+      photo: '/assets/img/people/placeholder.svg'
+      email: 'milan.wils@kuleuven.be'
+      orcid: '0000-0002-1544-7193'
+      inspire: 'M.Wils.2'
+      openalex: 'A5043928911'
+      # From the KU Leuven employment record on their ORCID profile, which runs
+      # to 2026-09-25. That is a contract end, not a departure, so no `end` is
+      # set — add one when they actually leave, or their later work stops being
+      # attributed to the group.
+      start: '2022-09-26'
+      links:
+          - {
+                label: 'ORCID',
+                icon: 'orcid',
+                url: 'https://orcid.org/0000-0002-1544-7193',
+            }
+          - {
+                label: 'GitHub',
+                icon: 'github',
+                url: 'https://github.com/milanwils',
+            }
+
+    - id: 'tom-colemont'
+      slug: 'tom-colemont'
+      name: 'Tom Colemont'
+      role: 'PhD Candidate'
+      category: 'Doctoral researchers'
+      group: 'gw-group'
+      status: 'current'
+      photo: '/assets/img/people/placeholder.svg'
+      email: 'tom.colemont@kuleuven.be'
+      orcid: '0009-0003-4408-5894'
+      inspire: 'T.Colemont.1'
+      # This entity carries no ORCID, so it cannot be found by ORCID lookup;
+      # it was identified from the author list of a paper he co-wrote.
+      openalex: 'A5120049122'
+      # PROVISIONAL START DATE — please replace with the real one.
+      # This profile carries no employment record to take a date from, unlike
+      # everyone else here. 2025 is the year of his first group paper, so it is
+      # the earliest date the evidence supports; if he joined earlier, anything
+      # he published in between is currently being left out.
+      start: '2025'
+      links:
+          - {
+                label: 'ORCID',
+                icon: 'orcid',
+                url: 'https://orcid.org/0009-0003-4408-5894',
+            }
+          - {
+                label: 'GitHub',
+                icon: 'github',
+                url: 'https://github.com/TomColemont',
+            }

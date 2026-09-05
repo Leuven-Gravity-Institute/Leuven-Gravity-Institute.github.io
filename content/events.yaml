@@ -1,0 +1,15 @@
+# Seminars, workshops, visits, and conferences. Events dated today or later are
+# listed as upcoming; the rest fall under past events.
+#   date  Start date (YYYY-MM-DD).
+#   end   Optional end date for multi-day events.
+#   kind  Seminar, Workshop, Conference, Visit, ...
+#
+# Example:
+#   - date: '2026-10-14'
+#     title: 'LGI Seminar: Overlapping signals in third-generation detectors'
+#     kind: 'Seminar'
+#     speaker: 'Invited speaker'
+#     location: 'Room 01.02, Department of Physics, KU Leuven'
+#     summary: 'Weekly group seminar. Open to all.'
+
+items: []

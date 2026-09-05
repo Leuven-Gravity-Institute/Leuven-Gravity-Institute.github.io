@@ -1,0 +1,166 @@
+# Site-wide configuration and the description of whose site this is.
+# Validated against schemas/site.schema.json. Edit values in place; keep the
+# structure (keys and nesting) intact.
+
+site:
+    # The full URL where the site is published (used for canonical links and metadata).
+    url: 'https://leuven-gravity-institute.github.io'
+    # Browser tab title and the name shown in the masthead.
+    title: 'Gravitational Wave Group'
+    # Shorter name, used in the masthead where the full one would crowd the
+    # navigation. Falls back to `title` when omitted.
+    short_title: 'GW Group'
+    # Kept short: the masthead is space-constrained. The full affiliation
+    # chain lives in `org.affiliation`, shown in the hero and the footer.
+    tagline: 'KU Leuven'
+    description:
+        'The Gravitational Wave Group at KU Leuven — part of the Laboratory for
+        Semiconductor Physics and the Leuven Gravity Institute. Data analysis
+        for LIGO, Virgo, and the Einstein Telescope, detector noise and
+        calibration, and gravitational waves from core-collapse supernovae.'
+    language: 'en'
+    # Accent colour used across the site (any valid CSS colour).
+    accent: '#0b6b8f'
+    # Site-root path to the logo, shown in the masthead and used as the browser
+    # tab icon. Leave empty ("") to show the site name without a mark.
+    logo: '/assets/img/logo.svg'
+
+    # Research groups covered by this site.
+    #
+    # Today this site covers one group, so group headings stay hidden and the
+    # People page reads exactly as it would without them. If another Leuven
+    # Gravity Institute group later joins, add it here and tag its members with
+    # `group:` in people.yaml — the People page then grows a heading per group
+    # on its own. Nothing else has to change, and no existing entry has to be
+    # rewritten.
+    #
+    #   id    Stable identifier, referenced by `group:` in people.yaml.
+    #   name  Heading shown above the group's members, once there are several.
+    #   lead  Person id of the group leader (from people.yaml).
+    groups:
+        - id: 'gw-group'
+          name: 'Gravitational Wave Group'
+          lead: 'tjonnie-li'
+
+    # Pages of the site. Each entry becomes its own page at a clean URL:
+    #   slug ""              -> "/"              (the home page)
+    #   slug "publications"  -> "/publications/"
+    # `nav: true` shows the page in the navigation bar (in this order).
+    # `lead` is an optional sentence shown under the page title.
+    # `sections` lists the content blocks rendered on the page, top to bottom.
+    # A block is either a plain name, or {name: <block>, preview: N} to show
+    # only the N most recent items with a link through to its full page.
+    # Available blocks: hero, about, research, people, publications, software,
+    # news, events, teaching, join, contact.
+    pages:
+        - slug: ''
+          label: 'Home'
+          nav: true
+          sections:
+              - 'hero'
+              - { name: 'research', preview: 3 }
+              - { name: 'publications', preview: 3 }
+              - { name: 'news', preview: 4 }
+              - { name: 'events', preview: 3 }
+        - slug: 'people'
+          label: 'People'
+          nav: true
+          lead: 'The researchers and students who make up the group.'
+          sections: ['people']
+        - slug: 'research'
+          label: 'Research'
+          nav: true
+          lead: 'What we work on, and why.'
+          sections: ['research']
+        - slug: 'publications'
+          label: 'Publications'
+          nav: true
+          lead:
+              'Work published by members during their time with the group,
+              collected automatically from their ORCID records.'
+          sections: ['publications', 'collaboration']
+        - slug: 'software'
+          label: 'Software & data'
+          nav: true
+          lead: 'Open-source tools and public datasets released by the group.'
+          sections: ['software']
+        - slug: 'news'
+          label: 'News & events'
+          nav: true
+          lead: 'Announcements, seminars, workshops, and visits.'
+          sections: ['events', 'news']
+        - slug: 'teaching'
+          label: 'Teaching'
+          nav: true
+          lead: 'Courses, lecture series, and student projects.'
+          sections: ['teaching']
+        - slug: 'join'
+          label: 'Join us'
+          nav: true
+          lead: 'Open positions and how to apply.'
+          sections: ['join']
+        - slug: 'contact'
+          label: 'Contact'
+          nav: true
+          sections: ['contact']
+
+# The organisation this site is about. Today that is the group; if the site
+# later grows to cover the whole Leuven Gravity Institute, this one block is
+# what you rewrite to describe the institute instead.
+org:
+    name: 'Gravitational Wave Group'
+    # One-line positioning statement shown in the home-page hero.
+    headline: 'Listening to spacetime.'
+    # The hero paragraph. Markdown is supported.
+    intro: |
+        The Gravitational Wave Group is actively involved in the scientific
+        exploitation of the current generation of gravitational-wave detectors —
+        LIGO and Virgo — and in the preparation of next-generation observatories,
+        particularly the Einstein Telescope.
+    # Longer description shown on the home page under the hero.
+    about: |
+        Our research follows several interconnected lines. We develop advanced
+        data-analysis techniques for gravitational-wave signals, including
+        Bayesian parameter estimation, machine-learning methods for noise
+        mitigation, and methods for signal detection. We work on robust
+        approaches to realistic detector noise — transient glitches, and noise
+        correlated across a network — and on supporting detector calibration for
+        current and future observatories. A major effort is dedicated to the
+        challenges and opportunities arising from the triangular configuration of
+        the Einstein Telescope. We also investigate gravitational waves from
+        core-collapse supernovae, using large-scale numerical simulations and
+        modern data-analytics tools to explore the strong-field regime of general
+        relativity.
+
+        We build our methods in the open: the software and datasets behind our
+        results are released publicly, and our publication list is generated
+        directly from our members' bibliographic records.
+
+        The group sits within the Laboratory for Semiconductor Physics and is
+        part of the Leuven Gravity Institute. It is one of several groups in the
+        institute; this site covers our own work rather than the institute as a
+        whole.
+    # The parent institutions, shown in the hero and the footer. The group
+    # belongs to both the Laboratory for Semiconductor Physics and the Leuven
+    # Gravity Institute.
+    affiliation:
+        'Laboratory for Semiconductor Physics · Leuven Gravity Institute · KU
+        Leuven'
+    location: 'Leuven, Belgium'
+    # Optional headline figures shown in the hero. Remove the list to hide them.
+    facts:
+        - { label: 'Members', value: '7' }
+        - { label: 'Research themes', value: '4' }
+    # Profile links for the group as a whole. `icon` must match a key in the
+    # icon set (see templates/partials/icons.html).
+    links:
+        - {
+              label: 'Email',
+              icon: 'email',
+              url: 'mailto:tjonnie.li@kuleuven.be',
+          }
+        - {
+              label: 'GitHub',
+              icon: 'github',
+              url: 'https://github.com/Leuven-Gravity-Institute',
+          }

@@ -1,0 +1,15 @@
+# Courses, lecture series, and supervised student projects.
+#   kind  "course", "lecture series", or "project"
+#   people  Person ids from people.yaml; each becomes a link to their profile.
+#
+# Example:
+#   - kind: 'course'
+#     title: 'Gravitational-Wave Astronomy'
+#     code: 'G0X00A'
+#     institution: 'KU Leuven'
+#     term: 'Spring 2026'
+#     people: ['tjonnie-li']
+#     summary: 'Master-level introduction to sources, detectors, and analysis.'
+#     url: 'https://onderwijsaanbod.kuleuven.be/...'
+
+items: []

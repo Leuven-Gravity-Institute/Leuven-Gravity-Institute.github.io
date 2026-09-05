@@ -1,0 +1,44 @@
+# Contact details shown on the Contact page.
+
+intro: |
+    For research enquiries, collaboration proposals, and press, write to the
+    group leader at the address below. For matters concerning a specific
+    project, contact the relevant group member directly; where an address is
+    listed, it is on their profile page.
+    The group is part of both the Laboratory for Semiconductor Physics and the
+    Leuven Gravity Institute at KU Leuven.
+
+# The group leader's address, used as the general contact point. It also
+# appears in `contact.links` below and in `org.links` in site.yaml; change all
+# three together.
+email: 'tjonnie.li@kuleuven.be'
+phone: ''
+address: |
+    Gravitational Wave Group
+    Laboratory for Semiconductor Physics
+    Department of Physics and Astronomy
+    KU Leuven
+    Celestijnenlaan 200D
+    3001 Leuven
+    Belgium
+
+# Optional: a link to route planning, and directions in prose.
+# Google Maps rather than OpenStreetMap because it routes public transport,
+# which OpenStreetMap's site does not — and the directions below describe a bus
+# journey. `dir/?api=1` opens directly in directions mode and hands off to the
+# phone app where one is installed. The destination is given as the coordinates
+# of Celestijnenlaan 200D (the physics research building) rather than as an
+# address string, so it cannot drift to a different entrance; update them if the
+# address changes.
+map_url: 'https://www.google.com/maps/dir/?api=1&destination=50.86280,4.67692'
+directions: |
+    The department is a twenty-minute bus ride from Leuven station (lines 3 and
+    616 stop nearby). Visitors should report to the reception desk on arrival.
+
+links:
+    - { label: 'Email', icon: 'email', url: 'mailto:tjonnie.li@kuleuven.be' }
+    - {
+          label: 'GitHub',
+          icon: 'github',
+          url: 'https://github.com/Leuven-Gravity-Institute',
+      }

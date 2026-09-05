@@ -1,0 +1,49 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "contact.schema.json",
+    "title": "Contact",
+    "type": "object",
+    "required": ["email", "address"],
+    "additionalProperties": false,
+    "properties": {
+        "intro": {
+            "type": "string"
+        },
+        "email": {
+            "type": "string"
+        },
+        "phone": {
+            "type": "string"
+        },
+        "address": {
+            "type": "string",
+            "minLength": 1
+        },
+        "map_url": {
+            "type": "string",
+            "description": "Link to route planning for the address, rendered as a 'Directions' link."
+        },
+        "directions": {
+            "type": "string"
+        },
+        "links": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": ["label", "url"],
+                "additionalProperties": false,
+                "properties": {
+                    "label": {
+                        "type": "string"
+                    },
+                    "icon": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+# Dated announcements, newest first is not required — the site sorts them.
+# `body` supports Markdown. `title` is optional; without it the feed derives a
+# title from the body.
+#
+# Example:
+#   - date: '2026-06-15'
+#     title: 'New preprint on null-stream reranking'
+#     body: |
+#         Our work on **null-stream reranking** is now on arXiv.
+
+items: []

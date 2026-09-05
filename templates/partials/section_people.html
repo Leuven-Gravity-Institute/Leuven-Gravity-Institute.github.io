@@ -1,0 +1,32 @@
+{% from "partials/macros.html" import person_card %}
+{% if people_sections or alumni %}
+<section id="people" class="section">
+  <div class="wrap">
+    {% if show_title %}<h2 class="section-title">People</h2>{% endif %}
+    {% for block in people_sections %}
+    {# The group heading only earns its place once the site covers more than
+       one group; with a single group the categories stand on their own.     #}
+    {% if show_group_headings and block.group %}
+    <h3 class="people-group-heading" id="{{ block.group.id }}">{{ block.group.name }}</h3>
+    {% endif %}
+    {% for category in block.categories %}
+    <h3 class="group-heading">{{ category.category }}</h3>
+    <ul class="person-grid">
+      {% for person in category['items'] %}{{ person_card(person) }}{% endfor %}
+    </ul>
+    {% endfor %}
+    {% endfor %}
+    {% if alumni %}
+    <h3 class="group-heading">Alumni</h3>
+    <ul class="alumni-list">
+      {% for person in alumni %}
+      <li class="alumni-item">
+        <a href="{{ person.url }}">{{ person.name }}</a>
+        <span class="alumni-role">{{ person.role }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
+{% endif %}

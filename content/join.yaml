@@ -1,0 +1,25 @@
+# The Join us page: open positions plus the standing text around them.
+#   intro    Shown above the list of positions. Markdown supported.
+#   closing  Shown below the list — how to get in touch speculatively.
+#   items    Open positions. Set `open: false` to keep a closed call visible.
+#
+# Everything here is empty until the group writes its own. The intro and
+# closing make commitments on the group's behalf ("we welcome...", "we support
+# applications for..."), so they are deliberately left for a person to write
+# rather than filled with plausible-sounding text.
+#
+# Example:
+#   intro: |
+#       We welcome enquiries from people who want to work on gravitational-wave
+#       data analysis, whether or not a position is advertised below.
+#
+#   items:
+#     - title: 'PhD position: inference for the Einstein Telescope'
+#       level: 'Doctoral'
+#       open: true
+#       deadline: '2026-12-01'
+#       summary: 'Four-year position developing statistical methods.'
+#       contact: 'someone@kuleuven.be'
+#       url: 'https://www.kuleuven.be/personeel/jobsite/...'
+
+items: []

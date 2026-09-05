@@ -1,0 +1,54 @@
+{# Reusable rendering macros shared across section partials. #}
+{% from "partials/icons.html" import icon %}
+
+{# A membership or event period, rendered "2024 – present" / "2024 – 2025". #}
+{% macro period(start, end) -%}
+{{ start[:4] }} – {% if end %}{{ end[:4] }}{% else %}present{% endif %}
+{%- endmacro %}
+
+{# One publication in a list. `people_by_id` is optional; when passed, the
+   credited group members are linked to their profile pages.                  #}
+{% macro pub_item(pub, people_by_id=None) %}
+<li class="pub{% if pub.highlight %} pub-highlight{% endif %}">
+  {% if pub.highlight %}<span class="star" aria-label="Selected work" title="Selected work">★</span>{% endif %}
+  <p class="pub-title">{{ pub.title }}</p>
+  {% if pub.authors %}
+  <p class="pub-authors">{% for author in pub.authors %}{{ author | markdown_inline }}{% if not loop.last %}, {% endif %}{% endfor %}</p>
+  {% endif %}
+  <p class="pub-venue">{{ pub.venue }}{% if pub.type %} <span class="pub-type">{{ pub.type }}</span>{% endif %}</p>
+  {% if pub.note %}<p class="pub-note">{{ pub.note | markdown_inline }}</p>{% endif %}
+  <p class="pub-links">
+    {% for link in pub.links %}<a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>{% endfor %}
+    {% if people_by_id %}
+    {% for member_id in pub.members %}
+    {% set member = people_by_id.get(member_id) %}
+    {% if member %}<a class="pub-member" href="{{ member.url }}">{{ member.name }}</a>{% endif %}
+    {% endfor %}
+    {% endif %}
+  </p>
+</li>
+{% endmacro %}
+
+{# A compact person card for the People page and research/teaching listings. #}
+{% macro person_card(person) %}
+<li class="person-card">
+  <a class="person-card-link" href="{{ person.url }}">
+    <img class="person-card-photo" src="{{ person.photo | default('/assets/img/people/placeholder.svg', true) }}" alt="Portrait of {{ person.name }}" loading="lazy">
+    <span class="person-card-body">
+      <span class="person-card-name">{{ person.name }}</span>
+      <span class="person-card-role">{{ person.role }}</span>
+      {% if person.publications %}
+      <span class="person-card-meta">{{ person.publications | length }} publication{{ '' if person.publications | length == 1 else 's' }} here</span>
+      {% endif %}
+    </span>
+  </a>
+</li>
+{% endmacro %}
+
+{# Inline list of member names linking to their profiles. #}
+{% macro people_links(ids, people_by_id) %}
+{% for member_id in ids %}
+{% set member = people_by_id.get(member_id) %}
+{% if member %}<a href="{{ member.url }}">{{ member.name }}</a>{% if not loop.last %}, {% endif %}{% endif %}
+{% endfor %}
+{% endmacro %}
