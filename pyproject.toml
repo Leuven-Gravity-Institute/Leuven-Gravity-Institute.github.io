@@ -36,6 +36,7 @@ dev = [
   "pytest>=9.1.1",
 ]
 build = ["hatch>=1.18.0"]
+release = ["git-cliff>=2.13.1"]
 
 [project.scripts]
 lgi = "leuven_gravity_institute.cli.main:app"

@@ -264,3 +264,36 @@ uv run lgi serve         # build and preview at http://localhost:8000
 Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the site
 and publishes `_site/` to GitHub Pages. Enable Pages once under **Settings →
 Pages → Build and deployment → Source: GitHub Actions**.
+
+## Automation
+
+| Workflow                   | When                | What it does                                                                 |
+| -------------------------- | ------------------- | ---------------------------------------------------------------------------- |
+| `ci.yml`                   | push, PR            | Tests across Python 3.12–3.14 and three OSes; validates and builds the site. |
+| `codeql.yml`               | push, PR, weekly    | CodeQL security and quality analysis.                                        |
+| `deploy.yml`               | push to `main`      | Builds and publishes to GitHub Pages.                                        |
+| `sync-publications.yml`    | weekly (Mon)        | Refreshes the publication list and opens a PR.                               |
+| `draft-release.yml`        | push to `main`      | Keeps a `next-release` draft with the changelog so far.                      |
+| `scheduled-release.yml`    | weekly (Tue)        | If anything changed: runs CI and CodeQL, tags the next version, releases it. |
+| `release.yml`              | called, or manually | Publishes a release for a given tag with its changelog.                      |
+| `support-floor-update.yml` | monthly             | Raises minimum supported dependency versions (SPEC 0) and opens a PR.        |
+
+Release notes come from the conventional-commit history via
+[git-cliff](https://git-cliff.org), configured in `cliff.toml`. Versions are
+derived from git tags by `uv-dynamic-versioning`, so tagging is what sets the
+version.
+
+### One-time setup
+
+- **Settings → Actions → General → Workflow permissions:** enable _Allow GitHub
+  Actions to create and approve pull requests_, or the PR-opening workflows fail
+  at their last step. For an organisation-owned repository this must also be
+  allowed at the organisation level.
+- **A GitHub App is required for `support-floor-update.yml` only.** It mints an
+  installation token so its pull request triggers CI — PRs opened with the
+  default `GITHUB_TOKEN` deliberately do not. Create an App with contents and
+  pull-requests write permission, install it on the repository, then set the
+  repository variable `APP_ID` and the secret `APP_PRIVATE_KEY`. Without these
+  that workflow fails at the "Mint app token" step; nothing else needs it.
+- `sync-publications.yml` needs no App and no API keys: ORCID, INSPIRE-HEP,
+  OpenAlex, and Crossref are all queried anonymously.
