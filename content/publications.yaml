@@ -875,6 +875,29 @@ items:
   - The LIGO Scientific Collaboration, The Virgo Collaboration, and The KAGRA Collaboration
 - include: true
   highlight: false
+  title: Theoretical and Experimental Characterization of Cochlear-Implant Stimulation Artifacts in EEG Recordings
+  authors:
+  - '**Tom Colemont**'
+  - Julian Schott
+  - Jan Wouters
+  - Marc Moonen
+  venue: IEEE Transactions on Neural Systems and Rehabilitation Engineering 34, 2947-2959 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.1109/TNSRE.2026.3700284
+  url: https://doi.org/10.1109/TNSRE.2026.3700284
+  key: doi:10.1109/tnsre.2026.3700284
+  source: orcid
+  members:
+  - tom-colemont
+  author_count: 4
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1109/TNSRE.2026.3700284
+- include: true
+  highlight: false
   title: Searches for Continuous Gravitational Waves from Supernova Remnants in the First Part of the LIGO-Virgo-KAGRA Fourth
     Observing Run
   authors:
@@ -1455,7 +1478,7 @@ items:
   - '**Isaac C.F. Wong**'
   - '**Francesco Cireddu**'
   - '**Milan Wils**'
-  - Tom Colemont
+  - '**Tom Colemont**'
   - Harsh Narola
   - Chris Van Den Broeck
   - '**Tjonnie G.F. Li**'
@@ -1472,6 +1495,7 @@ items:
   - isaac-wong
   - milan-wils
   - tjonnie-li
+  - tom-colemont
   author_count: 7
   collaboration: false
   links:

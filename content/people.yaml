@@ -226,10 +226,14 @@ items:
       group: 'gw-group'
       status: 'current'
       photo: '/assets/img/people/placeholder.svg'
-      # TODO: add `orcid: '0009-0003-4408-5894'` together with the date the PhD
-      # began. That profile carries no employment record to take a date from,
-      # and its one listed work is on cochlear-implant stimulation, so it needs
-      # a deliberate decision before it feeds the group's publication list.
+      orcid: '0009-0003-4408-5894'
+      inspire: 'T.Colemont.1'
+      # PROVISIONAL START DATE — please replace with the real one.
+      # This profile carries no employment record to take a date from, unlike
+      # everyone else here. 2025 is the year of his first group paper, so it is
+      # the earliest date the evidence supports; if he joined earlier, anything
+      # he published in between is currently being left out.
+      start: '2025'
       links:
           - {
                 label: 'ORCID',
