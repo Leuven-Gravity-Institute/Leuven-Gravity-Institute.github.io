@@ -24,6 +24,28 @@
 items:
 - include: true
   highlight: false
+  title: 'A Differentiable Parametric Model of Binary-Black-Hole Initial Data: I. Conformally flat Bowen-York punctures'
+  authors:
+  - Frederik De Ceuster
+  - '**Tjonnie G.-F. Li**'
+  venue: arXiv:2609.10173
+  year: 2026
+  date: '2026-09-09'
+  type: preprint
+  arxiv: '2609.10173'
+  key: arxiv:2609.10173
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 2
+  collaboration: false
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2609.10173
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3202019
+- include: true
+  highlight: false
   title: Spingarn’s method and progressive decoupling beyond elicitable monotonicity
   authors:
   - '**Brecht Evens**'
@@ -178,7 +200,7 @@ items:
   - isaac-wong
   - milan-wils
   - tjonnie-li
-  author_count: 1808
+  author_count: 1819
   collaboration: true
   links:
   - label: arXiv
@@ -578,7 +600,7 @@ items:
   - isaac-wong
   - milan-wils
   - tjonnie-li
-  author_count: 1821
+  author_count: 1822
   collaboration: true
   links:
   - label: arXiv
