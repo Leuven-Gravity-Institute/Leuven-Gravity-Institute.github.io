@@ -28,14 +28,14 @@ dynamic = ["version"]
 
 [dependency-groups]
 dev = [
-  "ruff>=0.16.7",
+  "ruff>=0.16.8",
   "prek>=0.5.3",
   "pytest-github-actions-annotate-failures>=0.4.2",
   "pytest-cov>=7.1.0",
   "pytest-mock>=3.15.1",
   "pytest>=9.1.1",
 ]
-build = ["hatch>=1.18.0"]
+build = ["hatch>=1.18.1"]
 release = ["git-cliff>=2.13.1"]
 
 [project.scripts]
