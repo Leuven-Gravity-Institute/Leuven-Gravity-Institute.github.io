@@ -24,6 +24,55 @@
 items:
 - include: true
   highlight: false
+  title: 'A Multidimensional General-Relativistic Boltzmann Solver for Neutrino Transport: Implementation, Discretization
+    and Optimization'
+  authors:
+  - '**Arthur Offermans**'
+  - Harry Ho-Yin Ng
+  - Patrick Chi-Kit Cheong
+  - Anthony Mezzacappa
+  - '**Tjonnie Guang Feng Li**'
+  venue: arXiv:2609.31611
+  year: 2026
+  date: '2026-09-25'
+  type: preprint
+  arxiv: '2609.31611'
+  key: arxiv:2609.31611
+  source: inspire
+  members:
+  - arthur-offermans
+  - tjonnie-li
+  author_count: 5
+  collaboration: false
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2609.31611
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3208095
+- include: true
+  highlight: false
+  title: 'A Differentiable Parametric Model of Binary-Black-Hole Initial Data: I. Conformally flat Bowen-York punctures'
+  authors:
+  - Frederik De Ceuster
+  - '**Tjonnie G.-F. Li**'
+  venue: arXiv:2609.10173
+  year: 2026
+  date: '2026-09-09'
+  type: preprint
+  arxiv: '2609.10173'
+  key: arxiv:2609.10173
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 2
+  collaboration: false
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2609.10173
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3202019
+- include: true
+  highlight: false
   title: Spingarn’s method and progressive decoupling beyond elicitable monotonicity
   authors:
   - '**Brecht Evens**'
@@ -178,7 +227,7 @@ items:
   - isaac-wong
   - milan-wils
   - tjonnie-li
-  author_count: 1808
+  author_count: 1819
   collaboration: true
   links:
   - label: arXiv
@@ -284,6 +333,7 @@ items:
   date: '2026-07-19'
   type: preprint
   arxiv: '2607.17439'
+  url: https://openalex.org/W7169880944
   key: arxiv:2607.17439
   source: inspire
   members:
@@ -578,7 +628,7 @@ items:
   - isaac-wong
   - milan-wils
   - tjonnie-li
-  author_count: 1821
+  author_count: 1822
   collaboration: true
   links:
   - label: arXiv
@@ -703,35 +753,6 @@ items:
   - LIGO Scientific
   - VIRGO
   - KAGRA
-- include: true
-  highlight: false
-  title: Quadratic gravity corrections to scalar QNMs of rapidly rotating black holes
-  authors:
-  - Stef J.B. Husken
-  - Tom van der Steen
-  - Simon Maenaut
-  - Kelvin Ka-Ho Lam
-  - Maxim D. Jockwer
-  - Adrian Ka-Wai Chung
-  - Thomas Hertog
-  - '**Tjonnie G.F. Li**'
-  - Nicolás Yunes
-  venue: arXiv:2604.02214
-  year: 2026
-  date: '2026-04-02'
-  type: preprint
-  arxiv: '2604.02214'
-  key: arxiv:2604.02214
-  source: inspire
-  members:
-  - tjonnie-li
-  author_count: 9
-  collaboration: false
-  links:
-  - label: arXiv
-    url: https://arxiv.org/abs/2604.02214
-  - label: INSPIRE
-    url: https://inspirehep.net/literature/3138881
 - include: true
   highlight: false
   title: The Science of the Einstein Telescope
@@ -960,7 +981,7 @@ items:
   type: journal
   doi: 10.3847/1538-4357/ae6263
   arxiv: '2603.25808'
-  url: http://inspirehep.net/record/3136106
+  url: https://openalex.org/W7164818445
   key: doi:10.3847/1538-4357/ae6263
   source: inspire
   members:
@@ -992,7 +1013,7 @@ items:
   type: journal
   doi: 10.1103/s551-7pch
   arxiv: '2511.19911'
-  url: http://inspirehep.net/record/3086383
+  url: https://openalex.org/W7160899945
   key: doi:10.1103/s551-7pch
   source: inspire
   members:
@@ -1077,6 +1098,39 @@ items:
     url: https://inspirehep.net/literature/2853401
 - include: true
   highlight: false
+  title: Quadratic gravity corrections to scalar quasinormal modes of rapidly rotating black holes
+  authors:
+  - Stef J.B. Husken
+  - Tom van der Steen
+  - Simon Maenaut
+  - Kelvin Ka-Ho Lam
+  - Maxim D. Jockwer
+  - Adrian Ka-Wai Chung
+  - Thomas Hertog
+  - '**Tjonnie G.F. Li**'
+  - Nicolás Yunes
+  venue: Phys.Rev.D 114, 064072 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.1103/jrnh-wsxw
+  arxiv: '2604.02214'
+  url: https://openalex.org/W7207548896
+  key: doi:10.1103/jrnh-wsxw
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 9
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/jrnh-wsxw
+  - label: arXiv
+    url: https://arxiv.org/abs/2604.02214
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3138881
+- include: true
+  highlight: false
   title: Open Data from LIGO, Virgo, and KAGRA through the First Part of the Fourth Observing Run
   authors:
   - A.G. Abac et al. (incl. **T.G. F. Li**, **M. Wils**, **I.C. F. Wong**)
@@ -1086,7 +1140,7 @@ items:
   type: journal
   doi: 10.3847/1538-4357/ae211e
   arxiv: '2508.18079'
-  url: http://inspirehep.net/record/2963692
+  url: https://openalex.org/W7165120127
   key: doi:10.3847/1538-4357/ae211e
   source: inspire
   members:
@@ -1118,7 +1172,7 @@ items:
   type: journal
   doi: 10.3847/2041-8213/ae2c74
   arxiv: '2508.18082'
-  url: http://inspirehep.net/record/2963698
+  url: https://openalex.org/W7165207250
   key: doi:10.3847/2041-8213/ae2c74
   source: inspire
   members:
@@ -1267,6 +1321,38 @@ items:
   - KAGRA
 - include: true
   highlight: false
+  title: Direct Multimodel Dark Matter Search with Gravitational-Wave Interferometers Using Data from the First Part of the
+    Fourth LIGO-Virgo-KAGRA Observing Run
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: Phys.Rev.Lett. 137, 131001 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.1103/qdnd-rsnh
+  arxiv: '2510.27022'
+  url: http://inspirehep.net/record/3075603
+  key: doi:10.1103/qdnd-rsnh
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1770
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/qdnd-rsnh
+  - label: arXiv
+    url: https://arxiv.org/abs/2510.27022
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3075603
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
   title: Constraining initial orbital eccentricity of inspiral-dominated gravitational-wave events with an analytic approximant
   authors:
   - Hemantakumar Phurailatpam
@@ -1376,34 +1462,6 @@ items:
     url: https://arxiv.org/abs/2511.16863
   - label: INSPIRE
     url: https://inspirehep.net/literature/3085518
-  collaborations:
-  - LIGO Scientific
-  - VIRGO
-  - KAGRA
-- include: true
-  highlight: false
-  title: Direct multi-model dark-matter search with gravitational-wave interferometers using data from the first part of the
-    fourth LIGO-Virgo-KAGRA observing run
-  authors:
-  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
-  venue: arXiv:2510.27022
-  year: 2025
-  date: '2025-10-30'
-  type: preprint
-  arxiv: '2510.27022'
-  key: arxiv:2510.27022
-  source: inspire
-  members:
-  - isaac-wong
-  - milan-wils
-  - tjonnie-li
-  author_count: 1767
-  collaboration: true
-  links:
-  - label: arXiv
-    url: https://arxiv.org/abs/2510.27022
-  - label: INSPIRE
-    url: https://inspirehep.net/literature/3075603
   collaborations:
   - LIGO Scientific
   - VIRGO
@@ -1635,6 +1693,28 @@ items:
     url: https://inspirehep.net/literature/2869344
 - include: true
   highlight: false
+  title: Solving Einstein's equations as Bayesian inference
+  authors:
+  - Frederik De Ceuster
+  - '**Tom Colemont**'
+  - '**T. G. F. Li**'
+  venue: Lirias (2025)
+  year: 2025
+  date: '2025-01-01'
+  type: conference
+  url: https://openalex.org/W7140963061
+  key: title:solving-einstein-s-equations-as-bayesian-inference
+  source: openalex
+  members:
+  - tjonnie-li
+  - tom-colemont
+  author_count: 3
+  collaboration: false
+  links:
+  - label: Link
+    url: https://openalex.org/W7140963061
+- include: true
+  highlight: false
   title: Using overlap of sky localization probability maps for filtering potentially lensed pairs of gravitational-wave signals
   authors:
   - Henry W.Y. Wong
@@ -1704,7 +1784,7 @@ items:
   type: journal
   doi: 10.3847/1538-4357/ad9749
   arxiv: '2407.12867'
-  url: http://inspirehep.net/record/2808936
+  url: https://openalex.org/W4402346100
   key: doi:10.3847/1538-4357/ad9749
   source: inspire
   members:
@@ -1771,7 +1851,7 @@ items:
   type: journal
   doi: 10.3847/1538-4357/adb3a0
   arxiv: '2501.01495'
-  url: http://inspirehep.net/record/2864903
+  url: https://openalex.org/W4406092706
   key: doi:10.3847/1538-4357/adb3a0
   source: inspire
   members:
@@ -2010,7 +2090,7 @@ items:
   type: journal
   doi: 10.3847/2041-8213/ae0c06
   arxiv: '2508.18080'
-  url: http://inspirehep.net/record/2963737
+  url: https://openalex.org/W4416020920
   key: doi:10.3847/2041-8213/ae0c06
   source: inspire
   members:
@@ -2236,7 +2316,7 @@ items:
   type: journal
   doi: 10.1103/PhysRevD.110.042001
   arxiv: '2403.03004'
-  url: http://inspirehep.net/record/2764911
+  url: https://openalex.org/W4401754312
   key: doi:10.1103/physrevd.110.042001
   source: inspire
   members:
@@ -2722,6 +2802,7 @@ items:
   type: journal
   doi: 10.1093/mnras/stad588
   arxiv: '2212.01477'
+  url: https://openalex.org/W4322739600
   key: doi:10.1093/mnras/stad588
   source: inspire
   members:
@@ -2982,7 +3063,7 @@ items:
   type: journal
   doi: 10.1093/mnras/stad2909
   arxiv: '2306.03827'
-  url: https://openalex.org/W4379925139
+  url: https://openalex.org/W4387111068
   key: doi:10.1093/mnras/stad2909
   source: inspire
   members:
@@ -3177,6 +3258,7 @@ items:
   type: journal
   doi: 10.3847/1538-4357/ac6acf
   arxiv: '2111.13106'
+  url: https://openalex.org/W4290666152
   key: doi:10.3847/1538-4357/ac6acf
   source: inspire
   members:
@@ -3233,6 +3315,7 @@ items:
   type: journal
   doi: 10.1051/0004-6361/202141452
   arxiv: '2105.15120'
+  url: https://openalex.org/W3204171810
   key: doi:10.1051/0004-6361/202141452
   source: inspire
   members:
@@ -3812,6 +3895,7 @@ items:
   type: journal
   doi: 10.1103/PhysRevD.106.102008
   arxiv: '2201.00697'
+  url: https://openalex.org/W4221139509
   key: doi:10.1103/physrevd.106.102008
   source: inspire
   members:
