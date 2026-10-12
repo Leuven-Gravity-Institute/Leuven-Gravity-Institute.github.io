@@ -24,6 +24,55 @@
 items:
 - include: true
   highlight: false
+  title: 'A Multidimensional General-Relativistic Boltzmann Solver for Neutrino Transport: Implementation, Discretization
+    and Optimization'
+  authors:
+  - '**Arthur Offermans**'
+  - Harry Ho-Yin Ng
+  - Patrick Chi-Kit Cheong
+  - Anthony Mezzacappa
+  - '**Tjonnie Guang Feng Li**'
+  venue: arXiv:2609.31611
+  year: 2026
+  date: '2026-09-25'
+  type: preprint
+  arxiv: '2609.31611'
+  key: arxiv:2609.31611
+  source: inspire
+  members:
+  - arthur-offermans
+  - tjonnie-li
+  author_count: 5
+  collaboration: false
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2609.31611
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3208095
+- include: true
+  highlight: false
+  title: 'A Differentiable Parametric Model of Binary-Black-Hole Initial Data: I. Conformally flat Bowen-York punctures'
+  authors:
+  - Frederik De Ceuster
+  - '**Tjonnie G.-F. Li**'
+  venue: arXiv:2609.10173
+  year: 2026
+  date: '2026-09-09'
+  type: preprint
+  arxiv: '2609.10173'
+  key: arxiv:2609.10173
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 2
+  collaboration: false
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2609.10173
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3202019
+- include: true
+  highlight: false
   title: Spingarn’s method and progressive decoupling beyond elicitable monotonicity
   authors:
   - '**Brecht Evens**'
@@ -34,7 +83,6 @@ items:
   date: '2026-08-27'
   type: journal
   doi: 10.1007/s10589-026-00812-1
-  arxiv: '2504.00836'
   url: https://doi.org/10.1007/s10589-026-00812-1
   key: doi:10.1007/s10589-026-00812-1
   source: orcid
@@ -45,8 +93,6 @@ items:
   links:
   - label: DOI
     url: https://doi.org/10.1007/s10589-026-00812-1
-  - label: arXiv
-    url: https://arxiv.org/abs/2504.00836
 - include: true
   highlight: false
   title: Updated Upper Limits on the Isotropic Gravitational-Wave Background from LIGO, Virgo, and KAGRA Data through April
@@ -178,7 +224,7 @@ items:
   - isaac-wong
   - milan-wils
   - tjonnie-li
-  author_count: 1808
+  author_count: 1819
   collaboration: true
   links:
   - label: arXiv
@@ -466,7 +512,6 @@ items:
   date: '2026-06-17'
   type: preprint
   arxiv: '2606.19201'
-  url: https://openalex.org/W7165121659
   key: arxiv:2606.19201
   source: inspire
   members:
@@ -578,7 +623,7 @@ items:
   - isaac-wong
   - milan-wils
   - tjonnie-li
-  author_count: 1821
+  author_count: 1822
   collaboration: true
   links:
   - label: arXiv
@@ -1030,7 +1075,6 @@ items:
   type: journal
   doi: 10.1103/xq7z-gh6p
   arxiv: '2604.11755'
-  url: https://openalex.org/W7171849761
   key: doi:10.1103/xq7z-gh6p
   source: inspire
   members:
@@ -1061,7 +1105,6 @@ items:
   type: journal
   doi: 10.1103/k3hv-cqfn
   arxiv: '2411.17893'
-  url: https://openalex.org/W4404990227
   key: doi:10.1103/k3hv-cqfn
   source: inspire
   members:
@@ -1075,6 +1118,38 @@ items:
     url: https://arxiv.org/abs/2411.17893
   - label: INSPIRE
     url: https://inspirehep.net/literature/2853401
+- include: true
+  highlight: false
+  title: Quadratic gravity corrections to scalar quasinormal modes of rapidly rotating black holes
+  authors:
+  - Stef J.B. Husken
+  - Tom van der Steen
+  - Simon Maenaut
+  - Kelvin Ka-Ho Lam
+  - Maxim D. Jockwer
+  - Adrian Ka-Wai Chung
+  - Thomas Hertog
+  - '**Tjonnie G.F. Li**'
+  - Nicolás Yunes
+  venue: Phys.Rev.D 114, 064072 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.1103/jrnh-wsxw
+  arxiv: '2604.02214'
+  key: doi:10.1103/jrnh-wsxw
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 9
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/jrnh-wsxw
+  - label: arXiv
+    url: https://arxiv.org/abs/2604.02214
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3138881
 - include: true
   highlight: false
   title: Open Data from LIGO, Virgo, and KAGRA through the First Part of the Fourth Observing Run
@@ -1261,6 +1336,38 @@ items:
     url: https://arxiv.org/abs/2509.07352
   - label: INSPIRE
     url: https://inspirehep.net/literature/2968096
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
+  title: Direct Multimodel Dark Matter Search with Gravitational-Wave Interferometers Using Data from the First Part of the
+    Fourth LIGO-Virgo-KAGRA Observing Run
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: Phys.Rev.Lett. 137, 131001 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.1103/qdnd-rsnh
+  arxiv: '2510.27022'
+  url: http://inspirehep.net/record/3075603
+  key: doi:10.1103/qdnd-rsnh
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1770
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/qdnd-rsnh
+  - label: arXiv
+    url: https://arxiv.org/abs/2510.27022
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3075603
   collaborations:
   - LIGO Scientific
   - VIRGO
@@ -1539,7 +1646,6 @@ items:
   date: '2025-10-07'
   type: preprint
   arxiv: '2510.06327'
-  url: https://openalex.org/W4415314658
   key: arxiv:2510.06327
   source: inspire
   members:
@@ -1566,7 +1672,6 @@ items:
   date: '2025-09-12'
   type: preprint
   arxiv: '2509.10150'
-  url: https://openalex.org/W4414595182
   key: arxiv:2509.10150
   source: inspire
   members:
@@ -1621,7 +1726,6 @@ items:
   date: '2025-01-14'
   type: preprint
   arxiv: '2501.08377'
-  url: https://openalex.org/W4406457564
   key: arxiv:2501.08377
   source: inspire
   members:
@@ -1648,7 +1752,7 @@ items:
   type: journal
   doi: 10.1103/qc7y-z9hy
   arxiv: '2112.05932'
-  url: https://openalex.org/W4226278522
+  url: http://inspirehep.net/record/1989043
   key: doi:10.1103/qc7y-z9hy
   source: inspire
   members:
@@ -1803,7 +1907,6 @@ items:
   date: '2025'
   type: journal
   doi: 10.1098/rsta.2024.0169
-  url: https://openalex.org/W4409343151
   key: doi:10.1098/rsta.2024.0169
   source: inspire
   members:
@@ -1832,7 +1935,7 @@ items:
   type: journal
   doi: 10.1103/PhysRevD.111.044046
   arxiv: '2407.08728'
-  url: https://openalex.org/W4407698751
+  url: http://inspirehep.net/record/2806882
   key: doi:10.1103/physrevd.111.044046
   source: inspire
   members:
@@ -1895,7 +1998,7 @@ items:
   type: journal
   doi: 10.1103/l6tp-ykxp
   arxiv: '2411.15506'
-  url: https://openalex.org/W4404986601
+  url: http://inspirehep.net/record/2851694
   key: doi:10.1103/l6tp-ykxp
   source: inspire
   members:
@@ -1927,7 +2030,6 @@ items:
   type: journal
   doi: 10.1103/bsml-2rdh
   arxiv: '2410.21738'
-  url: https://openalex.org/W4404341024
   key: doi:10.1103/bsml-2rdh
   source: inspire
   members:
@@ -1958,7 +2060,6 @@ items:
   type: journal
   doi: 10.1103/PhysRevD.111.043036
   arxiv: '2410.20681'
-  url: https://openalex.org/W4407723389
   key: doi:10.1103/physrevd.111.043036
   source: inspire
   members:
@@ -1985,7 +2086,6 @@ items:
   type: journal
   doi: 10.1103/nz17-wwp3
   arxiv: '2305.15181'
-  url: https://openalex.org/W4413641580
   key: doi:10.1103/nz17-wwp3
   source: inspire
   members:
@@ -2044,7 +2144,6 @@ items:
   type: journal
   doi: 10.1103/q1ys-h13y
   arxiv: '2401.13993'
-  url: https://openalex.org/W4391272506
   key: doi:10.1103/q1ys-h13y
   source: inspire
   members:
@@ -2070,7 +2169,6 @@ items:
   date: '2025'
   type: journal
   doi: 10.1007/s11229-025-05362-3
-  url: https://openalex.org/W4417229213
   key: doi:10.1007/s11229-025-05362-3
   source: inspire
   members:
@@ -2124,7 +2222,6 @@ items:
   date: '2024-11-19'
   type: preprint
   arxiv: '2411.12453'
-  url: https://openalex.org/W4404573908
   key: arxiv:2411.12453
   source: inspire
   members:
@@ -2336,7 +2433,7 @@ items:
   type: journal
   doi: 10.1103/PhysRevD.110.104060
   arxiv: '2312.14614'
-  url: https://openalex.org/W4404631517
+  url: http://inspirehep.net/record/2740429
   key: doi:10.1103/physrevd.110.104060
   source: inspire
   members:
@@ -2366,7 +2463,6 @@ items:
   type: journal
   doi: 10.3847/1538-4357/ad35bb
   arxiv: '2311.05543'
-  url: https://openalex.org/W4396241532
   key: doi:10.3847/1538-4357/ad35bb
   source: inspire
   members:
@@ -2395,7 +2491,6 @@ items:
   type: journal
   doi: 10.3847/1538-4365/ad2fbd
   arxiv: '2309.03526'
-  url: https://openalex.org/W4395466981
   key: doi:10.3847/1538-4365/ad2fbd
   source: inspire
   members:
@@ -2451,7 +2546,6 @@ items:
   type: journal
   doi: 10.1093/mnras/stae2321
   arxiv: '2303.16820'
-  url: https://openalex.org/W4403307726
   key: doi:10.1093/mnras/stae2321
   source: inspire
   members:
@@ -2482,7 +2576,6 @@ items:
   type: journal
   doi: 10.3847/1538-4357/ad7825
   arxiv: '2407.16017'
-  url: https://openalex.org/W4403877930
   key: doi:10.3847/1538-4357/ad7825
   source: inspire
   members:
@@ -2553,7 +2646,6 @@ items:
   type: journal
   doi: 10.1088/1361-6382/ad7b99
   arxiv: '2307.10421'
-  url: https://openalex.org/W4402639430
   key: doi:10.1088/1361-6382/ad7b99
   source: inspire
   members:
@@ -2609,7 +2701,6 @@ items:
   date: '2023-06-23'
   type: preprint
   arxiv: '2306.13745'
-  url: https://openalex.org/W4382319344
   key: arxiv:2306.13745
   source: inspire
   members:
@@ -2633,7 +2724,6 @@ items:
   date: 2023-02
   type: journal
   doi: 10.1109/OJSP.2023.3242122
-  url: https://openalex.org/W4319068623
   key: doi:10.1109/ojsp.2023.3242122
   source: orcid
   members:
@@ -2660,7 +2750,6 @@ items:
   type: journal
   doi: 10.1103/PhysRevD.107.123014
   arxiv: '1904.06020'
-  url: https://openalex.org/W2935975487
   key: doi:10.1103/physrevd.107.123014
   source: inspire
   members:
@@ -2696,7 +2785,6 @@ items:
   type: journal
   doi: 10.1103/PhysRevD.108.123020
   arxiv: '2206.02551'
-  url: https://openalex.org/W4389627314
   key: doi:10.1103/physrevd.108.123020
   source: inspire
   members:
@@ -2778,7 +2866,6 @@ items:
   type: journal
   doi: 10.1088/1475-7516/2023/07/068
   arxiv: '2303.15923'
-  url: https://openalex.org/W4361805875
   key: doi:10.1088/1475-7516/2023/07/068
   source: inspire
   members:
@@ -2831,7 +2918,6 @@ items:
   type: journal
   doi: 10.3847/1538-4365/acdc9f
   arxiv: '2302.03676'
-  url: https://openalex.org/W4385341464
   key: doi:10.3847/1538-4365/acdc9f
   source: inspire
   members:
@@ -2869,7 +2955,6 @@ items:
   type: journal
   doi: 10.1103/PhysRevX.13.041048
   arxiv: '2205.15029'
-  url: https://openalex.org/W4389613091
   key: doi:10.1103/physrevx.13.041048
   source: inspire
   members:
@@ -2898,7 +2983,6 @@ items:
   type: journal
   doi: 10.3847/1538-4365/acd931
   arxiv: '2303.03261'
-  url: https://openalex.org/W4385549366
   key: doi:10.3847/1538-4365/acd931
   source: inspire
   members:
@@ -2982,7 +3066,6 @@ items:
   type: journal
   doi: 10.1093/mnras/stad2909
   arxiv: '2306.03827'
-  url: https://openalex.org/W4379925139
   key: doi:10.1093/mnras/stad2909
   source: inspire
   members:
@@ -3013,7 +3096,6 @@ items:
   type: journal
   doi: 10.1093/mnras/stad1302
   arxiv: '2302.09870'
-  url: https://openalex.org/W4368351232
   key: doi:10.1093/mnras/stad1302
   source: inspire
   members:
@@ -3040,7 +3122,6 @@ items:
   date: '2023'
   type: conference
   doi: 10.22323/1.444.1518
-  url: https://openalex.org/W4385306019
   key: doi:10.22323/1.444.1518
   source: inspire
   members:
@@ -3068,7 +3149,6 @@ items:
   type: journal
   doi: 10.1093/mnras/stad2772
   arxiv: '2112.07635'
-  url: https://openalex.org/W4386754787
   key: doi:10.1093/mnras/stad2772
   source: inspire
   members:
@@ -3125,7 +3205,6 @@ items:
   type: journal
   doi: 10.1103/PhysRevD.106.083014
   arxiv: '2112.06707'
-  url: https://openalex.org/W4200631430
   key: doi:10.1103/physrevd.106.083014
   source: inspire
   members:
@@ -3151,7 +3230,6 @@ items:
   type: journal
   doi: 10.1103/PhysRevD.105.084002
   arxiv: '2108.05108'
-  url: https://openalex.org/W3192593541
   key: doi:10.1103/physrevd.105.084002
   source: inspire
   members:
@@ -3420,7 +3498,6 @@ items:
   type: journal
   doi: 10.1103/PhysRevD.105.024023
   arxiv: '2011.06787'
-  url: https://openalex.org/W4206262510
   key: doi:10.1103/physrevd.105.024023
   source: inspire
   members:
@@ -3448,7 +3525,6 @@ items:
   type: journal
   doi: 10.1038/s42005-022-01112-w
   arxiv: '2303.05684'
-  url: https://openalex.org/W4312116049
   key: doi:10.1038/s42005-022-01112-w
   source: inspire
   members:
@@ -3562,7 +3638,6 @@ items:
   type: journal
   doi: 10.1103/PhysRevD.105.024066
   arxiv: '2109.07642'
-  url: https://openalex.org/W4207011339
   key: doi:10.1103/physrevd.105.024066
   source: inspire
   members:
@@ -3591,7 +3666,6 @@ items:
   type: journal
   doi: 10.3847/2041-8213/ac7052
   arxiv: '2201.01817'
-  url: https://openalex.org/W4221151784
   key: doi:10.3847/2041-8213/ac7052
   source: inspire
   members:
@@ -3618,7 +3692,6 @@ items:
   type: journal
   doi: 10.3847/1538-4357/ac6dea
   arxiv: '2110.03308'
-  url: https://openalex.org/W4282977221
   key: doi:10.3847/1538-4357/ac6dea
   source: inspire
   members:
@@ -3674,7 +3747,6 @@ items:
   type: journal
   doi: 10.3847/1538-4357/ac92f3
   arxiv: '2206.08234'
-  url: https://openalex.org/W4307272348
   key: doi:10.3847/1538-4357/ac92f3
   source: inspire
   members:
@@ -3730,8 +3802,6 @@ items:
   date: '2022'
   type: journal
   doi: 10.3847/1538-4365/ac6cec
-  arxiv: '2110.03732'
-  url: https://openalex.org/W3206039792
   key: doi:10.3847/1538-4365/ac6cec
   source: inspire
   members:
@@ -4028,7 +4098,6 @@ items:
   type: journal
   doi: 10.1103/PhysRevD.104.084028
   arxiv: '2107.05492'
-  url: https://openalex.org/W3179192552
   key: doi:10.1103/physrevd.104.084028
   source: inspire
   members:
@@ -4141,7 +4210,6 @@ items:
   type: journal
   doi: 10.3847/1538-4357/ac23db
   arxiv: '2105.06384'
-  url: https://openalex.org/W3160029929
   key: doi:10.3847/1538-4357/ac23db
   source: inspire
   members:
@@ -4308,7 +4376,6 @@ items:
   type: journal
   doi: 10.3847/2041-8213/ac3bcf
   arxiv: '2110.06873'
-  url: https://openalex.org/W4200170089
   key: doi:10.3847/2041-8213/ac3bcf
   source: inspire
   members:
@@ -4362,7 +4429,6 @@ items:
   type: journal
   doi: 10.1103/PhysRevD.104.124060
   arxiv: '2106.09630'
-  url: https://openalex.org/W3173064806
   key: doi:10.1103/physrevd.104.124060
   source: inspire
   members:
@@ -4499,7 +4565,6 @@ items:
   date: '2021'
   type: conference
   doi: 10.1088/1742-6596/2156/1/012078
-  url: https://openalex.org/W4213071205
   key: doi:10.1088/1742-6596/2156/1/012078
   source: inspire
   members:
@@ -4718,7 +4783,6 @@ items:
   type: journal
   doi: 10.1103/PhysRevD.104.082004
   arxiv: '2107.00600'
-  url: https://openalex.org/W3174039195
   key: doi:10.1103/physrevd.104.082004
   source: inspire
   members:
