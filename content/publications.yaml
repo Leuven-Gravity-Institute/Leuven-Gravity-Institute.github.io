@@ -24,6 +24,34 @@
 items:
 - include: true
   highlight: false
+  title: Search for Compact Binary Coalescences with Sub-solar Mass Components in Data from the Second Part of LIGO-Virgo-KAGRA's
+    Fourth Observing Run
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: arXiv:2610.20276
+  year: 2026
+  date: '2026-10-14'
+  type: preprint
+  arxiv: '2610.20276'
+  key: arxiv:2610.20276
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1816
+  collaboration: true
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2610.20276
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3215238
+  collaborations:
+  - LIGO Scientific
+  - VIRGO
+  - KAGRA
+- include: true
+  highlight: false
   title: 'A Multidimensional General-Relativistic Boltzmann Solver for Neutrino Transport: Implementation, Discretization
     and Optimization'
   authors:
@@ -37,6 +65,7 @@ items:
   date: '2026-09-25'
   type: preprint
   arxiv: '2609.31611'
+  url: https://openalex.org/W7214660449
   key: arxiv:2609.31611
   source: inspire
   members:
@@ -83,6 +112,7 @@ items:
   date: '2026-08-27'
   type: journal
   doi: 10.1007/s10589-026-00812-1
+  arxiv: '2504.00836'
   url: https://doi.org/10.1007/s10589-026-00812-1
   key: doi:10.1007/s10589-026-00812-1
   source: orcid
@@ -93,6 +123,8 @@ items:
   links:
   - label: DOI
     url: https://doi.org/10.1007/s10589-026-00812-1
+  - label: arXiv
+    url: https://arxiv.org/abs/2504.00836
 - include: true
   highlight: false
   title: Updated Upper Limits on the Isotropic Gravitational-Wave Background from LIGO, Virgo, and KAGRA Data through April
@@ -330,6 +362,7 @@ items:
   date: '2026-07-19'
   type: preprint
   arxiv: '2607.17439'
+  url: https://openalex.org/W7169880944
   key: arxiv:2607.17439
   source: inspire
   members:
@@ -342,33 +375,6 @@ items:
     url: https://arxiv.org/abs/2607.17439
   - label: INSPIRE
     url: https://inspirehep.net/literature/3181886
-- include: true
-  highlight: false
-  title: Sub-Torque-Balance Upper Limits on Continuous Gravitational Waves from Scorpius X-1
-  authors:
-  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
-  venue: arXiv:2607.07765
-  year: 2026
-  date: '2026-07-08'
-  type: preprint
-  arxiv: '2607.07765'
-  key: arxiv:2607.07765
-  source: inspire
-  members:
-  - isaac-wong
-  - milan-wils
-  - tjonnie-li
-  author_count: 1833
-  collaboration: true
-  links:
-  - label: arXiv
-    url: https://arxiv.org/abs/2607.07765
-  - label: INSPIRE
-    url: https://inspirehep.net/literature/3178804
-  collaborations:
-  - LIGO Scientific
-  - VIRGO
-  - KAGRA
 - include: true
   highlight: false
   title: Narrowband Searches for Continuous Gravitational Waves from known Pulsars in the First Two Parts of the Fourth LIGO–Virgo–KAGRA
@@ -487,44 +493,6 @@ items:
     url: https://inspirehep.net/literature/2968116
   collaborations:
   - The LIGO Scientific Collaboration, the Virgo Collaboration, and the KAGRA Collaboration
-- include: true
-  highlight: false
-  title: Impact of the Einstein Telescope's duty cycle on the estimation of binary black holes parameters
-  authors:
-  - Luca Negr
-  - Thomas C.K. Ng
-  - Thibeau Wouters
-  - Tim J. Kuhlbusch
-  - Harsh Narol
-  - Robin Chan
-  - Kailib Ryan Doney
-  - '**Francesco Cireddu**'
-  - '**Isaac C.F. Wong**'
-  - Fabian Gittins
-  - Peter T.H. Pang
-  - Anuradha Samajdar
-  - Achim Stahl
-  - Justin Janquart
-  - Chris Van Den Broeck
-  - '**Tjonnie G.F. Li**'
-  venue: arXiv:2606.19201
-  year: 2026
-  date: '2026-06-17'
-  type: preprint
-  arxiv: '2606.19201'
-  key: arxiv:2606.19201
-  source: inspire
-  members:
-  - francesco-cireddu
-  - isaac-wong
-  - tjonnie-li
-  author_count: 16
-  collaboration: false
-  links:
-  - label: arXiv
-    url: https://arxiv.org/abs/2606.19201
-  - label: INSPIRE
-    url: https://inspirehep.net/literature/3169589
 - include: true
   highlight: false
   title: Open Data from LIGO, Virgo, and KAGRA through the Second Part of the Fourth Observing Run
@@ -750,35 +718,6 @@ items:
   - KAGRA
 - include: true
   highlight: false
-  title: Quadratic gravity corrections to scalar QNMs of rapidly rotating black holes
-  authors:
-  - Stef J.B. Husken
-  - Tom van der Steen
-  - Simon Maenaut
-  - Kelvin Ka-Ho Lam
-  - Maxim D. Jockwer
-  - Adrian Ka-Wai Chung
-  - Thomas Hertog
-  - '**Tjonnie G.F. Li**'
-  - Nicolás Yunes
-  venue: arXiv:2604.02214
-  year: 2026
-  date: '2026-04-02'
-  type: preprint
-  arxiv: '2604.02214'
-  key: arxiv:2604.02214
-  source: inspire
-  members:
-  - tjonnie-li
-  author_count: 9
-  collaboration: false
-  links:
-  - label: arXiv
-    url: https://arxiv.org/abs/2604.02214
-  - label: INSPIRE
-    url: https://inspirehep.net/literature/3138881
-- include: true
-  highlight: false
   title: The Science of the Einstein Telescope
   authors:
   - Adrian Abac et al. (incl. **Francesco Cireddu**, **T.G.F. Li**, **Milan Wils**, **Isaac C.F. Wong**)
@@ -995,6 +934,38 @@ items:
     url: https://doi.org/10.1109/TNSRE.2026.3700284
 - include: true
   highlight: false
+  title: Sub-torque-balance Upper Limits on Continuous Gravitational Waves from Scorpius X-1
+  authors:
+  - A. G. Abac et al. (incl. **T. G. F. Li**, **M. Wils**, **I. C. F. Wong**)
+  venue: The Astrophysical Journal Letters 1010, L23 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.3847/2041-8213/aea296
+  arxiv: '2607.07765'
+  url: http://inspirehep.net/record/3178804
+  key: doi:10.3847/2041-8213/aea296
+  source: orcid
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1838
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.3847/2041-8213/aea296
+  - label: arXiv
+    url: https://arxiv.org/abs/2607.07765
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3178804
+  collaborations:
+  - The LIGO Scientific Collaboration
+  - The Virgo Collaboration
+  - The KAGRA Collaboration
+  - Precision Ephemerides for Gravitational-Wave Searches (PEGS) Project
+- include: true
+  highlight: false
   title: Searches for Continuous Gravitational Waves from Supernova Remnants in the First Part of the LIGO-Virgo-KAGRA Fourth
     Observing Run
   authors:
@@ -1181,6 +1152,48 @@ items:
   - LIGO Scientific
   - Virgo
   - KAGRA
+- include: true
+  highlight: false
+  title: Impact of the Einstein Telescope’s duty cycle on the estimation of binary black hole parameters
+  authors:
+  - Luca Negri
+  - Thomas C.K. Ng
+  - Thibeau Wouters
+  - Tim J. Kuhlbusch
+  - Harsh Narola
+  - Robin Chan
+  - Kailib Ryan Doney
+  - '**Francesco Cireddu**'
+  - '**Isaac C.F. Wong**'
+  - Fabian Gittins
+  - Peter T.H. Pang
+  - Anuradha Samajdar
+  - Achim Stahl
+  - Justin Janquart
+  - Chris Van Den Broeck
+  - '**Tjonnie G.F. Li**'
+  venue: Phys.Rev.D 114, 082003 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.1103/1zg7-sd8v
+  arxiv: '2606.19201'
+  url: https://openalex.org/W7212243642
+  key: doi:10.1103/1zg7-sd8v
+  source: inspire
+  members:
+  - francesco-cireddu
+  - isaac-wong
+  - tjonnie-li
+  author_count: 16
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/1zg7-sd8v
+  - label: arXiv
+    url: https://arxiv.org/abs/2606.19201
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3169589
 - include: true
   highlight: false
   title: 'GWTC-4.0: Updating the Gravitational-Wave Transient Catalog with Observations from the First Part of the Fourth
@@ -1489,34 +1502,6 @@ items:
   - KAGRA
 - include: true
   highlight: false
-  title: Direct multi-model dark-matter search with gravitational-wave interferometers using data from the first part of the
-    fourth LIGO-Virgo-KAGRA observing run
-  authors:
-  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
-  venue: arXiv:2510.27022
-  year: 2025
-  date: '2025-10-30'
-  type: preprint
-  arxiv: '2510.27022'
-  key: arxiv:2510.27022
-  source: inspire
-  members:
-  - isaac-wong
-  - milan-wils
-  - tjonnie-li
-  author_count: 1767
-  collaboration: true
-  links:
-  - label: arXiv
-    url: https://arxiv.org/abs/2510.27022
-  - label: INSPIRE
-    url: https://inspirehep.net/literature/3075603
-  collaborations:
-  - LIGO Scientific
-  - VIRGO
-  - KAGRA
-- include: true
-  highlight: false
   title: Cosmological and High Energy Physics implications from gravitational-wave background searches in LIGO-Virgo-KAGRA's
     O1-O4a runs
   authors:
@@ -1646,6 +1631,7 @@ items:
   date: '2025-10-07'
   type: preprint
   arxiv: '2510.06327'
+  url: https://openalex.org/W4415314658
   key: arxiv:2510.06327
   source: inspire
   members:
@@ -1737,6 +1723,28 @@ items:
     url: https://arxiv.org/abs/2501.08377
   - label: INSPIRE
     url: https://inspirehep.net/literature/2869344
+- include: true
+  highlight: false
+  title: Solving Einstein's equations as Bayesian inference
+  authors:
+  - Frederik De Ceuster
+  - '**Tom Colemont**'
+  - '**T. G. F. Li**'
+  venue: Lirias (2025)
+  year: 2025
+  date: '2025-01-01'
+  type: conference
+  url: https://openalex.org/W7140963061
+  key: title:solving-einstein-s-equations-as-bayesian-inference
+  source: openalex
+  members:
+  - tjonnie-li
+  - tom-colemont
+  author_count: 3
+  collaboration: false
+  links:
+  - label: Link
+    url: https://openalex.org/W7140963061
 - include: true
   highlight: false
   title: Using overlap of sky localization probability maps for filtering potentially lensed pairs of gravitational-wave signals
@@ -1907,6 +1915,7 @@ items:
   date: '2025'
   type: journal
   doi: 10.1098/rsta.2024.0169
+  url: https://openalex.org/W4409343151
   key: doi:10.1098/rsta.2024.0169
   source: inspire
   members:
@@ -2060,6 +2069,7 @@ items:
   type: journal
   doi: 10.1103/PhysRevD.111.043036
   arxiv: '2410.20681'
+  url: https://openalex.org/W4407723389
   key: doi:10.1103/physrevd.111.043036
   source: inspire
   members:
@@ -2110,7 +2120,7 @@ items:
   type: journal
   doi: 10.3847/2041-8213/ae0c06
   arxiv: '2508.18080'
-  url: http://inspirehep.net/record/2963737
+  url: https://openalex.org/W4416020920
   key: doi:10.3847/2041-8213/ae0c06
   source: inspire
   members:
@@ -2222,6 +2232,7 @@ items:
   date: '2024-11-19'
   type: preprint
   arxiv: '2411.12453'
+  url: https://openalex.org/W4404573908
   key: arxiv:2411.12453
   source: inspire
   members:
@@ -2576,6 +2587,7 @@ items:
   type: journal
   doi: 10.3847/1538-4357/ad7825
   arxiv: '2407.16017'
+  url: https://openalex.org/W4403877930
   key: doi:10.3847/1538-4357/ad7825
   source: inspire
   members:
@@ -2724,6 +2736,7 @@ items:
   date: 2023-02
   type: journal
   doi: 10.1109/OJSP.2023.3242122
+  url: https://openalex.org/W4319068623
   key: doi:10.1109/ojsp.2023.3242122
   source: orcid
   members:
@@ -3899,29 +3912,6 @@ items:
   - KAGRA
   - LIGO Scientific
   - VIRGO
-- include: true
-  highlight: false
-  title: On the identification of individual image types of a lensed system using higher-order modes.
-  authors:
-  - Justin Janquart
-  - E. G. Seo
-  - O. A. Hannuksela
-  - '**Tjonnie G. F. Li**'
-  - Chris Van Den Broeck
-  venue: arXiv (Cornell University) (2021)
-  year: 2021
-  date: '2021-10-13'
-  type: preprint
-  url: https://openalex.org/W3205203037
-  key: title:on-the-identification-of-individual-image-types-of-a-lensed-system-using-higher-order-modes
-  source: openalex
-  members:
-  - tjonnie-li
-  author_count: 5
-  collaboration: false
-  links:
-  - label: Link
-    url: https://openalex.org/W3205203037
 - include: true
   highlight: false
   title: Upper limits on the isotropic gravitational-wave background from Advanced LIGO and Advanced Virgo’s third observing
