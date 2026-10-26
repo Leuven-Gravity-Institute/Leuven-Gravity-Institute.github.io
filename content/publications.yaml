@@ -39,7 +39,7 @@ items:
   - isaac-wong
   - milan-wils
   - tjonnie-li
-  author_count: 1816
+  author_count: 1817
   collaboration: true
   links:
   - label: arXiv
@@ -1387,6 +1387,38 @@ items:
   - KAGRA
 - include: true
   highlight: false
+  title: Cosmological and High-Energy Physics Implications from Gravitational-Wave Background Searches in LIGO-Virgo-KAGRA’s
+    O1–O4a Runs
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: Phys.Rev.X 16, 041023 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.1103/dlfv-z6m2
+  arxiv: '2510.26848'
+  url: http://inspirehep.net/record/3075635
+  key: doi:10.1103/dlfv-z6m2
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1773
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/dlfv-z6m2
+  - label: arXiv
+    url: https://arxiv.org/abs/2510.26848
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3075635
+  collaborations:
+  - KAGRA
+  - VIRGO
+  - LIGO Scientific
+- include: true
+  highlight: false
   title: Constraining initial orbital eccentricity of inspiral-dominated gravitational-wave events with an analytic approximant
   authors:
   - Hemantakumar Phurailatpam
@@ -1496,34 +1528,6 @@ items:
     url: https://arxiv.org/abs/2511.16863
   - label: INSPIRE
     url: https://inspirehep.net/literature/3085518
-  collaborations:
-  - LIGO Scientific
-  - VIRGO
-  - KAGRA
-- include: true
-  highlight: false
-  title: Cosmological and High Energy Physics implications from gravitational-wave background searches in LIGO-Virgo-KAGRA's
-    O1-O4a runs
-  authors:
-  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
-  venue: arXiv:2510.26848
-  year: 2025
-  date: '2025-10-30'
-  type: preprint
-  arxiv: '2510.26848'
-  key: arxiv:2510.26848
-  source: inspire
-  members:
-  - isaac-wong
-  - milan-wils
-  - tjonnie-li
-  author_count: 1769
-  collaboration: true
-  links:
-  - label: arXiv
-    url: https://arxiv.org/abs/2510.26848
-  - label: INSPIRE
-    url: https://inspirehep.net/literature/3075635
   collaborations:
   - LIGO Scientific
   - VIRGO
