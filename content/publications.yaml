@@ -24,6 +24,58 @@
 items:
 - include: true
   highlight: false
+  title: Spingarn’s method and progressive decoupling beyond elicitable monotonicity
+  authors:
+  - '**Brecht Evens**'
+  - Puya Latafat
+  - Panagiotis Patrinos
+  venue: Computational Optimization and Applications 95, 777-817 (2026)
+  year: 2026
+  date: 2026-11
+  type: journal
+  doi: 10.1007/s10589-026-00812-1
+  arxiv: '2504.00836'
+  url: https://doi.org/10.1007/s10589-026-00812-1
+  key: doi:10.1007/s10589-026-00812-1
+  source: orcid
+  members:
+  - brecht-evens
+  author_count: 3
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1007/s10589-026-00812-1
+  - label: arXiv
+    url: https://arxiv.org/abs/2504.00836
+- include: true
+  highlight: false
+  title: Three-flavor neutrino Boltzmann transport and flavor instabilities in long-lived neutron-star merger remnants
+  authors:
+  - Harry Ho-Yin Ng
+  - Jiabao Liu
+  - '**Arthur Offermans**'
+  - Shoichi Yamada
+  - Elias R. Most
+  - Luciano Rezzolla
+  venue: arXiv:2610.36486
+  year: 2026
+  date: '2026-10-27'
+  type: preprint
+  arxiv: '2610.36486'
+  url: https://openalex.org/W7224106294
+  key: arxiv:2610.36486
+  source: inspire
+  members:
+  - arthur-offermans
+  author_count: 6
+  collaboration: false
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2610.36486
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3219386
+- include: true
+  highlight: false
   title: Search for Compact Binary Coalescences with Sub-solar Mass Components in Data from the Second Part of LIGO-Virgo-KAGRA's
     Fourth Observing Run
   authors:
@@ -39,7 +91,7 @@ items:
   - isaac-wong
   - milan-wils
   - tjonnie-li
-  author_count: 1816
+  author_count: 1817
   collaboration: true
   links:
   - label: arXiv
@@ -100,31 +152,6 @@ items:
     url: https://arxiv.org/abs/2609.10173
   - label: INSPIRE
     url: https://inspirehep.net/literature/3202019
-- include: true
-  highlight: false
-  title: Spingarn’s method and progressive decoupling beyond elicitable monotonicity
-  authors:
-  - '**Brecht Evens**'
-  - Puya Latafat
-  - Panagiotis Patrinos
-  venue: Computational Optimization and Applications (2026)
-  year: 2026
-  date: '2026-08-27'
-  type: journal
-  doi: 10.1007/s10589-026-00812-1
-  arxiv: '2504.00836'
-  url: https://doi.org/10.1007/s10589-026-00812-1
-  key: doi:10.1007/s10589-026-00812-1
-  source: orcid
-  members:
-  - brecht-evens
-  author_count: 3
-  collaboration: false
-  links:
-  - label: DOI
-    url: https://doi.org/10.1007/s10589-026-00812-1
-  - label: arXiv
-    url: https://arxiv.org/abs/2504.00836
 - include: true
   highlight: false
   title: Updated Upper Limits on the Isotropic Gravitational-Wave Background from LIGO, Virgo, and KAGRA Data through April
@@ -362,7 +389,6 @@ items:
   date: '2026-07-19'
   type: preprint
   arxiv: '2607.17439'
-  url: https://openalex.org/W7169880944
   key: arxiv:2607.17439
   source: inspire
   members:
@@ -1385,6 +1411,38 @@ items:
   - LIGO Scientific
   - VIRGO
   - KAGRA
+- include: true
+  highlight: false
+  title: Cosmological and High-Energy Physics Implications from Gravitational-Wave Background Searches in LIGO-Virgo-KAGRA’s
+    O1–O4a Runs
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: Phys.Rev.X 16, 041023 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.1103/dlfv-z6m2
+  arxiv: '2510.26848'
+  url: http://inspirehep.net/record/3075635
+  key: doi:10.1103/dlfv-z6m2
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1773
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/dlfv-z6m2
+  - label: arXiv
+    url: https://arxiv.org/abs/2510.26848
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3075635
+  collaborations:
+  - KAGRA
+  - VIRGO
+  - LIGO Scientific
 - include: true
   highlight: false
   title: Constraining initial orbital eccentricity of inspiral-dominated gravitational-wave events with an analytic approximant
@@ -2736,7 +2794,6 @@ items:
   date: 2023-02
   type: journal
   doi: 10.1109/OJSP.2023.3242122
-  url: https://openalex.org/W4319068623
   key: doi:10.1109/ojsp.2023.3242122
   source: orcid
   members:
