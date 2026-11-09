@@ -24,6 +24,80 @@
 items:
 - include: true
   highlight: false
+  title: 'Choosing a generator for streaming Gaussian noise in gravitational-wave mock data: accuracy, cost and reproducibility'
+  authors:
+  - '**Isaac C.F. Wong**'
+  venue: arXiv:2611.01624
+  year: 2026
+  date: '2026-11-01'
+  type: preprint
+  arxiv: '2611.01624'
+  url: https://openalex.org/W7225155096
+  key: arxiv:2611.01624
+  source: inspire
+  members:
+  - isaac-wong
+  author_count: 1
+  collaboration: false
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2611.01624
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3222241
+- include: true
+  highlight: false
+  title: Spingarn’s method and progressive decoupling beyond elicitable monotonicity
+  authors:
+  - '**Brecht Evens**'
+  - Puya Latafat
+  - Panagiotis Patrinos
+  venue: Computational Optimization and Applications 95, 777-817 (2026)
+  year: 2026
+  date: 2026-11
+  type: journal
+  doi: 10.1007/s10589-026-00812-1
+  arxiv: '2504.00836'
+  url: https://doi.org/10.1007/s10589-026-00812-1
+  key: doi:10.1007/s10589-026-00812-1
+  source: orcid
+  members:
+  - brecht-evens
+  author_count: 3
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1007/s10589-026-00812-1
+  - label: arXiv
+    url: https://arxiv.org/abs/2504.00836
+- include: true
+  highlight: false
+  title: Three-flavor neutrino Boltzmann transport and flavor instabilities in long-lived neutron-star merger remnants
+  authors:
+  - Harry Ho-Yin Ng
+  - Jiabao Liu
+  - '**Arthur Offermans**'
+  - Shoichi Yamada
+  - Elias R. Most
+  - Luciano Rezzolla
+  venue: arXiv:2610.36486
+  year: 2026
+  date: '2026-10-27'
+  type: preprint
+  arxiv: '2610.36486'
+  url: https://openalex.org/W7224106294
+  key: arxiv:2610.36486
+  source: inspire
+  members:
+  - arthur-offermans
+  author_count: 6
+  collaboration: false
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2610.36486
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3219386
+- include: true
+  highlight: false
   title: Search for Compact Binary Coalescences with Sub-solar Mass Components in Data from the Second Part of LIGO-Virgo-KAGRA's
     Fourth Observing Run
   authors:
@@ -39,7 +113,7 @@ items:
   - isaac-wong
   - milan-wils
   - tjonnie-li
-  author_count: 1816
+  author_count: 1817
   collaboration: true
   links:
   - label: arXiv
@@ -100,31 +174,6 @@ items:
     url: https://arxiv.org/abs/2609.10173
   - label: INSPIRE
     url: https://inspirehep.net/literature/3202019
-- include: true
-  highlight: false
-  title: Spingarn’s method and progressive decoupling beyond elicitable monotonicity
-  authors:
-  - '**Brecht Evens**'
-  - Puya Latafat
-  - Panagiotis Patrinos
-  venue: Computational Optimization and Applications (2026)
-  year: 2026
-  date: '2026-08-27'
-  type: journal
-  doi: 10.1007/s10589-026-00812-1
-  arxiv: '2504.00836'
-  url: https://doi.org/10.1007/s10589-026-00812-1
-  key: doi:10.1007/s10589-026-00812-1
-  source: orcid
-  members:
-  - brecht-evens
-  author_count: 3
-  collaboration: false
-  links:
-  - label: DOI
-    url: https://doi.org/10.1007/s10589-026-00812-1
-  - label: arXiv
-    url: https://arxiv.org/abs/2504.00836
 - include: true
   highlight: false
   title: Updated Upper Limits on the Isotropic Gravitational-Wave Background from LIGO, Virgo, and KAGRA Data through April
@@ -1196,6 +1245,40 @@ items:
     url: https://inspirehep.net/literature/3169589
 - include: true
   highlight: false
+  title: 'Good things always come in 3s: Trimodality in the binary black-hole chirp-mass distribution supports bimodal black-hole
+    formation'
+  authors:
+  - Reinhold Willcox
+  - Fabian R.N. Schneider
+  - Eva Laplace
+  - Philipp Podsiadlowski
+  - Kiril Maltsev
+  - Ilya Mandel
+  - Pablo Marchant
+  - Hugues Sana
+  - '**Tjonnie G.F. Li**'
+  - Thomas Hertog
+  venue: Astron.Astrophys. 714, A314 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.1051/0004-6361/202557611
+  arxiv: '2510.07573'
+  key: doi:10.1051/0004-6361/202557611
+  source: inspire
+  members:
+  - tjonnie-li
+  author_count: 10
+  collaboration: false
+  links:
+  - label: DOI
+    url: https://doi.org/10.1051/0004-6361/202557611
+  - label: arXiv
+    url: https://arxiv.org/abs/2510.07573
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3065881
+- include: true
+  highlight: false
   title: 'GWTC-4.0: Updating the Gravitational-Wave Transient Catalog with Observations from the First Part of the Fourth
     LIGO-Virgo-KAGRA Observing Run'
   authors:
@@ -1387,6 +1470,38 @@ items:
   - KAGRA
 - include: true
   highlight: false
+  title: Cosmological and High-Energy Physics Implications from Gravitational-Wave Background Searches in LIGO-Virgo-KAGRA’s
+    O1–O4a Runs
+  authors:
+  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
+  venue: Phys.Rev.X 16, 041023 (2026)
+  year: 2026
+  date: '2026'
+  type: journal
+  doi: 10.1103/dlfv-z6m2
+  arxiv: '2510.26848'
+  url: http://inspirehep.net/record/3075635
+  key: doi:10.1103/dlfv-z6m2
+  source: inspire
+  members:
+  - isaac-wong
+  - milan-wils
+  - tjonnie-li
+  author_count: 1773
+  collaboration: true
+  links:
+  - label: DOI
+    url: https://doi.org/10.1103/dlfv-z6m2
+  - label: arXiv
+    url: https://arxiv.org/abs/2510.26848
+  - label: INSPIRE
+    url: https://inspirehep.net/literature/3075635
+  collaborations:
+  - KAGRA
+  - VIRGO
+  - LIGO Scientific
+- include: true
+  highlight: false
   title: Constraining initial orbital eccentricity of inspiral-dominated gravitational-wave events with an analytic approximant
   authors:
   - Hemantakumar Phurailatpam
@@ -1454,8 +1569,10 @@ items:
   year: 2025
   date: '2025-12-18'
   type: preprint
+  doi: 10.3847/1538-4357/ae9744
   arxiv: '2512.16347'
-  key: arxiv:2512.16347
+  url: https://openalex.org/W7128892917
+  key: doi:10.3847/1538-4357/ae9744
   source: inspire
   members:
   - isaac-wong
@@ -1496,34 +1613,6 @@ items:
     url: https://arxiv.org/abs/2511.16863
   - label: INSPIRE
     url: https://inspirehep.net/literature/3085518
-  collaborations:
-  - LIGO Scientific
-  - VIRGO
-  - KAGRA
-- include: true
-  highlight: false
-  title: Cosmological and High Energy Physics implications from gravitational-wave background searches in LIGO-Virgo-KAGRA's
-    O1-O4a runs
-  authors:
-  - A.G. Abac et al. (incl. **T.G.F. Li**, **M. Wils**, **I.C.F. Wong**)
-  venue: arXiv:2510.26848
-  year: 2025
-  date: '2025-10-30'
-  type: preprint
-  arxiv: '2510.26848'
-  key: arxiv:2510.26848
-  source: inspire
-  members:
-  - isaac-wong
-  - milan-wils
-  - tjonnie-li
-  author_count: 1769
-  collaboration: true
-  links:
-  - label: arXiv
-    url: https://arxiv.org/abs/2510.26848
-  - label: INSPIRE
-    url: https://inspirehep.net/literature/3075635
   collaborations:
   - LIGO Scientific
   - VIRGO
@@ -1584,37 +1673,6 @@ items:
     url: https://arxiv.org/abs/2507.08219
   - label: INSPIRE
     url: https://inspirehep.net/literature/2944905
-- include: true
-  highlight: false
-  title: 'Good things always come in 3s: trimodality in the binary black-hole chirp-mass distribution supports bimodal black-hole
-    formation'
-  authors:
-  - Reinhold Willcox
-  - Fabian R.N. Schneider
-  - Eva Laplace
-  - Philipp Podsiadlowski
-  - Kiril Maltsev
-  - Ilya Mandel
-  - Pablo Marchant
-  - Hugues Sana
-  - '**Tjonnie G.F. Li**'
-  - Thomas Hertog
-  venue: arXiv:2510.07573
-  year: 2025
-  date: '2025-10-08'
-  type: preprint
-  arxiv: '2510.07573'
-  key: arxiv:2510.07573
-  source: inspire
-  members:
-  - tjonnie-li
-  author_count: 10
-  collaboration: false
-  links:
-  - label: arXiv
-    url: https://arxiv.org/abs/2510.07573
-  - label: INSPIRE
-    url: https://inspirehep.net/literature/3065881
 - include: true
   highlight: false
   title: Bayesian Calibration of Gravitational-Wave Detectors Using Null Streams Without Waveform Assumptions
@@ -1729,7 +1787,7 @@ items:
   authors:
   - Frederik De Ceuster
   - '**Tom Colemont**'
-  - '**T. G. F. Li**'
+  - '**Tjonnie G. F. Li**'
   venue: Lirias (2025)
   year: 2025
   date: '2025-01-01'
