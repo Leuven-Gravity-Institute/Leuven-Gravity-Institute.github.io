@@ -273,3 +273,26 @@ items:
                 icon: 'github',
                 url: 'https://github.com/TomColemont',
             }
+
+    - id: 'bert-depoorter'
+      slug: 'bert-depoorter'
+      name: 'Bert Depoorter'
+      role: 'PhD Candidate'
+      category: 'Doctoral researchers'
+      group: 'gw-group'
+      status: 'current'
+      photo: '/assets/img/people/bertdepoorter.jpeg'
+      email: 'bert.depoorter@kuleuven.be'
+      orcid: '0009-0004-7865-7990'
+      start: '2025-10-01'
+      links:
+          - {
+                label: 'ORCID',
+                icon: 'orcid',
+                url: 'https://orcid.org/0009-0004-7865-7990',
+            }
+          - {
+                label: 'GitHub',
+                icon: 'github',
+                url: 'https://github.com/BertDepoorter',
+            }

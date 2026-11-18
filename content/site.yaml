@@ -16,7 +16,7 @@ site:
     description:
         'The Gravitational Wave Group at KU Leuven — part of the Laboratory for
         Semiconductor Physics and the Leuven Gravity Institute. Data analysis
-        for LIGO, Virgo, and the Einstein Telescope, detector noise and
+        for LIGO, Virgo, LISA and the Einstein Telescope, detector noise and
         calibration, and gravitational waves from core-collapse supernovae.'
     language: 'en'
     # Accent colour used across the site (any valid CSS colour).
